@@ -25,5 +25,14 @@ public class Print {
             System.out.print(filingChar);
         }
         System.out.println();
+
+        // Line with text
+        System.out.println(text);
+
+        // Line filled with textWidth times filingChar
+        for (byte i = 0; i < textWidth; i++) {
+            System.out.print(filingChar);
+        }
+        System.out.println();
     }
 }
