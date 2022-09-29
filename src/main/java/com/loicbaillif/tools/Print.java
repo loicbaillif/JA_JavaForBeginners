@@ -6,6 +6,13 @@ public class Print {
     final static byte TITLE_WIDTH = 80;
 
     // Methods
+    private static void decorationLine(char filingChar, byte textWidth) {
+        // Line filled with textWidth times filingChar
+        for (byte i = 0; i < textWidth; i++) {
+            System.out.print(filingChar);
+        }
+        System.out.println();
+    }
     public static void title(String text) {
         // use default constants
         title(text, FILING_CHAR, TITLE_WIDTH);
@@ -20,19 +27,13 @@ public class Print {
         // Empty line to separate from previous text
         System.out.println();
 
-        // Line filled with textWidth times filingChar
-        for (byte i = 0; i < textWidth; i++) {
-            System.out.print(filingChar);
-        }
-        System.out.println();
+        // First decoration line
+        decorationLine(filingChar, textWidth);
 
         // Line with text
         System.out.println(text);
 
-        // Line filled with textWidth times filingChar
-        for (byte i = 0; i < textWidth; i++) {
-            System.out.print(filingChar);
-        }
-        System.out.println();
+        // Third decoration line
+        decorationLine(filingChar, textWidth);
     }
 }
