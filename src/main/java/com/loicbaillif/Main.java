@@ -15,6 +15,6 @@ public class Main {
         */
         Project1.main();
         com.loicbaillif.codeOrganization.methods.overloading.Theory.main();
-        Print.subtitle("1) How to overload methods", '*', (byte) 60);
+
     }
 }
