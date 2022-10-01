@@ -13,5 +13,6 @@ public class Main {
                 "result with this crazily long title", '#', (byte) 40);
         */
         Project1.main();
+        com.loicbaillif.codeOrganization.methods.overloading.Theory.main();
     }
 }
