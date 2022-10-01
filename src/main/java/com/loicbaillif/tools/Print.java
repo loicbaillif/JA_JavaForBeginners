@@ -16,9 +16,9 @@ public class Print {
         for (int j = 0; j < nbLines; j++) {
             String textLine = splitText[j];
             byte freeSpace = (byte) (textWidth - 2 - textLine.length());
-            byte suffixSize = (byte) (freeSpace / 2);
-            // If text length is odd, we keep the extra character on the prefix
-            byte prefixSize = (byte) (suffixSize + freeSpace % 2);
+            byte prefixSize = (byte) (freeSpace / 2);
+            // If text length is odd, we keep the extra character on the suffix
+            byte suffixSize = (byte) (prefixSize + freeSpace % 2);
 
             // Printing line
             System.out.print(filChar);
@@ -54,7 +54,7 @@ public class Print {
         for (byte i = 0; i < nbLines; i++) {
             int begChar = i * charsPerLine;
             int endChar = Math.min(textLength, (i + 1) * charsPerLine);
-            splitText[i] = text.substring(begChar, endChar);
+            splitText[i] = text.substring(begChar, endChar).trim();
         }
         return splitText;
     }
@@ -76,10 +76,10 @@ public class Print {
         // First decoration line
         decorationLine(filingChar, textWidth);
 
-        // Line with text
+        // Line(s) with text
         centerText(text, filingChar, textWidth);
 
-        // Third decoration line
+        // Last line: decoration line
         decorationLine(filingChar, textWidth);
     }
 }
