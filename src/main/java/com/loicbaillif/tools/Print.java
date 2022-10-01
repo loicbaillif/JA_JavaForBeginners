@@ -72,6 +72,7 @@ public class Print {
             System.out.print(text);
             printXChars(' ', suffixSize);
             printXChars(filingChar, (byte) 5);
+            System.out.println();
         } else {
             System.out.println(text);
         }
