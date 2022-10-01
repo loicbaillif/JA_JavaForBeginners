@@ -54,6 +54,6 @@ public class Stage1 {
             System.out.printf(turnB, proposals[i]);
             System.out.printf(turnC, grades[i]);
         }
-        System.out.printf(endGame);
+        System.out.printf(endGame, proposals[proposals.length - 1]);
     }
 }
