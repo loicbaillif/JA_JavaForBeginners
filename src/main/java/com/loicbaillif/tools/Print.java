@@ -11,12 +11,7 @@ public class Print {
     private static void centerText(String text, char filChar, byte textWidth) {
         // Variables
         int nbLines = 1 + text.length() / (textWidth - 4);
-        String[] splitText = new String[nbLines];
-
-        for (int k = 0; k < nbLines; k++) {
-            int maxIndex = Math.min((k + 1) * (textWidth - 4), text.length());
-            splitText[k] = text.substring(k * (textWidth - 4), maxIndex);
-        }
+        String[] splitText = splitString(text, textWidth);
 
         for (int j = 0; j < nbLines; j++) {
             String textLine = splitText[j];
@@ -46,6 +41,24 @@ public class Print {
         }
         System.out.println();
     }
+
+    private static String[] splitString(String text, byte textWidth) {
+        // Each line displays textWidth characters.
+        // Text line first and last characters are decorative
+        // Text line second and second to last characters are blank space
+        // Text line consequently can display (textWidth - 4) chars of text
+        int textLength = text.length();
+        byte charsPerLine = (byte) (textWidth - 4);
+        byte nbLines = (byte) (1 + textLength / charsPerLine);
+        String[] splitText = new String[nbLines];
+        for (byte i = 0; i < nbLines; i++) {
+            int begChar = i * charsPerLine;
+            int endChar = Math.min(textLength, (i + 1) * charsPerLine);
+            splitText[i] = text.substring(begChar, endChar);
+        }
+        return splitText;
+    }
+
     public static void title(String text) {
         // use default constants
         title(text, FILING_CHAR, TITLE_WIDTH);
