@@ -1,6 +1,7 @@
 package com.loicbaillif;
 
 import com.loicbaillif.bullsAndCows.Project1;
+import com.loicbaillif.tools.Print;
 
 public class Main {
     public static void main(String[] args) {
@@ -14,5 +15,6 @@ public class Main {
         */
         Project1.main();
         com.loicbaillif.codeOrganization.methods.overloading.Theory.main();
+        Print.subtitle("1) How to overload methods", '*', (byte) 60);
     }
 }
