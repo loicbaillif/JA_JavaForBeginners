@@ -43,7 +43,7 @@ public class Stage1 {
         String turnA = "Turn %d. Answer:%n";
         String turnB = "%d%n";
         String turnC = "Grade: %s.%n%n";
-        String endGame = "Congrats! The secret code is %d.";
+        String endGame = "Congrats! The secret code is %d.%n";
         int[] proposals = {1234, 5678, 9012, 9087, 1087, 9205, 9305};
         String[] grades = {"1 cow", "1 cow", "1 bull and 1 cow", "1 bull and 1 cow",
                 "1 cow", "3 bulls", "4 bulls"};
