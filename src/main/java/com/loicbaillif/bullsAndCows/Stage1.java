@@ -1,6 +1,6 @@
 package com.loicbaillif.bullsAndCows;
 
-public class stage1 {
+public class Stage1 {
 
     /*
      **** Description:
@@ -39,6 +39,21 @@ public class stage1 {
     */
 
     public static void main() {
+        String preparation = "The secret code is prepared: ****.";
+        String turnA = "Turn %d. Answer:%n";
+        String turnB = "%d%n";
+        String turnC = "Grade: %s.%n%n";
+        String endGame = "Congrats! The secret code is %d.";
+        int[] proposals = {1234, 5678, 9012, 9087, 1087, 9205, 9305};
+        String[] grades = {"1 cow", "1 cow", "1 bull and 1 cow", "1 bull and 1 cow",
+                "1 cow", "3 bulls", "4 bulls"};
 
+        System.out.printf(preparation);
+        for (int i = 0; i < proposals.length; i++) {
+            System.out.printf(turnA, i + 1);
+            System.out.printf(turnB, proposals[i]);
+            System.out.printf(turnC, grades[i]);
+        }
+        System.out.printf(endGame);
     }
 }
