@@ -39,7 +39,7 @@ public class Stage1 {
     */
 
     public static void main() {
-        String preparation = "The secret code is prepared: ****.";
+        String preparation = "The secret code is prepared: ****.%n";
         String turnA = "Turn %d. Answer:%n";
         String turnB = "%d%n";
         String turnC = "Grade: %s.%n%n";
