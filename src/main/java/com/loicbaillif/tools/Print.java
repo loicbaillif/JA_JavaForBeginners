@@ -1,7 +1,5 @@
 package com.loicbaillif.tools;
 
-import org.apache.commons.lang3.StringUtils;
-
 public class Print {
     // Constants
     final static char FILING_CHAR = '*';
@@ -10,16 +8,13 @@ public class Print {
     // Methods
     private static void centerText(String text, char filChar, byte textWidth) {
         // Variables
-        int nbLines = 1 + text.length() / (textWidth - 4);
         String[] splitText = splitString(text, textWidth);
 
-        for (int j = 0; j < nbLines; j++) {
-            String textLine = splitText[j];
+        for (String textLine: splitText) {
             byte freeSpace = (byte) (textWidth - 2 - textLine.length());
             byte prefixSize = (byte) (freeSpace / 2);
             // If text length is odd, we keep the extra character on the suffix
             byte suffixSize = (byte) (prefixSize + freeSpace % 2);
-
             // Printing line
             System.out.print(filChar);
             for (byte i = 0; i < prefixSize; i++) {
@@ -30,7 +25,6 @@ public class Print {
                 System.out.print(' ');
             }
             System.out.println(filChar);
-
         }
 
     }
