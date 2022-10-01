@@ -36,6 +36,12 @@ public class Print {
         System.out.println();
     }
 
+    public static void printXChars(char letter, byte occurrences) {
+        for (int i = 0; i < occurrences; i++) {
+            System.out.print(letter);
+        }
+    }
+
     private static String[] splitString(String text, byte textWidth) {
         // Each line displays textWidth characters.
         // Text line first and last characters are decorative
@@ -51,6 +57,24 @@ public class Print {
             splitText[i] = text.substring(begChar, endChar).trim();
         }
         return splitText;
+    }
+
+    public static void subtitle(String text, char filingChar, byte lineWidth) {
+        // subtitle("Hello, World", '*', (byte) 40) will produce:
+        // *****         Hello, World         *****
+        byte textLen = (byte) text.length();
+        if (lineWidth - 10 >= text.length()) {
+            byte prefixSize = (byte) ((lineWidth - textLen) / 2);
+            byte suffixSize = (byte) (prefixSize + (lineWidth - textLen) % 2);
+            System.out.println();
+            printXChars(filingChar, (byte) 5);
+            printXChars(' ', (byte) prefixSize);
+            System.out.print(text);
+            printXChars(' ', suffixSize);
+            printXChars(filingChar, (byte) 5);
+        } else {
+            System.out.println(text);
+        }
     }
 
     public static void title(String text) {
