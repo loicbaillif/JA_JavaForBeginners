@@ -3,6 +3,7 @@ package com.loicbaillif.tools;
 public class Print {
     // Constants
     final static char FILING_CHAR = '*';
+    final static byte SUBTITLE_WIDTH = 70;
     final static byte TITLE_WIDTH = 80;
 
     // Methods
@@ -59,14 +60,19 @@ public class Print {
         return splitText;
     }
 
+    public static void subtitle(String text) {
+        // Uses defaults values
+        subtitle(text, FILING_CHAR, SUBTITLE_WIDTH);
+    }
+
     public static void subtitle(String text, char filingChar, byte lineWidth) {
         // subtitle("Hello, World", '*', (byte) 40) will produce:
         // *****         Hello, World         *****
         byte textLen = (byte) text.length();
-        if (lineWidth - 10 >= text.length()) {
-            byte prefixSize = (byte) ((lineWidth - textLen) / 2);
-            byte suffixSize = (byte) (prefixSize + (lineWidth - textLen) % 2);
-            System.out.println();
+        System.out.println();
+        if ((lineWidth - 10) >= textLen) {
+            byte prefixSize = (byte) ((lineWidth - textLen - 10) / 2);
+            byte suffixSize = (byte) (prefixSize + (lineWidth-textLen-10) % 2);
             printXChars(filingChar, (byte) 5);
             printXChars(' ', (byte) prefixSize);
             System.out.print(text);
