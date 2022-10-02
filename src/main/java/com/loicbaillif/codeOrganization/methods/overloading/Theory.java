@@ -8,8 +8,11 @@ public class Theory {
 
         Print.subtitle("1) How to overload methods", '*', (byte) 60);
         System.out.println("Few examples:");
+        System.out.println("First implementation of method");
         printEx1("Veni, Vidi, Vici");
+        System.out.println("Second implementation of method");
         printEx1(8, "Veni, Vidi, Vici");
+        System.out.println("Third implementation of method");
         printEx1("Veni, Vidi, Vici", 8);
     }
 
