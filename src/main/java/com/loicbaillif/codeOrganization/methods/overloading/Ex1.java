@@ -21,4 +21,12 @@ public class Ex1 {
          * type of the parameter.
          */
     }
+
+    public static long getMaxMinusCurrent(long val) {
+        return Long.MAX_VALUE - val;
+    }
+
+    public static long getMaxMinusCurrent(int val) {
+        return Integer.MAX_VALUE - val;
+    }
 }
