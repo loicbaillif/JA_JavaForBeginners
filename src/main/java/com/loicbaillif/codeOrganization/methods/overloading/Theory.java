@@ -43,15 +43,15 @@ public class Theory {
         System.out.printf("short argument: %d", myNumber);
     }
 
-//    public static void printEx2(int myNumber) {
-//        System.out.printf("int argument: %d", myNumber);
-//    }
+    public static void printEx2(int myNumber) {
+        System.out.printf("int argument: %d", myNumber);
+    }
 
-//    public static void printEx2(long myNumber) {
-//        System.out.printf("long argument: %d", myNumber);
-//    }
+    public static void printEx2(long myNumber) {
+        System.out.printf("long argument: %d", myNumber);
+    }
 
-//    public static void printEx2(double myNumber) {
-//        System.out.printf("double argument: %f", myNumber);
-//    }
+    public static void printEx2(double myNumber) {
+        System.out.printf("double argument: %f", myNumber);
+    }
 }
