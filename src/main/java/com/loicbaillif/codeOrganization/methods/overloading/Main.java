@@ -6,5 +6,6 @@ public class Main {
     public static void main() {
         // Theory
         Theory.main();
+        Ex1.main();
     }
 }
