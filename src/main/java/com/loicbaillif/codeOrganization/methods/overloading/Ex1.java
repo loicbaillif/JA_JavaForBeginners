@@ -20,13 +20,23 @@ public class Ex1 {
          * For the method, the type of result value must be the same as the
          * type of the parameter.
          */
+
+        for (int i = 0; i < 7; i++) {
+            System.out.printf("With long: getMaxMinusCurrent(%d) = %d%n",
+                    (long) Math.pow(10, i),
+                    getMaxMinusCurrent((long) Math.pow(10, i)));
+
+            System.out.printf("With int: getMaxMinusCurrent(%d) = %d%n",
+                    (int) Math.pow(10, i),
+                    getMaxMinusCurrent((int) Math.pow(10, i)));
+        }
     }
 
     public static long getMaxMinusCurrent(long val) {
         return Long.MAX_VALUE - val;
     }
 
-    public static long getMaxMinusCurrent(int val) {
+    public static int getMaxMinusCurrent(int val) {
         return Integer.MAX_VALUE - val;
     }
 }
