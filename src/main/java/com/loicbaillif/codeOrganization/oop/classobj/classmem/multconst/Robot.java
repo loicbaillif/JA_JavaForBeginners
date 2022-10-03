@@ -20,6 +20,8 @@ public class Robot {
         setName(name);
         setModel(model);
         setLifetime(lifetime);
+        System.out.println("Third constructor invoked");
+        System.out.println(this);
     }
 
 
@@ -42,6 +44,7 @@ public class Robot {
         return "Robot{" +
                 "name='" + name + '\'' +
                 ", model='" + model + '\'' +
+                ", lifetime='" + lifetime + '\'' +
                 '}';
     }
 }
