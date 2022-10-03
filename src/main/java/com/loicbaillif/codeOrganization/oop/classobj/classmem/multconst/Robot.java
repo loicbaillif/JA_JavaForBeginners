@@ -25,4 +25,13 @@ public class Robot {
     public void setModel(String model) {
         this.model = model;
     }
+
+    // toString
+    @Override
+    public String toString() {
+        return "Robot{" +
+                "name='" + name + '\'' +
+                ", model='" + model + '\'' +
+                '}';
+    }
 }
