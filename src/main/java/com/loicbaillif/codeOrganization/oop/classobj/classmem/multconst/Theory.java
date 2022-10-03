@@ -12,5 +12,8 @@ public class Theory {
         System.out.println(robot1);
         System.out.println(robot2);
 
+        System.out.println("***** 2) Invoking constructors from " +
+                "other constructors");
+
     }
 }

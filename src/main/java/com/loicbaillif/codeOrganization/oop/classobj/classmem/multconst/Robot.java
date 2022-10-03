@@ -4,6 +4,7 @@ public class Robot {
     // Attributes
     private String name;
     private String model;
+    private int lifetime;
 
     // Constructors
     public Robot() {
@@ -12,8 +13,13 @@ public class Robot {
     }
 
     public Robot(String name, String model) {
+        this(name, model, 42);
+    }
+
+    public Robot(String name, String model, int lifetime) {
         setName(name);
         setModel(model);
+        setLifetime(lifetime);
     }
 
 
@@ -24,6 +30,10 @@ public class Robot {
 
     public void setModel(String model) {
         this.model = model;
+    }
+
+    public void setLifetime(int lifetime) {
+        this.lifetime = lifetime;
     }
 
     // toString
