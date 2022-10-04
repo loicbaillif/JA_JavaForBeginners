@@ -2,6 +2,8 @@ package com.loicbaillif.codeOrganization.methods.overloading;
 
 import com.loicbaillif.tools.Print;
 
+import java.util.Scanner;
+
 public class Ex2 {
     public static void main() {
         Print.title("Overloading - Exercise: Print");
@@ -18,5 +20,18 @@ public class Ex2 {
          *      print("test", 4)
          * Do not remove the existing method!
          */
+        Scanner scanner = new Scanner(System.in);
+        String str = scanner.nextLine();
+        int val = scanner.nextInt();
+        print(str);
+        print(str, val);
+    }
+
+    public static void print(String text) {
+        System.out.printf("print(\"%s\")%n", text);
+    }
+
+    public static void print(String text, int occurrences) {
+        System.out.printf("print(\"%s\", %d)%n", text, occurrences);
     }
 }
