@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class Ex2 {
     public static void main() {
-        Print.title("Overloading - Exercise: Print");
+        Print.subtitle("Overloading - Exercise: Print");
 
         /* https://hyperskill.org/learn/step/2247
          * There is a method print(String arg). The method outputs the name
@@ -25,6 +25,8 @@ public class Ex2 {
         int val = scanner.nextInt();
         print(str);
         print(str, val);
+
+        Print.subtitle("End of exercise");
     }
 
     public static void print(String text) {
