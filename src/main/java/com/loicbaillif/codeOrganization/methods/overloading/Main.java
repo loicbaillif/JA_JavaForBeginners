@@ -7,5 +7,6 @@ public class Main {
         // Theory
         Theory.main();
         Ex1.main();
+        Ex2.main();
     }
 }

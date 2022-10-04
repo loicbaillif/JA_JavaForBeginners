@@ -8,9 +8,9 @@ public class Main {
         // Project stages
         // Project1.main();
 
-        /* Previous chapters
+        /* Previous chapters */
         com.loicbaillif.codeOrganization.methods.overloading.Main.main();
-        */
+
 
         // Current chapter
         com.loicbaillif.codeOrganization.oop.classobj.classmem.multconst.Main.main();
