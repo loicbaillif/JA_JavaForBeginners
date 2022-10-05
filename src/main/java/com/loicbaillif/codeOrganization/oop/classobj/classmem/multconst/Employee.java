@@ -12,4 +12,10 @@ public class Employee {
         this.salary = 0;
         this.address = "unknown";
     }
+
+    Employee(String name, int salary) {
+        this.name = name;
+        this.salary = salary;
+        this.address = "unknown";
+    }
 }
