@@ -24,4 +24,13 @@ public class Employee {
         this.salary = salary;
         this.address = address;
     }
+
+    // toString
+
+    @Override
+    public String toString() {
+        return String.format(
+                "Employee{name=%s, salary=%d€, address=%s}%n",
+                this.name, this.salary, this.address);
+    }
 }

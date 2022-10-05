@@ -20,5 +20,16 @@ public class Ex2 {
 
     public static void main() {
         Print.title("Multiple Constructors - Exercise: Employee");
+
+        Employee employee1 = new Employee();
+        Employee employee2 = new Employee("Tom Hato", 32123);
+        Employee employee3 = new Employee(
+                "Pat Hato",
+                97531,
+                "St. Ardom, Paris");
+
+        System.out.println(employee1);
+        System.out.println(employee2);
+        System.out.println(employee3);
     }
 }
