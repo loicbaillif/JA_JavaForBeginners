@@ -5,4 +5,11 @@ public class Employee {
     String name;
     int salary;
     String address;
+
+    // Constructors
+    Employee() {
+        this.name = "unknown";
+        this.salary = 0;
+        this.address = "unknown";
+    }
 }
