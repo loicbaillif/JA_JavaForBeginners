@@ -10,13 +10,12 @@ public class Time {
     }
 
     Time(int hours, int minutes) {
-        this.hours = hours;
+        this(hours);
         this.minutes = minutes;
     }
 
     Time(int hours, int minutes, int seconds) {
-        this.hours = hours;
-        this.minutes = minutes;
+        this(hours, minutes);
         this.seconds = seconds;
     }
 }
