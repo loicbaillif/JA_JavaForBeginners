@@ -6,17 +6,19 @@ public class Employee {
     int salary;
     String address;
 
+    final String DEFAULT_STR = "unknown";
+
     // Constructors
     Employee() {
-        this.name = "unknown";
+        this.name = DEFAULT_STR;
         this.salary = 0;
-        this.address = "unknown";
+        this.address = DEFAULT_STR;
     }
 
     Employee(String name, int salary) {
         this.name = name;
         this.salary = salary;
-        this.address = "unknown";
+        this.address = DEFAULT_STR;
     }
 
     Employee(String name, int salary, String address) {
