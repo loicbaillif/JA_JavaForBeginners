@@ -1,24 +1,21 @@
 package com.loicbaillif.codeOrganization.oop.classobj.classmem.multconst;
 
 public class Employee {
-    // Attributes
-    String name;
-    int salary;
-    String address;
 
-    final String DEFAULT_STR = "unknown";
+    final String defaultString = "unknown";
+
+    // Attributes
+    String name = defaultString;
+    int salary = 0;
+    String address = defaultString;
 
     // Constructors
     Employee() {
-        this.name = DEFAULT_STR;
-        this.salary = 0;
-        this.address = DEFAULT_STR;
     }
 
     Employee(String name, int salary) {
         this.name = name;
         this.salary = salary;
-        this.address = DEFAULT_STR;
     }
 
     Employee(String name, int salary, String address) {
