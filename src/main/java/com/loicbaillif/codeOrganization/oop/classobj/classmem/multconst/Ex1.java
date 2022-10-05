@@ -20,6 +20,12 @@ public class Ex1 {
     public static void main() {
         Print.title("Multiple Constructors - Exercise: Time");
 
+        Time time1 = new Time(22);
+        Time time2 = new Time(15, 34);
+        Time time3 = new Time(7, 51, 22);
 
+        System.out.println(time1);
+        System.out.println(time2);
+        System.out.println(time3);
     }
 }

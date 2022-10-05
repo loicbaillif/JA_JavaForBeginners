@@ -7,6 +7,8 @@ public class Time {
 
     Time(int hours) {
         this.hours = hours;
+        this.minutes = 0;
+        this.seconds = 0;
     }
 
     Time(int hours, int minutes) {
@@ -17,5 +19,11 @@ public class Time {
     Time(int hours, int minutes, int seconds) {
         this(hours, minutes);
         this.seconds = seconds;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("Time = %02d:%02d:%02d",
+                hours, minutes, seconds);
     }
 }
