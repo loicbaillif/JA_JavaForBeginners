@@ -23,4 +23,16 @@ public class Phone {
         this.cityCode = cityCode;
         this.number = number;
     }
+
+    // toString
+
+    @Override
+    public String toString() {
+        return "Phone{" +
+                "ownerName='" + ownerName + '\'' +
+                ", countryCode='" + countryCode + '\'' +
+                ", cityCode='" + cityCode + '\'' +
+                ", number='" + number + '\'' +
+                '}';
+    }
 }

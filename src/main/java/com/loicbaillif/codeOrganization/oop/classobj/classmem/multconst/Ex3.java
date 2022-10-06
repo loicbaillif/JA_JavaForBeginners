@@ -19,6 +19,11 @@ public class Ex3 {
     public static void main() {
         Print.title("Multiple Constructors - Exercise: Phone");
 
+        Phone phone1 = new Phone("Paul Isson", "0123456789");
+        Phone phone2 = new Phone("John Doe", "1234", "53100", "0987654321");
+
+        System.out.println(phone1);
+        System.out.println(phone2);
 
         Print.subtitle("End of exercise");
     }
