@@ -4,7 +4,7 @@ import com.loicbaillif.tools.Print;
 
 public class Theory {
     public static void main() {
-        Print.title("Multiple Constructors - Theory", '-', (byte) 70);
+        Print.title("Multiple Constructors - Theory");
 
         System.out.println("***** 1) Constructor Overloading");
         Robot robot1 = new Robot();
