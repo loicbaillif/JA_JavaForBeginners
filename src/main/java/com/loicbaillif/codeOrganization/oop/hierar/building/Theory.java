@@ -11,6 +11,11 @@ public class Theory {
         System.out.println(conv1);
         System.out.println(conv1.toString2());
 
+        Print.subtitle("2) Invoking superclass constructor");
+        Employee employee1 = new Employee(
+                "John Doe", 1994, "Dawn Street", 13579
+                );
+
         Print.subtitle("End of theory", '*', (byte) 80);
     }
 }
