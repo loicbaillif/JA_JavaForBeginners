@@ -94,3 +94,33 @@ class Developer extends Employee2 {
         this.skills = skills;
     }
 }
+
+
+class DataAnalyst extends Employee2 {
+    // Attributes
+    private boolean phd;
+    private String[] methods;
+
+    // Constructor
+    public DataAnalyst(String name, String email, int experience,
+                       boolean phd, String[] methods) {
+        super(name, email, experience);
+        setPhd(phd);
+        setMethods(methods);
+    }
+
+    // Getters and Setters
+    public boolean isPhd() {
+        return phd;
+    }
+    public void setPhd(boolean phd) {
+        this.phd = phd;
+    }
+
+    public String[] getMethods() {
+        return this.methods;
+    }
+    public void setMethods(String[] methods) {
+        this.methods = methods;
+    }
+}
