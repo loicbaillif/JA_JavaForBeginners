@@ -9,4 +9,11 @@ public class SavingsAccount extends BankAccount {
         super(number, balance);
         this.interestRate = interestRate;
     }
+
+    @Override
+    public String toString() {
+        return "SavingsAccount{" +
+                "interestRate=" + interestRate +
+                "} " + super.toString();
+    }
 }

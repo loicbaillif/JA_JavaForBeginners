@@ -8,4 +8,12 @@ public class BankAccount {
         this.number = number;
         this.balance = balance;
     }
+
+    @Override
+    public String toString() {
+        return "BankAccount{" +
+                "number='" + number + '\'' +
+                ", balance=" + balance +
+                '}';
+    }
 }

@@ -21,5 +21,13 @@ public class Ex1 {
 
     public static void main() {
         Print.title("The keyword super - Exercise: Bank Account");
+
+        CheckingAccount chac1 = new CheckingAccount("124531", 21321L, 25.5);
+        SavingsAccount sav1  = new SavingsAccount("9753", 90000L, 3.25);
+
+        System.out.println(chac1);
+        System.out.println(sav1);
+
+        Print.subtitle("End of exercise", '*', (byte)80);
     }
 }

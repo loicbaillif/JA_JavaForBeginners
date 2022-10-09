@@ -9,4 +9,11 @@ public class CheckingAccount extends BankAccount {
         super(number, balance);
         this.fee = fee;
     }
+
+    @Override
+    public String toString() {
+        return "CheckingAccount{" +
+                "fee=" + fee +
+                "} " + super.toString();
+    }
 }
