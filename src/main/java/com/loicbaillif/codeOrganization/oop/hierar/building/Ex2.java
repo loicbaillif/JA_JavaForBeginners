@@ -27,3 +27,40 @@ public class Ex2 {
         Print.subtitle("End of exercise", '*', (byte) 80);
     }
 }
+
+
+class Employee2 {
+    // Attributes
+    private String name;
+    private String email;
+    private int experience;
+
+    // Constructor
+    public Employee2(String name, String email, int experience) {
+        setName(name);
+        setEmail(email);
+        setExperience(experience);
+    }
+
+    // Getters and Setters
+    public String getName() {
+        return this.name;
+    }
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getEmail() {
+        return this.email;
+    }
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public int getExperience() {
+        return this.experience;
+    }
+    public void setExperience(int experience) {
+        this.experience = experience;
+    }
+}
