@@ -64,3 +64,33 @@ class Employee2 {
         this.experience = experience;
     }
 }
+
+
+class Developer extends Employee2 {
+    // Attributes
+    private String mainLanguage;
+    private String[] skills;
+
+    // Constructor
+    public Developer(String name, String email, int experience,
+                     String mainLanguage, String[] skills) {
+        super(name, email, experience);
+        setMainLanguage(mainLanguage);
+        setSkills(skills);
+    }
+
+    // Getters and Setters
+    public String getMainLanguage() {
+        return this.mainLanguage;
+    }
+    public void setMainLanguage(String mainLanguage) {
+        this.mainLanguage = mainLanguage;
+    }
+
+    public String[] getSkills() {
+        return this.skills;
+    }
+    public void setSkills(String[] skills) {
+        this.skills = skills;
+    }
+}
