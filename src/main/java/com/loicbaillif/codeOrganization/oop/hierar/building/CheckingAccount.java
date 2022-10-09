@@ -2,7 +2,7 @@ package com.loicbaillif.codeOrganization.oop.hierar.building;
 
 public class CheckingAccount extends BankAccount {
     // Fields
-    double fee;
+    private double fee;
 
     // Constructor
     public CheckingAccount(String number, Long balance, double fee) {
