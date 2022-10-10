@@ -2,6 +2,8 @@ package com.loicbaillif.codeOrganization.oop.hierar.building;
 
 import com.loicbaillif.tools.Print;
 
+import java.util.Arrays;
+
 public class Ex2 {
     /* https://hyperskill.org/learn/step/2206
      * Develop a class hierarchy of employees. The hierarchy should include
@@ -23,6 +25,15 @@ public class Ex2 {
     public static void main() {
         Print.title("The keyword super - Exercise: Employees");
 
+        String[] skills = { "git", "Scala", "JBoss", "UML" };
+        Developer developer = new Developer(
+                "Mary", "mary@mail.com", 3, "Java", skills);
+        System.out.println(developer);
+
+        String[] methods = { "neural networks", "decision tree", "bayesian algorithms" };
+        DataAnalyst analyst = new DataAnalyst(
+                "John", "john@gmail.com", 2, true, methods);
+        System.out.println(analyst);
 
         Print.subtitle("End of exercise", '*', (byte) 80);
     }
@@ -37,31 +48,33 @@ class Employee2 {
 
     // Constructor
     public Employee2(String name, String email, int experience) {
-        setName(name);
-        setEmail(email);
-        setExperience(experience);
+        this.name = name;
+        this.email = email;
+        this.experience = experience;
     }
 
     // Getters and Setters
     public String getName() {
         return this.name;
     }
-    public void setName(String name) {
-        this.name = name;
-    }
 
     public String getEmail() {
         return this.email;
-    }
-    public void setEmail(String email) {
-        this.email = email;
     }
 
     public int getExperience() {
         return this.experience;
     }
-    public void setExperience(int experience) {
-        this.experience = experience;
+
+    // toString()
+
+    @Override
+    public String toString() {
+        return "Employee2{" +
+                "name='" + name + '\'' +
+                ", email='" + email + '\'' +
+                ", experience=" + experience +
+                '}';
     }
 }
 
@@ -75,23 +88,27 @@ class Developer extends Employee2 {
     public Developer(String name, String email, int experience,
                      String mainLanguage, String[] skills) {
         super(name, email, experience);
-        setMainLanguage(mainLanguage);
-        setSkills(skills);
+        this.mainLanguage = mainLanguage;
+        this.skills = skills.clone();
     }
 
     // Getters and Setters
     public String getMainLanguage() {
         return this.mainLanguage;
     }
-    public void setMainLanguage(String mainLanguage) {
-        this.mainLanguage = mainLanguage;
-    }
 
     public String[] getSkills() {
-        return this.skills;
+        return this.skills.clone();
     }
-    public void setSkills(String[] skills) {
-        this.skills = skills;
+
+    // toString
+
+    @Override
+    public String toString() {
+        return "Developer{" +
+                "mainLanguage='" + mainLanguage + '\'' +
+                ", skills=" + Arrays.toString(skills) +
+                "} " + super.toString();
     }
 }
 
@@ -105,22 +122,26 @@ class DataAnalyst extends Employee2 {
     public DataAnalyst(String name, String email, int experience,
                        boolean phd, String[] methods) {
         super(name, email, experience);
-        setPhd(phd);
-        setMethods(methods);
+        this.phd = phd;
+        this.methods = methods.clone();
     }
 
     // Getters and Setters
     public boolean isPhd() {
         return phd;
     }
-    public void setPhd(boolean phd) {
-        this.phd = phd;
-    }
 
     public String[] getMethods() {
-        return this.methods;
+        return this.methods.clone();
     }
-    public void setMethods(String[] methods) {
-        this.methods = methods;
+
+    // toString()
+
+    @Override
+    public String toString() {
+        return "DataAnalyst{" +
+                "phd=" + phd +
+                ", methods=" + Arrays.toString(methods) +
+                "} " + super.toString();
     }
 }

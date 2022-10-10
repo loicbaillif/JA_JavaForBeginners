@@ -10,11 +10,11 @@ public class Main {
 
         /* Previous chapters */
         // com.loicbaillif.codeOrganization.methods.overloading.Main.main();
-        com.loicbaillif.codeOrganization.oop.classobj.classmem.multconst.Main.main();
+        // com.loicbaillif.codeOrganization.oop.classobj.classmem.multconst.Main.main();
 
 
         // Current chapter
-        // com.loicbaillif.codeOrganization.oop.hierar.building.Main.main();
+        com.loicbaillif.codeOrganization.oop.hierar.building.Main.main();
 
 
     }
