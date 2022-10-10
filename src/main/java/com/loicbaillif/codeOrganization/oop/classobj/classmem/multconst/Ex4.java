@@ -36,6 +36,12 @@ class Movie {
         this.year = year;
     }
 
+    public Movie(String title, int year) {
+        this.title = title;
+        this.year = year;
+        this.desc = "empty";
+    }
+
     // Getters and Setters
     public String getTitle() {
         return title;
