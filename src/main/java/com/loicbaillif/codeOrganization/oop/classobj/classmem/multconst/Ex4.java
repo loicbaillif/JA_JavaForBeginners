@@ -30,7 +30,13 @@ class Movie {
     private int year;
 
     // write two constructors here
+    public Movie(String title, String desc, int year) {
+        this.title = title;
+        this.desc = desc;
+        this.year = year;
+    }
 
+    // Getters and Setters
     public String getTitle() {
         return title;
     }
