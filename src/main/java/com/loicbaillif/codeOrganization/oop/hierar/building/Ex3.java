@@ -28,8 +28,8 @@ class Employee3 {
     protected String birthDate;
 
     public Employee3(String name, String birthDate) {
-        super.name = name;
-        super.birthDate = birthDate;
+        this.name = name;  // fixed: "super" replaced by "this"
+        this.birthDate = birthDate;  // fixed: "super" replaced by "this"
     }
 }
 
@@ -39,8 +39,8 @@ class RegularEmployee extends Employee3 {
     protected String hireDate;
 
     public RegularEmployee(String name, String birthDate, long salary, String hireDate) {
-        this(name, birthDate);
-        super.salary = salary;
+        super(name, birthDate);  // fixed: "this" replaced by "super"
+        this.salary = salary;  // fixed: "super" replaced by "this"
         this.hireDate = hireDate;
     }
 }
@@ -51,7 +51,8 @@ class ContractEmployee extends Employee3 {
     protected String contractPeriod;
 
     public ContractEmployee(String name, String birthDate, long payPerHour, String contractPeriod) {
+        super(name, birthDate); // line added to fix constructor
         this.payPerHour = payPerHour;
-        super.contractPeriod = contractPeriod;
+        this.contractPeriod = contractPeriod;  // fixed: "super" replaced by "this"
     }
 }
