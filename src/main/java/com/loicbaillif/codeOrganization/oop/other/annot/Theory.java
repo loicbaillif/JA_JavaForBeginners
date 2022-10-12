@@ -17,11 +17,14 @@ public class Theory {
         System.out.println("\t- @SuppressWarnings");
         System.out.println("\t- @Override");
 
+        Print.subtitle("3) Annotation elements");
+
+        Print.subtitle("4) @Deprecated annotations");
 
         Print.subtitle("End of theory", '*', (byte) 80);
     }
 
-    @Deprecated
+    @Deprecated(since = "0.8", forRemoval = true)
     public static void deprecatedMethod() {
         System.out.println("\t\tI am deprecated.");
     }
