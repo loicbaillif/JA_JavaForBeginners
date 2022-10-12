@@ -15,6 +15,7 @@ public class Theory {
         System.out.println("\t- @Deprecated");
         deprecatedMethod();
         System.out.println("\t- @SuppressWarnings");
+        System.out.println("\t- @Override");
 
 
         Print.subtitle("End of theory", '*', (byte) 80);
@@ -28,5 +29,10 @@ public class Theory {
     @SuppressWarnings("unused")
     public static void unusedMethod() {
         System.out.println("\t\tI am not used.");
+    }
+
+    @Override
+    public String toString() {
+        return "This is Theory for Annotations.";
     }
 }
