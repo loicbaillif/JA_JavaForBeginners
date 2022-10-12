@@ -14,6 +14,7 @@ public class Theory {
         System.out.println("There are 3 built-in annotations:");
         System.out.println("\t- @Deprecated");
         deprecatedMethod();
+        System.out.println("\t- @SuppressWarnings");
 
 
         Print.subtitle("End of theory", '*', (byte) 80);
@@ -21,6 +22,11 @@ public class Theory {
 
     @Deprecated
     public static void deprecatedMethod() {
-        System.out.println("I am deprecated.");
+        System.out.println("\t\tI am deprecated.");
+    }
+
+    @SuppressWarnings("unused")
+    public static void unusedMethod() {
+        System.out.println("\t\tI am not used.");
     }
 }
