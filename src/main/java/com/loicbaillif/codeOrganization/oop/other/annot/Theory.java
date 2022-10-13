@@ -1,6 +1,9 @@
 package com.loicbaillif.codeOrganization.oop.other.annot;
 
 import com.loicbaillif.tools.Print;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Range;
+// import org.jetbrains.annotations.NotNull;
 
 public class Theory {
     public static void main() {
@@ -21,6 +24,16 @@ public class Theory {
 
         Print.subtitle("4) @Deprecated annotations");
 
+        Print.subtitle("5) Custom annotations");
+        System.out.println("Examples of non built-in annotations:");
+        System.out.println("\t- @NotNull\n\t- @Range");
+        GameCharacter gameCh1 = new GameCharacter("rain", 120);
+        // GameCharacter gameCh2 = new GameCharacter(null, 33);
+        System.out.println(gameCh1.getLogin());
+        System.out.println(gameCh1.getLevel());
+
+
+
         Print.subtitle("End of theory", '*', (byte) 80);
     }
 
@@ -38,4 +51,31 @@ public class Theory {
     public String toString() {
         return "This is Theory for Annotations.";
     }
+}
+
+class GameCharacter {
+    // Attributes
+    @NotNull
+    private String login;
+
+    @Range(from = 1, to = 100)
+    private int level = 1;
+
+    public GameCharacter(
+            @NotNull String login,
+            @Range(from = 1, to = 100) int level) {
+        this.login = login;
+        this.level = level;
+    }
+
+    @NotNull
+    public String getLogin() {
+        return this.login;
+    }
+
+    @Range(from = 1, to = 100)
+    public int getLevel() {
+        return this.level;
+    }
+
 }
