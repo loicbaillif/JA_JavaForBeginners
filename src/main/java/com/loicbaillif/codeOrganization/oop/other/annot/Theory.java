@@ -32,8 +32,6 @@ public class Theory {
         System.out.println(gameCh1.getLogin());
         System.out.println(gameCh1.getLevel());
 
-
-
         Print.subtitle("End of theory", '*', (byte) 80);
     }
 
