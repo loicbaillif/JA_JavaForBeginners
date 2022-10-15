@@ -14,7 +14,9 @@ public class Theory {
         System.out.println(dog1.sayHello());
         System.out.println(human1.sayHello());
 
-        
+        Print.subtitle("2) Rules for overriding methods");
+
+
         Print.subtitle("End of theory", '*', (byte) 80);
     }
 }
