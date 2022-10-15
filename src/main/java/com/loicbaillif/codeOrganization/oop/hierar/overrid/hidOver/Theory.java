@@ -7,8 +7,14 @@ public class Theory {
         Print.title("Hiding and Overriding - Theory");
 
         Print.subtitle("1) Overriding instance methods");
-        
+        Mammal mammal1 = new Mammal();
+        Dog dog1 = new Dog();
+        Human human1 = new Human();
+        System.out.println(mammal1.sayHello());
+        System.out.println(dog1.sayHello());
+        System.out.println(human1.sayHello());
 
+        
         Print.subtitle("End of theory", '*', (byte) 80);
     }
 }
