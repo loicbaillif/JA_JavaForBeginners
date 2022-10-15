@@ -12,9 +12,10 @@ public class Main {
         // com.loicbaillif.codeOrganization.methods.overloading.Main.main();
         // com.loicbaillif.codeOrganization.oop.classobj.classmem.multconst.Main.main();
         // com.loicbaillif.codeOrganization.oop.hierar.building.Main.main();
+        // com.loicbaillif.codeOrganization.oop.other.annot.Main.main();
 
         // Current chapter
-        com.loicbaillif.codeOrganization.oop.other.annot.Main.main();
+        com.loicbaillif.codeOrganization.oop.hierar.overrid.hidOver.Main.main();
 
 
     }
