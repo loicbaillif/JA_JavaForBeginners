@@ -26,6 +26,15 @@ public class Ex1 {
     public static void main() {
         Print.title("Hiding and Overriding - Exercise: Shapes area");
 
+        Triangle triangle1 = new Triangle(3.5, 2.1);
+        Circle circle1 = new Circle(3.5);
+        Square square1 = new Square(3.5);
+        Rectangle rectangle1 = new Rectangle(3.5, 2.1);
+
+        System.out.println(triangle1.area());
+        System.out.println(circle1.area());
+        System.out.println(square1.area());
+        System.out.println(rectangle1.area());
 
         Print.subtitle("End of exercise", '*', (byte) 80);
 
