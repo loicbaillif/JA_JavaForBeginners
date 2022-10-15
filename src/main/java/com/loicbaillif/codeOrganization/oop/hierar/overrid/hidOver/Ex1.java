@@ -27,7 +27,6 @@ public class Ex1 {
         Print.title("Hiding and Overriding - Exercise: Shapes area");
 
 
-
         Print.subtitle("End of exercise", '*', (byte) 80);
 
     }
@@ -40,8 +39,15 @@ class Shape {
 }
 
 class Triangle extends Shape {
+    // Attributes
     double height;
     double base;
+
+    // Constructor
+    public Triangle(double height, double base) {
+        this.height = height;
+        this.base = base;
+    }
 
     // override the method here
     @Override
@@ -51,7 +57,13 @@ class Triangle extends Shape {
 }
 
 class Circle extends Shape {
+    // Attributes
     double radius;
+
+    // Constructor
+    public Circle(double radius) {
+        this.radius = radius;
+    }
 
     // override the method here
     @Override
@@ -61,7 +73,13 @@ class Circle extends Shape {
 }
 
 class Square extends Shape {
+    // Attributes
     double side;
+
+    // Constructor
+    public Square(double side) {
+        this.side = side;
+    }
 
     // override the method here
     @Override
@@ -71,8 +89,14 @@ class Square extends Shape {
 }
 
 class Rectangle extends Shape {
+    // Attributes
     double width;
     double height;
+
+    public Rectangle(double width, double height) {
+        this.width = width;
+        this.height = height;
+    }
 
     // override the method here
     @Override
