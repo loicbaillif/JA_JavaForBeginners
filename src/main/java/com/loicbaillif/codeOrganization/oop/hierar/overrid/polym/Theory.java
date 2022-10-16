@@ -13,8 +13,19 @@ public class Theory {
         MythicAnimal dragon1 = new Dragon();
         chimera1.hello();
         dragon1.hello();
+        System.out.println("Useful situation for this polymorphic behavior:");
+        MythicAnimal[] mythicAnimalsArray = new MythicAnimal[2];
+        mythicAnimalsArray[0] = chimera1;
+        mythicAnimalsArray[1] = dragon1;
+        for (MythicAnimal myth :
+                mythicAnimalsArray) {
+            myth.hello();
+        }
 
         Print.subtitle("3) Polymorphism within a class hierarchy");
+        byte[] byteArray1 = {(byte) 5, (byte) 32, (byte) 44};
+        File image1 = new ImageFile("smallDog.jpg", 300, 200, byteArray1);
+        image1.printFileInfo();
 
 
         Print.subtitle("End of theory", '*', (byte) 80);
