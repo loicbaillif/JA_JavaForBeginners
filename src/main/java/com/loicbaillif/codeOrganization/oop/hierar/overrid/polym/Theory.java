@@ -14,6 +14,9 @@ public class Theory {
         chimera1.hello();
         dragon1.hello();
 
+        Print.subtitle("3) Polymorphism within a class hierarchy");
+        
+
         Print.subtitle("End of theory", '*', (byte) 80);
     }
 }
@@ -47,5 +50,40 @@ class Dragon extends MythicAnimal {
     @Override
     public void hello() {
         System.out.println("Leave at once or you will be burned.");
+    }
+}
+
+class File {
+    protected String fullName;
+
+    // Constructor
+    // TODO
+
+    // Getters and Setters
+
+    public void printFileInfo() {
+        String info = this.getFileInfo();
+        System.out.println(info);
+    }
+
+    public String getFileInfo() {
+        return String.format("File: %s", fullName);
+    }
+}
+
+class ImageFile extends File {
+    protected int height;
+    protected int width;
+    protected byte[] content;
+
+    // Constructor
+    // TODO
+
+    // Getters and Setters
+
+    @Override
+    public String getFileInfo() {
+        return String.format("Image: %s (height=%d; width=%d)",
+                fullName, height, width);
     }
 }
