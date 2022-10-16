@@ -19,7 +19,12 @@ public class Ex2 {
     public static void main() {
         Print.title("Hiding and Overriding - Exercise: Saying Animals");
 
-
+        Cat cat1 = new Cat();
+        Dog2 dog2 = new Dog2();
+        Duck duck1 = new Duck();
+        cat1.say();
+        dog2.say();
+        duck1.say();
 
         Print.subtitle("End of exercise", '*', (byte) 80);
     }
