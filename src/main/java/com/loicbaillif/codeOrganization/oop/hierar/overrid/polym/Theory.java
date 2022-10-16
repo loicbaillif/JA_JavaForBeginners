@@ -15,7 +15,7 @@ public class Theory {
         dragon1.hello();
 
         Print.subtitle("3) Polymorphism within a class hierarchy");
-        
+
 
         Print.subtitle("End of theory", '*', (byte) 80);
     }
@@ -57,9 +57,18 @@ class File {
     protected String fullName;
 
     // Constructor
-    // TODO
+    public File(String fullName) {
+        setFullName(fullName);
+    }
 
     // Getters and Setters
+    public String getFullName() {
+        return this.fullName;
+    }
+
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
+    }
 
     public void printFileInfo() {
         String info = this.getFileInfo();
@@ -67,7 +76,7 @@ class File {
     }
 
     public String getFileInfo() {
-        return String.format("File: %s", fullName);
+        return String.format("File: %s", getFullName());
     }
 }
 
@@ -77,7 +86,12 @@ class ImageFile extends File {
     protected byte[] content;
 
     // Constructor
-    // TODO
+    public ImageFile(String fullName, int height, int width, byte[] content) {
+        super(fullName);
+        this.height = height;
+        this.width = width;
+        this.content = content.clone();
+    }
 
     // Getters and Setters
 
