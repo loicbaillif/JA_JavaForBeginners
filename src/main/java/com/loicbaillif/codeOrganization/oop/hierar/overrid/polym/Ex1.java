@@ -14,8 +14,11 @@ public class Ex1 {
      * and the title after a colon. Examples are shown below.
      */
 
-    public static void main(String[] args) {
+    public static void main() {
         Print.title("Polymorphism - Exercise: Publication and its subclasses");
+
+        Publication publi1 = new Publication("The new era");
+        System.out.println(publi1.getInfo());
 
         Print.subtitle("End of exercise", '*', (byte) 80);
     }
