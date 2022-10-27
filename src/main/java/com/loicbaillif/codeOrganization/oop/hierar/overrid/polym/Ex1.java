@@ -108,5 +108,14 @@ class Announcement extends Publication {
     }
 
     // write your code here
+    @Override
+    public String getType() {
+        return "Announcement";
+    }
 
+    @Override
+    public String getDetails() {
+        return String.format(" (days to expire: %s)",
+                this.daysToExpire);
+    }
 }
