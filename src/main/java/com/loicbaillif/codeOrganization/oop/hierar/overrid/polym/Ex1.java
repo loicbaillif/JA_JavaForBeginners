@@ -18,7 +18,9 @@ public class Ex1 {
         Print.title("Polymorphism - Exercise: Publication and its subclasses");
 
         Publication publi1 = new Publication("The new era");
+        Publication publi2 = new Newspaper("Football results", "Sport news");
         System.out.println(publi1.getInfo());
+        System.out.println(publi2.getInfo());
 
         Print.subtitle("End of exercise", '*', (byte) 80);
     }
