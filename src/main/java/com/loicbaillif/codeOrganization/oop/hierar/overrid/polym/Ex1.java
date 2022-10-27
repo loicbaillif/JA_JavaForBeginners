@@ -84,6 +84,15 @@ class Article extends Publication {
     }
 
     // write your code here
+    @Override
+    public String getType() {
+        return "Article";
+    }
+
+    @Override
+    public String getDetails() {
+        return String.format(" (author - %s)", this.author);
+    }
 
 }
 
