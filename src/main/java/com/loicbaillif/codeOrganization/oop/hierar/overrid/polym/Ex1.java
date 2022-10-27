@@ -36,7 +36,8 @@ class Publication {
 
     public final String getInfo() {
         // write your code here
-        return String.format("%s: %s", this.getType(), this.title);
+        return String.format("%s%s: %s",
+                this.getType(), this.getDetails(), this.title);
     }
 
     public String getType() {
@@ -59,6 +60,15 @@ class Newspaper extends Publication {
     }
 
     // write your code here
+    @Override
+    public String getType() {
+        return "Newspaper";
+    }
+
+    @Override
+    public String getDetails() {
+        return String.format(" (source - %s)", this.source);
+    }
 
 }
 
