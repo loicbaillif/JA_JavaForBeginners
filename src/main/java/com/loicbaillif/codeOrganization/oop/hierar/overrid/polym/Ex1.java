@@ -33,6 +33,7 @@ class Publication {
 
     public final String getInfo() {
         // write your code here
+        return String.format("%s: %s", this.getType(), this.title);
     }
 
     public String getType() {
