@@ -63,7 +63,10 @@ class Article extends Publication {
     }
 
     // write your code here
-    
+    @Override
+    public String getDetails() {
+        return super.getDetails() + ", author=\"" + author + "\"";
+    }
 }
 
 class Announcement extends Publication {
