@@ -81,6 +81,6 @@ class Announcement extends Publication {
     // write your code here
     @Override
     public String getDetails() {
-        return super.getDetails() + ", daysToExpire=" + daysToExpire + "\"";
+        return super.getDetails() + ", daysToExpire=" + daysToExpire;
     }
 }
