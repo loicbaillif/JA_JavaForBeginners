@@ -46,6 +46,10 @@ class Newspaper extends Publication {
     }
 
     // write your code here
+    @Override
+    public String getDetails() {
+        return super.getDetails() + ", source=\"" + source + "\"";
+    }
 
 }
 
@@ -59,7 +63,7 @@ class Article extends Publication {
     }
 
     // write your code here
-
+    
 }
 
 class Announcement extends Publication {
