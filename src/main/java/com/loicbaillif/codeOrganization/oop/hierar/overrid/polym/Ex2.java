@@ -17,6 +17,10 @@ public class Ex2 {
     public static void main() {
         Print.title("Polymorphism - Exercise: Find mistake");
 
+        Test test1 = new Test();
+        String[] testArgs = {"one", "two", "three"};
+        test1.main(testArgs);
+
         Print.subtitle("End of exercise", '*', (byte) 80);
     }
 }
