@@ -24,5 +24,9 @@ public class Theory {
         String UsPhoneNumber = "+1-213-555-7569";
         String[] strArray3 = UsPhoneNumber.split("-");
         System.out.println(Arrays.toString(strArray3));
+        for (String strElt: strArray3) {
+            System.out.printf("%s is a %s.%n",
+                    strElt, strElt.getClass().getSimpleName());
+        }
     }
 }
