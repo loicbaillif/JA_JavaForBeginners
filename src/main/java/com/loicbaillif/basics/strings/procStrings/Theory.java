@@ -13,5 +13,8 @@ public class Theory {
         System.out.println(strVar1);
         char[] charArray2 = strVar1.toCharArray();
         System.out.println(Arrays.toString(charArray2));
+        String strVar2 = "Satellite";
+        String[] strArray1 = strVar2.split("");
+        System.out.println(Arrays.toString(strArray1));
     }
 }
