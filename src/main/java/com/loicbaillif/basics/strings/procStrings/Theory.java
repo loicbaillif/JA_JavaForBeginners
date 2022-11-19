@@ -1,6 +1,7 @@
 package com.loicbaillif.basics.strings.procStrings;
 
 import com.loicbaillif.tools.Print;
+import java.util.Arrays;
 
 public class Theory {
     public static void main() {
@@ -10,5 +11,7 @@ public class Theory {
         char[] charArray1 = {'S', 'n', 'o', 'w', 'm', 'a', 'n'};
         String strVar1 = String.valueOf(charArray1);
         System.out.println(strVar1);
+        char[] charArray2 = strVar1.toCharArray();
+        System.out.println(Arrays.toString(charArray2));
     }
 }
