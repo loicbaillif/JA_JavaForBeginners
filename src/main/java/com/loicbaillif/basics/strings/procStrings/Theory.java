@@ -35,5 +35,11 @@ public class Theory {
         String strVar5 = "I want to break free";
         String[] strArray5 = strVar5.split("to break");
         System.out.println(Arrays.toString(strArray5));
+
+        Print.subtitle("3) Iterating over a String");
+        String strVar6 = "Ada Lovelace";
+        for (int i = 0; i < strVar6.length(); i++) {
+            System.out.printf("\t[%d]: %s%n", i, strVar6.charAt(i));
+        }
     }
 }
