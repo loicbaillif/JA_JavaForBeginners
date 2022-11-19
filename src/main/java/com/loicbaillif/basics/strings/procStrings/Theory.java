@@ -21,5 +21,8 @@ public class Theory {
         String strVar3 = "I want to break free";
         String[] strArray2 = strVar3.split(" ");
         System.out.println(Arrays.toString(strArray2));
+        String UsPhoneNumber = "+1-213-555-7569";
+        String[] strArray3 = UsPhoneNumber.split("-");
+        System.out.println(Arrays.toString(strArray3));
     }
 }
