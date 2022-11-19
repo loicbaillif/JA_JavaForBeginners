@@ -28,5 +28,9 @@ public class Theory {
             System.out.printf("%s is a %s.%n",
                     strElt, strElt.getClass().getSimpleName());
         }
+        String strVar4 = "That's one small step for a man, " +
+                "one giant leap for mankind.";
+        String[] strArray4 = strVar4.split(",");
+        System.out.println(Arrays.toString(strArray4));
     }
 }
