@@ -16,5 +16,10 @@ public class Theory {
         String strVar2 = "Satellite";
         String[] strArray1 = strVar2.split("");
         System.out.println(Arrays.toString(strArray1));
+
+        Print.subtitle("2) Splitting the String");
+        String strVar3 = "I want to break free";
+        String[] strArray2 = strVar3.split(" ");
+        System.out.println(Arrays.toString(strArray2));
     }
 }
