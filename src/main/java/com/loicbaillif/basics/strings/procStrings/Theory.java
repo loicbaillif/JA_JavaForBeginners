@@ -32,5 +32,8 @@ public class Theory {
                 "one giant leap for mankind.";
         String[] strArray4 = strVar4.split(",");
         System.out.println(Arrays.toString(strArray4));
+        String strVar5 = "I want to break free";
+        String[] strArray5 = strVar5.split("to break");
+        System.out.println(Arrays.toString(strArray5));
     }
 }
