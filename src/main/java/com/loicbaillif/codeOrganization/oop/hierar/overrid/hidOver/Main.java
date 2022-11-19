@@ -6,5 +6,6 @@ public class Main {
 
         Ex1.main();
         Ex2.main();
+        Ex3.main();
     }
 }
