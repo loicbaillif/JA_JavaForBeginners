@@ -41,5 +41,8 @@ public class Theory {
         for (int i = 0; i < strVar6.length(); i++) {
             System.out.printf("\t[%d]: %s%n", i, strVar6.charAt(i));
         }
+        int x = 1;
+        int y = (x++) + (x * 2) ;
+        System.out.println(y);
     }
 }
