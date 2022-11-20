@@ -14,7 +14,9 @@ public class Ex3 {
     public static void main() {
         Print.title("Processing Strings - Exercise: Cutting out the middle");
 
-
+        Scanner scanner = new Scanner(System.in);
+        String userInput = scanner.nextLine();
+        int inputSize = userInput.length();
 
         Print.subtitle("End of exercise");
     }
