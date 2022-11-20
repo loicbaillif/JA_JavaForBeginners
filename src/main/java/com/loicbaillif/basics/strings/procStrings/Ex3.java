@@ -19,10 +19,6 @@ public class Ex3 {
         int inputMaxIndex = userInput.length() - 1;
         int firstDeletion = inputMaxIndex / 2;
         int secondDeletion = inputMaxIndex / 2 + inputMaxIndex % 2;
-        System.out.printf("maxIndex = %d, firstDel = %d; secondDel = %d%n",
-                inputMaxIndex,
-                firstDeletion,
-                secondDeletion);
         for (int i = 0; i < userInput.length(); i++) {
             if (i != firstDeletion && i != secondDeletion) {
                 System.out.print(userInput.charAt(i));
