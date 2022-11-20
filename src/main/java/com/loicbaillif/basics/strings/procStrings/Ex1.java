@@ -16,6 +16,10 @@ public class Ex1 {
 
         Scanner scanner = new Scanner(System.in);
         String userInput = scanner.nextLine();
+        for (int i = 0; i < userInput.length(); i++) {
+            System.out.printf("%c%c",
+                    userInput.charAt(i), userInput.charAt(i));
+        }
 
         Print.subtitle("End of exercise");
     }
