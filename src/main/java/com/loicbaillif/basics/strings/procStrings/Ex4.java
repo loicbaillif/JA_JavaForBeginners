@@ -2,6 +2,8 @@ package com.loicbaillif.basics.strings.procStrings;
 
 import com.loicbaillif.tools.Print;
 
+import java.util.Scanner;
+
 public class Ex4 {
     /* https://hyperskill.org/learn/step/3791
      * All the letters of the English alphabet are divided into
@@ -21,7 +23,10 @@ public class Ex4 {
     public static void main() {
         Print.title("Processing Strings - Exercise: Euphonious word");
 
-
+        Scanner scanner = new Scanner(System.in);
+        String userInput = scanner.nextLine();
+        int consecutiveSibling = 0;
+        int result = 0;
 
         Print.subtitle("End of exercise");
     }
