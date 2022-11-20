@@ -20,7 +20,7 @@ public class Ex4 {
      * characters needed to create a euphonious word from a given word.
      */
 
-    final static String vowels = "aeiouyAEIOUY";
+    final static String VOWELS = "aeiouyAEIOUY";
 
     public static void main() {
         Print.title("Processing Strings - Exercise: Euphonious word");
@@ -50,6 +50,9 @@ public class Ex4 {
                 previousChar = currentChar;
             }
 
+            // Final count, if a chain is on-going at the last char
+            result += (consecutiveSibling - 1) / 2;
+
             System.out.println(result);
         } else {
             System.out.println(0);
@@ -59,6 +62,6 @@ public class Ex4 {
     }
 
     public static boolean isVowel(char letter) {
-        return vowels.indexOf(letter) >= 0;
+        return VOWELS.indexOf(letter) >= 0;
     }
 }
