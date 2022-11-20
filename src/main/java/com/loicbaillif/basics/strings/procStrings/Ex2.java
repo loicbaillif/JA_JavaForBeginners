@@ -2,6 +2,8 @@ package com.loicbaillif.basics.strings.procStrings;
 
 import com.loicbaillif.tools.Print;
 
+import java.util.Scanner;
+
 public class Ex2 {
     /* https://hyperskill.org/learn/step/2285
      *
@@ -14,7 +16,9 @@ public class Ex2 {
     public static void main() {
         Print.title("Processing Strings - Exercise: Piece of alphabet");
 
-
+        String alphabet = "abcdefghijklmnopqrstuvwxyz";
+        Scanner scanner = new Scanner(System.in);
+        String userInput = scanner.nextLine();
 
         Print.subtitle("End of exercise");
     }
