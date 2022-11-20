@@ -2,7 +2,6 @@ package com.loicbaillif.basics.strings.procStrings;
 
 import com.loicbaillif.tools.Print;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class Ex2 {
@@ -21,7 +20,6 @@ public class Ex2 {
         Scanner scanner = new Scanner(System.in);
         String userInput = scanner.nextLine();
         String[] strArray1 = alphabet.split(userInput);
-        System.out.println(Arrays.toString(strArray1));
         System.out.println(strArray1.length > 1);
 
         Print.subtitle("End of exercise");
