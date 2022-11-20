@@ -34,16 +34,18 @@ public class Ex4 {
             char currentChar;
 
             for (int i = 1; i < userInput.length(); i++) {
-                System.out.printf("%c is a vowel: %b%n",
-                        userInput.charAt(i),
-                        isVowel(userInput.charAt(i)));
-
                 currentChar = userInput.charAt(i);
+
                 if (isVowel(currentChar) == isVowel(previousChar)) {
                     consecutiveSibling++;
                 } else {
+                    /*
+                     * We check if number of consecutive vowels or consonants
+                     * is high enough to need letters insertion, and how many
+                     * Then we reset the counter to 1
+                     */
                     result += (consecutiveSibling - 1) / 2;
-                    consecutiveSibling = 0;
+                    consecutiveSibling = 1;
                 }
                 previousChar = currentChar;
             }
@@ -52,7 +54,6 @@ public class Ex4 {
         } else {
             System.out.println(0);
         }
-
 
         Print.subtitle("End of exercise");
     }
