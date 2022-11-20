@@ -17,10 +17,11 @@ public class Ex2 {
     public static void main() {
         Print.title("Processing Strings - Exercise: Piece of alphabet");
 
-        String alphabet = "abcdefghijklmnopqrstuvwxyz";
+        String alphabet = "abcdefghijklmnopqrstuvwxyz ";
         Scanner scanner = new Scanner(System.in);
         String userInput = scanner.nextLine();
         String[] strArray1 = alphabet.split(userInput);
+        System.out.println(Arrays.toString(strArray1));
         System.out.println(strArray1.length > 1);
 
         Print.subtitle("End of exercise");
