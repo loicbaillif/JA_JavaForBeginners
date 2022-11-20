@@ -5,6 +5,7 @@ public class Main {
         Theory.main();
 
         // Ex1.main();
-        Ex2.main();
+        // Ex2.main();
+        Ex3.main();
     }
 }
