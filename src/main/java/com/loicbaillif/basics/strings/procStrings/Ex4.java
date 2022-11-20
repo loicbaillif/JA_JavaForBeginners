@@ -33,7 +33,20 @@ public class Ex4 {
             char previousChar = userInput.charAt(0);
             char currentChar;
 
+            for (int i = 1; i < userInput.length(); i++) {
+                System.out.printf("%c is a vowel: %b%n",
+                        userInput.charAt(i),
+                        isVowel(userInput.charAt(i)));
 
+                currentChar = userInput.charAt(i);
+                if (isVowel(currentChar) == isVowel(previousChar)) {
+                    consecutiveSibling++;
+                } else {
+                    result += (consecutiveSibling - 1) / 2;
+                    consecutiveSibling = 0;
+                }
+                previousChar = currentChar;
+            }
 
             System.out.println(result);
         } else {
