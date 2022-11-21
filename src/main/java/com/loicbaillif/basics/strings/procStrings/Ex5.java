@@ -28,6 +28,17 @@ public class Ex5 {
         int first3Digits = ticketNumber / 1000;
         int last3Digits = ticketNumber % 1000;
 
+        int sumFirst3 = first3Digits % 10 + (first3Digits / 10) % 10 + first3Digits / 100;
+        int sumLast3 = last3Digits % 10 + (last3Digits / 10) % 10 + last3Digits / 100;
+
+        String result = "Lucky";
+
+        if (sumFirst3 != sumLast3) {
+            result = "Regular";
+        }
+
+        System.out.println(result);
+
         Print.subtitle("End of exercise");
     }
 }
