@@ -2,6 +2,8 @@ package com.loicbaillif.basics.strings.procStrings;
 
 import com.loicbaillif.tools.Print;
 
+import java.util.Scanner;
+
 public class Ex5 {
     /* https://hyperskill.org/learn/step/2281
      * *** The Lucky Ticket ***
@@ -21,7 +23,10 @@ public class Ex5 {
     public static void main() {
         Print.title("Processing Strings - Exercise: The lucky ticket");
 
-
+        Scanner scanner = new Scanner(System.in);
+        int ticketNumber = scanner.nextInt();
+        int first3Digits = ticketNumber / 1000;
+        int last3Digits = ticketNumber % 1000;
 
         Print.subtitle("End of exercise");
     }
