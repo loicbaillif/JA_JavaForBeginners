@@ -23,6 +23,16 @@ public class Ex6 {
         String userString = scanner.nextLine();
         String userSubstring = scanner.nextLine();
 
+        int i = 0;
+        int subLength = userSubstring.length();
+        int result = 0;
+
+        while (i >= 0) {
+            i = userString.indexOf(userSubstring, i);
+            result += (i >= 0) ? 1 : 0;
+            i += subLength;
+        }
+
         Print.subtitle("End of exercise");
     }
 }
