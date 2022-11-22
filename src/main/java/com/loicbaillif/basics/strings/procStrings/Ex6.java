@@ -2,6 +2,8 @@ package com.loicbaillif.basics.strings.procStrings;
 
 import com.loicbaillif.tools.Print;
 
+import java.util.Scanner;
+
 public class Ex6 {
     /* https://hyperskill.org/learn/step/2288
      *
@@ -17,7 +19,9 @@ public class Ex6 {
     public static void main() {
         Print.title("Processing Strings - Exercise: Number of occurrences");
 
-
+        Scanner scanner = new Scanner(System.in);
+        String userString = scanner.nextLine();
+        String userSubstring = scanner.nextLine();
 
         Print.subtitle("End of exercise");
     }
