@@ -33,6 +33,8 @@ public class Ex6 {
             i += subLength;
         }
 
+        System.out.println(result);
+
         Print.subtitle("End of exercise");
     }
 }
