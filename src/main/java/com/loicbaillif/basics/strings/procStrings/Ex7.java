@@ -2,6 +2,8 @@ package com.loicbaillif.basics.strings.procStrings;
 
 import com.loicbaillif.tools.Print;
 
+import java.util.Scanner;
+
 public class Ex7 {
     /* https://hyperskill.org/learn/step/2293
      *
@@ -13,6 +15,10 @@ public class Ex7 {
     public static void main() {
         Print.title("Processing Strings - Exercise: Move the first N chars");
 
+        Scanner scanner = new Scanner(System.in);
+        String userInput = scanner.nextLine();
+        String userString = userInput.split(" ")[0];
+        int userInt = Integer.parseInt(userInput.split(" ")[1]);
 
 
         Print.subtitle("End of exercise", '*', (byte) 80);
