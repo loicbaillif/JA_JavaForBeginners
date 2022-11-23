@@ -19,10 +19,13 @@ public class Ex7 {
         String userInput = scanner.nextLine();
         String userString = userInput.split(" ")[0];
         int userInt = Integer.parseInt(userInput.split(" ")[1]);
-        System.out.printf("%s%s",
-                userString.substring(userInt),
-                userString.substring(0, userInt));
-
+        if (userInt < userString.length()) {
+            System.out.printf("%s%s",
+                    userString.substring(userInt),
+                    userString.substring(0, userInt));
+        } else {
+            System.out.println(userString);
+        }
 
         Print.subtitle("End of exercise", '*', (byte) 80);
     }
