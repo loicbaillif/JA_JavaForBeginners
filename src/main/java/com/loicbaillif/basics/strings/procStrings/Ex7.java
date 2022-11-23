@@ -19,12 +19,14 @@ public class Ex7 {
         String userInput = scanner.nextLine();
         String userString = userInput.split(" ")[0];
         int userInt = Integer.parseInt(userInput.split(" ")[1]);
-        if (userInt < userString.length()) {
-            System.out.printf("%s%s",
-                    userString.substring(userInt),
-                    userString.substring(0, userInt));
-        } else {
-            System.out.println(userString);
+        int wordLength = userString.length();
+        int n = userInt;
+        while (n < wordLength) {
+            System.out.print(userString.charAt(n++));
+        }
+        n = 0;
+        while ((n < userInt) && (n < wordLength)) {
+            System.out.print(userString.charAt(n++));
         }
 
         Print.subtitle("End of exercise", '*', (byte) 80);
