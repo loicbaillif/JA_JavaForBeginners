@@ -14,10 +14,11 @@ public class Stage2 {
         Print.title("Project: Bulls and Cows - Stage 2: Grader");
 
         Scanner scanner = new Scanner(System.in);
-        int userInput = scanner.nextInt();
-        int secretCode = 9305;
+        String userInput = scanner.nextLine();
+        String secretCode = "9305"; // To work with, will be random in final
         byte nbBulls = 0;
         byte nbCows = 0;
+
 
 
         Print.subtitle("End of stage 2", '*', (byte) 80);
