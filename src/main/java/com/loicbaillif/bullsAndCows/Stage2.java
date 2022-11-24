@@ -17,22 +17,11 @@ public class Stage2 {
         Scanner scanner = new Scanner(System.in);
         String userInput = scanner.nextLine();
         String secret = "9305"; // To work with, will be random in final
-        String formatS = "Grade: %d bull(s) and %d cow(s).%n";
 
         // Looking for bulls, then for cows
         byte[] result = analyse(userInput, secret);
-        System.out.println(output(result));
+        System.out.println(output(result) + "The secret code is " + secret);
 
-        String[] testArray = {"9305", "3059", "3590", "5930", "5039",
-        "9306", "9385", "9505", "1305", "9350", "9035", "5309", "3905",
-        "1293", "5012", "3512", "5129", "1246", "7184", "4862", "2718",
-        "1111", "9999", "9955"};
-
-        for (String proposal: testArray) {
-            result = analyse(proposal, secret);
-            System.out.printf("%s:%n", proposal);
-            System.out.println(output(result));
-        }
 
         Print.subtitle("End of stage 2", '*', (byte) 80);
     }
@@ -60,7 +49,7 @@ public class Stage2 {
                     result[0],
                     result[1]);
         } else if (result[0] == 0 && result[1] == 0) {
-            return "None";
+            return "Grade: None.";
         } else if (result[0] == 0) {
             return String.format("Grade: %d cow(s).", result[1]);
         } else {
