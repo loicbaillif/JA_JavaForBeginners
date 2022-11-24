@@ -17,11 +17,11 @@ public class Stage2 {
         Scanner scanner = new Scanner(System.in);
         String userInput = scanner.nextLine();
         String secret = "9305"; // To work with, will be random in final
-        String formatS = "Number %s has %d bull(s) and %d cow(s).%n";
+        String formatS = "Grade: %d bull(s) and %d cow(s).%n";
 
         // Looking for bulls, then for cows
-        byte[] result = bullsCows(userInput, secret);
-        System.out.printf(formatS, userInput, result[0], result[1]);
+        byte[] result = analyse(userInput, secret);
+        System.out.println(output(result));
 
         String[] testArray = {"9305", "3059", "3590", "5930", "5039",
         "9306", "9385", "9505", "1305", "9350", "9035", "5309", "3905",
@@ -29,15 +29,16 @@ public class Stage2 {
         "1111", "9999", "9955"};
 
         for (String proposal: testArray) {
-            result = bullsCows(proposal, secret);
-            System.out.printf(formatS, proposal, result[0], result[1]);
+            result = analyse(proposal, secret);
+            System.out.printf("%s:%n", proposal);
+            System.out.println(output(result));
         }
 
         Print.subtitle("End of stage 2", '*', (byte) 80);
     }
 
 
-    public static byte[] bullsCows(String proposal, String solution) {
+    public static byte[] analyse(String proposal, String solution) {
         byte nbBulls = 0;
         byte nbCows = 0;
 
@@ -50,5 +51,20 @@ public class Stage2 {
         }
 
         return new byte[]{nbBulls, nbCows};
+    }
+
+    public static String output(byte[] result) {
+        if (result[0] != 0 && result[1] != 0) {
+            return String.format(
+                    "Grade: %d bull(s) and %d cow(s).",
+                    result[0],
+                    result[1]);
+        } else if (result[0] == 0 && result[1] == 0) {
+            return "None";
+        } else if (result[0] == 0) {
+            return String.format("Grade: %d cow(s).", result[1]);
+        } else {
+            return String.format("Grade: %d bull(s).", result[0]);
+        }
     }
 }
