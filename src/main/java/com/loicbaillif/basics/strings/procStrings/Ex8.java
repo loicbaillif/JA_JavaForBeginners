@@ -34,6 +34,12 @@ public class Ex8 {
         int sequenceLength = sequence.length();
         int gcCount = 0;
 
+        for (int i = 0; i < sequenceLength; i++) {
+            if (Objects.equals(cytosine, sequence.charAt(i))
+                || Objects.equals(guanine, sequence.charAt(i))) {
+                gcCount++;
+            }
+        }
 
 
         Print.subtitle("End of exercise", '*', (byte) 80);
