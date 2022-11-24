@@ -2,6 +2,9 @@ package com.loicbaillif.basics.strings.procStrings;
 
 import com.loicbaillif.tools.Print;
 
+import java.util.Objects;
+import java.util.Scanner;
+
 public class Ex8 {
     /* https://hyperskill.org/learn/step/2291
      *
@@ -23,6 +26,13 @@ public class Ex8 {
 
     public static void main() {
         Print.title("Processing Strings - Exercise: Percentage of C & G");
+
+        Scanner scanner = new Scanner(System.in);
+        String sequence = scanner.nextLine().toLowerCase();
+        char cytosine = 'c';
+        char guanine = 'g';
+        int sequenceLength = sequence.length();
+        int gcCount = 0;
 
 
 
