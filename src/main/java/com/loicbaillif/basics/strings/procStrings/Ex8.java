@@ -41,6 +41,7 @@ public class Ex8 {
             }
         }
 
+        System.out.println((double) gcCount / sequenceLength * 100);
 
         Print.subtitle("End of exercise", '*', (byte) 80);
     }
