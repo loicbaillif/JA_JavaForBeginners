@@ -2,6 +2,7 @@ package com.loicbaillif.bullsAndCows;
 
 import com.loicbaillif.tools.Print;
 
+import java.util.Objects;
 import java.util.Scanner;
 
 public class Stage2 {
@@ -18,6 +19,15 @@ public class Stage2 {
         String secretCode = "9305"; // To work with, will be random in final
         byte nbBulls = 0;
         byte nbCows = 0;
+
+        // Looking for bulls
+        for (byte i = 0; i < userInput.length(); i++) {
+            System.out.printf("Loop %d;%n", i);
+            if (Objects.equals(userInput.charAt(i), secretCode.charAt(i))) {
+                nbBulls++;
+            }
+        }
+
 
 
 
