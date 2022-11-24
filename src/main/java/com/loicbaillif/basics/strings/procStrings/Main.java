@@ -2,7 +2,7 @@ package com.loicbaillif.basics.strings.procStrings;
 
 public class Main {
     public static void main() {
-        Theory.main();
+        // Theory.main();
 
         // Ex1.main();
         // Ex2.main();
@@ -10,6 +10,7 @@ public class Main {
         // Ex4.main();
         // Ex5.main();
         // Ex6.main();
-        Ex7.main();
+        // Ex7.main();
+        Ex8.main();
     }
 }
