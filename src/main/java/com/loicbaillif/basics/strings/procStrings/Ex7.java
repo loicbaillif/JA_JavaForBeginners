@@ -16,9 +16,8 @@ public class Ex7 {
         Print.title("Processing Strings - Exercise: Move the first N chars");
 
         Scanner scanner = new Scanner(System.in);
-        String userInput = scanner.nextLine();
-        String userString = userInput.split(" ")[0];
-        int userInt = Integer.parseInt(userInput.split(" ")[1]);
+        String userString = scanner.next();
+        int userInt = scanner.nextInt();
         int wordLength = userString.length();
         int n = userInt;
         while (n < wordLength) {
