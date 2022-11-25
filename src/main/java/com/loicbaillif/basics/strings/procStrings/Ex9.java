@@ -2,6 +2,8 @@ package com.loicbaillif.basics.strings.procStrings;
 
 import com.loicbaillif.tools.Print;
 
+import java.util.Scanner;
+
 public class Ex9 {
     /* https://hyperskill.org/learn/step/2296
      *
@@ -15,6 +17,8 @@ public class Ex9 {
     public static void main() {
         Print.title("Processing Strings - Exercise: Convert a date");
 
+        Scanner scanner = new Scanner(System.in);
+        String userInput = scanner.nextLine();
 
 
         Print.subtitle("End of exercise", '*', (byte) 80);
