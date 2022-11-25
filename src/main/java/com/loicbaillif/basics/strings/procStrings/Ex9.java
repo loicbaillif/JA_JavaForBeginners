@@ -26,7 +26,6 @@ public class Ex9 {
                 userInput.substring(0, 4)
         );
 
-
         Print.subtitle("End of exercise", '*', (byte) 80);
     }
 }
