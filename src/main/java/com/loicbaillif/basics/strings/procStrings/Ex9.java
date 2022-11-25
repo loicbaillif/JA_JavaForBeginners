@@ -19,6 +19,12 @@ public class Ex9 {
 
         Scanner scanner = new Scanner(System.in);
         String userInput = scanner.nextLine();
+        System.out.printf(
+                "%s/%s/%s",
+                userInput.substring(5, 7),
+                userInput.substring(8),
+                userInput.substring(0, 4)
+        );
 
 
         Print.subtitle("End of exercise", '*', (byte) 80);
