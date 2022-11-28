@@ -40,7 +40,7 @@ public class Ex10 {
             } else {
                 // New letter
                 System.out.print(charInRow);
-                charInRow = 0;
+                charInRow = 1;
                 System.out.print(userInput.charAt(pointer));
             }
             pointer++;
