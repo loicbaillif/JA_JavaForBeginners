@@ -2,6 +2,8 @@ package com.loicbaillif.basics.strings.procStrings;
 
 import com.loicbaillif.tools.Print;
 
+import java.util.Scanner;
+
 public class Ex10 {
     /* https://hyperskill.org/learn/step/2292
      *
@@ -22,6 +24,13 @@ public class Ex10 {
      */
     public static void main() {
         Print.title("Processing Strings - Exercise: Compression algorithm");
+
+        Scanner scanner = new Scanner(System.in);
+        String userInput = scanner.nextLine();
+        int inputLength = userInput.length();
+        int pointer = 0;
+        int charInRow = 0;
+        boolean newLetter = true;
 
 
 
