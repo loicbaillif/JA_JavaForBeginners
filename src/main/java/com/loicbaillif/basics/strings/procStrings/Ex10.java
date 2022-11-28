@@ -28,11 +28,22 @@ public class Ex10 {
         Scanner scanner = new Scanner(System.in);
         String userInput = scanner.nextLine();
         int inputLength = userInput.length();
-        int pointer = 0;
-        int charInRow = 0;
+        int pointer = 1;
+        int charInRow = 1;
         boolean newLetter = true;
 
-
+        System.out.print(userInput.charAt(0));
+        while (pointer < inputLength) {
+            if (userInput.charAt(pointer) == userInput.charAt(pointer-1)) {
+                // Same letter
+                charInRow++;
+            } else {
+                // New letter
+                System.out.println(charInRow);
+                System.out.println(userInput.charAt(pointer));
+            }
+            pointer++;
+        }
 
         Print.subtitle("End of exercise", '*', (byte) 80);
     }
