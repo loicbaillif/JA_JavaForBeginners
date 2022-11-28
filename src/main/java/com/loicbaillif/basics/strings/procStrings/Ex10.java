@@ -30,11 +30,10 @@ public class Ex10 {
         int inputLength = userInput.length();
         int pointer = 1;
         int charInRow = 1;
-        boolean newLetter = true;
 
         System.out.print(userInput.charAt(0));
         while (pointer < inputLength) {
-            if (userInput.charAt(pointer) == userInput.charAt(pointer-1)) {
+            if (userInput.charAt(pointer) == userInput.charAt(pointer - 1)) {
                 // Same letter
                 charInRow++;
             } else {
