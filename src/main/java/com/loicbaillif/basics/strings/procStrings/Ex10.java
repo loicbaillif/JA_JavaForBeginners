@@ -44,6 +44,7 @@ public class Ex10 {
             }
             pointer++;
         }
+        System.out.print(charInRow);
 
         Print.subtitle("End of exercise", '*', (byte) 80);
     }
