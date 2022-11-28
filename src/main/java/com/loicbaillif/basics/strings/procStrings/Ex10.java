@@ -39,8 +39,9 @@ public class Ex10 {
                 charInRow++;
             } else {
                 // New letter
-                System.out.println(charInRow);
-                System.out.println(userInput.charAt(pointer));
+                System.out.print(charInRow);
+                charInRow = 0;
+                System.out.print(userInput.charAt(pointer));
             }
             pointer++;
         }
