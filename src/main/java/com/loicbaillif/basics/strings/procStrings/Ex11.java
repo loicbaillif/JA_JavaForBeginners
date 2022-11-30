@@ -31,7 +31,11 @@ public class Ex11 {
 
         String[] keyValueArray = remainingString.split("&");
         for (String keyValue : keyValueArray) {
-            System.out.println(keyValue);
+            System.out.print(keyValue.replaceFirst("=", " : "));
+            System.out.println(
+                    (keyValue.indexOf('=') == keyValue.length() - 1)
+                    ? emptyKey
+                    : "");
         }
 
         /*
