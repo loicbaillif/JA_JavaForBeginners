@@ -20,7 +20,12 @@ public class Theory {
         System.out.println(sb2);
 
         Print.subtitle("3) Some important methods");
-        System.out.printf("\"%s\".length() = %d", sb2, sb2.length());
+        System.out.printf("\"%s\".length() = %d%n", sb2, sb2.length());
+
+        System.out.printf("\"%s\".charAt(0) = %c%n", sb2, sb2.charAt(0));
+        System.out.printf("\"%s\".charAt(3) = %c%n", sb2, sb2.charAt(3));
+        System.out.printf("\"%s\".charAt(6) = %c%n", sb2, sb2.charAt(6));
+        System.out.printf("\"%s\".charAt(9) = %c%n", sb2, sb2.charAt(9));
 
 
         Print.subtitle("End of Theory", '*', (byte) 80);
