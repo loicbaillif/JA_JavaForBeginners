@@ -29,15 +29,35 @@ public class Ex11 {
         int valuePosition;
         String remainingString = inputUrl.substring(keyPosition + 1);
 
+        String[] keyValueArray = remainingString.split("&");
+        for (String keyValue : keyValueArray) {
+            System.out.println(keyValue);
+        }
+
+        /*
         while (keyPosition > 0) {
             keyPosition = remainingString.indexOf('&');
             valuePosition = remainingString.indexOf('=');
             System.out.println(remainingString);
 
-            if (keyPosition > 0) {
-                remainingString = remainingString.substring(keyPosition + 1);
+            System.out.print(remainingString.substring(0, valuePosition));
+            System.out.print(" : ");
+            if (keyPosition == valuePosition + 1) {
+                System.out.println(emptyKey);
+            } else {
+                System.out.println(remainingString.substring(
+                        valuePosition + 1,
+                        keyPosition > 0 ?
+                ));
             }
-        }
+            System.out.println(
+                    keyPosition == valuePosition + 1
+                    ? emptyKey
+                    : remainingString.substring(valuePosition + 1, keyPosition));
+
+            remainingString = remainingString.substring(keyPosition + 1);
+
+        } */
 
 
 
