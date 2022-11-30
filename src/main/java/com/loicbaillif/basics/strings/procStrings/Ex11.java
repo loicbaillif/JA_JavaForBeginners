@@ -26,11 +26,16 @@ public class Ex11 {
         String inputUrl = scanner.nextLine();
         int keyPosition = inputUrl.indexOf('?');
         String emptyKey = "not found";
-        int valuePosition;
         String remainingString = inputUrl.substring(keyPosition + 1);
+        boolean passDetected = false;
+        String password = "";
 
         String[] keyValueArray = remainingString.split("&");
         for (String keyValue : keyValueArray) {
+            if (keyValue.startsWith("pass")) {
+                passDetected = true;
+                password = keyValue.substring(keyValue.indexOf("=") + 1);
+            }
             System.out.print(keyValue.replaceFirst("=", " : "));
             System.out.println(
                     (keyValue.indexOf('=') == keyValue.length() - 1)
@@ -38,31 +43,9 @@ public class Ex11 {
                     : "");
         }
 
-        /*
-        while (keyPosition > 0) {
-            keyPosition = remainingString.indexOf('&');
-            valuePosition = remainingString.indexOf('=');
-            System.out.println(remainingString);
-
-            System.out.print(remainingString.substring(0, valuePosition));
-            System.out.print(" : ");
-            if (keyPosition == valuePosition + 1) {
-                System.out.println(emptyKey);
-            } else {
-                System.out.println(remainingString.substring(
-                        valuePosition + 1,
-                        keyPosition > 0 ?
-                ));
-            }
-            System.out.println(
-                    keyPosition == valuePosition + 1
-                    ? emptyKey
-                    : remainingString.substring(valuePosition + 1, keyPosition));
-
-            remainingString = remainingString.substring(keyPosition + 1);
-
-        } */
-
+        if (passDetected) {
+            System.out.printf("password : %s", password);
+        }
 
 
         Print.subtitle("End of exercise", '*', (byte) 80);
