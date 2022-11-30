@@ -27,6 +27,9 @@ public class Theory {
         System.out.printf("\"%s\".charAt(6) = %c%n", sb2, sb2.charAt(6));
         System.out.printf("\"%s\".charAt(9) = %c%n", sb2, sb2.charAt(9));
 
+        sb2.setCharAt(12, '?');
+        System.out.printf("\"Hello, World!\".setCharAt(12, '?') => %s%n", sb2);
+
 
         Print.subtitle("End of Theory", '*', (byte) 80);
     }
