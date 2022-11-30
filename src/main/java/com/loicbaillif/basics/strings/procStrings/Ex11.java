@@ -2,6 +2,8 @@ package com.loicbaillif.basics.strings.procStrings;
 
 import com.loicbaillif.tools.Print;
 
+import java.util.Scanner;
+
 public class Ex11 {
     /* https://hyperskill.org/learn/step/3660
      *
@@ -20,7 +22,10 @@ public class Ex11 {
     public static void main() {
         Print.title("Processing Strings - Exercise: Parse URL");
 
-
+        Scanner scanner = new Scanner(System.in);
+        String inputUrl = scanner.nextLine();
+        int keyPosition = inputUrl.indexOf('?');
+        String emptyKey = "not found";
 
         Print.subtitle("End of exercise", '*', (byte) 80);
     }
