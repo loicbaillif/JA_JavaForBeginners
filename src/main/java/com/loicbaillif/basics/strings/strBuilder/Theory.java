@@ -14,10 +14,14 @@ public class Theory {
          */
 
         Print.subtitle("2) Construct StringBuilder object");
-        StringBuilder firstSb = new StringBuilder();
-        System.out.println(firstSb);
-        StringBuilder secondSb = new StringBuilder("Hello, World!");
-        System.out.println(secondSb);
+        StringBuilder sb1 = new StringBuilder();
+        System.out.println(sb1);
+        StringBuilder sb2 = new StringBuilder("Hello, World!");
+        System.out.println(sb2);
+
+        Print.subtitle("3) Some important methods");
+        System.out.printf("\"%s\".length() = %d", sb2, sb2.length());
+
 
         Print.subtitle("End of Theory", '*', (byte) 80);
     }
