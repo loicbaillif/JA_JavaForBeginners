@@ -37,10 +37,7 @@ public class Ex11 {
                 password = keyValue.substring(keyValue.indexOf("=") + 1);
             }
             System.out.print(keyValue.replaceFirst("=", " : "));
-            System.out.println(
-                    (keyValue.indexOf('=') == keyValue.length() - 1)
-                    ? emptyKey
-                    : "");
+            System.out.println(keyValue.endsWith("=") ? emptyKey : "");
         }
 
         if (passDetected) {
