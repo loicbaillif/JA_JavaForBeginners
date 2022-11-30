@@ -16,6 +16,8 @@ public class Theory {
         Print.subtitle("2) Construct StringBuilder object");
         StringBuilder firstSb = new StringBuilder();
         System.out.println(firstSb);
+        StringBuilder secondSb = new StringBuilder("Hello, World!");
+        System.out.println(secondSb);
 
         Print.subtitle("End of Theory", '*', (byte) 80);
     }
