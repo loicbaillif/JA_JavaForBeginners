@@ -13,6 +13,10 @@ public class Theory {
          * StringBuilder is a Class
          */
 
+        Print.subtitle("2) Construct StringBuilder object");
+        StringBuilder firstSb = new StringBuilder();
+        System.out.println(firstSb);
+
         Print.subtitle("End of Theory", '*', (byte) 80);
     }
 }
