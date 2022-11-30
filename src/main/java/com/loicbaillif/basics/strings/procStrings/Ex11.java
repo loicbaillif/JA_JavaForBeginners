@@ -26,6 +26,20 @@ public class Ex11 {
         String inputUrl = scanner.nextLine();
         int keyPosition = inputUrl.indexOf('?');
         String emptyKey = "not found";
+        int valuePosition;
+        String remainingString = inputUrl.substring(keyPosition + 1);
+
+        while (keyPosition > 0) {
+            keyPosition = remainingString.indexOf('&');
+            valuePosition = remainingString.indexOf('=');
+            System.out.println(remainingString);
+
+            if (keyPosition > 0) {
+                remainingString = remainingString.substring(keyPosition + 1);
+            }
+        }
+
+
 
         Print.subtitle("End of exercise", '*', (byte) 80);
     }
