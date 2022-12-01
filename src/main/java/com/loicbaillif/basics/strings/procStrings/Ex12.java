@@ -22,7 +22,10 @@ public class Ex12 {
     public static void main() {
         Print.title("Processing Strings - Exercise: Find the first occurrence");
 
-
+        Scanner scanner = new Scanner(System.in);
+        String userInput = scanner.nextLine().toLowerCase();
+        int wordPosition = userInput.indexOf("the");
+        System.out.println(wordPosition);
 
         Print.subtitle("End of exercise", '*', (byte) 80);
     }
