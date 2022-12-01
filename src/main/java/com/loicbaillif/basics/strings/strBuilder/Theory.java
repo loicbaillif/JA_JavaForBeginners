@@ -39,7 +39,13 @@ public class Theory {
         System.out.printf("%n\"%s\"", sb2);
         sb2.append(" Heaven, Sky!");
         System.out.printf(".append(\" Heaven, Sky!\") => %n\t%s%n", sb2);
-
+        StringBuilder sb3 = new StringBuilder();
+        sb3
+                .append("There is nothing ")
+                .append("either good or bad, ")
+                .append("but thinking ")
+                .append("makes it so");
+        System.out.println(sb3);
 
         Print.subtitle("End of Theory", '*', (byte) 80);
     }
