@@ -14,6 +14,7 @@ public class Theory {
          */
 
         Print.subtitle("2) Construct StringBuilder object");
+        @SuppressWarnings("StringBufferReplaceableByString")
         StringBuilder sb1 = new StringBuilder();
         System.out.println(sb1);
         StringBuilder sb2 = new StringBuilder("Hello, World!");
@@ -39,6 +40,7 @@ public class Theory {
         System.out.printf("%n\"%s\"", sb2);
         sb2.append(" Heaven, Sky!");
         System.out.printf(".append(\" Heaven, Sky!\") => %n\t%s%n", sb2);
+        @SuppressWarnings("StringBufferReplaceableByString")
         StringBuilder sb3 = new StringBuilder();
         sb3
                 .append("There is nothing ")
