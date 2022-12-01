@@ -36,6 +36,10 @@ public class Theory {
         sb2.deleteCharAt(4);
         System.out.printf(".deleteCharAt(12, 4) => %n\t%s%n", sb2);
 
+        System.out.printf("%n\"%s\"", sb2);
+        sb2.append(" Heaven, Sky!");
+        System.out.printf(".append(\" Heaven, Sky!\") => %n\t%s%n", sb2);
+
 
         Print.subtitle("End of Theory", '*', (byte) 80);
     }
