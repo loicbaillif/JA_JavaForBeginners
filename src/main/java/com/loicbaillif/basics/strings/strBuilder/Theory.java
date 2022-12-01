@@ -49,6 +49,13 @@ public class Theory {
                 .append("makes it so");
         System.out.println(sb3);
 
+        System.out.printf("%n\"%s\"", sb2);
+        sb2.insert(13, "I would rather say ... ");
+        System.out.printf(
+                ".insert(13, \"I would rather say ... \") => %n\t%s%n",
+                sb2
+        );
+
         Print.subtitle("End of Theory", '*', (byte) 80);
     }
 }
