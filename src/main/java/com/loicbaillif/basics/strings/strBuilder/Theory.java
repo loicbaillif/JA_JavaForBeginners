@@ -56,6 +56,13 @@ public class Theory {
                 sb2
         );
 
+        System.out.printf("%n\"%s\"", sb2);
+        sb2.replace(15, 27, "prefer to");
+        System.out.printf(
+                ".replace(15, 27, \"prefer to\") => %n\t%s%n",
+                sb2
+        );
+
         Print.subtitle("End of Theory", '*', (byte) 80);
     }
 }
