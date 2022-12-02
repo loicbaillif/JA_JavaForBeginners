@@ -2,6 +2,8 @@ package com.loicbaillif.basics.strings.procStrings;
 
 import com.loicbaillif.tools.Print;
 
+import java.util.Scanner;
+
 public class Ex13 {
     /*
      *
@@ -18,7 +20,9 @@ public class Ex13 {
     public static void main() {
         Print.title("Processing Strings - Exercise: Palindrome");
 
-
+        Scanner scanner = new Scanner(System.in);
+        String userInput = scanner.nextLine();
+        boolean isPalindrome = true;
 
         Print.subtitle("End of exercise", '*', (byte) 80);
     }
