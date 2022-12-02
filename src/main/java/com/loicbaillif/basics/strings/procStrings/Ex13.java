@@ -23,6 +23,15 @@ public class Ex13 {
         Scanner scanner = new Scanner(System.in);
         String userInput = scanner.nextLine();
         boolean isPalindrome = true;
+        int inputLength = userInput.length();
+        for (int i = 0; i <= inputLength / 2; i++) {
+            if (userInput.charAt(i) != userInput.charAt(inputLength - i - 1)) {
+                isPalindrome = false;
+                break;
+            }
+        }
+
+        System.out.println(isPalindrome ? "yes" : "no");
 
         Print.subtitle("End of exercise", '*', (byte) 80);
     }
