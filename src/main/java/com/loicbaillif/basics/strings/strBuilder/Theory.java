@@ -80,6 +80,12 @@ public class Theory {
         System.out.printf("sb.length() = %d%n", sb4.length());
         System.out.printf("sb.capacity() = %d%n", sb4.capacity());
 
+        @SuppressWarnings("MismatchedQueryAndUpdateOfStringBuilder")
+        StringBuilder sb5 = new StringBuilder(30);
+        System.out.printf("sb.length() = %d%n", sb5.length());
+        System.out.printf("sb.capacity() = %d%n", sb5.capacity());
+
+
 
 
         Print.subtitle("End of Theory", '*', (byte) 80);
