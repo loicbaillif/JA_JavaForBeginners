@@ -16,10 +16,10 @@ public class Main {
         // com.loicbaillif.codeOrganization.oop.other.annot.Main.main();
         // com.loicbaillif.codeOrganization.oop.hierar.overrid.hidOver.Main.main();
         // com.loicbaillif.codeOrganization.oop.hierar.overrid.polym.Main.main();
-        // com.loicbaillif.basics.strings.procStrings.Main.main();
+        com.loicbaillif.basics.strings.procStrings.Main.main();
 
         // Current chapter
-        com.loicbaillif.basics.strings.strBuilder.Main.main();
+        // com.loicbaillif.basics.strings.strBuilder.Main.main();
 
     }
 }
