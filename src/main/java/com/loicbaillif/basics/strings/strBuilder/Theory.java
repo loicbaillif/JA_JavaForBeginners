@@ -63,6 +63,11 @@ public class Theory {
                 sb2
         );
 
+        System.out.printf("%n\"%s\"", sb2);
+        sb2.delete(6, 41);
+        System.out.printf(".delete(6, 33) => %n\t%s%n", sb2);
+
+
         Print.subtitle("End of Theory", '*', (byte) 80);
     }
 }
