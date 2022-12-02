@@ -72,6 +72,16 @@ public class Theory {
         System.out.printf(".reverse() =>%n\t%s%n", sb2);
 
 
+        Print.subtitle("4) length() and capacity()");
+        StringBuilder sb4 = new StringBuilder();
+        System.out.printf("sb.length() = %d%n", sb4.length());
+        System.out.printf("sb.capacity() = %d%n", sb4.capacity());
+        sb4.append("I wish you a Merry Christmas");
+        System.out.printf("sb.length() = %d%n", sb4.length());
+        System.out.printf("sb.capacity() = %d%n", sb4.capacity());
+
+
+
         Print.subtitle("End of Theory", '*', (byte) 80);
     }
 }
