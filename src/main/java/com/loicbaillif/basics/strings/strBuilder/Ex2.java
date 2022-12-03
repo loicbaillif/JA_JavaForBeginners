@@ -30,20 +30,9 @@ public class Ex2 {
     public static String concatenateStringsWithoutDigits(String[] strings) {
         // write your code with StringBuilder here
         StringBuilder sb = new StringBuilder();
-        int wordLength;
-        int codeSpace = 32;
-        int codeZero = 48;
-        int codeNine = 57;
 
         for (String word: strings) {
-            wordLength = word.length();
-            for (int i = 0; i < wordLength; i++) {
-                int letterCode = word.charAt(i);
-                if (letterCode != codeSpace
-                        && (letterCode < codeZero || letterCode > codeNine)) {
-                    sb.append((char) letterCode);
-                }
-            }
+            sb.append(word.replaceAll("\\d", ""));
         }
         return sb.toString();
     }
