@@ -33,7 +33,12 @@ public class Ex1 {
     }
 
     public static String createEmail(String name, String surname) {
-        // TODO
+        StringBuilder sb = new StringBuilder();
+        sb
+                .append(name)
+                .append(surname)
+                .append("@work.net");
+
         return null;
     }
 }
