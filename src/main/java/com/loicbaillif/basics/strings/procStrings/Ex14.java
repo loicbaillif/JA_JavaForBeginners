@@ -35,6 +35,8 @@ public class Ex14 {
             }
         }
 
+        System.out.println(longestWord);
+
         Print.subtitle("End of exercise", '*', (byte) 80);
     }
 }
