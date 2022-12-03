@@ -31,6 +31,13 @@ public class Ex2 {
         // write your code with StringBuilder here
         StringBuilder sb = new StringBuilder();
         int wordLength;
+
+        for (String word: strings) {
+            wordLength = word.length();
+            for (int i = 0; i < wordLength; i++) {
+                char letter = word.charAt(i);
+            }
+        }
         return null;
     }
 }
