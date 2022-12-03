@@ -87,7 +87,6 @@ public class Theory {
 
 
 
-
         Print.subtitle("End of Theory", '*', (byte) 80);
     }
 }
