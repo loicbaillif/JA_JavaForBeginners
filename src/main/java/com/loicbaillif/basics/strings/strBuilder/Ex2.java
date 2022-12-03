@@ -29,6 +29,8 @@ public class Ex2 {
 
     public static String concatenateStringsWithoutDigits(String[] strings) {
         // write your code with StringBuilder here
+        StringBuilder sb = new StringBuilder();
+        int wordLength;
         return null;
     }
 }
