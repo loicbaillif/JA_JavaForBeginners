@@ -2,6 +2,8 @@ package com.loicbaillif.basics.strings.procStrings;
 
 import com.loicbaillif.tools.Print;
 
+import java.util.Scanner;
+
 public class Ex14 {
     /* https://hyperskill.org/learn/step/2282
      *
@@ -21,7 +23,9 @@ public class Ex14 {
     public static void main() {
         Print.title("Processing Strings - Exercise: The longest word");
 
-
+        Scanner scanner = new Scanner(System.in);
+        String[] inputWords = scanner.nextLine().split(" ");
+        String longestWord = inputWords[0];
 
         Print.subtitle("End of exercise", '*', (byte) 80);
     }
