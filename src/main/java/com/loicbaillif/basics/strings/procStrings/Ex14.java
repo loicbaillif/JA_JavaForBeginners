@@ -26,6 +26,14 @@ public class Ex14 {
         Scanner scanner = new Scanner(System.in);
         String[] inputWords = scanner.nextLine().split(" ");
         String longestWord = inputWords[0];
+        int longestWordLength = longestWord.length();
+
+        for (String word : inputWords) {
+            if (word.length() > longestWordLength) {
+                longestWord = word;
+                longestWordLength = word.length();
+            }
+        }
 
         Print.subtitle("End of exercise", '*', (byte) 80);
     }
