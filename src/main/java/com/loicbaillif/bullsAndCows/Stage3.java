@@ -23,15 +23,24 @@ public class Stage3 {
 
         Scanner scanner = new Scanner(System.in);
         int codeSize = scanner.nextInt();
-        StringBuilder sb = new StringBuilder();
-        sb.append(System.nanoTime());
-
-
-        for (int i = 0; i < 10; i++) {
-            System.out.printf("Run #%d: nanoTime() = %n\t", i);
-            System.out.println(System.nanoTime());
+        if (codeSize > 10 || codeSize < 1) {
+            System.out.printf(
+                    "Error: can't generate a secret number with a " +
+                    "length of %d because there aren't enough unique digits.",
+                    codeSize);
+        } else {
+            StringBuilder sb = new StringBuilder();
+            sb.append(System.nanoTime());
+            sb.reverse();
         }
 
         Print.subtitle("End of stage 3", '*', (byte) 80);
+    }
+
+    public static StringBuilder genNewNano() {
+        StringBuilder sb1 = new StringBuilder();
+        sb1.append(System.nanoTime());
+        sb1.reverse();
+        return sb1;
     }
 }
