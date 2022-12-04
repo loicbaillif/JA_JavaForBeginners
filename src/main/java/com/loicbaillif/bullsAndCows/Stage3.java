@@ -18,6 +18,13 @@ public class Stage3 {
      * the secret code, use digits from 1 to 9.
      */
 
+    // Variables
+    static boolean[] digitsArray = {false, false, false, false, false,
+            false, false, false, false, false};
+    static String nanoTime = genNewNano();
+    static byte currentCodeSize = 0;
+    static byte pointerPos = 0; // Pointer in nanoTime String
+
     public static void main() {
         Print.title("Project: Bulls and Cows - Stage 3: Secret Code");
 
@@ -29,14 +36,9 @@ public class Stage3 {
                     "length of %d because there aren't enough unique digits.",
                     codeSize);
         } else {
-            String nanoTime = genNewNano();
-            byte currentCodeSize = 0;
-            byte pointerPos = 0; // Pointer in nanoTime String
-            Boolean firstDigit = true;
-            Boolean[] digitsArray = {false, false, false, false, false,
-            false, false, false, false, false};
             while (currentCodeSize < codeSize) {
-
+                System.out.println("One more digit.");
+                currentCodeSize++;
             }
         }
 
@@ -48,5 +50,18 @@ public class Stage3 {
         sb1.append(System.nanoTime());
         sb1.reverse();
         return sb1.toString();
+    }
+
+    public static byte getDigit(
+            String nanoTime,
+            byte pointerPos) {
+        byte nanoTimeLength = (byte) nanoTime.length();
+        if (currentCodeSize == 0) {
+            while (nanoTime.charAt(pointerPos) == 0) {
+                pointerPos++;
+            }
+        }
+
+        return 0;
     }
 }
