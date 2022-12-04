@@ -19,7 +19,10 @@ public class Stage3 {
     public static void main() {
         Print.title("Project: Bulls and Cows - Stage 3: Secret Code");
 
-
+        for (int i = 0; i < 10; i++) {
+            System.out.printf("Run #%d: nanoTime() = %n\t", i);
+            System.out.println(System.nanoTime());
+        }
 
         Print.subtitle("End of stage 3", '*', (byte) 80);
     }
