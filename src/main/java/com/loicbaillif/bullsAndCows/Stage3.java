@@ -29,18 +29,24 @@ public class Stage3 {
                     "length of %d because there aren't enough unique digits.",
                     codeSize);
         } else {
-            StringBuilder sb = new StringBuilder();
-            sb.append(System.nanoTime());
-            sb.reverse();
+            String nanoTime = genNewNano();
+            byte currentCodeSize = 0;
+            byte pointerPos = 0; // Pointer in nanoTime String
+            Boolean firstDigit = true;
+            Boolean[] digitsArray = {false, false, false, false, false,
+            false, false, false, false, false};
+            while (currentCodeSize < codeSize) {
+
+            }
         }
 
         Print.subtitle("End of stage 3", '*', (byte) 80);
     }
 
-    public static StringBuilder genNewNano() {
+    public static String genNewNano() {
         StringBuilder sb1 = new StringBuilder();
         sb1.append(System.nanoTime());
         sb1.reverse();
-        return sb1;
+        return sb1.toString();
     }
 }
