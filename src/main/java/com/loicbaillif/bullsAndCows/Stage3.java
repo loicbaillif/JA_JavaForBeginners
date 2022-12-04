@@ -38,20 +38,18 @@ public class Stage3 {
         } else {
             while (currentCodeSize < codeSize) {
                 secretCode.append(getDigit());
-                System.out.println(secretCode);
-                System.out.println("One more digit.");
                 currentCodeSize++;
             }
         }
+
+        System.out.println(secretCode);
 
         Print.subtitle("End of stage 3", '*', (byte) 80);
     }
 
     public static String genNewNano() {
         StringBuilder sb1 = new StringBuilder();
-        sb1.append(System.nanoTime());
-        sb1.reverse();
-        System.out.println(sb1);
+        sb1.append(System.nanoTime()).reverse();
         return sb1.toString();
     }
 
@@ -71,7 +69,6 @@ public class Stage3 {
             if (pointerPos >= nanoTimeLength) {
                 nanoTime = genNewNano();
                 pointerPos = 0;
-                System.out.println("new nano time generated"); // debug
             }
             currentDigit = String.valueOf(nanoTime.charAt(pointerPos));
         }
