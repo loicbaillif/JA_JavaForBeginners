@@ -2,6 +2,8 @@ package com.loicbaillif.bullsAndCows;
 
 import com.loicbaillif.tools.Print;
 
+import java.util.Scanner;
+
 public class Stage3 {
     /* https://hyperskill.org/projects/53/stages/289/
      *
@@ -18,6 +20,12 @@ public class Stage3 {
 
     public static void main() {
         Print.title("Project: Bulls and Cows - Stage 3: Secret Code");
+
+        Scanner scanner = new Scanner(System.in);
+        int codeSize = scanner.nextInt();
+        StringBuilder sb = new StringBuilder();
+        sb.append(System.nanoTime());
+
 
         for (int i = 0; i < 10; i++) {
             System.out.printf("Run #%d: nanoTime() = %n\t", i);
