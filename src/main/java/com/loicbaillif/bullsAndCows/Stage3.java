@@ -64,15 +64,18 @@ public class Stage3 {
             }
         }
 
-        while (secretCode.indexOf(String.valueOf(nanoTime.charAt(pointerPos))) != -1) {
+        String currentDigit = String.valueOf(nanoTime.charAt(pointerPos));
+
+        while (secretCode.indexOf(currentDigit) != -1) {
             pointerPos++;
             if (pointerPos >= nanoTimeLength) {
                 nanoTime = genNewNano();
                 pointerPos = 0;
                 System.out.println("new nano time generated"); // debug
             }
+            currentDigit = String.valueOf(nanoTime.charAt(pointerPos));
         }
 
-        return String.valueOf(nanoTime.charAt(pointerPos));
+        return currentDigit;
     }
 }
