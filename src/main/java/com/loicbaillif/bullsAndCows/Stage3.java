@@ -19,11 +19,11 @@ public class Stage3 {
      */
 
     // Variables
-    static boolean[] digitsArray = {false, false, false, false, false,
-            false, false, false, false, false};
     static String nanoTime = genNewNano();
-    static byte currentCodeSize = 0;
-    static byte pointerPos = 0; // Pointer in nanoTime String
+    static int nanoTimeLength = nanoTime.length();
+    static int currentCodeSize = 0;
+    static int pointerPos = 0; // Pointer in nanoTime String
+    static StringBuilder secretCode = new StringBuilder();
 
     public static void main() {
         Print.title("Project: Bulls and Cows - Stage 3: Secret Code");
@@ -37,6 +37,8 @@ public class Stage3 {
                     codeSize);
         } else {
             while (currentCodeSize < codeSize) {
+                secretCode.append(getDigit());
+                System.out.println(secretCode);
                 System.out.println("One more digit.");
                 currentCodeSize++;
             }
@@ -49,19 +51,25 @@ public class Stage3 {
         StringBuilder sb1 = new StringBuilder();
         sb1.append(System.nanoTime());
         sb1.reverse();
+        System.out.println(sb1);
         return sb1.toString();
     }
 
-    public static byte getDigit(
-            String nanoTime,
-            byte pointerPos) {
-        byte nanoTimeLength = (byte) nanoTime.length();
+    public static String getDigit() {
+
         if (currentCodeSize == 0) {
-            while (nanoTime.charAt(pointerPos) == 0) {
+            // First digit cannot be a 0
+            while (nanoTime.charAt(pointerPos) == '0') {
                 pointerPos++;
             }
         }
 
-        return 0;
+        pointerPos++;
+
+        if (pointerPos >= nanoTimeLength) {
+            nanoTime = genNewNano();
+        }
+
+        return String.valueOf(nanoTime.charAt(pointerPos));
     }
 }
