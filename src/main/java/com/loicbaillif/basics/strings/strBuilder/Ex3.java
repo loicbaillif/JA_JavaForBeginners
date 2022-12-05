@@ -23,6 +23,8 @@ public class Ex3 {
             sb.append(' ').append(startChar);
         }
 
+        System.out.println(sb);
+
         Print.subtitle("End of exercise", '*', (byte) 80);
     }
 }
