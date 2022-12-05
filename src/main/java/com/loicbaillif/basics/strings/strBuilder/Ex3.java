@@ -13,6 +13,9 @@ public class Ex3 {
     public static void main() {
         Print.title("StringBuilder - Exercise: English Alphabet");
 
+        StringBuilder sb = new StringBuilder();
+        char startChar = 'A';
+        char endChar = 'Z';
 
 
         Print.subtitle("End of exercise", '*', (byte) 80);
