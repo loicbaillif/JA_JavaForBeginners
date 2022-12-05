@@ -7,6 +7,6 @@ public class Project1 {
         Print.title("ProjectBulls and Cows");
         // Stage1.main();
         // Stage2.main();
-        Stage3.main();
+        // Stage3.main();
     }
 }
