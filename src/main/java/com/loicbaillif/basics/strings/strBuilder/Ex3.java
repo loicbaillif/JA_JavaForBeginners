@@ -17,6 +17,11 @@ public class Ex3 {
         char startChar = 'A';
         char endChar = 'Z';
 
+        sb.append(startChar);
+        while (startChar != endChar) {
+            startChar++;
+            sb.append(' ').append(startChar);
+        }
 
         Print.subtitle("End of exercise", '*', (byte) 80);
     }
