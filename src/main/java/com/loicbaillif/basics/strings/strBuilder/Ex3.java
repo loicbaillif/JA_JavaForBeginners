@@ -18,8 +18,7 @@ public class Ex3 {
         char endChar = 'Z';
 
         sb.append(startChar);
-        while (startChar != endChar) {
-            startChar++;
+        while (startChar++ != endChar) {
             sb.append(' ').append(startChar);
         }
 
