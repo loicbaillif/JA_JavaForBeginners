@@ -2,6 +2,8 @@ package com.loicbaillif.basics.strings.strBuilder;
 
 import com.loicbaillif.tools.Print;
 
+import java.util.Scanner;
+
 public class Ex4 {
     /* https://hyperskill.org/learn/daily/23738
      *
@@ -15,7 +17,9 @@ public class Ex4 {
     public static void main() {
         Print.title("StringBuilder - Exercise: Love of big letters");
 
-
+        StringBuilder sb1 = new StringBuilder();
+        Scanner scanner = new Scanner(System.in);
+        sb1.append(scanner.nextLine());
 
         Print.subtitle("End of Exercise", '*', (byte) 80);
     }
