@@ -30,6 +30,8 @@ public class Ex4 {
                     String.valueOf(Character.toUpperCase(pivotChar)));
         }
 
+        System.out.println(sb1);
+
         Print.subtitle("End of Exercise", '*', (byte) 80);
     }
 }
