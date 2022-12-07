@@ -8,5 +8,6 @@ public class Project1 {
         // Stage1.main();
         // Stage2.main();
         // Stage3.main();
+        Stage4.main();
     }
 }

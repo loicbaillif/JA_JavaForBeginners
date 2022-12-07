@@ -19,7 +19,7 @@ public class Main {
         // com.loicbaillif.basics.strings.procStrings.Main.main();
 
         // Current chapter
-        com.loicbaillif.basics.strings.strBuilder.Main.main();
+        // com.loicbaillif.basics.strings.strBuilder.Main.main();
 
     }
 }
