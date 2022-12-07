@@ -20,6 +20,15 @@ public class Ex4 {
         StringBuilder sb1 = new StringBuilder();
         Scanner scanner = new Scanner(System.in);
         sb1.append(scanner.nextLine());
+        char pivotChar;
+
+        for (int i = 0; i < sb1.length(); i += 2) {
+            pivotChar = sb1.charAt(i);
+            sb1.replace(
+                    i,
+                    i + 1,
+                    String.valueOf(Character.toUpperCase(pivotChar)));
+        }
 
         Print.subtitle("End of Exercise", '*', (byte) 80);
     }
