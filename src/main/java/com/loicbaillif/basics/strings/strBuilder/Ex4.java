@@ -17,17 +17,11 @@ public class Ex4 {
     public static void main() {
         Print.title("StringBuilder - Exercise: Love of big letters");
 
-        StringBuilder sb1 = new StringBuilder();
         Scanner scanner = new Scanner(System.in);
-        sb1.append(scanner.nextLine());
-        char pivotChar;
+        StringBuilder sb1 = new StringBuilder(scanner.nextLine());
 
         for (int i = 0; i < sb1.length(); i += 2) {
-            pivotChar = sb1.charAt(i);
-            sb1.replace(
-                    i,
-                    i + 1,
-                    String.valueOf(Character.toUpperCase(pivotChar)));
+            sb1.setCharAt(i, Character.toUpperCase(sb1.charAt(i)));
         }
 
         System.out.println(sb1);
