@@ -2,6 +2,8 @@ package com.loicbaillif.basics.strings.strBuilder;
 
 import com.loicbaillif.tools.Print;
 
+import java.util.Scanner;
+
 public class Ex5 {
     /* https://hyperskill.org/learn/daily/3789
      *
@@ -23,7 +25,15 @@ public class Ex5 {
     public static void main() {
         Print.title("StringBuilder - Exercise: Generating Passwords");
 
-
+        Scanner scanner = new Scanner(System.in);
+        int aConstraint = scanner.nextInt();
+        int bConstraint = scanner.nextInt();
+        int cConstraint = scanner.nextInt();
+        int nConstraint = scanner.nextInt();
+        StringBuilder sb = new StringBuilder();
+        String upperLetters = "AB";
+        String lowerLetters = "ab";
+        String digits = "12";
 
         Print.subtitle("End of exercise");
     }
