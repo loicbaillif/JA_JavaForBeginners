@@ -47,6 +47,10 @@ public class Ex5 {
             sb.append(digits.charAt(cConstraint-- % 2));
         }
 
+        if (sb.length() < nConstraint) {
+            sb.append('Z');
+        }
+
         while (sb.length() < nConstraint) {
             sb.append(upperLetters.charAt(sb.length() % 2));
         }
