@@ -35,6 +35,22 @@ public class Ex5 {
         String lowerLetters = "ab";
         String digits = "12";
 
+        while (aConstraint > 0) {
+            sb.append(upperLetters.charAt(aConstraint-- % 2));
+        }
+
+        while (bConstraint > 0) {
+            sb.append(lowerLetters.charAt(bConstraint-- % 2));
+        }
+
+        while (cConstraint > 0) {
+            sb.append(digits.charAt(cConstraint-- % 2));
+        }
+
+        while (sb.length() < nConstraint) {
+            sb.append(upperLetters.charAt(sb.length() % 2));
+        }
+
         Print.subtitle("End of exercise");
     }
 }
