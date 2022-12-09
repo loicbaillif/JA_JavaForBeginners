@@ -51,6 +51,8 @@ public class Ex5 {
             sb.append(upperLetters.charAt(sb.length() % 2));
         }
 
+        System.out.println(sb);
+
         Print.subtitle("End of exercise");
     }
 }
