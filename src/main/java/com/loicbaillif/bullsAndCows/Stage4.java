@@ -2,6 +2,7 @@ package com.loicbaillif.bullsAndCows;
 
 import com.loicbaillif.tools.Print;
 
+import java.util.Objects;
 import java.util.Scanner;
 
 public class Stage4 {
@@ -43,11 +44,27 @@ public class Stage4 {
         System.out.println(secretCode); // DEBUG
         System.out.println(startGuessing);
         do {
-            codeFound = playTurn();
+            codeFound = playTurn(scanner);
         } while (!codeFound);
 
 
         Print.subtitle("End of Stage 4", '+', (byte) 80);
+    }
+
+
+    public static void printGrade(byte[] result) {
+        if (result[0] != 0 && result[1] != 0) {
+            System.out.printf(
+                    "Grade: %d bull(s) and %d cow(s).",
+                    result[0],
+                    result[1]);
+        } else if (result[0] == 0 && result[1] == 0) {
+            System.out.println("Grade: None.");
+        } else if (result[0] == 0) {
+            System.out.printf("Grade: %d cow(s).", result[1]);
+        } else {
+            System.out.printf("Grade: %d bull(s).", result[0]);
+        }
     }
 
 
@@ -107,7 +124,26 @@ public class Stage4 {
     }
 
 
-    public static boolean playTurn() {
+    public static byte[] gradeNumber(String proposal, String solution) {
+        byte nbBulls = 0;
+        byte nbCows = 0;
+
+        for (byte i = 0; i < proposal.length(); i++) {
+            if (Objects.equals(proposal.charAt(i), solution.charAt(i))) {
+                nbBulls++;
+            } else if (solution.indexOf(proposal.charAt(i)) != -1) {
+                nbCows++;
+            }
+        }
+
+        return new byte[]{nbBulls, nbCows};
+    }
+
+
+    public static boolean playTurn(Scanner scanner) {
+        String userInput = scanner.nextLine();
+        byte[] result = gradeNumber(userInput, secretCode.toString());
+        printGrade(result);
         return true;
     }
 
