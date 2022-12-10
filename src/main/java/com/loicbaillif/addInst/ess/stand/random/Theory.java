@@ -44,6 +44,17 @@ public class Theory {
                     random2.nextLong());
         }
 
+        System.out.printf("%n***** nextDouble()%n");
+        for (int i = 1; i < 6; i++) {
+            System.out.printf("***** Run n°%d:%n", i);
+            System.out.printf(
+                    "\trandom.nextDouble() with system seed = %s%n",
+                    random1.nextLong());
+            System.out.printf(
+                    "\trandom.nextDouble() with specified seed = %s%n",
+                    random2.nextLong());
+        }
+
 
         Print.subtitle("End of Theory", '+', (byte) 80);
     }
