@@ -24,7 +24,7 @@ public class Stage4 {
      */
 
     // Static variables
-    static String nanoTime = genNewNano();
+    static String nanoTime = getNewNano();
     static int nanoTimeLength = nanoTime.length();
     static int currentCodeSize = 0;
     static int pointerPos = 0; // Pointer in nanoTime String
@@ -45,12 +45,44 @@ public class Stage4 {
     }
 
 
+    public static String getDigit() {
+
+        if (currentCodeSize == 0) {
+            // First digit cannot be a 0
+            while (nanoTime.charAt(pointerPos) == '0') {
+                pointerPos++;
+            }
+        }
+
+        String currentDigit = String.valueOf(nanoTime.charAt(pointerPos));
+
+        while (secretCode.indexOf(currentDigit) != -1) {
+            pointerPos++;
+            if (pointerPos >= nanoTimeLength) {
+                nanoTime = getNewNano();
+                pointerPos = 0;
+            }
+            currentDigit = String.valueOf(nanoTime.charAt(pointerPos));
+        }
+
+        return currentDigit;
+    }
+
+
+    public static String getNewNano() {
+        // Generates a new pseudo-random int, based on nanoTime
+        StringBuilder sb1 = new StringBuilder();
+        sb1.append(System.nanoTime()).reverse();
+        return sb1.toString();
+    }
+
+
     public static void getSecretCode(Scanner scanner) {
         // This method will generate a pseudo-random code, after asking
         // user/player to provide requested length (1 to 10)
 
         // Reset variables
-        nanoTime = genNewNano();
+        nanoTime = getNewNano();
         secretCode = new StringBuilder();
         currentCodeSize = 0;
 
@@ -68,35 +100,4 @@ public class Stage4 {
         }
     }
 
-
-    public static String genNewNano() {
-        // Generates a new pseudo-random int, based on nanoTime
-        StringBuilder sb1 = new StringBuilder();
-        sb1.append(System.nanoTime()).reverse();
-        return sb1.toString();
-    }
-
-
-    public static String getDigit() {
-
-        if (currentCodeSize == 0) {
-            // First digit cannot be a 0
-            while (nanoTime.charAt(pointerPos) == '0') {
-                pointerPos++;
-            }
-        }
-
-        String currentDigit = String.valueOf(nanoTime.charAt(pointerPos));
-
-        while (secretCode.indexOf(currentDigit) != -1) {
-            pointerPos++;
-            if (pointerPos >= nanoTimeLength) {
-                nanoTime = genNewNano();
-                pointerPos = 0;
-            }
-            currentDigit = String.valueOf(nanoTime.charAt(pointerPos));
-        }
-
-        return currentDigit;
-    }
 }
