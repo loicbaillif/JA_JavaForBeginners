@@ -109,6 +109,8 @@ public class Stage4 {
         secretCode = new StringBuilder();
         currentCodeSize = 0;
 
+        System.out.println("Please, enter the secret code's length:");
+
         int codeSize = scanner.nextInt();
         if (codeSize > 10 || codeSize < 1) {
             System.out.printf(
