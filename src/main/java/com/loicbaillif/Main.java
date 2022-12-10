@@ -6,7 +6,7 @@ public class Main {
     public static void main(String[] args) {
         Print.title("JetBrains Academy - Java for beginners");
         // Project stages
-        com.loicbaillif.bullsAndCows.Project1.main();
+        // com.loicbaillif.bullsAndCows.Project1.main();
 
         /* Previous chapters */
         // com.loicbaillif.codeOrganization.methods.overloading.Main.main();
@@ -16,9 +16,9 @@ public class Main {
         // com.loicbaillif.codeOrganization.oop.hierar.overrid.hidOver.Main.main();
         // com.loicbaillif.codeOrganization.oop.hierar.overrid.polym.Main.main();
         // com.loicbaillif.basics.strings.procStrings.Main.main();
-
-        // Current chapter
         // com.loicbaillif.basics.strings.strBuilder.Main.main();
 
+        // Current chapter
+        com.loicbaillif.addInst.ess.stand.random.Main.main();
     }
 }
