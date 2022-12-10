@@ -28,6 +28,7 @@ public class Stage4 {
     static boolean codeFound = false;
     static String nanoTime = getNewNano();
     static String startGuessing = "Okay, let's start a game!";
+    static String victory = "Congratulations! You guessed the secret code.";
     static int nanoTimeLength = nanoTime.length();
     static int currentCodeSize = 0;
     static int currentTurn = 1;
@@ -47,6 +48,7 @@ public class Stage4 {
         do {
             codeFound = playTurn();
         } while (!codeFound);
+        System.out.println(victory);
 
 
         Print.subtitle("End of Stage 4", '+', (byte) 80);
@@ -144,21 +146,21 @@ public class Stage4 {
     public static void printGrade(byte[] result) {
         if (result[0] != 0 && result[1] != 0) {
             System.out.printf(
-                    "Grade: %d %s and %d %s.",
+                    "Grade: %d %s and %d %s.%n",
                     result[0],
                     result[0] > 1 ? "bulls" : "bull",
                     result[1],
                     result[1] > 1 ? "cows" : "cow");
         } else if (result[0] == 0 && result[1] == 0) {
-            System.out.println("Grade: None.");
+            System.out.println("Grade: None.%n");
         } else if (result[0] == 0) {
             System.out.printf(
-                    "Grade: %d %s.",
+                    "Grade: %d %s.%n",
                     result[1],
                     result[1] > 1 ? "cows" : "cow");
         } else {
             System.out.printf(
-                    "Grade: %d %s.",
+                    "Grade: %d %s.%n",
                     result[0],
                     result[0] > 1 ? "bulls" : "bull");
         }
