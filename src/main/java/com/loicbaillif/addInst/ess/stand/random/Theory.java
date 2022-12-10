@@ -24,6 +24,15 @@ public class Theory {
                     random2.nextInt());
 
         }
+        System.out.printf("%n***** nextInt(bound)%n");
+        for (int i = 1; i < 6; i++) {
+            System.out.printf("***** Run n°%d:%n", i);
+            System.out.printf("\trandom.nextInt(100) with system seed = %s%n",
+                    random1.nextInt(100));
+            System.out.printf("\trandom.nextInt(100) with specified seed = %s%n",
+                    random2.nextInt(100));
+
+        }
 
 
         Print.subtitle("End of Theory", '+', (byte) 80);
