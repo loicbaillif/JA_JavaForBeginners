@@ -43,7 +43,7 @@ public class Stage4 {
         Scanner scanner = new Scanner(System.in);
 
         getSecretCode(scanner);
-        System.out.println(secretCode); // DEBUG
+        // System.out.println(secretCode); // DEBUG
         System.out.println(startGuessing);
         do {
             codeFound = playTurn();
@@ -152,7 +152,7 @@ public class Stage4 {
                     result[1],
                     result[1] > 1 ? "cows" : "cow");
         } else if (result[0] == 0 && result[1] == 0) {
-            System.out.println("Grade: None.%n");
+            System.out.println("Grade: None.");
         } else if (result[0] == 0) {
             System.out.printf(
                     "Grade: %d %s.%n",
