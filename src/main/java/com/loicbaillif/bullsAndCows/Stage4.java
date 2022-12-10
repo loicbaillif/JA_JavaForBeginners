@@ -24,7 +24,9 @@ public class Stage4 {
      */
 
     // Static variables
+    static boolean codeFound = false;
     static String nanoTime = getNewNano();
+    static String startGuessing = "Okay, let's start a game!";
     static int nanoTimeLength = nanoTime.length();
     static int currentCodeSize = 0;
     static int pointerPos = 0; // Pointer in nanoTime String
@@ -39,6 +41,10 @@ public class Stage4 {
 
         getSecretCode(scanner);
         System.out.println(secretCode); // DEBUG
+        System.out.println(startGuessing);
+        do {
+            codeFound = playTurn();
+        } while (!codeFound);
 
 
         Print.subtitle("End of Stage 4", '+', (byte) 80);
@@ -98,6 +104,11 @@ public class Stage4 {
                 currentCodeSize++;
             }
         }
+    }
+
+
+    public static boolean playTurn() {
+        return true;
     }
 
 }
