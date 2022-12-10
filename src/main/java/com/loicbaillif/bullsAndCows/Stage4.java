@@ -30,6 +30,7 @@ public class Stage4 {
     static String startGuessing = "Okay, let's start a game!";
     static int nanoTimeLength = nanoTime.length();
     static int currentCodeSize = 0;
+    static int currentTurn = 1;
     static int pointerPos = 0; // Pointer in nanoTime String
     static StringBuilder secretCode = new StringBuilder();
 
@@ -44,7 +45,7 @@ public class Stage4 {
         System.out.println(secretCode); // DEBUG
         System.out.println(startGuessing);
         do {
-            codeFound = playTurn(scanner);
+            codeFound = playTurn();
         } while (!codeFound);
 
 
@@ -142,11 +143,17 @@ public class Stage4 {
     }
 
 
-    public static boolean playTurn(Scanner scanner) {
-        String userInput = scanner.nextLine();
+    public static boolean playTurn() {
+        System.out.printf("Turn %d:%n", currentTurn);
+        Scanner scanner2 = new Scanner(System.in);
+        String userInput = scanner2.nextLine();
+
+        System.out.println(userInput);
         byte[] result = gradeNumber(userInput, secretCode.toString());
         printGrade(result);
-        return true;
+        currentTurn++;
+
+        return result[0] == currentCodeSize;
     }
 
 }
