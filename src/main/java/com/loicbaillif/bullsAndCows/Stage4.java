@@ -53,22 +53,6 @@ public class Stage4 {
     }
 
 
-    public static void printGrade(byte[] result) {
-        if (result[0] != 0 && result[1] != 0) {
-            System.out.printf(
-                    "Grade: %d bull(s) and %d cow(s).",
-                    result[0],
-                    result[1]);
-        } else if (result[0] == 0 && result[1] == 0) {
-            System.out.println("Grade: None.");
-        } else if (result[0] == 0) {
-            System.out.printf("Grade: %d cow(s).", result[1]);
-        } else {
-            System.out.printf("Grade: %d bull(s).", result[0]);
-        }
-    }
-
-
     public static String getDigit() {
 
         if (currentCodeSize == 0) {
@@ -154,6 +138,30 @@ public class Stage4 {
         currentTurn++;
 
         return result[0] == currentCodeSize;
+    }
+
+
+    public static void printGrade(byte[] result) {
+        if (result[0] != 0 && result[1] != 0) {
+            System.out.printf(
+                    "Grade: %d %s and %d %s.",
+                    result[0],
+                    result[0] > 1 ? "bulls" : "bull",
+                    result[1],
+                    result[1] > 1 ? "cows" : "cow");
+        } else if (result[0] == 0 && result[1] == 0) {
+            System.out.println("Grade: None.");
+        } else if (result[0] == 0) {
+            System.out.printf(
+                    "Grade: %d %s.",
+                    result[1],
+                    result[1] > 1 ? "cows" : "cow");
+        } else {
+            System.out.printf(
+                    "Grade: %d %s.",
+                    result[0],
+                    result[0] > 1 ? "bulls" : "bull");
+        }
     }
 
 }
