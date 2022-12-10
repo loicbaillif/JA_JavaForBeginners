@@ -49,10 +49,34 @@ public class Theory {
             System.out.printf("***** Run n°%d:%n", i);
             System.out.printf(
                     "\trandom.nextDouble() with system seed = %s%n",
-                    random1.nextLong());
+                    random1.nextLong()
+            );
             System.out.printf(
                     "\trandom.nextDouble() with specified seed = %s%n",
-                    random2.nextLong());
+                    random2.nextLong()
+            );
+        }
+
+        System.out.printf("%n***** nextBytes()%n");
+        byte[] bytes = new byte[10];
+        for (int i = 1; i < 6; i++) {
+            System.out.printf("***** Run n°%d:%n", i);
+            random1.nextBytes(bytes);
+            System.out.printf(
+                    "\trandom.nextBytes() with system seed => %n\t\t["
+            );
+            for (byte aByte : bytes) {
+                System.out.printf("%d; ", aByte);
+            }
+            System.out.printf("]%n");
+            random2.nextBytes(bytes);
+            System.out.printf(
+                    "\trandom.nextBytes() with specified seed => %n\t\t["
+            );
+            for (byte bByte : bytes) {
+                System.out.printf("%d; ", bByte);
+            }
+            System.out.printf("]%n");
         }
 
 
