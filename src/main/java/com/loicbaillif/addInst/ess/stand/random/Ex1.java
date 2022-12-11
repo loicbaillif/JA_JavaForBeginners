@@ -22,20 +22,28 @@ public class Ex1 {
         int nInput = scanner.nextInt();
         int kInput = scanner.nextInt();
         int answerSeed = aInput;
-        int answerMax = 0;
+        int answerLowerMax = kInput;
+        int maxForSeed = 0;
 
         for (int i = aInput; i <= bInput; i++) {
             Random r1 = new Random(i);
+
             for (int j = 0; j < nInput; j++) {
                 int temp = r1.nextInt(kInput);
-                if (temp > answerMax) {
-                    answerMax = temp;
-                    answerSeed = i;
+                if (temp > maxForSeed) {
+                    maxForSeed = temp;
                 }
             }
+
+            if (maxForSeed < answerLowerMax) {
+                answerLowerMax = maxForSeed;
+                answerSeed = i;
+            }
+
+            maxForSeed = 0;
         }
 
-        System.out.printf("%d %d%n", answerSeed, answerMax);
+        System.out.printf("%d%n%d%n", answerSeed, answerLowerMax);
 
 
         Print.subtitle("End of exercise");
