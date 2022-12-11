@@ -35,6 +35,8 @@ public class Ex1 {
             }
         }
 
+        System.out.printf("%d %d%n", answerSeed, answerMax);
+
 
         Print.subtitle("End of exercise");
     }
