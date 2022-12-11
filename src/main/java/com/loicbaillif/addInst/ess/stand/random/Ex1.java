@@ -2,6 +2,8 @@ package com.loicbaillif.addInst.ess.stand.random;
 
 import com.loicbaillif.tools.Print;
 
+import java.util.Scanner;
+
 public class Ex1 {
     /* https://hyperskill.org/learn/step/4940
      *
@@ -13,6 +15,13 @@ public class Ex1 {
     public static void main() {
         Print.title("Random - Exercise: Find the seed");
 
+        Scanner scanner = new Scanner(System.in);
+        int aInput = scanner.nextInt();
+        int bInput = scanner.nextInt();
+        int nInput = scanner.nextInt();
+        int kInput = scanner.nextInt();
+        int answerSeed = aInput;
+        int answerMax = 0;
 
 
         Print.subtitle("End of exercise");
