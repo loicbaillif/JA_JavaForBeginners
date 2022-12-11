@@ -2,6 +2,7 @@ package com.loicbaillif.addInst.ess.stand.random;
 
 import com.loicbaillif.tools.Print;
 
+import java.util.Random;
 import java.util.Scanner;
 
 public class Ex1 {
@@ -22,6 +23,17 @@ public class Ex1 {
         int kInput = scanner.nextInt();
         int answerSeed = aInput;
         int answerMax = 0;
+
+        for (int i = aInput; i <= bInput; i++) {
+            Random r1 = new Random(i);
+            for (int j = 0; j < nInput; j++) {
+                int temp = r1.nextInt(kInput);
+                if (temp > answerMax) {
+                    answerMax = temp;
+                    answerSeed = i;
+                }
+            }
+        }
 
 
         Print.subtitle("End of exercise");
