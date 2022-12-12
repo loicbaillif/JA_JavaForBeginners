@@ -31,16 +31,22 @@ public class Ex2 {
         do {
             Random random = new Random(kInput);
 
-            for (int i = kInput - 1; i <= nInput; i++) {
+            for (int i = 1; i <= nInput; i++) {
                 if (random.nextGaussian() > mInput) {
+                    System.out.printf(
+                            "Condition not met for i = %d -> break",
+                            i
+                    );
                     break;
                 }
                 if (i == nInput) {
+                    System.out.println("Max reached");
                     seedFound = true;
                 }
             }
 
             kInput++; // Very important to avoid infinite loop
+            System.out.printf("kInput = %d%n", kInput);
         } while (!seedFound);
 
         System.out.println(kInput);
