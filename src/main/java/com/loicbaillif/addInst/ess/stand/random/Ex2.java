@@ -26,6 +26,22 @@ public class Ex2 {
         int kInput = scanner.nextInt();
         int nInput = scanner.nextInt();
         int mInput = scanner.nextInt();
+        boolean seedFound = false;
+
+        do {
+            Random random = new Random(kInput);
+
+            for (int i = 1; i <= nInput; i++) {
+                if (random.nextGaussian() > mInput) {
+                    break;
+                }
+                if (i == nInput) {
+                    seedFound = true;
+                }
+            }
+        } while (!seedFound);
+
+
 
         Print.subtitle("End of exercise", '*', (byte) 80);
     }
