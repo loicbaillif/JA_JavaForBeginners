@@ -31,7 +31,7 @@ public class Ex2 {
         do {
             Random random = new Random(kInput);
 
-            for (int i = 1; i <= nInput; i++) {
+            for (int i = kInput - 1; i <= nInput; i++) {
                 if (random.nextGaussian() > mInput) {
                     break;
                 }
@@ -40,10 +40,10 @@ public class Ex2 {
                 }
             }
 
-            kInput++; // Very important
+            kInput++; // Very important to avoid infinite loop
         } while (!seedFound);
 
-        System.out.println();
+        System.out.println(kInput);
 
         Print.subtitle("End of exercise", '*', (byte) 80);
     }
