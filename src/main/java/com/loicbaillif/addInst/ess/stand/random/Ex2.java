@@ -25,7 +25,7 @@ public class Ex2 {
         Scanner scanner = new Scanner(System.in);
         int kInput = scanner.nextInt();
         int nInput = scanner.nextInt();
-        int mInput = scanner.nextInt();
+        float mInput = scanner.nextFloat();
         boolean seedFound = false;
 
         do {
@@ -33,23 +33,17 @@ public class Ex2 {
 
             for (int i = 1; i <= nInput; i++) {
                 if (random.nextGaussian() > mInput) {
-                    System.out.printf(
-                            "Condition not met for i = %d -> break",
-                            i
-                    );
                     break;
                 }
                 if (i == nInput) {
-                    System.out.println("Max reached");
                     seedFound = true;
                 }
             }
 
             kInput++; // Very important to avoid infinite loop
-            System.out.printf("kInput = %d%n", kInput);
         } while (!seedFound);
 
-        System.out.println(kInput);
+        System.out.println(--kInput);
 
         Print.subtitle("End of exercise", '*', (byte) 80);
     }
