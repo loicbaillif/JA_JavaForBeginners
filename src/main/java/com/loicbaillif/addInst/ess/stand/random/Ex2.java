@@ -39,9 +39,11 @@ public class Ex2 {
                     seedFound = true;
                 }
             }
+
+            kInput++; // Very important
         } while (!seedFound);
 
-
+        System.out.println();
 
         Print.subtitle("End of exercise", '*', (byte) 80);
     }
