@@ -2,6 +2,9 @@ package com.loicbaillif.addInst.ess.stand.random;
 
 import com.loicbaillif.tools.Print;
 
+import java.util.Random;
+import java.util.Scanner;
+
 public class Ex2 {
     /* https://hyperskill.org/learn/step/4941
      *
@@ -19,7 +22,10 @@ public class Ex2 {
     public static void main() {
         Print.title("Random - Exercise: Gaussian random numbers");
 
-
+        Scanner scanner = new Scanner(System.in);
+        int kInput = scanner.nextInt();
+        int nInput = scanner.nextInt();
+        int mInput = scanner.nextInt();
 
         Print.subtitle("End of exercise", '*', (byte) 80);
     }
