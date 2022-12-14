@@ -2,6 +2,8 @@ package com.loicbaillif.basics.opsPrim.floatpt;
 
 import com.loicbaillif.tools.Print;
 
+import java.util.Scanner;
+
 public class Ex1 {
     /* https://hyperskill.org/learn/step/2702
      *
@@ -17,7 +19,8 @@ public class Ex1 {
         Print.title("Floating - Exercise: Celsius to Fahrenheit",
                 '*', (byte) 70);
 
-
+        Scanner scanner = new Scanner(System.in);
+        double tempCelsius = scanner.nextDouble();
 
         Print.subtitle("End of exercise");
     }
