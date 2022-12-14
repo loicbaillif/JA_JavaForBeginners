@@ -17,8 +17,9 @@ public class Main {
         // com.loicbaillif.codeOrganization.oop.hierar.overrid.polym.Main.main();
         // com.loicbaillif.basics.strings.procStrings.Main.main();
         // com.loicbaillif.basics.strings.strBuilder.Main.main();
+        // com.loicbaillif.addInst.ess.stand.random.Main.main();
 
         // Current chapter
-        com.loicbaillif.addInst.ess.stand.random.Main.main();
+        com.loicbaillif.basics.opsPrim.floatpt.Main.main();
     }
 }
