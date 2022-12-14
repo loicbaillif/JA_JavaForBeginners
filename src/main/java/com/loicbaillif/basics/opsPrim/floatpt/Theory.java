@@ -42,6 +42,11 @@ public class Theory {
         System.out.println(gDouble);
         System.out.printf("%.2f / %.2f = ", cDouble, dDouble);
         System.out.println(hDouble);
+        Print.subtitle("WARNING", '=', (byte) 60);
+        double iDouble = 5 / 4;
+        double jDouble = 5.0 / 4;
+        System.out.println("double d1 = 5 / 4 \t\t=> " + iDouble);
+        System.out.println("double d2 = 5.0 / 4 \t=> " + jDouble);
 
 
         Print.subtitle("End of theory", '+', (byte) 80);
