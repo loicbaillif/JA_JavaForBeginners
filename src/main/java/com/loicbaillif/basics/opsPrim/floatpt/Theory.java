@@ -29,7 +29,19 @@ public class Theory {
         System.out.println(". decimals with mantissa");
         double eDouble = 1.23e2;
         float dFloat = 7890e-1f;
-        System.out.printf("\t1.23e2 = %f%n\t7890e-1f = %f%n", eDouble, dFloat);
+        System.out.println("\t1.23e2 = " + eDouble);
+        System.out.println("\t7890e-1f = " + dFloat);
+
+        Print.subtitle("2) Arithmetic operations");
+        double fDouble = bDouble + cDouble;
+        double gDouble = piDouble * dDouble;
+        double hDouble = cDouble / dDouble;
+        System.out.printf("%.2f + %.2f = ", bDouble, cDouble);
+        System.out.println(fDouble);
+        System.out.printf("%.2f * %.2f = ", piDouble, dDouble);
+        System.out.println(gDouble);
+        System.out.printf("%.2f / %.2f = ", cDouble, dDouble);
+        System.out.println(hDouble);
 
 
         Print.subtitle("End of theory", '+', (byte) 80);
