@@ -26,6 +26,11 @@ public class Theory {
         float cFloat = 0.888888888888f;
         System.out.printf("\t0.888888888888f = %f%n", cFloat);
 
+        System.out.println(". decimals with mantissa");
+        double eDouble = 1.23e2;
+        float dFloat = 7890e-1f;
+        System.out.printf("\t1.23e2 = %f%n\t7890e-1f = %f%n", eDouble, dFloat);
+
 
         Print.subtitle("End of theory", '+', (byte) 80);
     }
