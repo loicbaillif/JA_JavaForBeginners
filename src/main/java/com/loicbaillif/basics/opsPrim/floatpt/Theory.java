@@ -55,7 +55,20 @@ public class Theory {
         System.out.print("0.1 + 0.1 + 0.1 + 0.1 + 0.1 = ");
         System.out.println(0.1+0.1+0.1+0.1+0.1+0.1+0.1+0.1+0.1+0.1);
 
+        Print.subtitle("4) Reading floating-point numbers");
+        System.out.println("Base = 3.3 - Height = 4.5");
+        System.out.println("surface = " + triangleArea(3.3, 4.5));
+        System.out.println("Base = 2.2 - Height = 4.01");
+        System.out.println("surface = " + triangleArea(2.2, 4.01));
+
+
+
 
         Print.subtitle("End of theory", '+', (byte) 80);
+    }
+
+
+    public static double triangleArea (double base, double height) {
+        return base * height / 2.0;
     }
 }
