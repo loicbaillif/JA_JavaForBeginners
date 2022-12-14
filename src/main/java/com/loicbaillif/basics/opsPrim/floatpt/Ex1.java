@@ -21,6 +21,8 @@ public class Ex1 {
 
         Scanner scanner = new Scanner(System.in);
         double tempCelsius = scanner.nextDouble();
+        double tempFahr = tempCelsius * 1.8 + 32;
+        System.out.println(tempFahr);
 
         Print.subtitle("End of exercise");
     }
