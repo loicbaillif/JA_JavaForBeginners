@@ -17,6 +17,8 @@ public class Ex4 {
 
         Scanner scanner = new Scanner(System.in);
         double x = scanner.nextDouble();
+        double result = ((x + 1) * x + 1) * x + 1;
+        System.out.println(result);
 
         Print.subtitle("End of exercise");
     }
