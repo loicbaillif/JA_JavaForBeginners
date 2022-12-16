@@ -2,6 +2,8 @@ package com.loicbaillif.basics.opsPrim.floatpt;
 
 import com.loicbaillif.tools.Print;
 
+import java.util.Scanner;
+
 public class Ex4 {
     /* https://hyperskill.org/learn/step/2186
      *
@@ -12,6 +14,9 @@ public class Ex4 {
      */
     public static void main() {
         Print.title("Floating - Exercise: Exponential Expression");
+
+        Scanner scanner = new Scanner(System.in);
+        double x = scanner.nextDouble();
 
         Print.subtitle("End of exercise");
     }
