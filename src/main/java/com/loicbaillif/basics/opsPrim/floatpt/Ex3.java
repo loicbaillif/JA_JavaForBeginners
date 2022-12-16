@@ -19,6 +19,12 @@ public class Ex3 {
     public static void main() {
         Print.title("Floating - Exercise: Evaluate an expression");
 
+        Scanner scanner = new Scanner(System.in);
+        double aInput = scanner.nextDouble();
+        double bInput = scanner.nextDouble();
+        double cInput = scanner.nextDouble();
+        double dInput = scanner.nextDouble();
+
         Print.subtitle("End of exercise");
     }
 }
