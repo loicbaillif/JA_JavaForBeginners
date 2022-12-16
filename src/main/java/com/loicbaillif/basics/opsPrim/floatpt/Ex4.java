@@ -17,8 +17,7 @@ public class Ex4 {
 
         Scanner scanner = new Scanner(System.in);
         double x = scanner.nextDouble();
-        double result = ((x + 1) * x + 1) * x + 1;
-        System.out.println(result);
+        System.out.println(((x + 1) * x + 1) * x + 1); // Horner's method
 
         Print.subtitle("End of exercise");
     }
