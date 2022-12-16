@@ -17,7 +17,7 @@ public class Ex2 {
         Scanner scanner = new Scanner(System.in);
         double distance = scanner.nextDouble();
         double duration = scanner.nextDouble();
-
+        System.out.println(distance / duration);
 
         Print.subtitle("End of exercise");
     }
