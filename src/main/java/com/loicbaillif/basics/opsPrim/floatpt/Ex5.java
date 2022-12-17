@@ -30,6 +30,8 @@ public class Ex5 {
         final double gravity = 9.8;
         double pressure = density * gravity * height;
 
+        System.out.println(pressure);
+
         Print.subtitle("End of exercise");
     }
 }
