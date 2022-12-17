@@ -18,8 +18,9 @@ public class Main {
         // com.loicbaillif.basics.strings.procStrings.Main.main();
         // com.loicbaillif.basics.strings.strBuilder.Main.main();
         // com.loicbaillif.addInst.ess.stand.random.Main.main();
+        // com.loicbaillif.basics.opsPrim.floatpt.Main.main();
 
         // Current chapter
-        com.loicbaillif.basics.opsPrim.floatpt.Main.main();
+        com.loicbaillif.addInst.ess.stand.math.Main.main();
     }
 }
