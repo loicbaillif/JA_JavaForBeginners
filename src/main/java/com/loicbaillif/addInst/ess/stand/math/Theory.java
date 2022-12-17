@@ -7,9 +7,13 @@ public class Theory {
         Print.title("Math library: theory");
 
         Print.subtitle("1) Basic and rounding methods");
-        System.out.println("***** Math.min:");
+        System.out.println("***** Math.min():");
         System.out.printf("\tMath.min(14, 42) = %d%n", Math.min(14, 42));
         System.out.printf("\tMath.min(-13, -37) = %d%n", Math.min(-13, -37));
+
+        System.out.println("***** Math.abs():");
+        System.out.printf("\tMath.abs(3 - 5) = %d%n", Math.abs(3 - 5));
+        System.out.println("\tMath.abs(-12.3) = " + Math.abs(-12.3));
 
         Print.subtitle("End of theory", '+', (byte) 80);
     }
