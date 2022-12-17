@@ -53,6 +53,13 @@ public class Theory {
         System.out.println("\tMath.toRadians(180) = " + Math.toRadians(180));
 
 
+        Print.subtitle("4) More ...");
+        System.out.println("***** Math.random()");
+        for (int i = 1; i <= 10; i++) {
+            System.out.printf("\t%d) Math.random() = %f%n", i, Math.random());
+        }
+
+
         Print.subtitle("End of theory", '+', (byte) 80);
     }
 }
