@@ -2,6 +2,8 @@ package com.loicbaillif.basics.opsPrim.floatpt;
 
 import com.loicbaillif.tools.Print;
 
+import java.util.Scanner;
+
 public class Ex6 {
     /* https://hyperskill.org/learn/step/2703
      *
@@ -12,6 +14,10 @@ public class Ex6 {
      */
     public static void main() {
         Print.title("Floating - Exercise: Difference between two doubles");
+
+        Scanner scanner = new Scanner(System.in);
+        double aInput = scanner.nextDouble();
+        double bInput = scanner.nextDouble();
 
         Print.subtitle("End of exercise");
     }
