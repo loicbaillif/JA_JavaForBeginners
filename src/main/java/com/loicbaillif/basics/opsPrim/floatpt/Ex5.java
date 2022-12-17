@@ -27,7 +27,8 @@ public class Ex5 {
         Scanner scanner = new Scanner(System.in);
         double density = scanner.nextDouble();
         double height = scanner.nextDouble();
-
+        final double gravity = 9.8;
+        double pressure = density * gravity * height;
 
         Print.subtitle("End of exercise");
     }
