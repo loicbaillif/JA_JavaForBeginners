@@ -18,6 +18,7 @@ public class Ex6 {
         Scanner scanner = new Scanner(System.in);
         double aInput = scanner.nextDouble();
         double bInput = scanner.nextDouble();
+        System.out.println(bInput - aInput);
 
         Print.subtitle("End of exercise");
     }
