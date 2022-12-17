@@ -58,6 +58,9 @@ public class Theory {
         for (int i = 1; i <= 10; i++) {
             System.out.printf("\t%d) Math.random() = %f%n", i, Math.random());
         }
+        System.out.println("***** Constants");
+        System.out.println("\tMath.PI = " + Math.PI);
+        System.out.println("\tMath.E = " + Math.E);
 
 
         Print.subtitle("End of theory", '+', (byte) 80);
