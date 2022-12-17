@@ -2,6 +2,8 @@ package com.loicbaillif.basics.opsPrim.floatpt;
 
 import com.loicbaillif.tools.Print;
 
+import java.util.Scanner;
+
 public class Ex5 {
     /* https://hyperskill.org/learn/step/5014
      *
@@ -21,6 +23,11 @@ public class Ex5 {
      */
     public static void main() {
         Print.title("Floating - Exercise: Liquid Pressure");
+
+        Scanner scanner = new Scanner(System.in);
+        double density = scanner.nextDouble();
+        double height = scanner.nextDouble();
+
 
         Print.subtitle("End of exercise");
     }
