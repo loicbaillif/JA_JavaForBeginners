@@ -6,6 +6,8 @@ public class Theory {
     public static void main() {
         Print.title("Math library: theory");
 
+        Print.subtitle("1) Basic and rounding methods");
+
         Print.subtitle("End of theory", '+', (byte) 80);
     }
 }
