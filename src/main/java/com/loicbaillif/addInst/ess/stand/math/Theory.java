@@ -19,6 +19,10 @@ public class Theory {
         System.out.println("\tMath.floor(12.3) = " + Math.floor(12.3));
         System.out.println("\tMath.floor(-3.2) = " + Math.floor(-3.2));
 
+        System.out.println("***** Math.ceil():");
+        System.out.println("\tMath.ceil(12.3) = " + Math.ceil(12.3));
+        System.out.println("\tMath.ceil(-3.2) = " + Math.ceil(-3.2));
+
         Print.subtitle("End of theory", '+', (byte) 80);
     }
 }
