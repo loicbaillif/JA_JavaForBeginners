@@ -31,6 +31,10 @@ public class Theory {
         System.out.println("***** Math.cbrt():");
         System.out.println("\tMath.cbrt(27) = " + Math.cbrt(27));
         System.out.println("\tMath.cbrt(3.375) = " + Math.cbrt(3.375));
+        System.out.println("***** Math.pow():");
+        System.out.println("\tMath.pow(3, 3) = " + Math.pow(3, 3));
+        System.out.println("\tMath.pow(16, 0.25) = " + Math.pow(16, 0.25));
+
 
         Print.subtitle("End of theory", '+', (byte) 80);
     }
