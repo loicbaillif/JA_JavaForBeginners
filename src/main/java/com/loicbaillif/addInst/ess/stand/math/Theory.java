@@ -42,6 +42,11 @@ public class Theory {
         System.out.println("\tMath.sin(Math.PI/4) = " + Math.sin(Math.PI/4));
         System.out.println("\tMath.sin(Math.PI/2) = " + Math.sin(Math.PI/2));
 
+        System.out.println("***** Math.cos()");
+        System.out.println("\tMath.cos(0) = " + Math.cos(0));
+        System.out.println("\tMath.cos(Math.PI/4) = " + Math.cos(Math.PI/4));
+        System.out.println("\tMath.cos(Math.PI/2) = " + Math.cos(Math.PI/2));
+
 
         Print.subtitle("End of theory", '+', (byte) 80);
     }
