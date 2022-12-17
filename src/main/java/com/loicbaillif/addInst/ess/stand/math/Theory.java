@@ -28,6 +28,9 @@ public class Theory {
         System.out.println("***** Math.sqrt():");
         System.out.println("\tMath.sqrt(25) = " + Math.sqrt(25));
         System.out.println("\tMath.sqrt(2.25) = " + Math.sqrt(2.25));
+        System.out.println("***** Math.cbrt():");
+        System.out.println("\tMath.cbrt(27) = " + Math.cbrt(27));
+        System.out.println("\tMath.cbrt(3.375) = " + Math.cbrt(3.375));
 
         Print.subtitle("End of theory", '+', (byte) 80);
     }
