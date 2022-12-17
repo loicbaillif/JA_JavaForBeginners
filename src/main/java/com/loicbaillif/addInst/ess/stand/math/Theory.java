@@ -36,6 +36,13 @@ public class Theory {
         System.out.println("\tMath.pow(16, 0.25) = " + Math.pow(16, 0.25));
 
 
+        Print.subtitle("3) Trigonometric functions");
+        System.out.println("***** Math.sin()");
+        System.out.println("\tMath.sin(0) = " + Math.sin(0));
+        System.out.println("\tMath.sin(Math.PI/4) = " + Math.sin(Math.PI/4));
+        System.out.println("\tMath.sin(Math.PI/2) = " + Math.sin(Math.PI/2));
+
+
         Print.subtitle("End of theory", '+', (byte) 80);
     }
 }
