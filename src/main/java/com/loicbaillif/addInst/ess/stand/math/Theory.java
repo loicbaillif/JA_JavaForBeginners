@@ -47,6 +47,11 @@ public class Theory {
         System.out.println("\tMath.cos(Math.PI/4) = " + Math.cos(Math.PI/4));
         System.out.println("\tMath.cos(Math.PI/2) = " + Math.cos(Math.PI/2));
 
+        System.out.println("***** Math.toRadians()");
+        System.out.println("\tMath.toRadians(60) = " + Math.toRadians(60));
+        System.out.println("\tMath.toRadians(120) = " + Math.toRadians(120));
+        System.out.println("\tMath.toRadians(180) = " + Math.toRadians(180));
+
 
         Print.subtitle("End of theory", '+', (byte) 80);
     }
