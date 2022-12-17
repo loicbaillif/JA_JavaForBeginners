@@ -63,6 +63,10 @@ public class Theory {
         System.out.println("\tMath.E = " + Math.E);
 
 
+        Print.subtitle("5) Length of hypotenuse");
+        System.out.println("Math.hypot(4, 3) = " + Math.hypot(4, 3));
+
+
         Print.subtitle("End of theory", '+', (byte) 80);
     }
 }
