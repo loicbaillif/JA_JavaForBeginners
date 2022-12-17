@@ -23,6 +23,12 @@ public class Theory {
         System.out.println("\tMath.ceil(12.3) = " + Math.ceil(12.3));
         System.out.println("\tMath.ceil(-3.2) = " + Math.ceil(-3.2));
 
+
+        Print.subtitle("2) Exponential functions");
+        System.out.println("***** Math.sqrt():");
+        System.out.println("\tMath.sqrt(25) = " + Math.sqrt(25));
+        System.out.println("\tMath.sqrt(2.25) = " + Math.sqrt(2.25));
+
         Print.subtitle("End of theory", '+', (byte) 80);
     }
 }
