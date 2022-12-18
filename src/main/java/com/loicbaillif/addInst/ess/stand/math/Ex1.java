@@ -35,6 +35,9 @@ public class Ex1 {
         double lengthsProduct = Math.sqrt(v1x * v1x + v1y * v1y) *
                 Math.sqrt(v2x * v2x + v2y * v2y);
 
+        double resultRad = Math.acos(scalarProduct / lengthsProduct);
+
+        System.out.println(Math.toDegrees(resultRad));
 
         Print.subtitle("End of exercise");
     }
