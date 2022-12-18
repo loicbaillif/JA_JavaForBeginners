@@ -39,7 +39,7 @@ public class Ex2 {
         double semiP = (sideA + sideB + sideC) / 2.0;
         double area = Math.sqrt(semiP * (semiP - sideA) * (semiP - sideB) *
                 (semiP - sideC));
-
+        System.out.println(area);
 
         Print.subtitle("End of exercise");
     }
