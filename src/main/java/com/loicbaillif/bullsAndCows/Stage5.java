@@ -28,14 +28,13 @@ public class Stage5 {
 
     // Static variables
     static boolean codeFound = false;
-    static String nanoTime = getNewNano();
-    static String randomSeq;
+    static String randomSeq = getRandomInt();
     static String startGuessing = "Okay, let's start a game!";
     static String victory = "Congratulations! You guessed the secret code.";
-    static int nanoTimeLength = nanoTime.length();
+    static int randomSeqLength = randomSeq.length();
     static int currentCodeSize = 0;
     static int currentTurn = 1;
-    static int pointerPos = 0; // Pointer in nanoTime String
+    static int pointerPos = 0; // Pointer in randomSeq String
     static StringBuilder secretCode = new StringBuilder();
 
 
@@ -62,32 +61,25 @@ public class Stage5 {
 
         if (currentCodeSize == 0) {
             // First digit cannot be a 0
-            while (nanoTime.charAt(pointerPos) == '0') {
+            while (randomSeq.charAt(pointerPos) == '0') {
                 pointerPos++;
             }
         }
 
-        String currentDigit = String.valueOf(nanoTime.charAt(pointerPos));
+        String currentDigit = String.valueOf(randomSeq.charAt(pointerPos));
 
         while (secretCode.indexOf(currentDigit) != -1) {
             pointerPos++;
-            if (pointerPos >= nanoTimeLength) {
-                nanoTime = getNewNano();
+            if (pointerPos >= randomSeqLength) {
+                randomSeq = getRandomInt();
                 pointerPos = 0;
             }
-            currentDigit = String.valueOf(nanoTime.charAt(pointerPos));
+            currentDigit = String.valueOf(randomSeq.charAt(pointerPos));
         }
 
         return currentDigit;
     }
 
-
-    public static String getNewNano() {
-        // Generates a new pseudo-random int, based on nanoTime
-        StringBuilder sb1 = new StringBuilder();
-        sb1.append(System.nanoTime()).reverse();
-        return sb1.toString();
-    }
 
     public static String getRandomInt() {
         // Generates a new pseudo-random int, 8 digits based on Math.random()
@@ -100,7 +92,6 @@ public class Stage5 {
         // user/player to provide requested length (1 to 10)
 
         // Reset variables
-        nanoTime = getNewNano();
         randomSeq = getRandomInt();
         secretCode = new StringBuilder();
         currentCodeSize = 0;
