@@ -31,6 +31,10 @@ public class Ex1 {
         int v2x = scanner.nextInt();
         int v2y = scanner.nextInt();
 
+        int scalarProduct = v1x * v2x + v1y * v2y;
+        double lengthsProduct = Math.sqrt(v1x * v1x + v1y * v1y) *
+                Math.sqrt(v2x * v2x + v2y * v2y);
+
 
         Print.subtitle("End of exercise");
     }
