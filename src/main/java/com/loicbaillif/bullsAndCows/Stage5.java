@@ -29,6 +29,7 @@ public class Stage5 {
     // Static variables
     static boolean codeFound = false;
     static String nanoTime = getNewNano();
+    static String randomSeq;
     static String startGuessing = "Okay, let's start a game!";
     static String victory = "Congratulations! You guessed the secret code.";
     static int nanoTimeLength = nanoTime.length();
@@ -88,6 +89,11 @@ public class Stage5 {
         return sb1.toString();
     }
 
+    public static String getRandomInt() {
+        // Generates a new pseudo-random int, 8 digits based on Math.random()
+        return Integer.toString((int) (Math.random() * 100_000_000));
+    }
+
 
     public static void getSecretCode(Scanner scanner) {
         // This method will generate a pseudo-random code, after asking
@@ -95,6 +101,7 @@ public class Stage5 {
 
         // Reset variables
         nanoTime = getNewNano();
+        randomSeq = getRandomInt();
         secretCode = new StringBuilder();
         currentCodeSize = 0;
 
