@@ -31,6 +31,12 @@ public class Ex2 {
     public static void main() {
         Print.title("Maths library - Exercise: Heron's formula");
 
+        Scanner scanner = new Scanner(System.in);
+        int sideA = scanner.nextInt();
+        int sideB = scanner.nextInt();
+        int sideC = scanner.nextInt();
+
+
         Print.subtitle("End of exercise");
     }
 }
