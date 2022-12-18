@@ -36,6 +36,10 @@ public class Ex2 {
         int sideB = scanner.nextInt();
         int sideC = scanner.nextInt();
 
+        double semiP = (sideA + sideB + sideC) / 2.0;
+        double area = Math.sqrt(semiP * (semiP - sideA) * (semiP - sideB) *
+                (semiP - sideC));
+
 
         Print.subtitle("End of exercise");
     }
