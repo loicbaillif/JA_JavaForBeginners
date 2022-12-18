@@ -2,6 +2,8 @@ package com.loicbaillif.addInst.ess.stand.math;
 
 import com.loicbaillif.tools.Print;
 
+import java.util.Scanner;
+
 public class Ex1 {
     /* https://hyperskill.org/learn/step/2240
      *
@@ -22,6 +24,12 @@ public class Ex1 {
     public static void main() {
         Print.title("Maths library - Exercise: The angle between vectors");
 
+        Scanner scanner = new Scanner(System.in);
+        // Vector v1 (v1x, v1y) - Vector v2 (v2x, v2y)
+        int v1x = scanner.nextInt();
+        int v1y = scanner.nextInt();
+        int v2x = scanner.nextInt();
+        int v2y = scanner.nextInt();
 
 
         Print.subtitle("End of exercise");
