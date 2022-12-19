@@ -36,7 +36,11 @@ public class Stage6 {
 
     // Static variables
     static boolean codeFound = false;
+    static String codeAlphabet = "0123456789abcdefghijklmnopqrstuvwxyz";
     static String randomSeq = getRandomInt();
+    static String requestCodeLength = "Input the length of the secret code:";
+    static String requestCodeSymbols =
+            "Input the number of possible symbols in the code";
     static String startGuessing = "Okay, let's start a game!";
     static String victory = "Congratulations! You guessed the secret code.";
     static int randomSeqLength = randomSeq.length();
@@ -104,9 +108,12 @@ public class Stage6 {
         secretCode = new StringBuilder();
         currentCodeSize = 0;
 
-        System.out.println("Please, enter the secret code's length:");
-
+        System.out.println(requestCodeLength);
         int codeSize = scanner.nextInt();
+        System.out.println(requestCodeSymbols);
+        int codeSymbols = scanner.nextInt();
+
+
         if (codeSize > 10 || codeSize < 1) {
             System.out.printf(
                     "Error: can't generate a secret number with a " +
