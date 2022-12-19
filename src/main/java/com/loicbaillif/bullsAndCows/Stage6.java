@@ -71,13 +71,6 @@ public class Stage6 {
 
     public static String getDigit() {
 
-        if (currentCodeSize == 0) {
-            // First digit cannot be a 0
-            while (randomSeq.charAt(pointerPos) == '0') {
-                pointerPos++;
-            }
-        }
-
         String currentDigit = String.valueOf(randomSeq.charAt(pointerPos));
 
         while (secretCode.indexOf(currentDigit) != -1) {
@@ -114,7 +107,7 @@ public class Stage6 {
         int codeSymbols = scanner.nextInt();
 
 
-        if (codeSize > 10 || codeSize < 1) {
+        if (codeSize > 36 || codeSize < 1) {
             System.out.printf(
                     "Error: can't generate a secret number with a " +
                             "length of %d because there aren't enough unique digits.",
