@@ -45,6 +45,7 @@ public class Stage6 {
     static String victory = "Congratulations! You guessed the secret code.";
     static int currentCodeSize = 0;
     static int currentTurn = 1;
+    static int symbolsRange = 0;
     static StringBuilder secretCode = new StringBuilder();
 
 
@@ -92,7 +93,7 @@ public class Stage6 {
         System.out.println(requestCodeLength);
         int codeSize = scanner.nextInt();
         System.out.println(requestCodeSymbols);
-        int symbolsRange = scanner.nextInt();
+        symbolsRange = scanner.nextInt();
 
 
         if (codeSize > 36 || codeSize < 1 || codeSize > symbolsRange) {
@@ -126,7 +127,24 @@ public class Stage6 {
 
 
     public static String hideCode() {
-        return "****";
+        StringBuilder codeHidden = new StringBuilder();
+
+        codeHidden.append("*".repeat(Math.max(0, currentCodeSize)));
+
+        if (symbolsRange <= 10) {
+            codeHidden.append(" (0-");
+            codeHidden.append(symbolsRange - 1);
+        } else {
+            codeHidden.append(" (0-9, a");
+            if (symbolsRange > 11) {
+                codeHidden.append("-");
+                codeHidden.append(codeAlphabet.charAt(symbolsRange - 1));
+            }
+        }
+
+        codeHidden.append(").");
+
+        return codeHidden.toString();
     }
 
 
