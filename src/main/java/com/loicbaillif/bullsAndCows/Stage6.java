@@ -37,13 +37,11 @@ public class Stage6 {
     // Static variables
     static boolean codeFound = false;
     static String codeAlphabet = "0123456789abcdefghijklmnopqrstuvwxyz";
-    static String randomSeq = getRandomInt();
     static String requestCodeLength = "Input the length of the secret code:";
     static String requestCodeSymbols =
             "Input the number of possible symbols in the code";
     static String startGuessing = "Okay, let's start a game!";
     static String victory = "Congratulations! You guessed the secret code.";
-    static int randomSeqLength = randomSeq.length();
     static int currentCodeSize = 0;
     static int currentTurn = 1;
     static int pointerPos = 0; // Pointer in randomSeq String
@@ -69,42 +67,28 @@ public class Stage6 {
     }
 
 
-    public static String getDigit() {
+    public static String getDigit(int symbolsRange) {
 
-        String currentDigit = String.valueOf(randomSeq.charAt(pointerPos));
+        String currentDigit = "3";
 
-        while (secretCode.indexOf(currentDigit) != -1) {
-            pointerPos++;
-            if (pointerPos >= randomSeqLength) {
-                randomSeq = getRandomInt();
-                pointerPos = 0;
-            }
-            currentDigit = String.valueOf(randomSeq.charAt(pointerPos));
-        }
+
 
         return currentDigit;
     }
 
 
-    public static String getRandomInt() {
-        // Generates a new pseudo-random int, 8 digits based on Math.random()
-        return Integer.toString((int) (Math.random() * 100_000_000));
-    }
-
-
     public static void getSecretCode(Scanner scanner) {
         // This method will generate a pseudo-random code, after asking
-        // user/player to provide requested length (1 to 10)
+        // user/player to provide requested length (1 to 36)
 
         // Reset variables
-        randomSeq = getRandomInt();
         secretCode = new StringBuilder();
         currentCodeSize = 0;
 
         System.out.println(requestCodeLength);
         int codeSize = scanner.nextInt();
         System.out.println(requestCodeSymbols);
-        int codeSymbols = scanner.nextInt();
+        int symbolsRange = scanner.nextInt();
 
 
         if (codeSize > 36 || codeSize < 1) {
@@ -114,7 +98,7 @@ public class Stage6 {
                     codeSize);
         } else {
             while (currentCodeSize < codeSize) {
-                secretCode.append(getDigit());
+                secretCode.append(getDigit(symbolsRange));
                 currentCodeSize++;
             }
         }
