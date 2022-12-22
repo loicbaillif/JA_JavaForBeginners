@@ -44,7 +44,6 @@ public class Stage6 {
     static String victory = "Congratulations! You guessed the secret code.";
     static int currentCodeSize = 0;
     static int currentTurn = 1;
-    static int pointerPos = 0; // Pointer in randomSeq String
     static StringBuilder secretCode = new StringBuilder();
 
 
@@ -68,12 +67,15 @@ public class Stage6 {
 
 
     public static String getDigit(int symbolsRange) {
+        String newDigit;
+        int indexInAlphabet;
 
-        String currentDigit = "3";
+        do {
+            indexInAlphabet = (int) (Math.random() * symbolsRange);
+            newDigit = String.valueOf(codeAlphabet.charAt(indexInAlphabet));
+        } while (secretCode.indexOf(newDigit) != -1);
 
-
-
-        return currentDigit;
+        return newDigit;
     }
 
 
