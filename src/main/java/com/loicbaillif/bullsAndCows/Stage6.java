@@ -95,7 +95,7 @@ public class Stage6 {
         int symbolsRange = scanner.nextInt();
 
 
-        if (codeSize > 36 || codeSize < 1) {
+        if (codeSize > 36 || codeSize < 1 || codeSize > symbolsRange) {
             System.out.printf(
                     "Error: can't generate a secret number with a " +
                             "length of %d because there aren't enough unique digits.",
