@@ -37,6 +37,7 @@ public class Stage6 {
     // Static variables
     static boolean codeFound = false;
     static String codeAlphabet = "0123456789abcdefghijklmnopqrstuvwxyz";
+    static String codePrepared = "The secred code is prepared: ";
     static String requestCodeLength = "Input the length of the secret code:";
     static String requestCodeSymbols =
             "Input the number of possible symbols in the code";
@@ -55,14 +56,13 @@ public class Stage6 {
 
         getSecretCode(scanner);
         System.out.println(secretCode); // DEBUG
+        System.out.println(codePrepared + hideCode());
 
-        /*
         System.out.println(startGuessing);
         do {
             codeFound = playTurn();
         } while (!codeFound);
         System.out.println(victory);
-        */
 
         Print.subtitle("End of Stage 4", '+', (byte) 80);
     }
@@ -122,6 +122,11 @@ public class Stage6 {
         }
 
         return new byte[]{nbBulls, nbCows};
+    }
+
+
+    public static String hideCode() {
+        return "****";
     }
 
 
