@@ -54,13 +54,15 @@ public class Stage6 {
         Scanner scanner = new Scanner(System.in);
 
         getSecretCode(scanner);
-        // System.out.println(secretCode); // DEBUG
+        System.out.println(secretCode); // DEBUG
+
+        /*
         System.out.println(startGuessing);
         do {
             codeFound = playTurn();
         } while (!codeFound);
         System.out.println(victory);
-
+        */
 
         Print.subtitle("End of Stage 4", '+', (byte) 80);
     }
