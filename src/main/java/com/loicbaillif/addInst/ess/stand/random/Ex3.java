@@ -2,6 +2,7 @@ package com.loicbaillif.addInst.ess.stand.random;
 
 import com.loicbaillif.tools.Print;
 
+import java.util.Random;
 import java.util.Scanner;
 
 public class Ex3 {
@@ -27,6 +28,12 @@ public class Ex3 {
         int aInput = scanner.nextInt();
         int bInput = scanner.nextInt();
         int sum = 0;
+
+        Random r1 = new Random(aInput + bInput);
+        while (nInput > 0) {
+            sum += r1.nextInt(bInput - aInput + 1) + aInput;
+            nInput--;
+        }
 
         Print.subtitle("End of exercise", '*', (byte) 80);
     }
