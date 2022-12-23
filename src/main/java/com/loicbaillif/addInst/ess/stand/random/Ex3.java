@@ -2,6 +2,8 @@ package com.loicbaillif.addInst.ess.stand.random;
 
 import com.loicbaillif.tools.Print;
 
+import java.util.Scanner;
+
 public class Ex3 {
     /* https://hyperskill.org/learn/step/4939
      *
@@ -20,7 +22,11 @@ public class Ex3 {
     public static void main() {
         Print.title("Random - Exercise: Generate random numbers");
 
-
+        Scanner scanner = new Scanner(System.in);
+        int nInput = scanner.nextInt();
+        int aInput = scanner.nextInt();
+        int bInput = scanner.nextInt();
+        int sum = 0;
 
         Print.subtitle("End of exercise", '*', (byte) 80);
     }
