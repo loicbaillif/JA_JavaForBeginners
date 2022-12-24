@@ -28,6 +28,8 @@ public class Ex7 {
         // a * x + b = c  <=>  x = (c - b) / a
         xOutput = (cInput - bInput) / aInput;
 
+        System.out.println(xOutput);
+
         Print.subtitle("End of exercise");
     }
 }
