@@ -2,14 +2,7 @@ package com.loicbaillif.errless.except.hier;
 
 import com.loicbaillif.tools.Print;
 
-import java.io.IOException;
-import java.io.UncheckedIOException;
-
-public class Ex1 extends UncheckedIOException {
-    public Ex1(IOException cause) {
-        super(cause);
-    }
-
+public class Ex1 {
     /* https://hyperskill.org/learn/step/16172
      *
      * ***** UncheckedException *****
@@ -21,8 +14,15 @@ public class Ex1 extends UncheckedIOException {
     public static void main() {
         Print.title("UncheckedException");
 
-
+        UncheckedException uncheckedException = new UncheckedException();
+        System.out.println(uncheckedException instanceof RuntimeException);
 
         Print.subtitle("End of exercise", '+', (byte) 80);
+    }
+}
+
+class UncheckedException extends RuntimeException {
+    public UncheckedException() {
+        super();
     }
 }
