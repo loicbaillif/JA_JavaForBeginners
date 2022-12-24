@@ -35,6 +35,8 @@ public class Ex3 {
             nInput--;
         }
 
+        System.out.println(sum);
+
         Print.subtitle("End of exercise", '*', (byte) 80);
     }
 }
