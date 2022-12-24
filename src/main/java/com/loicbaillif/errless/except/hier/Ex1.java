@@ -2,7 +2,14 @@ package com.loicbaillif.errless.except.hier;
 
 import com.loicbaillif.tools.Print;
 
-public class Ex1 {
+import java.io.IOException;
+import java.io.UncheckedIOException;
+
+public class Ex1 extends UncheckedIOException {
+    public Ex1(IOException cause) {
+        super(cause);
+    }
+
     /* https://hyperskill.org/learn/step/16172
      *
      * ***** UncheckedException *****
