@@ -25,6 +25,9 @@ public class Ex7 {
         double cInput = scanner.nextDouble();
         double xOutput;
 
+        // a * x + b = c  <=>  x = (c - b) / a
+        xOutput = (cInput - bInput) / aInput;
+
         Print.subtitle("End of exercise");
     }
 }
