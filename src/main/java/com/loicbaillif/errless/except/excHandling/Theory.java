@@ -42,7 +42,8 @@ public class Theory {
         Print.subtitle("4) finally block");
         try {
             System.out.println("Inside the try block");
-            Integer.parseInt("12a");
+            // Integer.parseInt("12a");
+            System.out.println(2 / 0);
         } catch (ArithmeticException e) {
             System.out.println("This is an arithmetic exception");
         } catch (Exception e) {
