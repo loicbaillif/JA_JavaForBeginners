@@ -39,6 +39,20 @@ public class Theory {
             System.out.println("General exception caught");
         }
 
+        Print.subtitle("4) finally block");
+        try {
+            System.out.println("Inside the try block");
+            Integer.parseInt("12a");
+        } catch (ArithmeticException e) {
+            System.out.println("This is an arithmetic exception");
+        } catch (Exception e) {
+            System.out.println("General exception caught");
+            System.out.println(e.getMessage());
+            System.out.println(e.toString());
+        } finally {
+            System.out.println("Exception or not, finally is executed");
+        }
+
         Print.subtitle("End of Theory", '+', (byte) 80);
     }
 }
