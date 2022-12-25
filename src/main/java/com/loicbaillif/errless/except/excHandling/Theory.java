@@ -10,11 +10,13 @@ public class Theory {
         try {
             // Code which might raise an exception
             System.out.println("I might raise an exception");
-            int c = 3 / 0;
+            int c = 3 / 1;
+            System.out.println("I raised no exception");
         } catch (Exception e) {
             // Code to deal with the exception
             System.out.println("I am executed because of an exception");
         }
+        System.out.println("try-catch block finished");
 
         Print.subtitle("End of Theory", '+', (byte) 80);
     }
