@@ -18,6 +18,13 @@ public class Theory {
         }
         System.out.println("try-catch block finished");
 
+        Print.subtitle("2) Getting info about an exception");
+        try {
+            double d = 2 / 0;
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+
         Print.subtitle("End of Theory", '+', (byte) 80);
     }
 }
