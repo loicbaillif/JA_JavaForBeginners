@@ -2,6 +2,11 @@ package com.loicbaillif.errless.except.excHandling;
 
 import com.loicbaillif.tools.Print;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.Scanner;
+
 public class Theory {
     public static void main() {
         Print.title("Theory - Exception Handling", '+');
@@ -23,6 +28,15 @@ public class Theory {
             double d = 2 / 0;
         } catch (Exception e) {
             System.out.println(e.getMessage());
+        }
+
+        Print.subtitle("3) Catching multiple exceptions");
+        try {
+            Scanner s2 = new Scanner(new File("file.txt"));
+        } catch (FileNotFoundException e) {
+            System.out.println("File not found Exception caught");
+        } catch (Exception e) {
+            System.out.println("General exception caught");
         }
 
         Print.subtitle("End of Theory", '+', (byte) 80);
