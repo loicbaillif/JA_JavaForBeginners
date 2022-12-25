@@ -2,6 +2,8 @@ package com.loicbaillif.addInst.ess.stand.math;
 
 import com.loicbaillif.tools.Print;
 
+import java.util.Scanner;
+
 public class Ex3 {
     /* https://hyperskill.org/learn/step/2237
      *
@@ -18,6 +20,11 @@ public class Ex3 {
 
     public static void main() {
         Print.title("Maths library - Exercise: Quadratic equation");
+
+        Scanner scanner = new Scanner(System.in);
+        double aInput = scanner.nextDouble();
+        double bInput = scanner.nextDouble();
+        double cInput = scanner.nextDouble();
 
         Print.subtitle("End of exercise");
     }
