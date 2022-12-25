@@ -25,6 +25,9 @@ public class Ex3 {
         double aInput = scanner.nextDouble();
         double bInput = scanner.nextDouble();
         double cInput = scanner.nextDouble();
+        double delta = bInput * bInput - 4 * aInput * cInput;
+        double r1 = (-bInput - Math.sqrt(delta)) / (2 * aInput);
+        double r2 = (-bInput + Math.sqrt(delta)) / (2 * aInput);
 
         Print.subtitle("End of exercise");
     }
