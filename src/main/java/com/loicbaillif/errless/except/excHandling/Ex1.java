@@ -17,7 +17,7 @@ public class Ex1 {
          */
         Print.title("Exception Handling - Exercise: String to double");
 
-        double d1 = convertStringToDouble("123");
+        double d1 = convertStringToDouble("123a");
         System.out.println(d1 / 10);
 
         Print.subtitle("End of exercise", '+', (byte) 80);
