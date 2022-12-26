@@ -24,6 +24,10 @@ public class Ex1 {
 
 
     public static double convertStringToDouble(String input) {
-        return Double.parseDouble(input);
+        try {
+            return Double.parseDouble(input);
+        } catch (NumberFormatException e) {
+            return 0;
+        }
     }
 }
