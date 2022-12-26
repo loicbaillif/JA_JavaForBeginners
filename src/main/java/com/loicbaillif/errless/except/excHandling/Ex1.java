@@ -28,6 +28,9 @@ public class Ex1 {
         try {
             return Double.parseDouble(input);
         } catch (NumberFormatException e) {
+            System.out.println(input + " is not a valid double.");
+            return 0;
+        } catch (Exception e) {
             return 0;
         }
     }
