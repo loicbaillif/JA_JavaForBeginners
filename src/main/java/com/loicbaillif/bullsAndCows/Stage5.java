@@ -5,34 +5,36 @@ import com.loicbaillif.tools.Print;
 import java.util.Objects;
 import java.util.Scanner;
 
-public class Stage4 {
-    /* https://hyperskill.org/projects/53/stages/290/implement
+public class Stage5 {
+    /* https://hyperskill.org/projects/53/stages/291/implement
      *
-     * Stage 4/7 : Game time!
+     * Stage 5/7 : Improve the code generator
      *
-     * In this stage, you should combine all the previous parts into a simple
-     * playable version of the "Bulls and Cows" game. First, prompt the player
-     * to input the length of the secret code. The length will determine the
-     * difficulty level for the current game session. The program should
-     * generate a secret code of the given length. Remember that it should
-     * consist of unique numbers.
+     * DESCRIPTION
+     * The algorithm suggested for generating the secret code in the previous
+     * stage was really a “reinvention of the wheel”. Java already has the
+     * tools for generating random numbers! Research some common pseudo-random
+     * generation methods such as Math.random() and other methods from the
+     * Random class. Choose the method you like and use it to rewrite the
+     * secret code generation.
+     * Nothing else is supposed to change at this stage: the program asks for
+     * the length, generates a secret code, and then receives and grades the
+     * attempts until the code is guessed. Your task here is to rewrite the
+     * code generator without breaking the existing code.
      *
-     * Then, the game starts and the program prompts the player to guess
-     * the code. When the player inputs a number, the program should grade it
-     * in bulls and cows. The game goes on until the code is guessed, that is,
-     * until the number of bulls is equal to the number of digits in the code.
-     * When the game ends, the program should finish its execution.
+     * OBJECTIVE
+     * In this stage, rewrite the secret code generator using a suitable Java method.
      */
 
     // Static variables
     static boolean codeFound = false;
-    static String nanoTime = getNewNano();
+    static String randomSeq = getRandomInt();
     static String startGuessing = "Okay, let's start a game!";
     static String victory = "Congratulations! You guessed the secret code.";
-    static int nanoTimeLength = nanoTime.length();
+    static int randomSeqLength = randomSeq.length();
     static int currentCodeSize = 0;
     static int currentTurn = 1;
-    static int pointerPos = 0; // Pointer in nanoTime String
+    static int pointerPos = 0; // Pointer in randomSeq String
     static StringBuilder secretCode = new StringBuilder();
 
 
@@ -59,31 +61,29 @@ public class Stage4 {
 
         if (currentCodeSize == 0) {
             // First digit cannot be a 0
-            while (nanoTime.charAt(pointerPos) == '0') {
+            while (randomSeq.charAt(pointerPos) == '0') {
                 pointerPos++;
             }
         }
 
-        String currentDigit = String.valueOf(nanoTime.charAt(pointerPos));
+        String currentDigit = String.valueOf(randomSeq.charAt(pointerPos));
 
         while (secretCode.indexOf(currentDigit) != -1) {
             pointerPos++;
-            if (pointerPos >= nanoTimeLength) {
-                nanoTime = getNewNano();
+            if (pointerPos >= randomSeqLength) {
+                randomSeq = getRandomInt();
                 pointerPos = 0;
             }
-            currentDigit = String.valueOf(nanoTime.charAt(pointerPos));
+            currentDigit = String.valueOf(randomSeq.charAt(pointerPos));
         }
 
         return currentDigit;
     }
 
 
-    public static String getNewNano() {
-        // Generates a new pseudo-random int, based on nanoTime
-        StringBuilder sb1 = new StringBuilder();
-        sb1.append(System.nanoTime()).reverse();
-        return sb1.toString();
+    public static String getRandomInt() {
+        // Generates a new pseudo-random int, 8 digits based on Math.random()
+        return Integer.toString((int) (Math.random() * 100_000_000));
     }
 
 
@@ -92,7 +92,7 @@ public class Stage4 {
         // user/player to provide requested length (1 to 10)
 
         // Reset variables
-        nanoTime = getNewNano();
+        randomSeq = getRandomInt();
         secretCode = new StringBuilder();
         currentCodeSize = 0;
 

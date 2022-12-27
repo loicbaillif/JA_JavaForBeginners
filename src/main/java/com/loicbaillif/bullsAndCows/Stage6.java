@@ -5,108 +5,105 @@ import com.loicbaillif.tools.Print;
 import java.util.Objects;
 import java.util.Scanner;
 
-public class Stage4 {
-    /* https://hyperskill.org/projects/53/stages/290/implement
+public class Stage6 {
+    /* https://hyperskill.org/projects/53/stages/292/implement
      *
-     * Stage 4/7 : Game time!
+     * Stage 6/7 : New Level
      *
-     * In this stage, you should combine all the previous parts into a simple
-     * playable version of the "Bulls and Cows" game. First, prompt the player
-     * to input the length of the secret code. The length will determine the
-     * difficulty level for the current game session. The program should
-     * generate a secret code of the given length. Remember that it should
-     * consist of unique numbers.
+     * DESCRIPTION
+     * Some players need a challenge, so let's make the secret code in the
+     * game harder to guess. Add support for more than 10 symbols by adding
+     * letters. Now, the secret code can contain the numbers 0-9 and the
+     * lowercase Latin characters a-z. The new maximum length for the code
+     * is 36. Note that the length of the secret word may not match the number
+     * of possible characters in the secret code, so you should request input
+     * twice: once for the secret code length and once for the number
+     * of possible characters.
      *
-     * Then, the game starts and the program prompts the player to guess
-     * the code. When the player inputs a number, the program should grade it
-     * in bulls and cows. The game goes on until the code is guessed, that is,
-     * until the number of bulls is equal to the number of digits in the code.
-     * When the game ends, the program should finish its execution.
+     * Also, since a secret code is not a number anymore, the symbol 0 should
+     * be allowed as the first character in a secret code.
+     *
+     * OBJECTIVES
+     * In this step, your program should:
+     *      1. Ask for the length of the secret code.
+     *      2. Ask for the range of possible characters in the secret code.
+     *      3. Generate a secret code using numbers and characters. This time,
+     *      you should also print the secret code using * characters and print
+     *      which characters were used to generate the secret code.
+     *      4. Function as a fully playable game.
+     *
      */
 
     // Static variables
     static boolean codeFound = false;
-    static String nanoTime = getNewNano();
+    static String codeAlphabet = "0123456789abcdefghijklmnopqrstuvwxyz";
+    static String codePrepared = "The secred code is prepared: ";
+    static String requestCodeLength = "Input the length of the secret code:";
+    static String requestCodeSymbols =
+            "Input the number of possible symbols in the code";
     static String startGuessing = "Okay, let's start a game!";
     static String victory = "Congratulations! You guessed the secret code.";
-    static int nanoTimeLength = nanoTime.length();
     static int currentCodeSize = 0;
     static int currentTurn = 1;
-    static int pointerPos = 0; // Pointer in nanoTime String
+    static int symbolsRange = 0;
     static StringBuilder secretCode = new StringBuilder();
 
 
 
     public static void main() {
-        Print.title("Stage 4: Game Time", '+');
+        Print.title("Stage 6: New Level", '+');
 
         Scanner scanner = new Scanner(System.in);
 
         getSecretCode(scanner);
-        // System.out.println(secretCode); // DEBUG
+        System.out.println(secretCode); // DEBUG
+        System.out.println(codePrepared + hideCode());
+
         System.out.println(startGuessing);
         do {
             codeFound = playTurn();
         } while (!codeFound);
         System.out.println(victory);
 
-
         Print.subtitle("End of Stage 4", '+', (byte) 80);
     }
 
 
-    public static String getDigit() {
+    public static String getDigit(int symbolsRange) {
+        String newDigit;
+        int indexInAlphabet;
 
-        if (currentCodeSize == 0) {
-            // First digit cannot be a 0
-            while (nanoTime.charAt(pointerPos) == '0') {
-                pointerPos++;
-            }
-        }
+        do {
+            indexInAlphabet = (int) (Math.random() * symbolsRange);
+            newDigit = String.valueOf(codeAlphabet.charAt(indexInAlphabet));
+        } while (secretCode.indexOf(newDigit) != -1);
 
-        String currentDigit = String.valueOf(nanoTime.charAt(pointerPos));
-
-        while (secretCode.indexOf(currentDigit) != -1) {
-            pointerPos++;
-            if (pointerPos >= nanoTimeLength) {
-                nanoTime = getNewNano();
-                pointerPos = 0;
-            }
-            currentDigit = String.valueOf(nanoTime.charAt(pointerPos));
-        }
-
-        return currentDigit;
-    }
-
-
-    public static String getNewNano() {
-        // Generates a new pseudo-random int, based on nanoTime
-        StringBuilder sb1 = new StringBuilder();
-        sb1.append(System.nanoTime()).reverse();
-        return sb1.toString();
+        return newDigit;
     }
 
 
     public static void getSecretCode(Scanner scanner) {
         // This method will generate a pseudo-random code, after asking
-        // user/player to provide requested length (1 to 10)
+        // user/player to provide requested length (1 to 36)
 
         // Reset variables
-        nanoTime = getNewNano();
         secretCode = new StringBuilder();
         currentCodeSize = 0;
 
-        System.out.println("Please, enter the secret code's length:");
-
+        System.out.println(requestCodeLength);
         int codeSize = scanner.nextInt();
-        if (codeSize > 10 || codeSize < 1) {
+        System.out.println(requestCodeSymbols);
+        symbolsRange = scanner.nextInt();
+
+
+        if (codeSize > 36 || codeSize < 1 || codeSize > symbolsRange) {
             System.out.printf(
                     "Error: can't generate a secret number with a " +
                             "length of %d because there aren't enough unique digits.",
                     codeSize);
         } else {
             while (currentCodeSize < codeSize) {
-                secretCode.append(getDigit());
+                secretCode.append(getDigit(symbolsRange));
                 currentCodeSize++;
             }
         }
@@ -126,6 +123,28 @@ public class Stage4 {
         }
 
         return new byte[]{nbBulls, nbCows};
+    }
+
+
+    public static String hideCode() {
+        StringBuilder codeHidden = new StringBuilder();
+
+        codeHidden.append("*".repeat(Math.max(0, currentCodeSize)));
+
+        if (symbolsRange <= 10) {
+            codeHidden.append(" (0-");
+            codeHidden.append(symbolsRange - 1);
+        } else {
+            codeHidden.append(" (0-9, a");
+            if (symbolsRange > 11) {
+                codeHidden.append("-");
+                codeHidden.append(codeAlphabet.charAt(symbolsRange - 1));
+            }
+        }
+
+        codeHidden.append(").");
+
+        return codeHidden.toString();
     }
 
 

@@ -1,4 +1,4 @@
-package com.loicbaillif.basics.strings.strBuilder;
+package com.loicbaillif.addInst.ess.stand.random;
 
 public class Main {
     public static void main() {
@@ -6,8 +6,6 @@ public class Main {
 
         // Ex1.main();
         // Ex2.main();
-        // Ex3.main();
-        // Ex4.main();
-        Ex5.main();
+        Ex3.main();
     }
 }
