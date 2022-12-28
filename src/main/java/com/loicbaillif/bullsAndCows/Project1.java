@@ -10,6 +10,7 @@ public class Project1 {
         // Stage3.main();
         // Stage4.main();
         // Stage5.main();
-        Stage6.main();
+        // Stage6.main();
+        Stage7.main();
     }
 }
