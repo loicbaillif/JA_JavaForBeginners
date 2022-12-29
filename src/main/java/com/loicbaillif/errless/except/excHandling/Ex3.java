@@ -2,6 +2,8 @@ package com.loicbaillif.errless.except.excHandling;
 
 import com.loicbaillif.tools.Print;
 
+import java.util.Scanner;
+
 public class Ex3 {
     /* https://hyperskill.org/learn/daily/2481
      *
@@ -21,8 +23,17 @@ public class Ex3 {
     public static void main() {
         Print.title("Exception Handling - Exercise: String to double");
 
+        Scanner scanner = new Scanner(System.in);
+        String userInput;
+        while (scanner.hasNextLine()) {
+            userInput = scanner.next();
+        }
 
 
         Print.subtitle("End of exercise", '+', (byte) 80);
+    }
+
+    private static void treatInput(String userInput) {
+
     }
 }
