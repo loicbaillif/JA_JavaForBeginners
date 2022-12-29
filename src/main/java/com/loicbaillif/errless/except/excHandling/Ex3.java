@@ -2,6 +2,7 @@ package com.loicbaillif.errless.except.excHandling;
 
 import com.loicbaillif.tools.Print;
 
+import java.util.Objects;
 import java.util.Scanner;
 
 public class Ex3 {
@@ -24,16 +25,21 @@ public class Ex3 {
         Print.title("Exception Handling - Exercise: String to double");
 
         Scanner scanner = new Scanner(System.in);
-        String userInput;
-        while (scanner.hasNextLine()) {
-            userInput = scanner.next();
+        int nbInputs = 0;
+
+        while (treatInput(scanner.next())) {
+            nbInputs++;
         }
 
 
         Print.subtitle("End of exercise", '+', (byte) 80);
     }
 
-    private static void treatInput(String userInput) {
+    private static boolean treatInput(String userInput) {
+        if (Objects.equals("0", userInput)) return false;
 
+        System.out.printf("\t%s0%n", userInput);
+
+        return true;
     }
 }
