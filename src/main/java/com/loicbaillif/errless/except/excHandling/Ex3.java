@@ -31,14 +31,18 @@ public class Ex3 {
             nbInputs++;
         }
 
-
         Print.subtitle("End of exercise", '+', (byte) 80);
     }
 
     private static boolean treatInput(String userInput) {
         if (Objects.equals("0", userInput)) return false;
 
-        System.out.printf("\t%s0%n", userInput);
+        try {
+            int inputToInt = Integer.parseInt(userInput);
+            System.out.println(inputToInt * 10);
+        } catch (NumberFormatException e) {
+            System.out.printf("Invalid user input: %s%n", userInput);
+        }
 
         return true;
     }
