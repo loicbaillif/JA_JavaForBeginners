@@ -39,6 +39,8 @@ public class Stage7 {
     static String codeAlphabet = "0123456789abcdefghijklmnopqrstuvwxyz";
     static String codePrepared = "The secret code is prepared: ";
     static String errorInvNumber = "Error: \"%s\" is not a valid number%n";
+    static String errorFewSymbols = "Error: can't generate a secret number " +
+            "with a length of %d because there aren't enough unique digits.%n";
     static String requestCodeLength = "Input the length of the secret code:";
     static String requestCodeSymbols =
             "Input the number of possible symbols in the code";
@@ -54,24 +56,31 @@ public class Stage7 {
     public static void main() {
         Print.title("Stage 7: Error!", '+');
 
+        // Variables
         Scanner scanner = new Scanner(System.in);
+        boolean validSecretCode = getSecretCode(scanner);
 
-        if (getSecretCode(scanner)) {
+        // Program
+        if (validSecretCode) {
             System.out.println("Valid code generated, continue"); //DEBUG
+
+            System.out.println(secretCode); // DEBUG
+            System.out.println(codePrepared + hideCode());
+
+            System.out.println(startGuessing);
+
+            do {
+                codeFound = playTurn();
+            } while (!codeFound);
+
         } else {
             System.out.println("No valid code generated, the end"); //DEBUG
             secretCode = new StringBuilder("0");
         }
 
 
-        System.out.println(secretCode); // DEBUG
-        System.out.println(codePrepared + hideCode());
-
-        System.out.println(startGuessing);
-        do {
-            codeFound = playTurn();
-        } while (!codeFound);
         System.out.println(victory);
+
 
         Print.subtitle("End of Stage 7", '+', (byte) 80);
     }
@@ -99,6 +108,7 @@ public class Stage7 {
         currentCodeSize = 0;
         int codeSize;
 
+        // 1) Request code length (returns false if invalid input)
         System.out.println(requestCodeLength);
         try {
             codeSize = scanner.nextInt();
@@ -107,6 +117,7 @@ public class Stage7 {
             return false;
         }
 
+        // 2) Request number of symbols (returns false if invalid input)
         System.out.println(requestCodeSymbols);
         try {
             symbolsRange = scanner.nextInt();
@@ -115,12 +126,10 @@ public class Stage7 {
             return false;
         }
 
-
+        // 3) Populate code with pseudo-random numbers if conditions met
         if (codeSize > 36 || codeSize < 1 || codeSize > symbolsRange) {
-            System.out.printf(
-                    "Error: can't generate a secret number with a " +
-                            "length of %d because there aren't enough unique digits.",
-                    codeSize);
+            System.out.printf(errorFewSymbols, codeSize);
+            return false;
         } else {
             while (currentCodeSize < codeSize) {
                 secretCode.append(getDigit(symbolsRange));
