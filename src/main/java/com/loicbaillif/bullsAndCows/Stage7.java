@@ -54,7 +54,13 @@ public class Stage7 {
 
         Scanner scanner = new Scanner(System.in);
 
-        getSecretCode(scanner);
+        if (getSecretCode(scanner)) {
+            System.out.println("Valid code generated, continue"); //DEBUG
+        } else {
+            System.out.println("No valid code generated, the end"); //DEBUG
+        }
+
+
         System.out.println(secretCode); // DEBUG
         System.out.println(codePrepared + hideCode());
 
@@ -81,7 +87,7 @@ public class Stage7 {
     }
 
 
-    public static void getSecretCode(Scanner scanner) {
+    public static boolean getSecretCode(Scanner scanner) {
         // This method will generate a pseudo-random code, after asking
         // user/player to provide requested length (1 to 36)
 
@@ -106,6 +112,8 @@ public class Stage7 {
                 currentCodeSize++;
             }
         }
+
+        return true;
     }
 
 
