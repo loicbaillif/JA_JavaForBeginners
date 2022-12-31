@@ -2,6 +2,7 @@ package com.loicbaillif.bullsAndCows;
 
 import com.loicbaillif.tools.Print;
 
+import java.util.InputMismatchException;
 import java.util.Objects;
 import java.util.Scanner;
 
@@ -36,7 +37,8 @@ public class Stage7 {
     // Static variables
     static boolean codeFound = false;
     static String codeAlphabet = "0123456789abcdefghijklmnopqrstuvwxyz";
-    static String codePrepared = "The secred code is prepared: ";
+    static String codePrepared = "The secret code is prepared: ";
+    static String errorLength = "Error: \"%s\" is not a valid number%n";
     static String requestCodeLength = "Input the length of the secret code:";
     static String requestCodeSymbols =
             "Input the number of possible symbols in the code";
@@ -58,6 +60,7 @@ public class Stage7 {
             System.out.println("Valid code generated, continue"); //DEBUG
         } else {
             System.out.println("No valid code generated, the end"); //DEBUG
+            secretCode = new StringBuilder("0");
         }
 
 
@@ -94,9 +97,16 @@ public class Stage7 {
         // Reset variables
         secretCode = new StringBuilder();
         currentCodeSize = 0;
+        int codeSize;
 
         System.out.println(requestCodeLength);
-        int codeSize = scanner.nextInt();
+        try {
+            codeSize = scanner.nextInt();
+        } catch (InputMismatchException e) {
+            System.out.printf(errorLength, scanner.next());
+            return false;
+        }
+
         System.out.println(requestCodeSymbols);
         symbolsRange = scanner.nextInt();
 
