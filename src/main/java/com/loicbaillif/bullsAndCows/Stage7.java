@@ -73,13 +73,14 @@ public class Stage7 {
                 codeFound = playTurn();
             } while (!codeFound);
 
+            if (codeFound) {
+                System.out.println(victory);
+            }
+
         } else {
             System.out.println("No valid code generated, the end"); //DEBUG
             secretCode = new StringBuilder("0");
         }
-
-
-        System.out.println(victory);
 
 
         Print.subtitle("End of Stage 7", '+', (byte) 80);
