@@ -66,8 +66,6 @@ public class Stage7 {
 
         // Program
         if (validSecretCode) {
-            System.out.println("Valid code generated, continue"); //DEBUG
-
             System.out.println(secretCode); // DEBUG
             System.out.println(codePrepared + hideCode());
 
@@ -81,10 +79,7 @@ public class Stage7 {
                 System.out.println(victory);
             }
 
-        } else {
-            System.out.println("No valid code generated, the end"); //DEBUG
         }
-
 
         Print.subtitle("End of Stage 7", '+', (byte) 80);
     }
@@ -189,8 +184,6 @@ public class Stage7 {
         Scanner scanner2 = new Scanner(System.in);
         String userInput = scanner2.nextLine();
         byte[] result; // nbBulls, nbCows
-
-        System.out.println(userInput); // DEBUG
 
         if (userInput.length() == codeLength) {
             result = gradeNumber(userInput, secretCode.toString());
