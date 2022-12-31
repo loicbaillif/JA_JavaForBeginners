@@ -125,9 +125,7 @@ public class Stage7 {
         }
 
         // 3) Populate code with pseudo-random numbers if conditions met
-        if (codeLength > 36 || codeLength < 1
-                || codeLength > symbolsRange)
-        {
+        if (codeLength < 1 || symbolsRange > 36 || codeLength > symbolsRange) {
             System.out.printf(errorFewSymbols, codeLength);
             return false;
         } else {
