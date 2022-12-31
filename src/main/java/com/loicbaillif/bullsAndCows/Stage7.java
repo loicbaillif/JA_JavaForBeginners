@@ -38,7 +38,7 @@ public class Stage7 {
     static boolean codeFound = false;
     static String codeAlphabet = "0123456789abcdefghijklmnopqrstuvwxyz";
     static String codePrepared = "The secret code is prepared: ";
-    static String errorLength = "Error: \"%s\" is not a valid number%n";
+    static String errorInvNumber = "Error: \"%s\" is not a valid number%n";
     static String requestCodeLength = "Input the length of the secret code:";
     static String requestCodeSymbols =
             "Input the number of possible symbols in the code";
@@ -94,7 +94,7 @@ public class Stage7 {
         // This method will generate a pseudo-random code, after asking
         // user/player to provide requested length (1 to 36)
 
-        // Reset variables
+        // Reset/init variables
         secretCode = new StringBuilder();
         currentCodeSize = 0;
         int codeSize;
@@ -103,12 +103,17 @@ public class Stage7 {
         try {
             codeSize = scanner.nextInt();
         } catch (InputMismatchException e) {
-            System.out.printf(errorLength, scanner.next());
+            System.out.printf(errorInvNumber, scanner.next());
             return false;
         }
 
         System.out.println(requestCodeSymbols);
-        symbolsRange = scanner.nextInt();
+        try {
+            symbolsRange = scanner.nextInt();
+        } catch (InputMismatchException e) {
+            System.out.printf(errorInvNumber, scanner.next());
+            return false;
+        }
 
 
         if (codeSize > 36 || codeSize < 1 || codeSize > symbolsRange) {
