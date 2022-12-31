@@ -36,6 +36,7 @@ public class Stage7 {
 
     // Static variables
     static boolean codeFound = false;
+    static boolean validProposal = true;
     static String codeAlphabet = "0123456789abcdefghijklmnopqrstuvwxyz";
     static String codePrepared = "The secret code is prepared: ";
     static String errorInvNumber = "Error: \"%s\" is not a valid number%n";
@@ -46,6 +47,7 @@ public class Stage7 {
             "Input the number of possible symbols in the code";
     static String startGuessing = "Okay, let's start a game!";
     static String victory = "Congratulations! You guessed the secret code.";
+    static int codeLength;
     static int currentCodeSize = 0;
     static int currentTurn = 1;
     static int symbolsRange = 0;
@@ -71,7 +73,7 @@ public class Stage7 {
 
             do {
                 codeFound = playTurn();
-            } while (!codeFound);
+            } while (!codeFound && validProposal);
 
             if (codeFound) {
                 System.out.println(victory);
@@ -107,12 +109,11 @@ public class Stage7 {
         // Reset/init variables
         secretCode = new StringBuilder();
         currentCodeSize = 0;
-        int codeSize;
 
         // 1) Request code length (returns false if invalid input)
         System.out.println(requestCodeLength);
         try {
-            codeSize = scanner.nextInt();
+            codeLength = scanner.nextInt();
         } catch (InputMismatchException e) {
             System.out.printf(errorInvNumber, scanner.next());
             return false;
@@ -128,11 +129,13 @@ public class Stage7 {
         }
 
         // 3) Populate code with pseudo-random numbers if conditions met
-        if (codeSize > 36 || codeSize < 1 || codeSize > symbolsRange) {
-            System.out.printf(errorFewSymbols, codeSize);
+        if (codeLength > 36 || codeLength < 1
+                || codeLength > symbolsRange)
+        {
+            System.out.printf(errorFewSymbols, codeLength);
             return false;
         } else {
-            while (currentCodeSize < codeSize) {
+            while (currentCodeSize < codeLength) {
                 secretCode.append(getDigit(symbolsRange));
                 currentCodeSize++;
             }
@@ -184,11 +187,18 @@ public class Stage7 {
         System.out.printf("Turn %d:%n", currentTurn);
         Scanner scanner2 = new Scanner(System.in);
         String userInput = scanner2.nextLine();
+        byte[] result = new byte[2]; // nbBulls, nbCows
 
-        System.out.println(userInput);
-        byte[] result = gradeNumber(userInput, secretCode.toString());
-        printGrade(result);
-        currentTurn++;
+        System.out.println(userInput); // DEBUG
+
+        if (userInput.length() == codeLength) {
+            result = gradeNumber(userInput, secretCode.toString());
+            printGrade(result);
+            currentTurn++;
+        } else {
+            validProposal = false;
+            return false;
+        }
 
         return result[0] == currentCodeSize;
     }
