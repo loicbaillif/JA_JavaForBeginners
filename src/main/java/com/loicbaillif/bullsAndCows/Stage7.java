@@ -40,6 +40,8 @@ public class Stage7 {
     static String codeAlphabet = "0123456789abcdefghijklmnopqrstuvwxyz";
     static String codePrepared = "The secret code is prepared: ";
     static String errorInvNumber = "Error: \"%s\" is not a valid number%n";
+    static String errorInvProp = "Error: Proposal length (%d) is invalid " +
+            "(%d characters expected)%n";
     static String errorFewSymbols = "Error: can't generate a secret number " +
             "with a length of %d because there aren't enough unique digits.%n";
     static String requestCodeLength = "Input the length of the secret code:";
@@ -81,7 +83,6 @@ public class Stage7 {
 
         } else {
             System.out.println("No valid code generated, the end"); //DEBUG
-            secretCode = new StringBuilder("0");
         }
 
 
@@ -187,7 +188,7 @@ public class Stage7 {
         System.out.printf("Turn %d:%n", currentTurn);
         Scanner scanner2 = new Scanner(System.in);
         String userInput = scanner2.nextLine();
-        byte[] result = new byte[2]; // nbBulls, nbCows
+        byte[] result; // nbBulls, nbCows
 
         System.out.println(userInput); // DEBUG
 
@@ -196,6 +197,7 @@ public class Stage7 {
             printGrade(result);
             currentTurn++;
         } else {
+            System.out.printf(errorInvProp, userInput.length(), codeLength);
             validProposal = false;
             return false;
         }
