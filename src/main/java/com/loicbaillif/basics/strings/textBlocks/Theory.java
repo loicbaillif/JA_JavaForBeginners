@@ -34,6 +34,20 @@ public class Theory {
         System.out.println(iliadQuote);
 
 
+        System.out.println("3) ***** whitespaces *****");
+        String htmlCode = """
+                <html>
+                    <head>
+                        <title>Some page</title>
+                    </head>
+                    <body>
+                        <p>Hi there</p>
+                    </body>
+                </html>
+                """;
+        System.out.println(htmlCode);
+
+
         Print.subtitle("End of Theory", '*', (byte) 80);
     }
 }
