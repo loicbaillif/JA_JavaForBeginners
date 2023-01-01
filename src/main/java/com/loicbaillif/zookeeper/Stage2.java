@@ -11,7 +11,7 @@ public class Stage2 {
     public static void main() {
         Print.title("Stage 2 - Show me an animal");
 
-        String camel = """
+        String zooCamel = """
                 Switching on the camera in the camel habitat...
                  ___.-''''-.
                 /___  @    |
@@ -32,6 +32,8 @@ public class Stage2 {
                            /_I      L_I   L_I     /_I
                 Look at that! Our little camel is sunbathing!
                 """;
+
+        System.out.println(zooCamel);
 
         Print.subtitle("End of stage 2");
     }
