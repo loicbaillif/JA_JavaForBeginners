@@ -159,6 +159,8 @@ public class Stage4 {
             userChoice = scanner.next();
         }
 
+        System.out.println(endVisit);
+
         Print.subtitle("End of Stage 4");
     }
 }
