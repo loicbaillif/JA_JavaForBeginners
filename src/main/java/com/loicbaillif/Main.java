@@ -7,7 +7,7 @@ public class Main {
         Print.title("JetBrains Academy - Java for beginners");
         // Project stages
         // com.loicbaillif.bullsAndCows.Project1.main();
-        // com.loicbaillif.zookeeper.Main.main();
+        com.loicbaillif.zookeeper.Main.main();
 
         /* Previous chapters */
         // com.loicbaillif.codeOrganization.methods.overloading.Main.main();
@@ -25,6 +25,6 @@ public class Main {
         // com.loicbaillif.errless.except.excHandling.Main.main();
 
         // Current chapter
-        com.loicbaillif.basics.strings.textBlocks.Main.main();
+        // com.loicbaillif.basics.strings.textBlocks.Main.main();
     }
 }
