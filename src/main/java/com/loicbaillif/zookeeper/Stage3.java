@@ -144,8 +144,11 @@ public class Stage3 {
         String[] zooAnimals = {camel, lion, deer, goose, bat, rabbit};
         String askVisitor = "Please enter the number of the habitat " +
                 "you would like to view:";
-        String endVisit = "You've reached the end of the program. To check " +
-                "another habitat, please restart the watcher.";
+        String endVisit = """
+                ---
+                You've reached the end of the program. To check \
+                another habitat, please restart the watcher.
+                """;
 
         // Program
         Scanner scanner = new Scanner(System.in);
