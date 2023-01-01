@@ -2,6 +2,7 @@ package com.loicbaillif.zookeeper;
 
 import com.loicbaillif.tools.Print;
 
+import java.util.Objects;
 import java.util.Scanner;
 
 public class Stage4 {
@@ -149,7 +150,14 @@ public class Stage4 {
 
         Scanner scanner = new Scanner(System.in);
         String userChoice;
+        System.out.println(askVisitor);
+        userChoice = scanner.next();
 
+        while (!Objects.equals(userChoice, "exit")) {
+            System.out.println(zooAnimals[Integer.parseInt(userChoice)]);
+            System.out.println(askVisitor);
+            userChoice = scanner.next();
+        }
 
         Print.subtitle("End of Stage 4");
     }
