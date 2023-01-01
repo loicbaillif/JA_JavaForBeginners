@@ -48,6 +48,19 @@ public class Theory {
         System.out.println(htmlCode);
 
 
+        System.out.println("4) ***** Beyond Basics *****");
+        String textBlock = """
+                We can use "single" or ""double"" quotes any time.
+                For triple quotes \""" an escape is needed though...
+                With two escape chars we can have 4 quotes "\"""
+                This text is displayed \
+                on a single line.
+                And this one with lots of spaces        \s
+                at its end.
+                """;
+        System.out.println(textBlock);
+
+
         Print.subtitle("End of Theory", '*', (byte) 80);
     }
 }
