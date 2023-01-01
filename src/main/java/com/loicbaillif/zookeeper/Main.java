@@ -7,7 +7,8 @@ public class Main {
         Print.title("Project Zookeeper");
 
         // Stage1.main();
-        Stage2.main();
+        // Stage2.main();
+        Stage3.main();
 
         Print.subtitle("End of project", '*', (byte) 80);
     }
