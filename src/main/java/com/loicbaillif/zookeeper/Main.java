@@ -8,7 +8,8 @@ public class Main {
 
         // Stage1.main();
         // Stage2.main();
-        Stage3.main();
+        // Stage3.main();
+        Stage4.main();
 
         Print.subtitle("End of project", '*', (byte) 80);
     }
