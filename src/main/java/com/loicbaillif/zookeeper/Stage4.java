@@ -139,12 +139,13 @@ public class Stage4 {
             (" ~----( ~   Y.  )
             It looks like we will soon have more rabbits!""";
 
-        String emptyHab = "Sorry, we don't have that many animals";
-        String[] animals = {camel, lion, deer, goose, bat, rabbit, emptyHab};
+
+        String[] animals = {camel, lion, deer, goose, bat, rabbit};
         String askVisitor = "Please enter the number of the habitat " +
                 "you would like to view:";
         String endVisit = "See you later!";
-        String invalidInt = "Please enter the habitat number, or 'exit'.";
+        String errorInvInt = "Sorry, this is not a valid integer.";
+        String errorEmptyHab = "Sorry, we don't have that many animals";
 
         Scanner scanner = new Scanner(System.in);
         String userChoice;
@@ -156,11 +157,13 @@ public class Stage4 {
             try {
                 parsedUserChoice = Integer.parseInt(userChoice);
                 System.out.println(animals[parsedUserChoice]);
-                System.out.println(askVisitor);
             } catch (NumberFormatException e) {
-                System.out.println(invalidInt);
+                System.out.println(errorInvInt);
+            } catch (ArrayIndexOutOfBoundsException e) {
+                System.out.println(errorEmptyHab);
             }
 
+            System.out.println(askVisitor);
             userChoice = scanner.next();
         }
 
