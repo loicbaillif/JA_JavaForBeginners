@@ -139,23 +139,28 @@ public class Stage4 {
             (" ~----( ~   Y.  )
             It looks like we will soon have more rabbits!""";
 
-        String[] zooAnimals = {camel, lion, deer, goose, bat, rabbit};
+        String emptyHab = "Sorry, we don't have that many animals";
+        String[] animals = {camel, lion, deer, goose, bat, rabbit, emptyHab};
         String askVisitor = "Please enter the number of the habitat " +
                 "you would like to view:";
-        String endVisit = """
-                ---
-                You've reached the end of the program. To check \
-                another habitat, please restart the watcher.
-                """;
+        String endVisit = "See you later!";
+        String invalidInt = "Please enter the habitat number, or 'exit'.";
 
         Scanner scanner = new Scanner(System.in);
         String userChoice;
+        int parsedUserChoice;
         System.out.println(askVisitor);
         userChoice = scanner.next();
 
         while (!Objects.equals(userChoice, "exit")) {
-            System.out.println(zooAnimals[Integer.parseInt(userChoice)]);
-            System.out.println(askVisitor);
+            try {
+                parsedUserChoice = Integer.parseInt(userChoice);
+                System.out.println(animals[parsedUserChoice]);
+                System.out.println(askVisitor);
+            } catch (NumberFormatException e) {
+                System.out.println(invalidInt);
+            }
+
             userChoice = scanner.next();
         }
 
