@@ -60,6 +60,9 @@ public class Theory {
                 """;
         System.out.println(textBlock);
 
+        System.out.println(textBlock.stripIndent());
+        System.out.println(textBlock.translateEscapes());
+
 
         Print.subtitle("End of Theory", '*', (byte) 80);
     }
