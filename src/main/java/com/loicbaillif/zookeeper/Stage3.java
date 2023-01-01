@@ -2,6 +2,8 @@ package com.loicbaillif.zookeeper;
 
 import com.loicbaillif.tools.Print;
 
+import java.util.Scanner;
+
 public class Stage3 {
     /* https://hyperskill.org/projects/229/stages/1149/implement
      *
@@ -145,6 +147,11 @@ public class Stage3 {
         String endVisit = "You've reached the end of the program. To check " +
                 "another habitat, please restart the watcher.";
 
+        // Program
+        Scanner scanner = new Scanner(System.in);
+        System.out.println(askVisitor);
+        System.out.println(zooAnimals[scanner.nextInt()]);
+        System.out.println(endVisit);
 
         Print.subtitle("End of stage 3");
     }
