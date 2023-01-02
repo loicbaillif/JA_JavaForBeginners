@@ -45,6 +45,8 @@ public class Stage1 {
         String buzzReason2 = "%d ends with 7";
         String buzzReason3 = "%d is divisible by 7 and ends with 7";
         String notBuzz = "%d is neither divisible by 7 nor does it end with 7";
+        String[] buzzStatus = {notBuzz, buzzReason1, buzzReason2, buzzReason3};
+
 
     }
 
