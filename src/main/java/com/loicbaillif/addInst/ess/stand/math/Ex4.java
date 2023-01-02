@@ -2,6 +2,8 @@ package com.loicbaillif.addInst.ess.stand.math;
 
 import com.loicbaillif.tools.Print;
 
+import java.util.Scanner;
+
 public class Ex4 {
     /* https://hyperskill.org/learn/daily/2236
      *
@@ -13,7 +15,10 @@ public class Ex4 {
     public static void main() {
         Print.title("Maths library - Exercise: Pow");
 
-
+        // Variables
+        Scanner scanner = new Scanner(System.in);
+        double aInput = scanner.nextDouble();
+        double bInput = scanner.nextDouble();
 
         Print.subtitle("End of exercise", '*', (byte) 80);
     }
