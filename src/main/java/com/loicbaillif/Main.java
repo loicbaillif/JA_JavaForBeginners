@@ -7,7 +7,7 @@ public class Main {
         Print.title("JetBrains Academy - Java for beginners");
         // Project stages
         // com.loicbaillif.bullsAndCows.Project1.main();
-        com.loicbaillif.zookeeper.Main.main();
+        // com.loicbaillif.zookeeper.Main.main();
 
         /* Previous chapters */
         // com.loicbaillif.codeOrganization.methods.overloading.Main.main();
@@ -20,7 +20,7 @@ public class Main {
         // com.loicbaillif.basics.strings.strBuilder.Main.main();
         // com.loicbaillif.addInst.ess.stand.random.Main.main();
         // com.loicbaillif.basics.opsPrim.floatpt.Main.main();
-        // com.loicbaillif.addInst.ess.stand.math.Main.main();
+        com.loicbaillif.addInst.ess.stand.math.Main.main();
         // com.loicbaillif.errless.except.hier.Main.main();
         // com.loicbaillif.errless.except.excHandling.Main.main();
 
