@@ -30,8 +30,7 @@ public class Stage1 {
 
 
     private static void checkParity(int userInput) {
-        String parityStatus = userInput % 2 == 0 ? "Even" : "Odd";
-        System.out.printf(checkParity, parityStatus);
+        System.out.printf(checkParity, userInput % 2 == 0 ? "Even" : "Odd");
     }
 
     private static int getNatural() {
