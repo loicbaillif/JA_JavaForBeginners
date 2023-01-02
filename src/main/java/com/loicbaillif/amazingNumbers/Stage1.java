@@ -20,9 +20,16 @@ public class Stage1 {
         Print.subtitle("Stage 1 - Buzz Numbers", '*', (byte) 80);
 
         int userInput = getNatural();
-        System.out.println(userInput);
+        if (userInput != 0) {
+            checkParity(userInput);
+        }
 
         Print.subtitle("End of Stage 1", '*', (byte) 80);
+    }
+
+
+    private static void checkParity(int userInput) {
+
     }
 
     private static int getNatural() {
