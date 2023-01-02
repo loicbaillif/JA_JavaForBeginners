@@ -28,13 +28,20 @@ public class Stage1 {
     private static int getNatural() {
         // Variables
         Scanner scanner = new Scanner(System.in);
+        int userInput;
         System.out.println(getNatural);
 
         try {
-            return scanner.nextInt();
+            userInput = scanner.nextInt();
         } catch (InputMismatchException e) {
-            System.out.println(errorNotNatural);
-            return 0;
+            userInput = 0;
         }
+
+        if (userInput <= 0) {
+            System.out.println(errorNotNatural);
+            userInput = 0;
+        }
+
+        return userInput;
     }
 }
