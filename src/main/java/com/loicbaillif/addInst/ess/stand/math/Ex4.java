@@ -20,6 +20,8 @@ public class Ex4 {
         double aInput = scanner.nextDouble();
         double bInput = scanner.nextDouble();
 
+        System.out.println(Math.pow(aInput, bInput));
+
         Print.subtitle("End of exercise", '*', (byte) 80);
     }
 }
