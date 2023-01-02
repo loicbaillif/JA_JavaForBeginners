@@ -39,6 +39,11 @@ public class Stage1 {
     }
 
 
+    private static void checkBuzz(int userInput) {
+
+    }
+
+
     private static void checkParity(int userInput) {
         System.out.printf(checkParity, userInput % 2 == 0 ? "Even" : "Odd");
     }
