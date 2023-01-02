@@ -17,6 +17,7 @@ public class Stage1 {
         Print.subtitle("Stage 1 - Buzz Numbers", '*', (byte) 80);
 
         int userInput = getNatural();
+        System.out.println(userInput);
 
         Print.subtitle("End of Stage 1", '*', (byte) 80);
     }
@@ -26,6 +27,6 @@ public class Stage1 {
         Scanner scanner = new Scanner(System.in);
         System.out.println(getNatural);
 
-        return 0;
+        return scanner.nextInt();
     }
 }
