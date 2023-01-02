@@ -20,10 +20,20 @@ public class Stage1 {
     public static void main() {
         Print.subtitle("Stage 1 - Buzz Numbers", '*', (byte) 80);
 
+        /*
         int userInput = getNatural();
         if (userInput != 0) {
             checkParity(userInput);
         }
+        */
+
+        // TEST PHASE
+        int[] testValues = {11, 22, 33, 44, 55, 66, 777, 8888};
+        for (int userInput: testValues) {
+            System.out.printf("Number %d:%n\t. ", userInput);
+            checkParity(userInput);
+        }
+        // END OF TEST PHASE
 
         Print.subtitle("End of Stage 1", '*', (byte) 80);
     }
