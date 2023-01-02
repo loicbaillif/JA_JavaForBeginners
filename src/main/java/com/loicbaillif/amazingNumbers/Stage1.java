@@ -12,6 +12,7 @@ public class Stage1 {
      */
 
     // Static variables
+    static String checkParity = "This number is %s.%n";
     static String errorNotNatural = "Error: Not a natural number, " +
             "zero will be used instead";
     static String getNatural = "Enter a natural number:";
@@ -29,7 +30,8 @@ public class Stage1 {
 
 
     private static void checkParity(int userInput) {
-
+        String parityStatus = userInput % 2 == 0 ? "Even" : "Odd";
+        System.out.printf(checkParity, parityStatus);
     }
 
     private static int getNatural() {
