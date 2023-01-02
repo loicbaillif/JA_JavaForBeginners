@@ -2,6 +2,7 @@ package com.loicbaillif.amazingNumbers;
 
 import com.loicbaillif.tools.Print;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Stage1 {
@@ -11,6 +12,8 @@ public class Stage1 {
      */
 
     // Static variables
+    static String errorNotNatural = "Error: Not a natural number, " +
+            "zero will be used instead";
     static String getNatural = "Enter a natural number:";
 
     public static void main() {
@@ -27,6 +30,11 @@ public class Stage1 {
         Scanner scanner = new Scanner(System.in);
         System.out.println(getNatural);
 
-        return scanner.nextInt();
+        try {
+            return scanner.nextInt();
+        } catch (InputMismatchException e) {
+            System.out.println(errorNotNatural);
+            return 0;
+        }
     }
 }
