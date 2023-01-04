@@ -28,7 +28,7 @@ public class Stage1 {
         */
 
         // TEST PHASE
-        int[] testValues = {11, 22, 33, 44, 49, 14, 55, 66, 77, 777, 8888};
+        int[] testValues = {11, 22, 33, 44, 49, 14, 55, 66, 77, 337, 8888};
         for (int userInput: testValues) {
             System.out.printf("Number %d:%n\t. ", userInput);
             checkParity(userInput);
@@ -65,15 +65,15 @@ public class Stage1 {
         // This method returns 0 if userInput does not end with 7,
         // and returns 2 elsewhere;
 
-        return 0;
+        return (userInput % 10 == 7) ? 2 : 0;
     }
 
 
     private static int multipleOf7(int userInput) {
         // This method returns 0 if userInput is not divisible by 7,
         // and returns 1 elsewhere;
-        if (userInput == 0 || userInput == 7) {
-            return 1;
+        if (userInput < 10) {
+            return (userInput == 0 || userInput == 7) ? 1 : 0;
         } else {
             // Variables
             int lastDigit = userInput % 10;
