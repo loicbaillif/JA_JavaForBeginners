@@ -15,3 +15,7 @@ public class Ex4 {
         Print.subtitle("End of exercise", ':', (byte) 80);
     }
 }
+
+class MyException extends Throwable {
+
+}
