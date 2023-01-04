@@ -10,7 +10,8 @@ public class Ex4 {
     public static void main() {
         Print.title("Hierarchy of Exceptions - Exercise: Base Class", ':');
 
-
+        MyException me1 = new MyException("Ping?");
+        System.out.println(me1.getMessage());
 
         Print.subtitle("End of exercise", ':', (byte) 80);
     }
