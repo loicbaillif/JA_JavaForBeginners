@@ -63,14 +63,13 @@ public class Stage1 {
     private static int multipleOf7(int userInput) {
         // This method returns 0 if userInput is not divisible by 7,
         // and returns 1 elsewhere;
-
-        // Variables
-        int lastDigit = userInput % 10;
-        int prefix = userInput / 10;
-
-        if (prefix == 0) {
-            return (lastDigit == 0 || lastDigit == 7) ? 1 : 0;
+        if (userInput == 0 || userInput == 7) {
+            return 1;
         } else {
+            // Variables
+            int lastDigit = userInput % 10;
+            int prefix = userInput / 10;
+
             return multipleOf7(Math.abs(prefix - ( 2 * lastDigit)));
         }
     }
