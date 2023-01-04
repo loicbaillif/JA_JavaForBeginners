@@ -12,10 +12,16 @@ public class Stage1 {
      */
 
     // Static variables
+    static String buzzReason1 = "%d is divisible by 7%n";
+    static String buzzReason2 = "%d ends with 7%n";
+    static String buzzReason3 = "%d is divisible by 7 and ends with 7%n";
+    static String buzzStatus = "It is%sa Buzz number%n";
     static String checkParity = "This number is %s.%n";
     static String errorNotNatural = "Error: Not a natural number, " +
             "zero will be used instead";
     static String getNatural = "Enter a natural number:";
+    static String notBuzz = "%d is neither divisible by 7 " +
+            "nor does it end with 7%n";
 
     public static void main() {
         Print.subtitle("Stage 1 - Buzz Numbers", '*', (byte) 80);
@@ -30,7 +36,7 @@ public class Stage1 {
         // TEST PHASE
         int[] testValues = {11, 22, 33, 44, 49, 14, 55, 66, 77, 337, 8888};
         for (int userInput: testValues) {
-            System.out.printf("Number %d:%n\t. ", userInput);
+            System.out.printf("%nNumber %d:%n", userInput);
             checkParity(userInput);
             checkBuzz(userInput);
         }
@@ -42,21 +48,14 @@ public class Stage1 {
 
     private static void checkBuzz(int userInput) {
         // Variables
-        String buzzReason1 = "%d is divisible by 7%n";
-        String buzzReason2 = "%d ends with 7%n";
-        String buzzReason3 = "%d is divisible by 7 and ends with 7%n";
-        String buzzStatus = "It is%sa Buzz number%n";
-        String notBuzz = "%d is neither divisible by 7 " +
-                "nor does it end with 7%n";
         String[] buzzReasons = {notBuzz, buzzReason1, buzzReason2, buzzReason3};
         int userInputStatus = 0;
 
         // Processing
         userInputStatus += multipleOf7(userInput);
         userInputStatus += endsBy7(userInput);
-        System.out.println(userInputStatus);
-        System.out.println(userInputStatus == 0 ? "not " : " ");
         System.out.printf(buzzStatus, (userInputStatus == 0 ? " not " : " "));
+        System.out.println("Explanation:");
         System.out.printf(buzzReasons[userInputStatus], userInput);
     }
 
