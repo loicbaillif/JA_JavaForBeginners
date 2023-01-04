@@ -28,7 +28,7 @@ public class Stage1 {
         */
 
         // TEST PHASE
-        int[] testValues = {11, 22, 33, 44, 49, 14, 55, 66, 777, 8888};
+        int[] testValues = {11, 22, 33, 44, 49, 14, 55, 66, 77, 777, 8888};
         for (int userInput: testValues) {
             System.out.printf("Number %d:%n\t. ", userInput);
             checkParity(userInput);
@@ -69,7 +69,7 @@ public class Stage1 {
         int prefix = userInput / 10;
 
         if (prefix == 0) {
-            return lastDigit == 7 ? 1 : 0;
+            return (lastDigit == 0 || lastDigit == 7) ? 1 : 0;
         } else {
             return multipleOf7(Math.abs(prefix - ( 2 * lastDigit)));
         }
