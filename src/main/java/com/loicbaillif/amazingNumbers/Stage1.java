@@ -42,17 +42,22 @@ public class Stage1 {
 
     private static void checkBuzz(int userInput) {
         // Variables
-        String buzzReason1 = "%d is divisible by 7";
-        String buzzReason2 = "%d ends with 7";
-        String buzzReason3 = "%d is divisible by 7 and ends with 7";
-        String notBuzz = "%d is neither divisible by 7 nor does it end with 7";
-        String[] buzzStatus = {notBuzz, buzzReason1, buzzReason2, buzzReason3};
+        String buzzReason1 = "%d is divisible by 7%n";
+        String buzzReason2 = "%d ends with 7%n";
+        String buzzReason3 = "%d is divisible by 7 and ends with 7%n";
+        String buzzStatus = "It is%sa Buzz number%n";
+        String notBuzz = "%d is neither divisible by 7 " +
+                "nor does it end with 7%n";
+        String[] buzzReasons = {notBuzz, buzzReason1, buzzReason2, buzzReason3};
         int userInputStatus = 0;
 
         // Processing
         userInputStatus += multipleOf7(userInput);
         userInputStatus += endsBy7(userInput);
         System.out.println(userInputStatus);
+        System.out.println(userInputStatus == 0 ? "not " : " ");
+        System.out.printf(buzzStatus, (userInputStatus == 0 ? " not " : " "));
+        System.out.printf(buzzReasons[userInputStatus], userInput);
     }
 
 
