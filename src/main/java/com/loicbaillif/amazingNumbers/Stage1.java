@@ -51,12 +51,21 @@ public class Stage1 {
 
         // Processing
         userInputStatus += multipleOf7(userInput);
+        userInputStatus += endsBy7(userInput);
         System.out.println(userInputStatus);
     }
 
 
     private static void checkParity(int userInput) {
         System.out.printf(checkParity, userInput % 2 == 0 ? "Even" : "Odd");
+    }
+
+
+    private static int endsBy7(int userInput) {
+        // This method returns 0 if userInput does not end with 7,
+        // and returns 2 elsewhere;
+
+        return 0;
     }
 
 
