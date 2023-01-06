@@ -2,6 +2,7 @@ package com.loicbaillif.amazingNumbers;
 
 public class Main {
     public static void main() {
-        Stage1.main();
+        // Stage1.main();
+        Stage2.main();
     }
 }
