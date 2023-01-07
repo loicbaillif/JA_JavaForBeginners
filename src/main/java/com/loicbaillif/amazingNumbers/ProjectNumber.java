@@ -18,7 +18,7 @@ class ProjectNumber {
     public ProjectNumber(long numberValue) {
         this.numberValue = numberValue;
         setEven();
-        System.out.println(isEven());
+        setOdd();
     }
 
     // Getters and Setters
@@ -26,8 +26,14 @@ class ProjectNumber {
     boolean isEven() {
         return even;
     }
+    boolean isOdd() {
+        return odd;
+    }
 
     private void setEven() {
         this.even = (numberValue % 2 == 0);
+    }
+    private void setOdd() {
+        this.odd = (numberValue % 2 == 1);
     }
 }
