@@ -14,6 +14,8 @@ public class Stage2 {
     // Static Variables
     static String errorNotNatural = "Error: This is not a natural number";
     static String getNatural = "Enter a natural number:";
+    static String statusEven = "\teven: %b%n";
+    static String statusOdd = "\t odd: %b%n";
 
 
     public static void main() {
@@ -23,11 +25,17 @@ public class Stage2 {
         if (userInput != 0) {
             // TODO:
             // Check parity
+            checkParity(userInput);
             // Check buzz
             // Check Duck
         }
 
         Print.subtitle("End of Stage 2", '*', (byte) 80);
+    }
+
+
+    private static void checkParity(int userInput) {
+        boolean even = userInput % 2 == 0;
     }
 
 
