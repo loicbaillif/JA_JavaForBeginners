@@ -6,5 +6,12 @@ class ProjectNumber {
      * Properties:
      * even, odd, buzz, duck and palindromic.
      */
+    public ProjectNumber() {
+        // Properties
+        boolean buzz;
+        boolean duck;
+        boolean even;
+        boolean odd;
+        boolean palindromic;
     }
 }
