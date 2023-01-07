@@ -13,10 +13,12 @@ class ProjectNumber {
     boolean even;
     boolean odd;
     boolean palindromic;
-    int numberValue;
+    long numberValue;
 
-    public ProjectNumber(int numberValue) {
+    public ProjectNumber(long numberValue) {
         this.numberValue = numberValue;
+        setEven();
+        System.out.println(isEven());
     }
 
     // Getters and Setters

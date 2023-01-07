@@ -22,6 +22,7 @@ public class Stage3 {
         Print.subtitle("Stage 3 - Palindromic Numbers", '*', (byte) 80);
 
         System.out.println(welcome);
+        ProjectNumber projectNumber = new ProjectNumber(9223372036854775807L);
 
         Print.subtitle("End of Stage 3", '*', (byte) 80);
     }
