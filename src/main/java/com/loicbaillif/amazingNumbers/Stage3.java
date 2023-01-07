@@ -17,12 +17,21 @@ public class Stage3 {
                 - enter a natural number to know its properties;
                 - enter 0 to exit.
             """;
+    static String numberStatus = """
+            Properties of %d
+                even: %b
+                 odd: %b
+            """;
 
     public static void main() {
         Print.subtitle("Stage 3 - Palindromic Numbers", '*', (byte) 80);
 
         System.out.println(welcome);
         ProjectNumber projectNumber = new ProjectNumber(9223372036854775807L);
+        System.out.printf(numberStatus,
+                projectNumber.numberValue,
+                projectNumber.isEven(),
+                projectNumber.isOdd());
 
         Print.subtitle("End of Stage 3", '*', (byte) 80);
     }
