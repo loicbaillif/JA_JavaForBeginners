@@ -65,6 +65,12 @@ public class Stage2 {
         int lastDigit = userInput % 10;
         int remainingDigit = userInput / 10;
 
+        while (!isDuck && remainingDigit != 0) {
+            isDuck = (lastDigit == 0);
+            lastDigit = remainingDigit % 10;
+            remainingDigit /= 10;
+        }
+
         System.out.printf(statusDuck, isDuck);
     }
 
