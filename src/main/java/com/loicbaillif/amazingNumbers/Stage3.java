@@ -28,6 +28,14 @@ public class Stage3 {
 
         System.out.println(welcome);
         ProjectNumber projectNumber = new ProjectNumber(9223372036854775807L);
+
+        // TEST PHASE
+        long[] testValues = {11L, 234L, 31L, 400L, 56L, 71L, 787L, 6789L, 66L};
+        for (long testValue : testValues) {
+            projectNumber = new ProjectNumber(testValue);
+        }
+        // END TEST
+
         System.out.printf(numberStatus,
                 projectNumber.numberValue,
                 projectNumber.isEven(),
