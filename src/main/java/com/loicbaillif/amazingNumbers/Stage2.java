@@ -49,11 +49,11 @@ public class Stage2 {
 
     private static void checkBuzz(int userInput) {
         // Variables
-        boolean buzzStatus;
+        boolean isBuzz;
 
         // Processing
-        buzzStatus = endsBy7(userInput) || multipleOf7(userInput);
-        System.out.printf(statusBuzz, buzzStatus);
+        isBuzz = endsBy7(userInput) || multipleOf7(userInput);
+        System.out.printf(statusBuzz, isBuzz);
     }
 
 
