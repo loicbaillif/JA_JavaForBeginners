@@ -7,10 +7,15 @@ public class Stage3 {
      *
      * Stage 3 - Palindromic Numbers
      */
+
+    // Static variables
+
+    static String welcome = "Welcome to Amazing Numbers!";
+
     public static void main() {
         Print.subtitle("Stage 3 - Palindromic Numbers", '*', (byte) 80);
 
-
+        System.out.println(welcome);
 
         Print.subtitle("End of Stage 3", '*', (byte) 80);
     }
