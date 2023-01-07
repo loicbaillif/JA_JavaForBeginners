@@ -21,6 +21,16 @@ public class Stage2 {
     public static void main() {
         Print.subtitle("Stage 2 - Duck Numbers", '*', (byte) 80);
 
+        // TEST PHASE
+        int[] testValues = {11, 22, 33, 44, 49, 14, 55, 66, 77, 337, 8888};
+        for (int userInput: testValues) {
+            System.out.printf("%nNumber %d:%n", userInput);
+            checkParity(userInput);
+        }
+        // END OF TEST PHASE
+
+
+        /*
         int userInput = getNatural(); // returns 0 if invalid input
         if (userInput != 0) {
             // TODO:
@@ -29,6 +39,7 @@ public class Stage2 {
             // Check buzz
             // Check Duck
         }
+         */
 
         Print.subtitle("End of Stage 2", '*', (byte) 80);
     }
@@ -36,6 +47,8 @@ public class Stage2 {
 
     private static void checkParity(int userInput) {
         boolean even = userInput % 2 == 0;
+        System.out.printf(statusEven, even);
+        System.out.printf(statusOdd, !even);
     }
 
 
