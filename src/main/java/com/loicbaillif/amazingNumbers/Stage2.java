@@ -26,6 +26,7 @@ public class Stage2 {
         for (int userInput: testValues) {
             System.out.printf("%nNumber %d:%n", userInput);
             checkParity(userInput);
+            checkBuzz(userInput);
         }
         // END OF TEST PHASE
 
@@ -42,6 +43,15 @@ public class Stage2 {
          */
 
         Print.subtitle("End of Stage 2", '*', (byte) 80);
+    }
+
+
+    private static void checkBuzz(int userInput) {
+        // Variables
+        boolean buzzStatus;
+
+        // Processing
+
     }
 
 
