@@ -14,6 +14,7 @@ public class Stage2 {
     // Static Variables
     static String errorNotNatural = "Error: This is not a natural number";
     static String getNatural = "Enter a natural number:";
+    static String introduction = "Properties of %d%n";
     static String statusBuzz = "\tbuzz: %b%n";
     static String statusDuck = "\tduck: %b%n";
     static String statusEven = "\teven: %b%n";
@@ -23,7 +24,7 @@ public class Stage2 {
     public static void main() {
         Print.subtitle("Stage 2 - Duck Numbers", '*', (byte) 80);
 
-        // TEST PHASE
+        /* TEST PHASE
         int[] testValues = {11, 22, 33, 44, 49, 14, 5, 66, 77, 337, 8888, 180};
         for (int userInput: testValues) {
             System.out.printf("%nNumber %d:%n", userInput);
@@ -31,20 +32,16 @@ public class Stage2 {
             checkBuzz(userInput);
             checkDuck(userInput);
         }
-        // END OF TEST PHASE
+        // END OF TEST PHASE */
 
 
-        /*
         int userInput = getNatural(); // returns 0 if invalid input
         if (userInput != 0) {
-            // TODO:
-            // Check parity
+            System.out.printf(introduction, userInput);
             checkParity(userInput);
-            // Check buzz
             checkBuzz(userInput);
-            // Check Duck
+            checkDuck(userInput);
         }
-         */
 
         Print.subtitle("End of Stage 2", '*', (byte) 80);
     }
