@@ -62,6 +62,14 @@ public class Stage2 {
     }
 
 
+    private static boolean endsBy7(int userInput) {
+        // This method returns false if userInput does not end with 7,
+        // and returns true elsewhere;
+
+        return (userInput % 10 == 7);
+    }
+
+
     private static int getNatural() {
         // Variables
         Scanner scanner = new Scanner(System.in);
