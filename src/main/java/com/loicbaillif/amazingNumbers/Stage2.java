@@ -14,6 +14,7 @@ public class Stage2 {
     // Static Variables
     static String errorNotNatural = "Error: This is not a natural number";
     static String getNatural = "Enter a natural number:";
+    static String statusBuzz = "\tbuzz: %b%n";
     static String statusEven = "\teven: %b%n";
     static String statusOdd = "\t odd: %b%n";
 
@@ -51,7 +52,8 @@ public class Stage2 {
         boolean buzzStatus;
 
         // Processing
-        buzzStatus = endsBy7(userInput);
+        buzzStatus = endsBy7(userInput) || multipleOf7(userInput);
+        System.out.printf(statusBuzz, buzzStatus);
     }
 
 
