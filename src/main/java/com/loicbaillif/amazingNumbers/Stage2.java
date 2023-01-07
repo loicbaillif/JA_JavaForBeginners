@@ -51,7 +51,7 @@ public class Stage2 {
         boolean buzzStatus;
 
         // Processing
-
+        buzzStatus = endsBy7(userInput);
     }
 
 
@@ -88,5 +88,20 @@ public class Stage2 {
         }
 
         return userInput;
+    }
+
+
+    private static boolean multipleOf7(int userInput) {
+        // This method returns false if userInput is not divisible by 7,
+        // and returns true elsewhere;
+        if (userInput < 10) {
+            return (userInput == 0 || userInput == 7);
+        } else {
+            // Variables
+            int lastDigit = userInput % 10;
+            int prefix = userInput / 10;
+
+            return multipleOf7(Math.abs(prefix - ( 2 * lastDigit)));
+        }
     }
 }
