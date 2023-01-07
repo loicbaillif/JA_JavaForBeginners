@@ -19,9 +19,13 @@ class ProjectNumber {
         this.numberValue = numberValue;
         setEven();
         setOdd();
+        setBuzz();
     }
 
     // Getters and Setters
+    boolean isBuzz() {
+        return buzz;
+    }
     boolean isEven() {
         return even;
     }
