@@ -15,6 +15,7 @@ public class Stage2 {
     static String errorNotNatural = "Error: This is not a natural number";
     static String getNatural = "Enter a natural number:";
     static String statusBuzz = "\tbuzz: %b%n";
+    static String statusDuck = "\tduck: %b%n";
     static String statusEven = "\teven: %b%n";
     static String statusOdd = "\t odd: %b%n";
 
@@ -23,11 +24,12 @@ public class Stage2 {
         Print.subtitle("Stage 2 - Duck Numbers", '*', (byte) 80);
 
         // TEST PHASE
-        int[] testValues = {11, 22, 33, 44, 49, 14, 55, 66, 77, 337, 8888};
+        int[] testValues = {11, 22, 33, 44, 49, 14, 5, 66, 77, 337, 8888, 180};
         for (int userInput: testValues) {
             System.out.printf("%nNumber %d:%n", userInput);
             checkParity(userInput);
             checkBuzz(userInput);
+            checkDuck(userInput);
         }
         // END OF TEST PHASE
 
@@ -39,6 +41,7 @@ public class Stage2 {
             // Check parity
             checkParity(userInput);
             // Check buzz
+            checkBuzz(userInput);
             // Check Duck
         }
          */
@@ -54,6 +57,15 @@ public class Stage2 {
         // Processing
         isBuzz = endsBy7(userInput) || multipleOf7(userInput);
         System.out.printf(statusBuzz, isBuzz);
+    }
+
+
+    private static void checkDuck(int userInput) {
+        boolean isDuck = false;
+        int lastDigit = userInput % 10;
+        int remainingDigit = userInput / 10;
+
+        System.out.printf(statusDuck, isDuck);
     }
 
 
