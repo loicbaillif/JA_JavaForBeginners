@@ -46,8 +46,6 @@ class ProjectNumber {
 
         while (!isDuck && remainingDigit != 0) {
             isDuck = endsByX(remainingDigit, 0);
-            System.out.printf("\tremaining = %d; isduck = %b%n",
-                    remainingDigit, isDuck);
             remainingDigit /= 10;
         }
 
