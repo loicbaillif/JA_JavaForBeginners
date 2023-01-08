@@ -32,7 +32,10 @@ public class Stage4 {
         Print.subtitle("Stage 4 : Gapful Number", '*', (byte) 80);
 
         System.out.println(instructions);
-        getUserInput();
+        long[] userInput = getUserInput();
+        for (int i = 0; i < userInput.length; i++) {
+            System.out.printf("input %d = %d", i, userInput[i]);
+        }
 
         Print.subtitle("End of Stage 4", '*', (byte) 80);
     }
@@ -58,7 +61,7 @@ public class Stage4 {
                 userInput = new long[1];
                 try {
                     userInput[0] = Long.parseLong(inputString);
-                } catch (InputMismatchException e) {
+                } catch (NumberFormatException e) {
                     System.out.println(errorNotNatural);
                     userInput[0] = -1;
                 }
