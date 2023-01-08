@@ -21,6 +21,7 @@ class ProjectNumber {
         setOdd();
         setBuzz();
         setDuck();
+        setPalindromic();
     }
 
     // Getters and Setters
@@ -35,6 +36,9 @@ class ProjectNumber {
     }
     boolean isOdd() {
         return odd;
+    }
+    boolean isPalindromic() {
+        return palindromic;
     }
 
     private void setBuzz() {
@@ -56,6 +60,10 @@ class ProjectNumber {
     }
     private void setOdd() {
         this.odd = (numberValue % 2 == 1);
+    }
+    private void setPalindromic() {
+
+        this.palindromic = false;
     }
 
 
