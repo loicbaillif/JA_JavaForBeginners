@@ -70,7 +70,15 @@ class ProjectNumber {
         char firstChar;
         char lastChar;
 
-        this.palindromic = false;
+        // Processing
+        while (!isPalindromic || index >= (numberLength / 2)) {
+            firstChar = numberString.charAt(index);
+            lastChar = numberString.charAt(numberLength - index);
+            isPalindromic = (firstChar == lastChar);
+            index++;
+        }
+
+        this.palindromic = isPalindromic;
     }
 
 
