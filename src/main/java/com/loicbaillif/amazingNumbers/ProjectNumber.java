@@ -74,8 +74,6 @@ class ProjectNumber {
         while (isPalindromic && index < (numberLength / 2)) {
             firstChar = numberString.charAt(index);
             lastChar = numberString.charAt(numberLength - index - 1);
-            System.out.printf("firstC = %c - lastC = %c%n", firstChar, lastChar);
-            System.out.printf("length=%d - index = %d%n", numberLength, index);
             isPalindromic = (firstChar == lastChar);
             index++;
         }

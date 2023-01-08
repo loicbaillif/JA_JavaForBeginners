@@ -19,17 +19,18 @@ public class Stage3 {
             """;
     static String numberStatus = """
             Properties of %d
-                even: %b
-                 odd: %b
-                buzz: %b
-                duck: %b
+                       even: %b
+                        odd: %b
+                       buzz: %b
+                       duck: %b
+                palindromic: %b
             """;
 
     public static void main() {
         Print.subtitle("Stage 3 - Palindromic Numbers", '*', (byte) 80);
 
         System.out.println(welcome);
-        ProjectNumber projectNumber = new ProjectNumber(9223372036854775807L);
+        ProjectNumber projectNumber;
 
         // TEST PHASE
         long[] testValues = {11L, 234L, 31L, 400L, 56L, 71L, 787L, 6789L, 66L,
@@ -41,7 +42,8 @@ public class Stage3 {
                     projectNumber.isEven(),
                     projectNumber.isOdd(),
                     projectNumber.isBuzz(),
-                    projectNumber.isDuck());
+                    projectNumber.isDuck(),
+                    projectNumber.isPalindromic());
         }
         // END TEST
 
