@@ -2,6 +2,9 @@ package com.loicbaillif.amazingNumbers;
 
 import com.loicbaillif.tools.Print;
 
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
 public class Stage3 {
     /* https://hyperskill.org/projects/184/stages/933/implement
      *
@@ -25,6 +28,9 @@ public class Stage3 {
                        duck: %b
                 palindromic: %b
             """;
+    static String errorNotNatural = "The first parameter should be a " +
+            "natural number or zero";
+
 
     public static void main() {
         Print.subtitle("Stage 3 - Palindromic Numbers", '*', (byte) 80);
@@ -57,5 +63,25 @@ public class Stage3 {
          */
 
         Print.subtitle("End of Stage 3", '*', (byte) 80);
+    }
+
+
+    private static long getNatural() {
+        // Variables
+        Scanner scanner = new Scanner(System.in);
+        long userInput;
+
+        try {
+            userInput = scanner.nextLong();
+        } catch (InputMismatchException e) {
+            userInput = -1L;
+        }
+
+        if (userInput <= 0) {
+            System.out.println(errorNotNatural);
+            userInput = -1L;
+        }
+
+        return userInput;
     }
 }
