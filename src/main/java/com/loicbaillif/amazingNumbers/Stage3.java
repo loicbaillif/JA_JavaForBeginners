@@ -36,7 +36,7 @@ public class Stage3 {
         Print.subtitle("Stage 3 - Palindromic Numbers", '*', (byte) 80);
 
         System.out.println(welcome);
-        ProjectNumber projectNumber;
+        ProjectNumber projectNumber = new ProjectNumber(getNatural());
 
         // TEST PHASE
         long[] testValues = {11L, 234L, 31L, 400L, 56L, 71L, 787L, 6789L, 66L,
@@ -53,14 +53,17 @@ public class Stage3 {
         }
         // END TEST
 
-        /*
-        System.out.printf(numberStatus,
-                projectNumber.numberValue,
-                projectNumber.isEven(),
-                projectNumber.isOdd(),
-                projectNumber.isBuzz());
+        while (projectNumber.getNumberValue() != 0) {
+            System.out.printf(numberStatus,
+                    projectNumber.numberValue,
+                    projectNumber.isEven(),
+                    projectNumber.isOdd(),
+                    projectNumber.isBuzz(),
+                    projectNumber.isDuck(),
+                    projectNumber.isPalindromic());
+            projectNumber.setNumberValue(getNatural());
+        }
 
-         */
 
         Print.subtitle("End of Stage 3", '*', (byte) 80);
     }

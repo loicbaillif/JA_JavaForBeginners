@@ -25,6 +25,9 @@ class ProjectNumber {
     }
 
     // Getters and Setters
+    long getNumberValue() {
+        return this.numberValue;
+    }
     boolean isBuzz() {
         return buzz;
     }
@@ -57,6 +60,14 @@ class ProjectNumber {
     }
     private void setEven() {
         this.even = (numberValue % 2 == 0);
+    }
+    void setNumberValue(long numberValue) {
+        this.numberValue = numberValue;
+        setBuzz();
+        setDuck();
+        setEven();
+        setOdd();
+        setPalindromic();
     }
     private void setOdd() {
         this.odd = (numberValue % 2 == 1);
