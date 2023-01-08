@@ -47,12 +47,7 @@ public class Stage4 {
         if (inputString.indexOf(' ') == -1) {
             // One input only
             userInput = new long[1];
-            try {
-                userInput[0] = Long.parseLong(inputString);
-            } catch (NumberFormatException e) {
-                System.out.println(errorNotNatural);
-                userInput[0] = -1;
-            }
+            userInput[0] = CheckInput.strToLong(inputString, errorNotNatural);
 
             if (userInput[0] < 0) {
                 userInput[0] = -1;
