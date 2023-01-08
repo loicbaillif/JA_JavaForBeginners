@@ -7,6 +7,7 @@ public class Main {
         Print.title("PROJECT - Amazing Numbers");
         // Stage1.main();
         // Stage2.main();
-        Stage3.main();
+        // Stage3.main();
+        Stage4.main();
     }
 }
