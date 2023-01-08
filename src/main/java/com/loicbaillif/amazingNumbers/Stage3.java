@@ -38,7 +38,7 @@ public class Stage3 {
         System.out.println(welcome);
         ProjectNumber projectNumber = new ProjectNumber(getNatural());
 
-        // TEST PHASE
+        /* TEST PHASE
         long[] testValues = {11L, 234L, 31L, 400L, 56L, 71L, 787L, 6789L, 66L,
                 9223372036854775807L};
         for (long testValue : testValues) {
@@ -51,16 +51,18 @@ public class Stage3 {
                     projectNumber.isDuck(),
                     projectNumber.isPalindromic());
         }
-        // END TEST
+        // END TEST */
 
         while (projectNumber.getNumberValue() != 0) {
-            System.out.printf(numberStatus,
-                    projectNumber.getNumberValue(),
-                    projectNumber.isEven(),
-                    projectNumber.isOdd(),
-                    projectNumber.isBuzz(),
-                    projectNumber.isDuck(),
-                    projectNumber.isPalindromic());
+            if (projectNumber.getNumberValue() != -1) {
+                System.out.printf(numberStatus,
+                        projectNumber.getNumberValue(),
+                        projectNumber.isEven(),
+                        projectNumber.isOdd(),
+                        projectNumber.isBuzz(),
+                        projectNumber.isDuck(),
+                        projectNumber.isPalindromic());
+            }
             projectNumber.setNumberValue(getNatural());
         }
 
@@ -80,7 +82,7 @@ public class Stage3 {
             userInput = -1L;
         }
 
-        if (userInput <= 0) {
+        if (userInput < 0) {
             System.out.println(errorNotNatural);
             userInput = -1L;
         }
