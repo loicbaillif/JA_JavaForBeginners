@@ -42,9 +42,9 @@ public class Stage3 {
         long[] testValues = {11L, 234L, 31L, 400L, 56L, 71L, 787L, 6789L, 66L,
                 9223372036854775807L};
         for (long testValue : testValues) {
-            projectNumber = new ProjectNumber(testValue);
+            projectNumber.setNumberValue(testValue);
             System.out.printf(numberStatus,
-                    projectNumber.numberValue,
+                    projectNumber.getNumberValue(),
                     projectNumber.isEven(),
                     projectNumber.isOdd(),
                     projectNumber.isBuzz(),
@@ -55,7 +55,7 @@ public class Stage3 {
 
         while (projectNumber.getNumberValue() != 0) {
             System.out.printf(numberStatus,
-                    projectNumber.numberValue,
+                    projectNumber.getNumberValue(),
                     projectNumber.isEven(),
                     projectNumber.isOdd(),
                     projectNumber.isBuzz(),
