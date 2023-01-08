@@ -28,8 +28,10 @@ public class Stage3 {
                        duck: %b
                 palindromic: %b
             """;
+    static String askRequest = "Enter a request";
     static String errorNotNatural = "The first parameter should be a " +
             "natural number or zero";
+    static String goodbye = "Thanks for testing, goodbye!";
 
 
     public static void main() {
@@ -66,6 +68,7 @@ public class Stage3 {
             projectNumber.setNumberValue(getNatural());
         }
 
+        System.out.println(goodbye);
 
         Print.subtitle("End of Stage 3", '*', (byte) 80);
     }
@@ -76,6 +79,7 @@ public class Stage3 {
         Scanner scanner = new Scanner(System.in);
         long userInput;
 
+        System.out.println(askRequest);
         try {
             userInput = scanner.nextLong();
         } catch (InputMismatchException e) {
