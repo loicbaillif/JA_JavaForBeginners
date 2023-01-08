@@ -63,7 +63,7 @@ class ProjectNumber {
     }
     private void setPalindromic() {
         // Variables
-        boolean isPalindromic = false;
+        boolean isPalindromic = true;
         String numberString = String.valueOf(numberValue);
         int index = 0;
         int numberLength = numberString.length();
@@ -71,9 +71,11 @@ class ProjectNumber {
         char lastChar;
 
         // Processing
-        while (!isPalindromic || index >= (numberLength / 2)) {
+        while (isPalindromic && index < (numberLength / 2)) {
             firstChar = numberString.charAt(index);
-            lastChar = numberString.charAt(numberLength - index);
+            lastChar = numberString.charAt(numberLength - index - 1);
+            System.out.printf("firstC = %c - lastC = %c%n", firstChar, lastChar);
+            System.out.printf("length=%d - index = %d%n", numberLength, index);
             isPalindromic = (firstChar == lastChar);
             index++;
         }
