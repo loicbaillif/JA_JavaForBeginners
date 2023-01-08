@@ -3,14 +3,7 @@ package com.loicbaillif.amazingNumbers;
 class CheckInput {
 
     static long strToLong(String input, String errorMessage) {
-        long inputLong = -1L;
-        try {
-            inputLong = Long.parseLong(input);
-        } catch (NumberFormatException e) {
-            System.out.println(errorMessage);
-        }
-
-        return inputLong;
+        return strToLong(input, errorMessage, Long.MIN_VALUE);
     }
 
     static long strToLong(String input, String errorMessage, long minValue) {

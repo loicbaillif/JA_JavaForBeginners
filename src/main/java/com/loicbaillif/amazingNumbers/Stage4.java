@@ -47,22 +47,22 @@ public class Stage4 {
         if (inputString.indexOf(' ') == -1) {
             // One input only
             userInput = new long[1];
-            userInput[0] = CheckInput.strToLong(inputString, errorNotNatural);
-
-            if (userInput[0] < 0) {
-                userInput[0] = -1;
-            }
+            userInput[0] = CheckInput.strToLong(
+                    inputString,
+                    errorNotNatural,
+                    0L);
         } else {
             // Multiple inputs
-            long firstNumber = Long.parseLong(inputString.split(" ")[0]);
-            int qtyNumbers = Integer.parseInt(inputString.split(" ")[1]);
+            long firstNumber = CheckInput.strToLong(
+                    inputString.split(" ")[0],
+                    errorNotNatural,
+                    0L);
+            long qtyNumbers = CheckInput.strToLong(
+                    inputString.split(" ")[1],
+                    errorLen,
+                    0L);
 
-            if (qtyNumbers <= 0) {
-                qtyNumbers = 0;
-                System.out.println(errorLen);
-            }
-
-            userInput = new long[qtyNumbers];
+            userInput = new long[(int) qtyNumbers];
             for (int i = 0; i < qtyNumbers; i++) {
                 userInput[i] = firstNumber++;
             }
