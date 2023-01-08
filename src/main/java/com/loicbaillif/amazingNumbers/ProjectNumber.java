@@ -20,11 +20,15 @@ class ProjectNumber {
         setEven();
         setOdd();
         setBuzz();
+        setDuck();
     }
 
     // Getters and Setters
     boolean isBuzz() {
         return buzz;
+    }
+    boolean isDuck() {
+        return duck;
     }
     boolean isEven() {
         return even;
@@ -35,6 +39,10 @@ class ProjectNumber {
 
     private void setBuzz() {
         this.buzz = endsByX(numberValue, 7) || multipleOf7(numberValue);
+    }
+    private void setDuck() {
+        boolean isDuck = false;
+        long remainingDigit = numberValue;
     }
     private void setEven() {
         this.even = (numberValue % 2 == 0);

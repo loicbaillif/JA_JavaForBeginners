@@ -22,6 +22,7 @@ public class Stage3 {
                 even: %b
                  odd: %b
                 buzz: %b
+                duck: %b
             """;
 
     public static void main() {
@@ -39,7 +40,8 @@ public class Stage3 {
                     projectNumber.numberValue,
                     projectNumber.isEven(),
                     projectNumber.isOdd(),
-                    projectNumber.isBuzz());
+                    projectNumber.isBuzz(),
+                    projectNumber.isDuck());
         }
         // END TEST
 
