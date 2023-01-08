@@ -52,6 +52,14 @@ public class Stage4 {
                 System.out.println(errorNotNatural);
                 userInput[0] = -1;
             }
+        } else {
+            // Multiple inputs
+            long firstNumber = Long.parseLong(inputString.split(" ")[0]);
+            int qtyNumbers = Integer.parseInt(inputString.split(" ")[1]);
+            userInput = new long[qtyNumbers];
+            for (int i = 0; i < qtyNumbers; i++) {
+                userInput[i] = firstNumber++;
+            }
         }
 
         return userInput;
