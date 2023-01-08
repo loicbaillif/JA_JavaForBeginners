@@ -62,6 +62,13 @@ class ProjectNumber {
         this.odd = (numberValue % 2 == 1);
     }
     private void setPalindromic() {
+        // Variables
+        boolean isPalindromic = false;
+        String numberString = String.valueOf(numberValue);
+        int index = 0;
+        int numberLength = numberString.length();
+        char firstChar;
+        char lastChar;
 
         this.palindromic = false;
     }
