@@ -2,6 +2,7 @@ package com.loicbaillif.amazingNumbers;
 
 import com.loicbaillif.tools.Print;
 
+import java.util.Objects;
 import java.util.Scanner;
 
 public class Stage4 {
@@ -39,11 +40,17 @@ public class Stage4 {
     private static long[] getUserInput() {
         // Variables
         Scanner scanner = new Scanner(System.in);
-        String userInput;
+        String inputString;
 
         System.out.println(askRequest);
 
-        userInput = scanner.next();
+        inputString = scanner.nextLine();
+
+        if (Objects.equals("", inputString)) {
+            System.out.println(instructions);
+        } else {
+
+        }
 
         return new long[2];
     }
