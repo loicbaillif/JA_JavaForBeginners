@@ -12,7 +12,6 @@ public class Stage3 {
      */
 
     // Static variables
-
     static String welcome = """
             Welcome to Amazing Numbers!
                 
@@ -57,13 +56,7 @@ public class Stage3 {
 
         while (projectNumber.getNumberValue() != 0) {
             if (projectNumber.getNumberValue() != -1) {
-                System.out.printf(numberStatus,
-                        projectNumber.getNumberValue(),
-                        projectNumber.isEven(),
-                        projectNumber.isOdd(),
-                        projectNumber.isBuzz(),
-                        projectNumber.isDuck(),
-                        projectNumber.isPalindromic());
+                projectNumber.giveStatus(numberStatus);
             }
             projectNumber.setNumberValue(getNatural());
         }

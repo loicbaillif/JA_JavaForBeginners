@@ -100,6 +100,17 @@ class ProjectNumber {
 
         return (userInput % 10 == digit);
     }
+
+    void giveStatus(String statusPhrase) {
+        System.out.printf(statusPhrase,
+                this.getNumberValue(),
+                this.isEven(),
+                this.isOdd(),
+                this.isBuzz(),
+                this.isDuck(),
+                this.isPalindromic());
+    }
+
     private static boolean multipleOf7(long userInput) {
         // This method returns false if userInput is not divisible by 7,
         // and returns true elsewhere;
