@@ -2,6 +2,7 @@ package com.loicbaillif.amazingNumbers;
 
 import com.loicbaillif.tools.Print;
 
+import java.util.InputMismatchException;
 import java.util.Objects;
 import java.util.Scanner;
 
@@ -41,6 +42,8 @@ public class Stage4 {
         // Variables
         Scanner scanner = new Scanner(System.in);
         String inputString;
+        long[] userInput = new long[0];
+        System.out.println(userInput.length);
 
         System.out.println(askRequest);
 
@@ -49,9 +52,19 @@ public class Stage4 {
         if (Objects.equals("", inputString)) {
             System.out.println(instructions);
         } else {
-
+            // String not empty
+            if (inputString.indexOf(' ') == -1) {
+                // One input only
+                userInput = new long[1];
+                try {
+                    userInput[0] = Long.parseLong(inputString);
+                } catch (InputMismatchException e) {
+                    System.out.println(errorNotNatural);
+                    userInput[0] = -1;
+                }
+            }
         }
 
-        return new long[2];
+        return userInput;
     }
 }
