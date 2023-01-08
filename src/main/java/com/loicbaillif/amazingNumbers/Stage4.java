@@ -2,7 +2,6 @@ package com.loicbaillif.amazingNumbers;
 
 import com.loicbaillif.tools.Print;
 
-import java.util.InputMismatchException;
 import java.util.Objects;
 import java.util.Scanner;
 
@@ -41,6 +40,24 @@ public class Stage4 {
     }
 
 
+    private static long[] convertUserInput(String inputString) {
+        // gets user input as String and returns it as long[]
+        long[] userInput;
+        if (inputString.indexOf(' ') == -1) {
+            // One input only
+            userInput = new long[1];
+            try {
+                userInput[0] = Long.parseLong(inputString);
+            } catch (NumberFormatException e) {
+                System.out.println(errorNotNatural);
+                userInput[0] = -1;
+            }
+        }
+
+        return userInput;
+    }
+
+
     private static long[] getUserInput() {
         // Variables
         Scanner scanner = new Scanner(System.in);
@@ -56,16 +73,7 @@ public class Stage4 {
             System.out.println(instructions);
         } else {
             // String not empty
-            if (inputString.indexOf(' ') == -1) {
-                // One input only
-                userInput = new long[1];
-                try {
-                    userInput[0] = Long.parseLong(inputString);
-                } catch (NumberFormatException e) {
-                    System.out.println(errorNotNatural);
-                    userInput[0] = -1;
-                }
-            }
+            userInput = convertUserInput(inputString);
         }
 
         return userInput;
