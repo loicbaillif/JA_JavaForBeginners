@@ -23,6 +23,7 @@ public class Stage4 {
             - enter 0 to exit.
             """;
     static String askRequest = "Enter a request:";
+    static String errorLen = "The second parameter should be a natural number";
     static String errorNotNatural = "The first parameter should be a " +
             "natural number or zero";
 
@@ -33,7 +34,7 @@ public class Stage4 {
         System.out.println(instructions);
         long[] userInput = getUserInput();
         for (int i = 0; i < userInput.length; i++) {
-            System.out.printf("input %d = %d", i, userInput[i]);
+            System.out.printf("input %d = %d%n", i, userInput[i]);
         }
 
         Print.subtitle("End of Stage 4", '*', (byte) 80);
@@ -52,10 +53,20 @@ public class Stage4 {
                 System.out.println(errorNotNatural);
                 userInput[0] = -1;
             }
+
+            if (userInput[0] < 0) {
+                userInput[0] = -1;
+            }
         } else {
             // Multiple inputs
             long firstNumber = Long.parseLong(inputString.split(" ")[0]);
             int qtyNumbers = Integer.parseInt(inputString.split(" ")[1]);
+
+            if (qtyNumbers <= 0) {
+                qtyNumbers = 0;
+                System.out.println(errorLen);
+            }
+
             userInput = new long[qtyNumbers];
             for (int i = 0; i < qtyNumbers; i++) {
                 userInput[i] = firstNumber++;
