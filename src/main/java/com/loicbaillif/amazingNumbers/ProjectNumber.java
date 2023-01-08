@@ -43,6 +43,15 @@ class ProjectNumber {
     private void setDuck() {
         boolean isDuck = false;
         long remainingDigit = numberValue;
+
+        while (!isDuck && remainingDigit != 0) {
+            isDuck = endsByX(remainingDigit, 0);
+            System.out.printf("\tremaining = %d; isduck = %b%n",
+                    remainingDigit, isDuck);
+            remainingDigit /= 10;
+        }
+
+        this.duck = isDuck;
     }
     private void setEven() {
         this.even = (numberValue % 2 == 0);
