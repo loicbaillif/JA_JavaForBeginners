@@ -8,11 +8,11 @@ class CheckInput {
 
     static long strToLong(String input, String errorMessage, long minValue) {
         // minValue is excluded
-        long inputLong = minValue;
+        long inputLong;
         try {
             inputLong = Long.parseLong(input);
         } catch (NumberFormatException e) {
-            System.out.println(errorMessage);
+            inputLong = minValue;
         }
 
         if (minValue != Long.MIN_VALUE && inputLong <= minValue) {
