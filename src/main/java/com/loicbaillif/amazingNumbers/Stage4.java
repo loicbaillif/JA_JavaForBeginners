@@ -44,8 +44,24 @@ public class Stage4 {
     private static long[] convertUserInput(String inputString) {
         // gets user input as String and returns it as long[]
         long[] userInput;
+
+        long firstNumber = CheckInput.strToLong(
+                inputString.split(" ")[0], errorNotNatural, 0L
+        );
+
+        if (inputString.indexOf(' ') != -1) {
+            // Two inputs
+            long qtyNumbers = CheckInput.strToLong(
+                    inputString.split(" ")[1], errorLen, 0L
+            );
+        }
+
+
+
+        /*
         if (inputString.indexOf(' ') == -1) {
             // One input only
+            System.out.println("Only one input detected");
             userInput = new long[1];
             userInput[0] = CheckInput.strToLong(
                     inputString,
@@ -67,6 +83,8 @@ public class Stage4 {
                 userInput[i] = firstNumber++;
             }
         }
+
+         */
 
         return userInput;
     }

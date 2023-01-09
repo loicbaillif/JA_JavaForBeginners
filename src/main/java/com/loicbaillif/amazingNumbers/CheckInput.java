@@ -16,6 +16,7 @@ class CheckInput {
         }
 
         if (minValue != Long.MIN_VALUE && inputLong <= minValue) {
+            System.out.println(errorMessage);
             inputLong = minValue - 1;
         }
 
