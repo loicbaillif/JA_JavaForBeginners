@@ -16,6 +16,11 @@ public class Ex5 {
         // invoke methodThrowingExceptions here and catch some types of exceptions
         Print.title("Exception Handling : Exercise 5");
 
+        try {
+            methodThrowingExceptions();
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("ArrayIndexOutOfBoundsException");
+        }
 
 
         Print.subtitle("End of exercise", '*', (byte) 80);
