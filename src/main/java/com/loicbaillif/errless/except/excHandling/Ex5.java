@@ -20,6 +20,8 @@ public class Ex5 {
             methodThrowingExceptions();
         } catch (ArrayIndexOutOfBoundsException e) {
             System.out.println("ArrayIndexOutOfBoundsException");
+        } catch (NumberFormatException e) {
+            System.out.println("NumberFormatException");
         }
 
 
