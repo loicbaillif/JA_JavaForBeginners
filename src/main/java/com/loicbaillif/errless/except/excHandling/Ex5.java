@@ -14,6 +14,11 @@ public class Ex5 {
     // Code to update:
     public static void methodCatchingSomeExceptions() {
         // invoke methodThrowingExceptions here and catch some types of exceptions
+        Print.title("Exception Handling : Exercise 5");
+
+
+
+        Print.subtitle("End of exercise", '*', (byte) 80);
     }
 
 
