@@ -76,6 +76,7 @@ class ProjectNumber {
         setEven();
         setOdd();
         setPalindromic();
+        setGapful();
     }
     private void setOdd() {
         this.odd = (numberValue % 2 == 1);
@@ -107,6 +108,13 @@ class ProjectNumber {
         // and returns false elsewhere;
 
         return (userInput % 10 == digit);
+    }
+    private static int firstDigit(long userInput) {
+        long tempNumber = userInput / 10;
+        while (tempNumber > 9L) {
+            tempNumber /= 10;
+        }
+        return (int) tempNumber;
     }
 
     void giveStatus(String statusPhrase) {
