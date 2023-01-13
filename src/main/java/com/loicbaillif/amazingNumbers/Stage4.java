@@ -52,10 +52,11 @@ public class Stage4 {
             if (userInput.length == 1 && userInput[0] > 0){
                 projectNumber.setNumberValue(userInput[0]);
                 projectNumber.giveStatus(numberStatus);
-            } else if (userInput.length == 2 && userInput[0] > 0) {
+            } else if (userInput.length >= 1 && userInput[0] > 0) {
+                System.out.println("Range to treat");
                 for (long l : userInput) {
                     projectNumber.setNumberValue(l);
-                    projectNumber.giveStatus(numberStatus);
+                    projectNumber.giveShortStatus();
                 }
             }
 

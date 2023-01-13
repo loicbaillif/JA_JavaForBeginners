@@ -120,7 +120,15 @@ class ProjectNumber {
         }
         return (int) tempNumber;
     }
-
+    void giveShortStatus() {
+        System.out.printf("%d is: ", numberValue);
+        System.out.printf(even? "even": "odd");
+        System.out.printf(buzz? ", buzz": "");
+        System.out.printf(duck? ", duck": "");
+        System.out.printf(gapful? ", gapful": "");
+        System.out.printf(palindromic? ", palindromic": "");
+        System.out.println();
+    }
     void giveStatus(String statusPhrase) {
         System.out.printf(statusPhrase,
                 this.getNumberValue(),
