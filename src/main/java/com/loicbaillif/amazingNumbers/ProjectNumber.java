@@ -68,6 +68,7 @@ class ProjectNumber {
     }
     private void setGapful() {
         this.gapful = false;
+
     }
     void setNumberValue(long numberValue) {
         this.numberValue = numberValue;
@@ -109,8 +110,8 @@ class ProjectNumber {
 
         return (userInput % 10 == digit);
     }
-    private static int firstDigit(long userInput) {
-        long tempNumber = userInput / 10;
+    private int firstDigit() {
+        long tempNumber = this.getNumberValue() / 10;
         while (tempNumber > 9L) {
             tempNumber /= 10;
         }
@@ -126,6 +127,9 @@ class ProjectNumber {
                 this.isDuck(),
                 this.isPalindromic(),
                 this.isGapful());
+    }
+    private int lastDigit() {
+        return ((int) this.getNumberValue() % 10);
     }
 
     private static boolean multipleOf7(long userInput) {
