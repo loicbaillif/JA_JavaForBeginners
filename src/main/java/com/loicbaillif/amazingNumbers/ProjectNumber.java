@@ -11,6 +11,7 @@ class ProjectNumber {
     boolean buzz;
     boolean duck;
     boolean even;
+    boolean gapful;
     boolean odd;
     boolean palindromic;
     long numberValue;
@@ -21,6 +22,7 @@ class ProjectNumber {
         setOdd();
         setBuzz();
         setDuck();
+        setGapful();
         setPalindromic();
     }
 
@@ -36,6 +38,9 @@ class ProjectNumber {
     }
     boolean isEven() {
         return even;
+    }
+    boolean isGapful() {
+        return gapful;
     }
     boolean isOdd() {
         return odd;
@@ -60,6 +65,9 @@ class ProjectNumber {
     }
     private void setEven() {
         this.even = (numberValue % 2 == 0);
+    }
+    private void setGapful() {
+        this.gapful = false;
     }
     void setNumberValue(long numberValue) {
         this.numberValue = numberValue;
@@ -108,7 +116,8 @@ class ProjectNumber {
                 this.isOdd(),
                 this.isBuzz(),
                 this.isDuck(),
-                this.isPalindromic());
+                this.isPalindromic(),
+                this.isGapful());
     }
 
     private static boolean multipleOf7(long userInput) {

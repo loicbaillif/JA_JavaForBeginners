@@ -35,6 +35,7 @@ public class Stage4 {
                        buzz: %b
                        duck: %b
                 palindromic: %b
+                     gapful: %b
             """;
 
 
@@ -52,9 +53,8 @@ public class Stage4 {
                 projectNumber.setNumberValue(userInput[0]);
                 projectNumber.giveStatus(numberStatus);
             } else if (userInput.length == 2 && userInput[0] > 0) {
-                for (int i = 0; i < userInput.length; i++) {
-                    System.out.printf("input %d = %d%n", i, userInput[i]); // DEBUG
-                    projectNumber.setNumberValue(userInput[i]);
+                for (long l : userInput) {
+                    projectNumber.setNumberValue(l);
                     projectNumber.giveStatus(numberStatus);
                 }
             }
