@@ -34,17 +34,18 @@ public class Stage4 {
         Print.subtitle("Stage 4 : Gapful Number", '*', (byte) 80);
 
         System.out.println(instructions);
-        long[] userInput = getUserInput();
+        long[] userInput;
 
-        // Debug
-        for (int i = 0; i < userInput.length; i++) {
-            System.out.printf("input %d = %d%n", i, userInput[i]);
-        }
-        // End of debug
+        do {
+            userInput = getUserInput();
+            // Debug
+            for (int i = 0; i < userInput.length; i++) {
+                System.out.printf("input %d = %d%n", i, userInput[i]);
+            }
+            // End of debug
+        } while (userInput[0] != 0);
 
-        if (userInput[0] == 0) {
-            System.out.println(farewell);
-        }
+        System.out.println(farewell);
 
         Print.subtitle("End of Stage 4", '*', (byte) 80);
     }
