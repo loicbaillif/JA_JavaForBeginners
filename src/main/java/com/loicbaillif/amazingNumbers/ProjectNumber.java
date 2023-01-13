@@ -120,7 +120,7 @@ class ProjectNumber {
         return (int) tempNumber;
     }
     void giveShortStatus() {
-        System.out.printf("%d is: ", numberValue);
+        System.out.printf("%d is ", numberValue);
         System.out.printf(even? "even": "odd");
         System.out.printf(buzz? ", buzz": "");
         System.out.printf(duck? ", duck": "");
@@ -139,7 +139,7 @@ class ProjectNumber {
                 this.isGapful());
     }
     private int lastDigit() {
-        return ((int) this.getNumberValue() % 10);
+        return (int) (this.getNumberValue() % 10L);
     }
 
     private static boolean multipleOf7(long userInput) {
