@@ -22,8 +22,6 @@ public class Ex5 {
             System.out.println("ArrayIndexOutOfBoundsException");
         } catch (NumberFormatException e) {
             System.out.println("NumberFormatException");
-        } catch (Exception e) {
-            System.out.println(e.getClass().getSimpleName());
         }
 
 
