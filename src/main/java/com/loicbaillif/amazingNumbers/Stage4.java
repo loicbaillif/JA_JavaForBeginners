@@ -25,9 +25,17 @@ public class Stage4 {
     static String askRequest = "Enter a request:";
     static String errorLen = "Error: The second parameter should be " +
             "a natural number";
-    static String farewell = "Thanks for using Amazing Numbers, goodbye!";
     static String errorNotNatural = "Error: The first parameter should be a " +
             "natural number or zero";
+    static String farewell = "Thanks for using Amazing Numbers, goodbye!";
+    static String numberStatus = """
+            Properties of %d
+                       even: %b
+                        odd: %b
+                       buzz: %b
+                       duck: %b
+                palindromic: %b
+            """;
 
 
     public static void main() {
@@ -35,14 +43,19 @@ public class Stage4 {
 
         System.out.println(instructions);
         long[] userInput;
+        ProjectNumber projectNumber = new ProjectNumber(1);
 
         do {
             userInput = getUserInput();
-            // Debug
-            for (int i = 0; i < userInput.length; i++) {
-                System.out.printf("input %d = %d%n", i, userInput[i]);
+
+            if (userInput[0] > 0){
+                for (int i = 0; i < userInput.length; i++) {
+                    System.out.printf("input %d = %d%n", i, userInput[i]); // DEBUG
+                    projectNumber.setNumberValue(userInput[i]);
+                    projectNumber.giveStatus(numberStatus);
+                }
             }
-            // End of debug
+
         } while (userInput[0] != 0);
 
         System.out.println(farewell);
@@ -91,7 +104,6 @@ public class Stage4 {
         Scanner scanner = new Scanner(System.in);
         String inputString;
         long[] userInput = new long[0];
-        System.out.println(userInput.length);
 
         System.out.println(askRequest);
 
