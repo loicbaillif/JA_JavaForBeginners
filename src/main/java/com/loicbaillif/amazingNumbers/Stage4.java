@@ -23,8 +23,9 @@ public class Stage4 {
             - enter 0 to exit.
             """;
     static String askRequest = "Enter a request:";
-    static String errorLen = "The second parameter should be a natural number";
-    static String errorNotNatural = "The first parameter should be a " +
+    static String errorLen = "Error: The second parameter should be " +
+            "a natural number";
+    static String errorNotNatural = "Error: The first parameter should be a " +
             "natural number or zero";
 
 
@@ -33,9 +34,12 @@ public class Stage4 {
 
         System.out.println(instructions);
         long[] userInput = getUserInput();
+
+        // Debug
         for (int i = 0; i < userInput.length; i++) {
             System.out.printf("input %d = %d%n", i, userInput[i]);
         }
+        // End of debug
 
         Print.subtitle("End of Stage 4", '*', (byte) 80);
     }
