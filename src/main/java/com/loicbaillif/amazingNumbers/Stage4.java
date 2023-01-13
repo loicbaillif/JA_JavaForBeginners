@@ -25,6 +25,7 @@ public class Stage4 {
     static String askRequest = "Enter a request:";
     static String errorLen = "Error: The second parameter should be " +
             "a natural number";
+    static String farewell = "Thanks for using Amazing Numbers, goodbye!";
     static String errorNotNatural = "Error: The first parameter should be a " +
             "natural number or zero";
 
@@ -41,6 +42,10 @@ public class Stage4 {
         }
         // End of debug
 
+        if (userInput[0] == 0) {
+            System.out.println(farewell);
+        }
+
         Print.subtitle("End of Stage 4", '*', (byte) 80);
     }
 
@@ -48,15 +53,18 @@ public class Stage4 {
     private static long[] convertUserInput(String inputString) {
         // gets user input as String and returns it as long[]
         long firstNumber = CheckInput.strToLong(
-                inputString.split(" ")[0], errorNotNatural, 0L
+                inputString.split(" ")[0], errorNotNatural, -1L
         );
+
         long qtyNumbers = 1L;
 
-        if (inputString.indexOf(' ') != -1) {
-            // Two inputs
-            qtyNumbers = CheckInput.strToLong(
-                    inputString.split(" ")[1], errorLen, 0L
-            );
+        if (firstNumber > 0) {
+            if (inputString.indexOf(' ') != -1) {
+                // Two inputs
+                qtyNumbers = CheckInput.strToLong(
+                        inputString.split(" ")[1], errorLen, 0L
+                );
+            }
         }
 
         long[] userInput;
@@ -72,6 +80,7 @@ public class Stage4 {
         } else {
             userInput = new long[]{-1};
         }
+
         return userInput;
     }
 
