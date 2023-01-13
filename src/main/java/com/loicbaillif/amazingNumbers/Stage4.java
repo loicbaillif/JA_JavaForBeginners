@@ -13,6 +13,8 @@ public class Stage4 {
 
     // Static Variables
     static String instructions = """
+            Welcome to Amazing Numbers!
+            
             Supported requests:
             - enter a natural number to know its properties;
             - enter two natural numbers to obtain the properties of the list:
@@ -53,7 +55,6 @@ public class Stage4 {
                 projectNumber.setNumberValue(userInput[0]);
                 projectNumber.giveStatus(numberStatus);
             } else if (userInput.length >= 1 && userInput[0] > 0) {
-                System.out.println("Range to treat");
                 for (long l : userInput) {
                     projectNumber.setNumberValue(l);
                     projectNumber.giveShortStatus();

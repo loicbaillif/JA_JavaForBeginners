@@ -4,7 +4,7 @@ class ProjectNumber {
     /* ProjectNumber as an object
      *
      * Properties:
-     * even, odd, buzz, duck and palindromic.
+     * even, odd, buzz, duck, gapful and palindromic.
      */
 
     // Properties
@@ -67,9 +67,8 @@ class ProjectNumber {
         this.even = (numberValue % 2 == 0);
     }
     private void setGapful() {
-        this.gapful = false;
         if (numberValue > 99L) {
-            int divider = firstDigit() * 10 + lastDigit();
+            long divider = firstDigit() * 10L + lastDigit();
             this.gapful = (numberValue % divider == 0);
         }
     }
@@ -114,7 +113,7 @@ class ProjectNumber {
         return (userInput % 10 == digit);
     }
     private int firstDigit() {
-        long tempNumber = this.getNumberValue() / 10;
+        long tempNumber = this.getNumberValue() / 10L;
         while (tempNumber > 9L) {
             tempNumber /= 10;
         }
@@ -125,8 +124,8 @@ class ProjectNumber {
         System.out.printf(even? "even": "odd");
         System.out.printf(buzz? ", buzz": "");
         System.out.printf(duck? ", duck": "");
-        System.out.printf(gapful? ", gapful": "");
         System.out.printf(palindromic? ", palindromic": "");
+        System.out.printf(gapful? ", gapful": "");
         System.out.println();
     }
     void giveStatus(String statusPhrase) {
