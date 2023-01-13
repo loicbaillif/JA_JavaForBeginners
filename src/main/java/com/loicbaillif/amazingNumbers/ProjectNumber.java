@@ -68,7 +68,10 @@ class ProjectNumber {
     }
     private void setGapful() {
         this.gapful = false;
-
+        if (numberValue > 99L) {
+            int divider = firstDigit() * 10 + lastDigit();
+            this.gapful = (numberValue % divider == 0);
+        }
     }
     void setNumberValue(long numberValue) {
         this.numberValue = numberValue;
