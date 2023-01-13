@@ -48,7 +48,10 @@ public class Stage4 {
         do {
             userInput = getUserInput();
 
-            if (userInput[0] > 0){
+            if (userInput.length == 1 && userInput[0] > 0){
+                projectNumber.setNumberValue(userInput[0]);
+                projectNumber.giveStatus(numberStatus);
+            } else if (userInput.length == 2 && userInput[0] > 0) {
                 for (int i = 0; i < userInput.length; i++) {
                     System.out.printf("input %d = %d%n", i, userInput[i]); // DEBUG
                     projectNumber.setNumberValue(userInput[i]);
