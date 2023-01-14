@@ -12,8 +12,7 @@ public class Ex8 {
         // Variables
         Scanner scanner = new Scanner(System.in);
         float radius = scanner.nextFloat();
-        double area = Math.PI * radius * radius;
-        System.out.println(area);
+        System.out.println(Math.PI * radius * radius);
 
         Print.subtitle("End of exercise", '*', (byte) 80);
     }
