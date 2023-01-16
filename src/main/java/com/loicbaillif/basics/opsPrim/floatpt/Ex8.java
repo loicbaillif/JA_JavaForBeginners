@@ -12,6 +12,7 @@ public class Ex8 {
         // Variables
         Scanner scanner = new Scanner(System.in);
         float radius = scanner.nextFloat();
+        assert (radius >= 0) : "Invalid radius, cannot be negative value";
         System.out.println(Math.PI * radius * radius);
 
         Print.subtitle("End of exercise", '*', (byte) 80);
