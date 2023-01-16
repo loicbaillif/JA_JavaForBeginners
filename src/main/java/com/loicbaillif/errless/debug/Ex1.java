@@ -15,7 +15,7 @@ public class Ex1 {
         ints[0] = Integer.parseInt(scanner.nextLine());
         ints[1] = Integer.parseInt(scanner.nextLine());
 
-        swapInts(ints);
+        ints = swapInts(ints);
 
         System.out.println(ints[0]);
         System.out.println(ints[1]);
