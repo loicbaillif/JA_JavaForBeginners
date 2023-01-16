@@ -2,6 +2,8 @@ package com.loicbaillif.amazingNumbers;
 
 import com.loicbaillif.tools.Print;
 
+import java.util.Scanner;
+
 public class Stage5 {
     /* https://hyperskill.org/projects/184/stages/935/implement
      *
@@ -42,8 +44,18 @@ public class Stage5 {
     public static void main() {
         Print.subtitle("Stage 5 : Spy Numbers", '*', (byte) 80);
 
-
+        System.out.println(instructions);
+        String[] userInput = getUserInput();
 
         Print.subtitle("End of Stage 5", '*', (byte) 80);
+    }
+
+
+    private static String[] getUserInput() {
+        // Variables
+        Scanner scanner = new Scanner(System.in);
+        String[] userInput = {"", "", ""};
+
+        return userInput;
     }
 }
