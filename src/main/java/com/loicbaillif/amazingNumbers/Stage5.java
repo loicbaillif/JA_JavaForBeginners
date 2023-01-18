@@ -44,8 +44,15 @@ public class Stage5 {
     public static void main() {
         Print.subtitle("Stage 5 : Spy Numbers", '*', (byte) 80);
 
+        // Variables
+        boolean exitCondition = false;
+
         System.out.println(instructions);
         String[] userInput = getUserInput();
+        while (!exitCondition) {
+            treatRequest(userInput);
+            exitCondition = true;
+        }
 
 
         Print.subtitle("End of Stage 5", '*', (byte) 80);
@@ -57,5 +64,10 @@ public class Stage5 {
         Scanner scanner = new Scanner(System.in);
 
         return scanner.nextLine().split(" ");
+    }
+
+
+    private static void treatRequest(String[] userInput) {
+        System.out.println(userInput);
     }
 }
