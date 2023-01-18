@@ -55,9 +55,7 @@ public class Stage5 {
     private static String[] getUserInput() {
         // Variables
         Scanner scanner = new Scanner(System.in);
-        String[] userInput = scanner.nextLine().split(" ");
 
-
-        return userInput;
+        return scanner.nextLine().split(" ");
     }
 }
