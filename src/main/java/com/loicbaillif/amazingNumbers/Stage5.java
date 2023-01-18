@@ -47,6 +47,7 @@ public class Stage5 {
         System.out.println(instructions);
         String[] userInput = getUserInput();
 
+
         Print.subtitle("End of Stage 5", '*', (byte) 80);
     }
 
@@ -54,7 +55,8 @@ public class Stage5 {
     private static String[] getUserInput() {
         // Variables
         Scanner scanner = new Scanner(System.in);
-        String[] userInput = {"", "", ""};
+        String[] userInput = scanner.nextLine().split(" ");
+
 
         return userInput;
     }
