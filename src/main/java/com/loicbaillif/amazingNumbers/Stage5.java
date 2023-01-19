@@ -94,6 +94,14 @@ public class Stage5 {
 
     private static void treat2Inputs(String[] userInput) {
         System.out.println("2 inputs detected");
+
+        long firstValue = Long.parseLong(userInput[0]);
+        int nbElements = Integer.parseInt(userInput[1]);
+        for (int i = 0; i < nbElements; i++) {
+            projectNumber.setNumberValue(firstValue);
+            projectNumber.setProperties();
+            projectNumber.giveShortStatus();
+        }
     }
 
 
