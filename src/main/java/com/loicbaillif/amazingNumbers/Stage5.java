@@ -83,8 +83,11 @@ public class Stage5 {
             return true;
         }
 
-        long userInputLong = Long.parseLong(userInput);
-
+        try {
+            long userInputLong = Long.parseLong(userInput);
+        } catch (NumberFormatException e) {
+            System.out.println(errorNotNatural);
+        }
 
         return false;
     }
