@@ -14,16 +14,12 @@ class ProjectNumber {
     boolean gapful;
     boolean odd;
     boolean palindromic;
+    boolean spy;
     long numberValue;
 
     public ProjectNumber(long numberValue) {
         this.numberValue = numberValue;
-        setEven();
-        setOdd();
-        setBuzz();
-        setDuck();
-        setGapful();
-        setPalindromic();
+        setProperties();
     }
 
     // Getters and Setters
@@ -47,6 +43,9 @@ class ProjectNumber {
     }
     boolean isPalindromic() {
         return palindromic;
+    }
+    boolean isSpy() {
+        return spy;
     }
 
     private void setBuzz() {
@@ -97,6 +96,9 @@ class ProjectNumber {
 
         this.palindromic = isPalindromic;
     }
+    private void setSpy() {
+        this.spy = false;
+    }
     void setProperties() {
         setBuzz();
         setDuck();
@@ -104,6 +106,7 @@ class ProjectNumber {
         setOdd();
         setPalindromic();
         setGapful();
+        setSpy();
     }
 
 
@@ -128,6 +131,7 @@ class ProjectNumber {
         System.out.printf(duck? ", duck": "");
         System.out.printf(palindromic? ", palindromic": "");
         System.out.printf(gapful? ", gapful": "");
+        System.out.printf(spy? ", spy": "");
         System.out.println();
     }
     void giveStatus(String statusPhrase) {
@@ -138,7 +142,8 @@ class ProjectNumber {
                 this.isBuzz(),
                 this.isDuck(),
                 this.isPalindromic(),
-                this.isGapful());
+                this.isGapful(),
+                this.isSpy());
     }
     private int lastDigit() {
         return (int) (this.getNumberValue() % 10L);

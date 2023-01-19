@@ -40,6 +40,7 @@ public class Stage5 {
                        duck: %b
                 palindromic: %b
                      gapful: %b
+                        spy: %b
             """;
     static ProjectNumber projectNumber = new ProjectNumber(1);
 
