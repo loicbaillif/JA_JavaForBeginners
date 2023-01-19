@@ -77,10 +77,7 @@ public class Stage5 {
 
 
     private static boolean treat1Input(String userInput) {
-        System.out.println("1 argument detected"); // DEBUG
-        if (Objects.equals("0", userInput)) {
-            return true;
-        }
+        if (Objects.equals("0", userInput)) return true;
 
         try {
             long userInputLong = Long.parseLong(userInput);
