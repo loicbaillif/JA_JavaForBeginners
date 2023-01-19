@@ -50,8 +50,7 @@ public class Stage5 {
         System.out.println(instructions);
         String[] userInput = getUserInput();
         while (!exitCondition) {
-            treatRequest(userInput);
-            exitCondition = true;
+            exitCondition = treatRequest(userInput);
         }
 
 
@@ -67,7 +66,17 @@ public class Stage5 {
     }
 
 
-    private static void treatRequest(String[] userInput) {
-        System.out.println(userInput);
+    private static boolean treatRequest(String[] userInput) {
+        // Variables
+        int nbArgs = userInput.length;
+
+        switch (nbArgs) {
+            case 1 -> System.out.println("1 argument detected");
+            case 2 -> System.out.println("2 arguments detected");
+            case 3 -> System.out.println("3 arguments detected");
+            default -> System.out.println("Invalid number of arguments");
+        }
+
+        return true;
     }
 }
