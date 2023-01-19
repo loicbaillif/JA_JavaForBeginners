@@ -2,6 +2,7 @@ package com.loicbaillif.amazingNumbers;
 
 import com.loicbaillif.tools.Print;
 
+import java.util.Objects;
 import java.util.Scanner;
 
 public class Stage5 {
@@ -51,6 +52,7 @@ public class Stage5 {
         String[] userInput = getUserInput();
         while (!exitCondition) {
             exitCondition = treatRequest(userInput);
+            userInput = getUserInput();
         }
 
 
@@ -66,17 +68,28 @@ public class Stage5 {
     }
 
 
+    private static boolean treat1Input(String userInput) {
+        System.out.println("1 argument detected"); // DEBUG
+        if (Objects.equals("0", userInput)) {
+            return true;
+        }
+
+        return false;
+    }
+
+
     private static boolean treatRequest(String[] userInput) {
         // Variables
         int nbArgs = userInput.length;
+        boolean endProgram = false;
 
         switch (nbArgs) {
-            case 1 -> System.out.println("1 argument detected");
+            case 1 -> endProgram = treat1Input(userInput[0]);
             case 2 -> System.out.println("2 arguments detected");
             case 3 -> System.out.println("3 arguments detected");
             default -> System.out.println("Invalid number of arguments");
         }
 
-        return true;
+        return endProgram;
     }
 }
