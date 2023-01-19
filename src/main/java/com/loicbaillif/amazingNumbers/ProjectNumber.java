@@ -74,12 +74,6 @@ class ProjectNumber {
     }
     void setNumberValue(long numberValue) {
         this.numberValue = numberValue;
-        setBuzz();
-        setDuck();
-        setEven();
-        setOdd();
-        setPalindromic();
-        setGapful();
     }
     private void setOdd() {
         this.odd = (numberValue % 2 == 1);
@@ -102,6 +96,14 @@ class ProjectNumber {
         }
 
         this.palindromic = isPalindromic;
+    }
+    void setProperties() {
+        setBuzz();
+        setDuck();
+        setEven();
+        setOdd();
+        setPalindromic();
+        setGapful();
     }
 
 

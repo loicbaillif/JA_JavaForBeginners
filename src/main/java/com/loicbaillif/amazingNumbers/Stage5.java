@@ -42,6 +42,7 @@ public class Stage5 {
                      gapful: %b
                         spy: %b
             """;
+    static ProjectNumber projectNumber = new ProjectNumber(1);
 
     public static void main() {
         Print.subtitle("Stage 5 : Spy Numbers", '*', (byte) 80);
@@ -81,6 +82,9 @@ public class Stage5 {
         if (Objects.equals("0", userInput)) {
             return true;
         }
+
+        long userInputLong = Long.parseLong(userInput);
+
 
         return false;
     }
