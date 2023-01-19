@@ -40,7 +40,6 @@ public class Stage5 {
                        duck: %b
                 palindromic: %b
                      gapful: %b
-                        spy: %b
             """;
     static ProjectNumber projectNumber = new ProjectNumber(1);
 
@@ -85,6 +84,9 @@ public class Stage5 {
 
         try {
             long userInputLong = Long.parseLong(userInput);
+            projectNumber.setNumberValue(userInputLong);
+            projectNumber.setProperties();
+            projectNumber.giveStatus(numberStatus);
         } catch (NumberFormatException e) {
             System.out.println(errorNotNatural);
         }
