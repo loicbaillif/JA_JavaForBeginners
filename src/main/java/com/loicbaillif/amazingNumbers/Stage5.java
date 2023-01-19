@@ -49,10 +49,10 @@ public class Stage5 {
         boolean exitCondition = false;
 
         System.out.println(instructions);
-        String[] userInput = getUserInput();
+        String[] userInput;
         while (!exitCondition) {
-            exitCondition = treatRequest(userInput);
             userInput = getUserInput();
+            exitCondition = treatRequest(userInput);
         }
 
 
