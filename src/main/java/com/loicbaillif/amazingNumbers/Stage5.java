@@ -98,7 +98,7 @@ public class Stage5 {
         long firstValue = Long.parseLong(userInput[0]);
         int nbElements = Integer.parseInt(userInput[1]);
         for (int i = 0; i < nbElements; i++) {
-            projectNumber.setNumberValue(firstValue);
+            projectNumber.setNumberValue(firstValue + i);
             projectNumber.setProperties();
             projectNumber.giveShortStatus();
         }
