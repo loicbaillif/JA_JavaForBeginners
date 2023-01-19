@@ -26,6 +26,7 @@ public class Stage5 {
             - enter 0 to exit.
             """;
     static String askRequest = "Enter a request:";
+    static String errorEmpty = "Error: User input cannot be empty.";
     static String errorLen = "Error: The second parameter should be " +
             "a natural number";
     static String errorNotNatural = "Error: The first parameter should be a " +
@@ -47,14 +48,16 @@ public class Stage5 {
 
         // Variables
         boolean exitCondition = false;
+        String[] userInput;
 
         System.out.println(instructions);
-        String[] userInput;
+
         while (!exitCondition) {
             userInput = getUserInput();
             exitCondition = treatRequest(userInput);
         }
 
+        System.out.println(farewell);
 
         Print.subtitle("End of Stage 5", '*', (byte) 80);
     }
@@ -63,8 +66,13 @@ public class Stage5 {
     private static String[] getUserInput() {
         // Variables
         Scanner scanner = new Scanner(System.in);
+        String userInput = scanner.nextLine();
+        while (userInput.length() == 0) {
+            System.out.println(errorEmpty);
+            userInput = scanner.nextLine();
+        }
 
-        return scanner.nextLine().split(" ");
+        return userInput.split(" ");
     }
 
 
