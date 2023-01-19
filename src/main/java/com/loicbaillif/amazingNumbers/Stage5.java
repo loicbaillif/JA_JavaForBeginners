@@ -92,6 +92,11 @@ public class Stage5 {
     }
 
 
+    private static void treat2Inputs(String[] userInput) {
+        System.out.println("2 inputs detected");
+    }
+
+
     private static boolean treatRequest(String[] userInput) {
         // Variables
         int nbArgs = userInput.length;
@@ -99,7 +104,7 @@ public class Stage5 {
 
         switch (nbArgs) {
             case 1 -> endProgram = treat1Input(userInput[0]);
-            case 2 -> System.out.println("2 arguments detected");
+            case 2 -> treat2Inputs(userInput);
             case 3 -> System.out.println("3 arguments detected");
             default -> System.out.println("Invalid number of arguments");
         }
