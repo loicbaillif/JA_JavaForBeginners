@@ -108,8 +108,6 @@ class ProjectNumber {
             digit = Character.getNumericValue(numberValueString.charAt(i));
             sumDigits += digit;
             productDigits *= digit;
-            System.out.printf("\t- Digit %d = %d - sum = %d - product = %d%n",
-                    i, digit, sumDigits, productDigits); // DEBUG
         }
 
         this.spy = (sumDigits == productDigits);
