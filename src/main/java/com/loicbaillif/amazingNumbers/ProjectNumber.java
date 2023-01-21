@@ -98,6 +98,16 @@ class ProjectNumber {
     }
     private void setSpy() {
         this.spy = false;
+        // Variables
+        String numberValueString = String.valueOf(numberValue);
+        byte digit;
+        int nbDigits = numberValueString.length();
+        long sumDigits;
+        long productDigits;
+
+        for (int i = 0; i < nbDigits; i++) {
+            System.out.printf("\t- Digit %d%n", i);
+        }
     }
     void setProperties() {
         setBuzz();
