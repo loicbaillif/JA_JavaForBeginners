@@ -27,6 +27,11 @@ public class Stage5 {
             """;
     static String askRequest = "Enter a request:";
     static String errorEmpty = "Error: User input cannot be empty.";
+    static String errorInvalidProperty = """
+    Error: the property [%s] is wrong.
+    Available properties: ["BUZZ", "DUCK", "EVEN", "GAPFUL", /
+    "ODD", "PALINDROMIC", "SPY"]
+    """;
     static String errorLen = "Error: The second parameter should be " +
             "a natural number";
     static String errorNotNatural = "Error: The first parameter should be a " +
@@ -138,7 +143,12 @@ public class Stage5 {
 
     private static void treat3Inputs(String[] userInput) {
         System.out.println("3 arguments detected");
-        String PropertySeeked = userInput[2];
+        String seekedProperty = userInput[2];
+        if (isValidProperty(seekedProperty)) {
+            System.out.println("Valid property");
+        } else {
+            System.out.printf(errorInvalidProperty, seekedProperty);
+        }
 
     }
 
