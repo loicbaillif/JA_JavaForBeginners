@@ -100,13 +100,17 @@ class ProjectNumber {
         this.spy = false;
         // Variables
         String numberValueString = String.valueOf(numberValue);
-        byte digit;
+        int digit;
         int nbDigits = numberValueString.length();
-        long sumDigits;
-        long productDigits;
+        long sumDigits = 0L;
+        long productDigits = 1L;
 
         for (int i = 0; i < nbDigits; i++) {
-            System.out.printf("\t- Digit %d%n", i);
+            digit = Character.getNumericValue(numberValueString.charAt(i));
+            sumDigits += digit;
+            productDigits *= digit;
+            System.out.printf("\t- Digit %d = %d - sum = %d - product = %d%n",
+                    i, digit, sumDigits, productDigits); // DEBUG
         }
     }
     void setProperties() {
