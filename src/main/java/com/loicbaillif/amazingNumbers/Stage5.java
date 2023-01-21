@@ -108,6 +108,7 @@ public class Stage5 {
 
         try {
             nbElements = Integer.parseInt(userInput[1]);
+            if (nbElements == 0) System.out.println(errorLen);
         } catch (NumberFormatException e) {
             System.out.println(errorLen);
         }
