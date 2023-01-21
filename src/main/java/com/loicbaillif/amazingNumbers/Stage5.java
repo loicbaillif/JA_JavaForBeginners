@@ -55,6 +55,7 @@ public class Stage5 {
         System.out.println(instructions);
 
         while (!exitCondition) {
+            System.out.println(askRequest);
             userInput = getUserInput();
             exitCondition = treatRequest(userInput);
         }
@@ -95,7 +96,6 @@ public class Stage5 {
 
 
     private static void treat2Inputs(String[] userInput) {
-        System.out.println("2 inputs detected");
         // Variables
         long firstValue = 0L;
         int nbElements = 0;
@@ -112,7 +112,6 @@ public class Stage5 {
         } catch (NumberFormatException e) {
             System.out.println(errorLen);
         }
-
 
         for (int i = 0; i < nbElements; i++) {
             projectNumber.setNumberValue(firstValue + i);
