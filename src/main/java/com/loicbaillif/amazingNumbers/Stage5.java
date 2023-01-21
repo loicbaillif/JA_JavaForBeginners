@@ -31,6 +31,7 @@ public class Stage5 {
             "a natural number";
     static String errorNotNatural = "Error: The first parameter should be a " +
             "natural number or zero";
+    static String errorNbArgs = "Error: The program needs 1 to 3 arguments";
     static String farewell = "Thanks for using Amazing Numbers, goodbye!";
     static String numberStatus = """
             Properties of %d
@@ -95,9 +96,23 @@ public class Stage5 {
 
     private static void treat2Inputs(String[] userInput) {
         System.out.println("2 inputs detected");
+        // Variables
+        long firstValue = 0L;
+        int nbElements = 0;
 
-        long firstValue = Long.parseLong(userInput[0]);
-        int nbElements = Integer.parseInt(userInput[1]);
+        try {
+            firstValue = Long.parseLong(userInput[0]);
+        } catch (NumberFormatException e) {
+            System.out.println(errorNotNatural);
+        }
+
+        try {
+            nbElements = Integer.parseInt(userInput[1]);
+        } catch (NumberFormatException e) {
+            System.out.println(errorLen);
+        }
+
+
         for (int i = 0; i < nbElements; i++) {
             projectNumber.setNumberValue(firstValue + i);
             projectNumber.setProperties();
@@ -115,7 +130,7 @@ public class Stage5 {
             case 1 -> endProgram = treat1Input(userInput[0]);
             case 2 -> treat2Inputs(userInput);
             case 3 -> System.out.println("3 arguments detected");
-            default -> System.out.println("Invalid number of arguments");
+            default -> System.out.println(errorNbArgs);
         }
 
         return endProgram;
