@@ -97,7 +97,6 @@ class ProjectNumber {
         this.palindromic = isPalindromic;
     }
     private void setSpy() {
-        this.spy = false;
         // Variables
         String numberValueString = String.valueOf(numberValue);
         int digit;
@@ -112,6 +111,8 @@ class ProjectNumber {
             System.out.printf("\t- Digit %d = %d - sum = %d - product = %d%n",
                     i, digit, sumDigits, productDigits); // DEBUG
         }
+
+        this.spy = (sumDigits == productDigits);
     }
     void setProperties() {
         setBuzz();
