@@ -43,6 +43,8 @@ public class Stage5 {
                      gapful: %b
                         spy: %b
             """;
+    static String[] listProperties =
+            {"BUZZ", "DUCK", "EVEN", "GAPFUL", "ODD", "PALINDROMIC", "SPY"};
     static ProjectNumber projectNumber = new ProjectNumber(1);
 
     public static void main() {
@@ -76,6 +78,19 @@ public class Stage5 {
         }
 
         return userInput.split(" ");
+    }
+
+
+    private static boolean isValidProperty(String property) {
+        boolean result = false;
+        for (String listProperty : listProperties) {
+            if (Objects.equals(listProperty, property)) {
+                result = true;
+                break;
+            }
+        }
+
+        return result;
     }
 
 
@@ -121,6 +136,12 @@ public class Stage5 {
     }
 
 
+    private static void treat3Inputs(String[] userInput) {
+        System.out.println("3 arguments detected");
+        String PropertySeeked = userInput[2];
+
+    }
+
     private static boolean treatRequest(String[] userInput) {
         // Variables
         int nbArgs = userInput.length;
@@ -129,7 +150,7 @@ public class Stage5 {
         switch (nbArgs) {
             case 1 -> endProgram = treat1Input(userInput[0]);
             case 2 -> treat2Inputs(userInput);
-            case 3 -> System.out.println("3 arguments detected");
+            case 3 -> treat3Inputs(userInput);
             default -> System.out.println(errorNbArgs);
         }
 
