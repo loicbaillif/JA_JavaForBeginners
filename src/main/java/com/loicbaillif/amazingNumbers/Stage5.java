@@ -100,16 +100,18 @@ public class Stage5 {
 
 
     private static boolean treat1Input(String userInput) {
+        // Exit condition
         if (Objects.equals("0", userInput)) return true;
 
-        try {
-            long userInputLong = Long.parseLong(userInput);
-            projectNumber.setNumberValue(userInputLong);
-            projectNumber.setProperties();
-            projectNumber.giveStatus(numberStatus);
-        } catch (NumberFormatException e) {
-            System.out.println(errorNotNatural);
+        // Variable
+        long inputLong = CheckInput.strToLong(userInput, errorNotNatural, -1L);
+        if (inputLong == -1) {
+            return false;
         }
+
+        projectNumber.setNumberValue(inputLong);
+        projectNumber.setProperties();
+        projectNumber.giveStatus(numberStatus);
 
         return false;
     }
