@@ -15,6 +15,8 @@ class ProjectNumber {
     boolean odd;
     boolean palindromic;
     boolean spy;
+    boolean square;
+    boolean sunny;
     long numberValue;
 
     public ProjectNumber(long numberValue) {
@@ -46,6 +48,12 @@ class ProjectNumber {
     }
     boolean isSpy() {
         return spy;
+    }
+    boolean isSquare() {
+        return square;
+    }
+    boolean isSunny() {
+        return sunny;
     }
 
     void setBuzz() {
@@ -113,6 +121,12 @@ class ProjectNumber {
 
         this.spy = (sumDigits == productDigits);
     }
+    void setSquare() {
+        this.square = false;
+    }
+    void setSunny() {
+        this.sunny = false;
+    }
     void setProperties() {
         setBuzz();
         setDuck();
@@ -157,7 +171,9 @@ class ProjectNumber {
                 this.isDuck(),
                 this.isPalindromic(),
                 this.isGapful(),
-                this.isSpy());
+                this.isSpy(),
+                this.isSquare(),
+                this.isSunny());
     }
     private int lastDigit() {
         return (int) (this.getNumberValue() % 10L);
