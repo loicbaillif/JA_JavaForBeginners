@@ -29,7 +29,7 @@ public class Stage5 {
     static String errorEmpty = "Error: User input cannot be empty.";
     static String errorInvalidProperty = """
     Error: the property [%s] is wrong.
-    Available properties: ["BUZZ", "DUCK", "EVEN", "GAPFUL", /
+    Available properties: ["BUZZ", "DUCK", "EVEN", "GAPFUL", \
     "ODD", "PALINDROMIC", "SPY"]
     """;
     static String errorLen = "Error: The second parameter should be " +
@@ -118,23 +118,24 @@ public class Stage5 {
 
 
     private static void treat2Inputs(String[] userInput) {
-        // Variables
+        // Check first value
         long firstValue = CheckInput.strToLong(
                 userInput[0],
                 errorNotNatural,
                 -1L
         );
-
         if (firstValue == -1) {
             return;
         }
 
+        // Check number of elements
         int nbElements = (int) CheckInput.strToLong(
                 userInput[1],
                 errorLen,
                 0
         );
 
+        // Treat request only if previous checks successful
         for (int i = 0; i < nbElements; i++) {
             projectNumber.setNumberValue(firstValue + i);
             projectNumber.setProperties();
