@@ -4,7 +4,7 @@ class ProjectNumber {
     /* ProjectNumber as an object
      *
      * Properties:
-     * even, odd, buzz, duck, gapful and palindromic.
+     * even, odd, buzz, duck, gapful, palindromic and spy.
      */
 
     // Properties
@@ -66,6 +66,7 @@ class ProjectNumber {
         this.even = (numberValue % 2 == 0);
     }
     void setGapful() {
+        this.gapful = false;
         if (numberValue > 99L) {
             long divider = firstDigit() * 10L + lastDigit();
             this.gapful = (numberValue % divider == 0);
