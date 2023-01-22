@@ -226,6 +226,14 @@ public class Stage6 {
         // Check number of elements
         int nbElements = verifyNbElements(userInput[1]);
         if (nbElements == 0) return;
+
+        // Check seeked properties
+        String property1 = userInput[2].toUpperCase();
+        if (!isValidProperty(property1)) return;
+        String property2 = userInput[3].toUpperCase();
+        if (!isValidProperty(property2)) return;
+        // Duplicate property detected
+        if (Objects.equals(property1, property2)) treat3Inputs(userInput);
     }
 
 
