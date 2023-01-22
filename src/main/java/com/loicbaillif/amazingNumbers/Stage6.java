@@ -120,6 +120,14 @@ public class Stage6 {
                 projectNumber.setSpy();
                 if (projectNumber.isSpy()) return true;
             }
+            case "SQUARE" -> {
+                projectNumber.setSquare();
+                if (projectNumber.isSquare()) return true;
+            }
+            case "SUNNY" -> {
+                projectNumber.setSunny();
+                if (projectNumber.isSunny()) return true;
+            }
             default -> {
                 return false; // unknown property
             }
