@@ -123,6 +123,13 @@ class ProjectNumber {
     }
     void setSquare() {
         this.square = false;
+        // Variables
+        int sumDigits = sumDigits(this.numberValue);
+        while (sumDigits > 9) {
+            sumDigits = sumDigits(sumDigits);
+        }
+
+        System.out.printf("Sum of all digits = %d%n", sumDigits);
     }
     void setSunny() {
         this.sunny = false;
@@ -135,6 +142,8 @@ class ProjectNumber {
         setPalindromic();
         setGapful();
         setSpy();
+        setSquare();
+        setSunny();
     }
 
 
@@ -177,6 +186,20 @@ class ProjectNumber {
     }
     private int lastDigit() {
         return (int) (this.getNumberValue() % 10L);
+    }
+    private int sumDigits(long userInput) {
+        // Variables
+        String userInputString = String.valueOf(userInput);
+        int digit;
+        int nbDigits = userInputString.length();
+        int sumDigits = 0;
+
+        for (int i = 0; i < nbDigits; i++) {
+            digit = Character.getNumericValue(userInputString.charAt(i));
+            sumDigits += digit;
+        }
+
+        return sumDigits;
     }
 
     private static boolean multipleOf7(long userInput) {
