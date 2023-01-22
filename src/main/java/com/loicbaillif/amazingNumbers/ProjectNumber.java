@@ -48,10 +48,10 @@ class ProjectNumber {
         return spy;
     }
 
-    private void setBuzz() {
+    void setBuzz() {
         this.buzz = endsByX(numberValue, 7) || multipleOf7(numberValue);
     }
-    private void setDuck() {
+    void setDuck() {
         boolean isDuck = false;
         long remainingDigit = numberValue;
 
@@ -62,10 +62,10 @@ class ProjectNumber {
 
         this.duck = isDuck;
     }
-    private void setEven() {
+    void setEven() {
         this.even = (numberValue % 2 == 0);
     }
-    private void setGapful() {
+    void setGapful() {
         if (numberValue > 99L) {
             long divider = firstDigit() * 10L + lastDigit();
             this.gapful = (numberValue % divider == 0);
@@ -74,10 +74,10 @@ class ProjectNumber {
     void setNumberValue(long numberValue) {
         this.numberValue = numberValue;
     }
-    private void setOdd() {
+    void setOdd() {
         this.odd = (numberValue % 2 == 1);
     }
-    private void setPalindromic() {
+    void setPalindromic() {
         // Variables
         boolean isPalindromic = true;
         String numberString = String.valueOf(numberValue);
@@ -96,7 +96,7 @@ class ProjectNumber {
 
         this.palindromic = isPalindromic;
     }
-    private void setSpy() {
+    void setSpy() {
         // Variables
         String numberValueString = String.valueOf(numberValue);
         int digit;

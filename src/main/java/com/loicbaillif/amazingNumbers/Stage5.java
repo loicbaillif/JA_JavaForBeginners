@@ -86,6 +86,45 @@ public class Stage5 {
     }
 
 
+    private static boolean hasProperty(String property) {
+        switch (property) {
+            case "BUZZ" -> {
+                projectNumber.setBuzz();
+                if (projectNumber.isBuzz()) return true;
+            }
+            case "DUCK" -> {
+                projectNumber.setDuck();
+                if (projectNumber.isDuck()) return true;
+            }
+            case "EVEN" -> {
+                projectNumber.setEven();
+                if (projectNumber.isEven()) return true;
+            }
+            case "GAPFUL" -> {
+                projectNumber.setGapful();
+                if (projectNumber.isGapful()) return true;
+            }
+            case "ODD" -> {
+                projectNumber.setOdd();
+                if (projectNumber.isOdd()) return true;
+            }
+            case "PALINDROMIC" -> {
+                projectNumber.setPalindromic();
+                if (projectNumber.isPalindromic()) return true;
+            }
+            case "SPY" -> {
+                projectNumber.setSpy();
+                if (projectNumber.isSpy()) return true;
+            }
+            default -> {
+                return false; // unknown property
+            }
+        }
+
+        return false;
+    }
+
+
     private static boolean isValidProperty(String property) {
         boolean result = false;
         for (String listProperty : listProperties) {
@@ -139,8 +178,6 @@ public class Stage5 {
 
 
     private static void treat3Inputs(String[] userInput) {
-        System.out.println("3 arguments detected"); // DEBUG
-
         // Check first value
         long firstValue = verifyFirstValue(userInput[0]);
         if (firstValue == -1) return;
@@ -155,6 +192,11 @@ public class Stage5 {
         // Check requested property
         String seekedProperty = userInput[2].toUpperCase();
         if (!isValidProperty(seekedProperty)) return;
+
+        for (int i = 0; i < nbElements; i++) {
+            projectNumber.setNumberValue(firstValue++);
+
+        }
 
     }
 
