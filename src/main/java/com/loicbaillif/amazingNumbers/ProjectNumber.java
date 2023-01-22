@@ -128,7 +128,11 @@ class ProjectNumber {
             sumDigits = sumDigits(sumDigits);
         }
 
-        System.out.printf("Sum of all digits = %d%n", sumDigits);
+        if (sumDigits == 1 || sumDigits == 4 || sumDigits == 7 || sumDigits == 9) {
+            // Sum of digits for a square number cannot be else than 1 4 7 or 9
+            long root = (long) Math.sqrt(this.numberValue);
+            this.square = ((root * root) == this.numberValue);
+        }
     }
     void setSunny() {
         this.sunny = false;
