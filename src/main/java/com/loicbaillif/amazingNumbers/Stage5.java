@@ -104,12 +104,10 @@ public class Stage5 {
         if (Objects.equals("0", userInput)) return true;
 
         // Variable
-        long inputLong = CheckInput.strToLong(userInput, errorNotNatural, -1L);
-        if (inputLong == -1) {
-            return false;
-        }
+        long firstValue = verifyFirstValue(userInput);
+        if (firstValue == -1) return false;
 
-        projectNumber.setNumberValue(inputLong);
+        projectNumber.setNumberValue(firstValue);
         projectNumber.setProperties();
         projectNumber.giveStatus(numberStatus);
 
@@ -119,14 +117,8 @@ public class Stage5 {
 
     private static void treat2Inputs(String[] userInput) {
         // Check first value
-        long firstValue = CheckInput.strToLong(
-                userInput[0],
-                errorNotNatural,
-                -1L
-        );
-        if (firstValue == -1) {
-            return;
-        }
+        long firstValue = verifyFirstValue(userInput[0]);
+        if (firstValue == -1) return;
 
         // Check number of elements
         int nbElements = (int) CheckInput.strToLong(
@@ -146,6 +138,11 @@ public class Stage5 {
 
     private static void treat3Inputs(String[] userInput) {
         System.out.println("3 arguments detected"); // DEBUG
+
+        // First value
+        long firstValue = verifyFirstValue(userInput[0]);
+        if (firstValue == -1) return;
+
         String seekedProperty = userInput[2].toUpperCase();
         if (isValidProperty(seekedProperty)) {
             System.out.println("Valid property"); // DEBUG
@@ -168,5 +165,14 @@ public class Stage5 {
         }
 
         return endProgram;
+    }
+
+
+    private static long verifyFirstValue(String userInput) {
+        return CheckInput.strToLong(
+                userInput,
+                errorNotNatural,
+                -1L
+        );
     }
 }
