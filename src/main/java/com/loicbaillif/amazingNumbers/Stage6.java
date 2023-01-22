@@ -174,11 +174,8 @@ public class Stage6 {
         if (firstValue == -1) return;
 
         // Check number of elements
-        int nbElements = (int) CheckInput.strToLong(
-                userInput[1],
-                errorLen,
-                0L
-        );
+        int nbElements = verifyNbElements(userInput[1]);
+        if (nbElements == 0) return;
 
         // Treat request only if previous checks successful
         for (int i = 0; i < nbElements; i++) {
@@ -198,11 +195,8 @@ public class Stage6 {
         if (firstValue == -1) return;
 
         // Check number of elements
-        int nbElements = (int) CheckInput.strToLong(
-                userInput[1],
-                errorLen,
-                0L
-        );
+        int nbElements = verifyNbElements(userInput[1]);
+        if (nbElements == 0) return;
 
         // Check requested property
         String seekedProperty = userInput[2].toUpperCase();
@@ -222,6 +216,16 @@ public class Stage6 {
 
     private static void treat4Inputs(String[] userInput) {
         System.out.println("4 inputs detected"); // DEBUG
+        // Variables
+        int foundElements = 0;
+
+        // Check first value
+        long firstValue = verifyFirstValue(userInput[0]);
+        if (firstValue == -1) return;
+
+        // Check number of elements
+        int nbElements = verifyNbElements(userInput[1]);
+        if (nbElements == 0) return;
     }
 
 
@@ -248,5 +252,10 @@ public class Stage6 {
                 errorNotNatural,
                 -1L
         );
+    }
+
+
+    private static int verifyNbElements(String userInput) {
+        return (int) CheckInput.strToLong(userInput, errorLen, 0L);
     }
 }
