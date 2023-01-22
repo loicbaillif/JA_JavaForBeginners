@@ -21,7 +21,7 @@ class ProjectNumber {
 
     public ProjectNumber(long numberValue) {
         this.numberValue = numberValue;
-        setProperties();
+        //setProperties();
     }
 
     // Getters and Setters
@@ -135,7 +135,9 @@ class ProjectNumber {
         }
     }
     void setSunny() {
-        this.sunny = false;
+        ProjectNumber tempNumber = new ProjectNumber(this.numberValue + 1);
+        tempNumber.setSquare();
+        this.sunny = tempNumber.isSquare();
     }
     void setProperties() {
         setBuzz();
