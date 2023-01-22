@@ -220,6 +220,11 @@ public class Stage6 {
     }
 
 
+    private static void treat4Inputs(String[] userInput) {
+        System.out.println("4 inputs detected"); // DEBUG
+    }
+
+
     private static boolean treatRequest(String[] userInput) {
         // Variables
         int nbArgs = userInput.length;
@@ -229,6 +234,7 @@ public class Stage6 {
             case 1 -> endProgram = treat1Input(userInput[0]);
             case 2 -> treat2Inputs(userInput);
             case 3 -> treat3Inputs(userInput);
+            case 4 -> treat4Inputs(userInput);
             default -> System.out.println(errorNbArgs);
         }
 
