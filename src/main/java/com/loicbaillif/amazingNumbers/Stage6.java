@@ -2,6 +2,9 @@ package com.loicbaillif.amazingNumbers;
 
 import com.loicbaillif.tools.Print;
 
+import java.util.Objects;
+import java.util.Scanner;
+
 public class Stage6 {
     /* https://hyperskill.org/projects/184/stages/936/implement
      *
@@ -56,8 +59,180 @@ public class Stage6 {
     public static void main() {
         Print.subtitle("Stage 6 : Sunny and Square Numbers", '*', (byte) 80);
 
+        // Variables
+        boolean exitCondition = false;
+        String[] userInput;
 
+        System.out.println(instructions);
+
+        while (!exitCondition) {
+            System.out.println(askRequest);
+            userInput = getUserInput();
+            exitCondition = treatRequest(userInput);
+        }
+
+        System.out.println(farewell);
 
         Print.subtitle("End of Stage 6", '*', (byte) 80);
+    }
+
+
+    private static String[] getUserInput() {
+        // Variables
+        Scanner scanner = new Scanner(System.in);
+        String userInput = scanner.nextLine();
+        while (userInput.length() == 0) {
+            System.out.println(errorEmpty);
+            userInput = scanner.nextLine();
+        }
+
+        return userInput.split(" ");
+    }
+
+
+    private static boolean hasProperty(String property) {
+        switch (property) {
+            case "BUZZ" -> {
+                projectNumber.setBuzz();
+                if (projectNumber.isBuzz()) return true;
+            }
+            case "DUCK" -> {
+                projectNumber.setDuck();
+                if (projectNumber.isDuck()) return true;
+            }
+            case "EVEN" -> {
+                projectNumber.setEven();
+                if (projectNumber.isEven()) return true;
+            }
+            case "GAPFUL" -> {
+                projectNumber.setGapful();
+                if (projectNumber.isGapful()) return true;
+            }
+            case "ODD" -> {
+                projectNumber.setOdd();
+                if (projectNumber.isOdd()) return true;
+            }
+            case "PALINDROMIC" -> {
+                projectNumber.setPalindromic();
+                if (projectNumber.isPalindromic()) return true;
+            }
+            case "SPY" -> {
+                projectNumber.setSpy();
+                if (projectNumber.isSpy()) return true;
+            }
+            default -> {
+                return false; // unknown property
+            }
+        }
+
+        return false;
+    }
+
+
+    private static boolean isValidProperty(String property) {
+        boolean result = false;
+        for (String listProperty : listProperties) {
+            if (Objects.equals(listProperty, property)) {
+                result = true;
+                break;
+            }
+        }
+
+        if (!result) System.out.printf(errorInvalidProperty, property);
+
+        return result;
+    }
+
+
+    private static boolean treat1Input(String userInput) {
+        // Exit condition
+        if (Objects.equals("0", userInput)) return true;
+
+        // Variable
+        long firstValue = verifyFirstValue(userInput);
+        if (firstValue == -1) return false;
+
+        projectNumber.setNumberValue(firstValue);
+        projectNumber.setProperties();
+        projectNumber.giveStatus(numberStatus);
+
+        return false;
+    }
+
+
+    private static void treat2Inputs(String[] userInput) {
+        // Check first value
+        long firstValue = verifyFirstValue(userInput[0]);
+        if (firstValue == -1) return;
+
+        // Check number of elements
+        int nbElements = (int) CheckInput.strToLong(
+                userInput[1],
+                errorLen,
+                0L
+        );
+
+        // Treat request only if previous checks successful
+        for (int i = 0; i < nbElements; i++) {
+            projectNumber.setNumberValue(firstValue + i);
+            projectNumber.setProperties();
+            projectNumber.giveShortStatus();
+        }
+    }
+
+
+    private static void treat3Inputs(String[] userInput) {
+        // Variables
+        int foundElements = 0;
+
+        // Check first value
+        long firstValue = verifyFirstValue(userInput[0]);
+        if (firstValue == -1) return;
+
+        // Check number of elements
+        int nbElements = (int) CheckInput.strToLong(
+                userInput[1],
+                errorLen,
+                0L
+        );
+
+        // Check requested property
+        String seekedProperty = userInput[2].toUpperCase();
+        if (!isValidProperty(seekedProperty)) return;
+
+        while (foundElements < nbElements) {
+            projectNumber.setNumberValue(firstValue++);
+            if (hasProperty(seekedProperty)) {
+                projectNumber.setProperties();
+                projectNumber.giveShortStatus();
+                foundElements++;
+            }
+        }
+
+    }
+
+
+    private static boolean treatRequest(String[] userInput) {
+        // Variables
+        int nbArgs = userInput.length;
+        boolean endProgram = false;
+
+        switch (nbArgs) {
+            case 1 -> endProgram = treat1Input(userInput[0]);
+            case 2 -> treat2Inputs(userInput);
+            case 3 -> treat3Inputs(userInput);
+            default -> System.out.println(errorNbArgs);
+        }
+
+        return endProgram;
+    }
+
+
+    private static long verifyFirstValue(String userInput) {
+        return CheckInput.strToLong(
+                userInput,
+                errorNotNatural,
+                -1L
+        );
     }
 }
