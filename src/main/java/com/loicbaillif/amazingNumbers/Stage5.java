@@ -95,6 +95,8 @@ public class Stage5 {
             }
         }
 
+        if (!result) System.out.printf(errorInvalidProperty, property);
+
         return result;
     }
 
@@ -124,7 +126,7 @@ public class Stage5 {
         int nbElements = (int) CheckInput.strToLong(
                 userInput[1],
                 errorLen,
-                0
+                0L
         );
 
         // Treat request only if previous checks successful
@@ -139,16 +141,20 @@ public class Stage5 {
     private static void treat3Inputs(String[] userInput) {
         System.out.println("3 arguments detected"); // DEBUG
 
-        // First value
+        // Check first value
         long firstValue = verifyFirstValue(userInput[0]);
         if (firstValue == -1) return;
 
+        // Check number of elements
+        int nbElements = (int) CheckInput.strToLong(
+                userInput[1],
+                errorLen,
+                0L
+        );
+
+        // Check requested property
         String seekedProperty = userInput[2].toUpperCase();
-        if (isValidProperty(seekedProperty)) {
-            System.out.println("Valid property"); // DEBUG
-        } else {
-            System.out.printf(errorInvalidProperty, seekedProperty);
-        }
+        if (!isValidProperty(seekedProperty)) return;
 
     }
 
