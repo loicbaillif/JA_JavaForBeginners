@@ -174,6 +174,8 @@ class ProjectNumber {
         System.out.printf(palindromic? ", palindromic": "");
         System.out.printf(gapful? ", gapful": "");
         System.out.printf(spy? ", spy": "");
+        System.out.printf(square? ", square": "");
+        System.out.printf(sunny? ", sunny": "");
         System.out.println();
     }
     void giveStatus(String statusPhrase) {
