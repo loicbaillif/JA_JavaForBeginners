@@ -178,6 +178,9 @@ public class Stage5 {
 
 
     private static void treat3Inputs(String[] userInput) {
+        // Variables
+        int foundElements = 0;
+
         // Check first value
         long firstValue = verifyFirstValue(userInput[0]);
         if (firstValue == -1) return;
@@ -193,9 +196,13 @@ public class Stage5 {
         String seekedProperty = userInput[2].toUpperCase();
         if (!isValidProperty(seekedProperty)) return;
 
-        for (int i = 0; i < nbElements; i++) {
+        while (foundElements < nbElements) {
             projectNumber.setNumberValue(firstValue++);
-
+            if (hasProperty(seekedProperty)) {
+                projectNumber.setProperties();
+                projectNumber.giveShortStatus();
+                foundElements++;
+            }
         }
 
     }
