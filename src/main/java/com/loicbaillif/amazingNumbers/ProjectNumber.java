@@ -110,12 +110,11 @@ class ProjectNumber {
         String numberValueString = String.valueOf(numberValue);
         int digit;
         int nbDigits = numberValueString.length();
-        long sumDigits = 0L;
+        long sumDigits = sumDigits(this.numberValue);
         long productDigits = 1L;
 
         for (int i = 0; i < nbDigits; i++) {
             digit = Character.getNumericValue(numberValueString.charAt(i));
-            sumDigits += digit;
             productDigits *= digit;
         }
 
