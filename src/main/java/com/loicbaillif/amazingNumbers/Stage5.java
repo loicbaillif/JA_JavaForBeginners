@@ -117,21 +117,21 @@ public class Stage5 {
 
     private static void treat2Inputs(String[] userInput) {
         // Variables
-        long firstValue = 0L;
-        int nbElements = 0;
+        long firstValue = CheckInput.strToLong(
+                userInput[0],
+                errorNotNatural,
+                -1L
+        );
 
-        try {
-            firstValue = Long.parseLong(userInput[0]);
-        } catch (NumberFormatException e) {
-            System.out.println(errorNotNatural);
+        if (firstValue == -1) {
+            return;
         }
 
-        try {
-            nbElements = Integer.parseInt(userInput[1]);
-            if (nbElements == 0) System.out.println(errorLen);
-        } catch (NumberFormatException e) {
-            System.out.println(errorLen);
-        }
+        int nbElements = (int) CheckInput.strToLong(
+                userInput[1],
+                errorLen,
+                0
+        );
 
         for (int i = 0; i < nbElements; i++) {
             projectNumber.setNumberValue(firstValue + i);
