@@ -142,10 +142,10 @@ public class Stage5 {
 
 
     private static void treat3Inputs(String[] userInput) {
-        System.out.println("3 arguments detected");
-        String seekedProperty = userInput[2];
+        System.out.println("3 arguments detected"); // DEBUG
+        String seekedProperty = userInput[2].toUpperCase();
         if (isValidProperty(seekedProperty)) {
-            System.out.println("Valid property");
+            System.out.println("Valid property"); // DEBUG
         } else {
             System.out.printf(errorInvalidProperty, seekedProperty);
         }
