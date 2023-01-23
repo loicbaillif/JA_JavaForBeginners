@@ -236,6 +236,7 @@ public class Stage6 {
         if (Objects.equals(property1, property2)) treat3Inputs(userInput);
         // Check incompatible pairs
         if (!verifyPropertyCompat(property1, property2)) return;
+        System.out.println("Properties compatible"); // DEBUG
 
     }
 
@@ -274,8 +275,23 @@ public class Stage6 {
     private static boolean verifyPropertyCompat(String prop1, String prop2) {
         // Return true if and only if prop1 and prop2 are compatible
         if (Objects.equals(prop1, "EVEN")) {
-            return Objects.equals(prop2, "ODD");
+            return !Objects.equals(prop2, "ODD");
         }
-        return false;
+        if (Objects.equals(prop1, "ODD")) {
+            return !Objects.equals(prop2, "EVEN");
+        }
+        if (Objects.equals(prop1, "DUCK")) {
+            return !Objects.equals(prop2, "SPY");
+        }
+        if (Objects.equals(prop1, "SPY")) {
+            return !Objects.equals(prop2, "DUCK");
+        }
+        if (Objects.equals(prop1, "SUNNY")) {
+            return !Objects.equals(prop2, "SQUARE");
+        }
+        if (Objects.equals(prop1, "SQUARE")) {
+            return !Objects.equals(prop2, "SUNNY");
+        }
+        return true;
     }
 }
