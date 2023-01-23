@@ -35,6 +35,10 @@ public class Stage6 {
     """;
     static String errorLen = "Error: The second parameter should be " +
             "a natural number";
+    static String errorIncompatible = """
+            Error: The request contains mutually exclusive properties: [%s, %s]
+            There are no numbers with these properties.
+            """;
     static String errorNotNatural = "Error: The first parameter should be a " +
             "natural number or zero";
     static String errorNbArgs = "Error: The program needs 1 to 3 arguments";
@@ -235,7 +239,10 @@ public class Stage6 {
         // Duplicate property detected
         if (Objects.equals(property1, property2)) treat3Inputs(userInput);
         // Check incompatible pairs
-        if (!verifyPropertyCompat(property1, property2)) return;
+        if (!verifyPropertyCompat(property1, property2)) {
+            System.out.printf(errorIncompatible, property1, property2);
+            return;
+        }
 
         // Treat request
         while (foundElements < nbElements) {
