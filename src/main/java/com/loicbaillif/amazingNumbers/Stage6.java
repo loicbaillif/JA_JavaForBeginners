@@ -236,7 +236,16 @@ public class Stage6 {
         if (Objects.equals(property1, property2)) treat3Inputs(userInput);
         // Check incompatible pairs
         if (!verifyPropertyCompat(property1, property2)) return;
-        System.out.println("Properties compatible"); // DEBUG
+
+        // Treat request
+        while (foundElements < nbElements) {
+            projectNumber.setNumberValue(firstValue++);
+            if (hasProperty(property1) && hasProperty(property2)) {
+                projectNumber.setProperties();
+                projectNumber.giveShortStatus();
+                foundElements++;
+            }
+        }
 
     }
 
