@@ -234,6 +234,9 @@ public class Stage6 {
         if (!isValidProperty(property2)) return;
         // Duplicate property detected
         if (Objects.equals(property1, property2)) treat3Inputs(userInput);
+        // Check incompatible pairs
+        if (!verifyPropertyCompat(property1, property2)) return;
+
     }
 
 
@@ -265,5 +268,14 @@ public class Stage6 {
 
     private static int verifyNbElements(String userInput) {
         return (int) CheckInput.strToLong(userInput, errorLen, 0L);
+    }
+
+
+    private static boolean verifyPropertyCompat(String prop1, String prop2) {
+        // Return true if and only if prop1 and prop2 are compatible
+        if (Objects.equals(prop1, "EVEN")) {
+            return Objects.equals(prop2, "ODD");
+        }
+        return false;
     }
 }
