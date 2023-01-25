@@ -225,7 +225,6 @@ public class Stage6 {
 
 
     private static void treat4Inputs(String[] userInput) {
-        System.out.println("4 inputs detected"); // DEBUG
         // Variables
         int foundElements = 0;
 
@@ -242,7 +241,10 @@ public class Stage6 {
         String property2 = userInput[3].toUpperCase();
         if (!verifyProperties(property1, property2)) return;
         // Check duplicated property
-        if (Objects.equals(property1, property2)) treat3Inputs(userInput);
+        if (Objects.equals(property1, property2)) {
+            treat3Inputs(userInput);
+            return;
+        }
         // Check incompatible pairs
         if (!verifyPropertyCompat(property1, property2)) {
             System.out.printf(errorIncompatible, property1, property2);
