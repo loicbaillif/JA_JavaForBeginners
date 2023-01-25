@@ -207,7 +207,10 @@ public class Stage6 {
 
         // Check requested property
         String seekedProperty = userInput[2].toUpperCase();
-        if (!isValidProperty(seekedProperty)) return;
+        if (!isValidProperty(seekedProperty)) {
+            System.out.printf(errorInvalidProperty, seekedProperty);
+            return;
+        }
 
         while (foundElements < nbElements) {
             projectNumber.setNumberValue(firstValue++);
