@@ -28,10 +28,15 @@ public class Stage6 {
             """;
     static String askRequest = "Enter a request:";
     static String errorEmpty = "Error: User input cannot be empty.";
+    static String errorInvalidProperties = """
+            Error: The properties [%s, %s] are wrong.    
+            Available properties: ["BUZZ", "DUCK", "EVEN", "GAPFUL", \
+            "ODD", "PALINDROMIC", "SPY", "SQUARE", "SUNNY"]
+            """;
     static String errorInvalidProperty = """
-    Error: the property [%s] is wrong.
-    Available properties: ["BUZZ", "DUCK", "EVEN", "GAPFUL", \
-    "ODD", "PALINDROMIC", "SPY", "SQUARE", "SUNNY"]
+            Error: the property [%s] is wrong.
+            Available properties: ["BUZZ", "DUCK", "EVEN", "GAPFUL", \
+            "ODD", "PALINDROMIC", "SPY", "SQUARE", "SUNNY"]
     """;
     static String errorLen = "Error: The second parameter should be " +
             "a natural number";
@@ -233,9 +238,9 @@ public class Stage6 {
 
         // Check seeked properties
         String property1 = userInput[2].toUpperCase();
-        if (!isValidProperty(property1)) return;
         String property2 = userInput[3].toUpperCase();
-        if (!isValidProperty(property2)) return;
+        if (!verifyProperties(property1, property2)) return;
+
         // Duplicate property detected
         if (Objects.equals(property1, property2)) treat3Inputs(userInput);
         // Check incompatible pairs
@@ -288,8 +293,25 @@ public class Stage6 {
     }
 
 
+    private static boolean verifyProperties(String prop1, String prop2) {
+        // Returns true if and only if prop1 and prop2 are valid properties
+        // i.e. in the given list
+        if (isValidProperty(prop1) && isValidProperty(prop2)) {
+          return true;
+        } else if (!isValidProperty(prop1) && !isValidProperty(prop2)) {
+            System.out.printf(errorInvalidProperties, prop1, prop2);
+        } else if (!isValidProperty(prop1)) {
+            System.out.printf(errorInvalidProperty, prop1);
+        } else if (!isValidProperty(prop2)) {
+            System.out.printf(errorInvalidProperty, prop2);
+        }
+
+        return false;
+    }
+
+
     private static boolean verifyPropertyCompat(String prop1, String prop2) {
-        // Return true if and only if prop1 and prop2 are compatible
+        // Returns true if and only if prop1 and prop2 are compatible
         if (Objects.equals(prop1, "EVEN")) {
             return !Objects.equals(prop2, "ODD");
         }
