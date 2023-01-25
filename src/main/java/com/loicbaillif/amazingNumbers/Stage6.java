@@ -29,7 +29,7 @@ public class Stage6 {
     static String askRequest = "Enter a request:";
     static String errorEmpty = "Error: User input cannot be empty.";
     static String errorInvalidProperties = """
-            Error: The properties [%s, %s] are wrong.    
+            Error: The properties [%s, %s] are wrong.
             Available properties: ["BUZZ", "DUCK", "EVEN", "GAPFUL", \
             "ODD", "PALINDROMIC", "SPY", "SQUARE", "SUNNY"]
             """;
@@ -37,7 +37,7 @@ public class Stage6 {
             Error: the property [%s] is wrong.
             Available properties: ["BUZZ", "DUCK", "EVEN", "GAPFUL", \
             "ODD", "PALINDROMIC", "SPY", "SQUARE", "SUNNY"]
-    """;
+            """;
     static String errorLen = "Error: The second parameter should be " +
             "a natural number";
     static String errorIncompatible = """
@@ -155,8 +155,6 @@ public class Stage6 {
             }
         }
 
-        if (!result) System.out.printf(errorInvalidProperty, property);
-
         return result;
     }
 
@@ -240,8 +238,7 @@ public class Stage6 {
         String property1 = userInput[2].toUpperCase();
         String property2 = userInput[3].toUpperCase();
         if (!verifyProperties(property1, property2)) return;
-
-        // Duplicate property detected
+        // Check duplicated property
         if (Objects.equals(property1, property2)) treat3Inputs(userInput);
         // Check incompatible pairs
         if (!verifyPropertyCompat(property1, property2)) {
