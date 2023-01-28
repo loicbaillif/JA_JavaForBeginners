@@ -2,6 +2,8 @@ package com.loicbaillif.amazingNumbers;
 
 import com.loicbaillif.tools.Print;
 
+import java.util.Scanner;
+
 public class Stage7 {
     /* https://hyperskill.org/projects/184/stages/937/implement
      *
@@ -9,6 +11,10 @@ public class Stage7 {
      */
 
     // Variables
+    static String askRequest = "Enter a request:";
+    static String errorEmpty = "Error: User input cannot be empty.";
+    static String errorNbArgs = "Error: The program needs at least" +
+            "1 argument";
     static String farewell = "Thanks for using Amazing Numbers, goodbye!";
     static String instructions = """
             Welcome to Amazing Numbers!
@@ -28,12 +34,51 @@ public class Stage7 {
         Print.subtitle("Stage 7 : Jumping Numbers", '*', (byte) 80);
 
         // Variables
+        boolean exitCondition = false;
+        String[] userInput;
 
+        // Welcome user
         System.out.println(instructions);
 
+        while (!exitCondition) {
+            System.out.println(askRequest);
+            userInput = getUserInput();
+            exitCondition = treatRequest(userInput);
+        }
 
+        // Farewell user
         System.out.println(farewell);
 
         Print.subtitle("End of Stage 7", '*', (byte) 80);
+    }
+
+
+    static String[] getUserInput() {
+        // Variables
+        Scanner scanner = new Scanner(System.in);
+        String userInput = scanner.nextLine();
+        while (userInput.length() == 0) {
+            System.out.println(errorEmpty);
+            userInput = scanner.nextLine();
+        }
+
+        return userInput.split(" ");
+    }
+
+
+    private static boolean treatRequest(String[] userInput) {
+        // Variables
+        int nbArgs = userInput.length;
+        boolean endProgram = false;
+
+        switch (nbArgs) {
+            case 1 -> endProgram = treat1Input(userInput[0]);
+            case 2 -> treat2Inputs(userInput);
+            case 3 -> treat3Inputs(userInput);
+            case 4 -> treat4Inputs(userInput);
+            default -> System.out.println(errorNbArgs);
+        }
+
+        return endProgram;
     }
 }
