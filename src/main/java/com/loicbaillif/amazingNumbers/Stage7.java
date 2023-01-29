@@ -71,12 +71,12 @@ public class Stage7 {
         int nbArgs = userInput.length;
         boolean endProgram = false;
 
+        if (nbArgs == 0) return false;
+
         switch (nbArgs) {
             case 1 -> endProgram = ProcessRequests.process1Input(userInput[0]);
-            case 2 -> treat2Inputs(userInput);
-            case 3 -> treat3Inputs(userInput);
-            case 4 -> treat4Inputs(userInput);
-            default -> System.out.println(errorNbArgs);
+            case 2 -> ProcessRequests.process2Inputs(userInput);
+            default -> ProcessRequests.process3MoreInputs(userInput);
         }
 
         return endProgram;

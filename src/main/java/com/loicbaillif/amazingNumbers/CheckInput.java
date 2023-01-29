@@ -53,7 +53,7 @@ class CheckInput {
     }
 
 
-    private static long verifyFirstValue(String userInput) {
+    static long verifyFirstValue(String userInput) {
         return strToLong(
                 userInput,
                 errorNotNatural,
