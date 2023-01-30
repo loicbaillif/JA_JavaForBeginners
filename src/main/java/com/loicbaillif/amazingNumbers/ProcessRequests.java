@@ -60,6 +60,7 @@ public class ProcessRequests {
         int foundElements = 0;
         int nbProperties = userInput.length - 2;
         String[] seekedProperties = new String[nbProperties];
+        String tempProperty;
 
         // Check first value
         long firstValue = CheckInput.verifyFirstValue(userInput[0]);
@@ -71,7 +72,9 @@ public class ProcessRequests {
 
         // Populate seekedProperties
         for (int i = 0; i < nbProperties; i++) {
-            seekedProperties[i] = userInput[i + 2];
+            tempProperty = userInput[i + 2].toUpperCase();
+            if (!CheckInput.isValidProperty(tempProperty)) return;
+            seekedProperties[i] = tempProperty;
         }
 
         // DEBUG: Verify number of arguments

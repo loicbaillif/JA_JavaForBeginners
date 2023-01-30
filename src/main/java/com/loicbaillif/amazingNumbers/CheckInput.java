@@ -40,16 +40,14 @@ class CheckInput {
     }
 
 
-    private static boolean isValidProperty(String property) {
-        boolean result = false;
+    static boolean isValidProperty(String property) {
         for (String listProperty : listProperties) {
             if (Objects.equals(listProperty, property)) {
-                result = true;
-                break;
+                return true;
             }
         }
-
-        return result;
+        System.out.printf(errorInvalidProperty, property);
+        return false;
     }
 
 
