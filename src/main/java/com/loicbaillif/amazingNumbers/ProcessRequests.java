@@ -58,7 +58,8 @@ public class ProcessRequests {
 
         // Variables
         int foundElements = 0;
-        String[] seekedProperties;
+        int nbProperties = userInput.length - 2;
+        String[] seekedProperties = new String[nbProperties];
 
         // Check first value
         long firstValue = CheckInput.verifyFirstValue(userInput[0]);
@@ -67,5 +68,13 @@ public class ProcessRequests {
         // Check number of elements
         int nbElements = CheckInput.verifyNbElements(userInput[1]);
         if (nbElements == 0) return;
+
+        // Populate seekedProperties
+        for (int i = 0; i < nbProperties; i++) {
+            seekedProperties[i] = userInput[i + 2];
+        }
+
+        // DEBUG: Verify number of arguments
+        System.out.printf("%d properties requested.%n", nbProperties);
     }
 }
