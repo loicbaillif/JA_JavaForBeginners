@@ -16,6 +16,7 @@ public class ProcessRequests {
                      square: %b
                       sunny: %b
             """;
+    static ProjectNumber projectNumber = new ProjectNumber(1);
 
 
     static boolean process1Input(String userInput) {
@@ -27,7 +28,6 @@ public class ProcessRequests {
         // Variable
         long firstValue = CheckInput.verifyFirstValue(userInput);
         if (firstValue == -1) return false;
-        ProjectNumber projectNumber = new ProjectNumber(firstValue);
 
         projectNumber.setProperties();
         projectNumber.giveStatus(numberStatus);
@@ -37,7 +37,7 @@ public class ProcessRequests {
 
 
     static void process2Inputs(String[] userInput) {
-        System.out.println("2 inputs to process");
+        System.out.println("2 inputs to process"); // DEBUG
 
 
     }
