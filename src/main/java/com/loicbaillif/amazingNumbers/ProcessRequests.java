@@ -20,8 +20,6 @@ public class ProcessRequests {
 
 
     static boolean process1Input(String userInput) {
-        System.out.println("1 input to process"); // DEBUG
-
         // Exit condition
         if (Objects.equals("0", userInput)) return true;
 
@@ -37,8 +35,20 @@ public class ProcessRequests {
 
 
     static void process2Inputs(String[] userInput) {
-        System.out.println("2 inputs to process"); // DEBUG
+        // Check first value
+        long firstValue = CheckInput.verifyFirstValue(userInput[0]);
+        if (firstValue == -1) return;
 
+        // Check number of elements
+        int nbElements = CheckInput.verifyNbElements(userInput[1]);
+        if (nbElements == 0) return;
+
+        // Treat request only if previous checks successful
+        for (int i = 0; i < nbElements; i++) {
+            projectNumber.setNumberValue(firstValue + i);
+            projectNumber.setProperties();
+            projectNumber.giveShortStatus();
+        }
 
     }
 

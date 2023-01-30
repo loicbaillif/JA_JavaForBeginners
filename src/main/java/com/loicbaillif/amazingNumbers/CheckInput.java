@@ -62,7 +62,7 @@ class CheckInput {
     }
 
 
-    private static int verifyNbElements(String userInput) {
+    static int verifyNbElements(String userInput) {
         return (int) CheckInput.strToLong(userInput, errorLen, 0L);
     }
 
