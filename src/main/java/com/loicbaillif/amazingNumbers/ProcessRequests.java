@@ -54,6 +54,18 @@ public class ProcessRequests {
 
 
     static void process3MoreInputs(String[] userInput) {
-        System.out.println("3 inputs or more to process");
+        System.out.println("3 inputs or more to process"); // DEBUG
+
+        // Variables
+        int foundElements = 0;
+        String[] seekedProperties;
+
+        // Check first value
+        long firstValue = CheckInput.verifyFirstValue(userInput[0]);
+        if (firstValue == -1) return;
+
+        // Check number of elements
+        int nbElements = CheckInput.verifyNbElements(userInput[1]);
+        if (nbElements == 0) return;
     }
 }
