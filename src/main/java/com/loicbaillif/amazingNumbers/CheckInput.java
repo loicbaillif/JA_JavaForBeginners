@@ -1,5 +1,8 @@
 package com.loicbaillif.amazingNumbers;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Objects;
 
 class CheckInput {
@@ -65,9 +68,16 @@ class CheckInput {
     }
 
 
-    private static boolean verifyProperties(String prop1, String prop2) {
-        // Returns true if and only if prop1 and prop2 are valid properties
-        // i.e. in the given list
+    static String[] verifyProperties(String[] properties) {
+        // Returns String[] after checking properties element are valid, i.e.
+        //  - in the given list
+        //  - No incompatibility pair
+        // Will also remove duplicated properties
+        ArrayList<String> tempList
+                = new ArrayList<>(
+                Arrays.asList(properties));
+
+        /*
         if (isValidProperty(prop1) && isValidProperty(prop2)) {
             return true;
         } else if (!isValidProperty(prop1) && !isValidProperty(prop2)) {
@@ -77,8 +87,9 @@ class CheckInput {
         } else if (!isValidProperty(prop2)) {
             System.out.printf(errorInvalidProperty, prop2);
         }
+         */
 
-        return false;
+        return tempList.toArray(new String[tempList.size()]);
     }
 
 
