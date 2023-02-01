@@ -6,12 +6,12 @@ import java.util.Objects;
 class CheckInput {
     // Variables
     static String errorInvalidProperties = """
-            Error: The properties [%s, %s] are wrong.
+            Error: The properties %s are wrong.
             Available properties: ["BUZZ", "DUCK", "EVEN", "GAPFUL", \
             "ODD", "PALINDROMIC", "SPY", "SQUARE", "SUNNY"]
             """;
     static String errorInvalidProperty = """
-            Error: the property [%s] is wrong.
+            Error: the property %s is wrong.
             Available properties: ["BUZZ", "DUCK", "EVEN", "GAPFUL", \
             "ODD", "PALINDROMIC", "SPY", "SQUARE", "SUNNY"]
             """;
@@ -33,6 +33,17 @@ class CheckInput {
         }
         System.out.printf(errorInvalidProperty, property);
         return false;
+    }
+
+
+    private static void showInvalidProperties(ArrayList<String> properties) {
+        if (properties.size() == 1) {
+            System.out.printf(errorInvalidProperty, properties);
+            return;
+        }
+        if (properties.size() > 1) {
+            System.out.printf(errorInvalidProperties, properties);
+        }
     }
 
 
@@ -90,7 +101,7 @@ class CheckInput {
 
         }
 
-
+        showInvalidProperties(rejectedList);
 
         return validList.toArray(new String[validList.size()]);
     }
