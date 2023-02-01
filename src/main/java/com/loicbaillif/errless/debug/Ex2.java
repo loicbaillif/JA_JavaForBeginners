@@ -20,6 +20,7 @@ public class Ex2 {
 
 
     public static String capitalize(String str) {
+        System.out.printf("Before: %s%n", str); // LOG
         if (str == null || str.isBlank()) {
             return str;
         }
