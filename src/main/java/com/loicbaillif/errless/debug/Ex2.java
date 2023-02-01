@@ -9,6 +9,11 @@ public class Ex2 {
     public static void main() {
         Print.title(("Exercise - Log Events"));
 
+        String ex1 = "string";
+        String ex2 = "Capitalized";
+        System.out.println(capitalize(ex1));
+        System.out.println(capitalize(ex2));
+
 
         Print.title(("End of exercise"));
     }
