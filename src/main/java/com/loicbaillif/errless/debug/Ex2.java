@@ -31,6 +31,7 @@ public class Ex2 {
         }
 
         if (str.length() == 1) {
+            System.out.printf("After: %s%n", str.toUpperCase());
             return str.toUpperCase();
         }
 
