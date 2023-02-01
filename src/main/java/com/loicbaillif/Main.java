@@ -8,7 +8,7 @@ public class Main {
         // Project stages
         // com.loicbaillif.bullsAndCows.Project1.main();
         // com.loicbaillif.zookeeper.Main.main();
-        // com.loicbaillif.amazingNumbers.Main.main();
+        com.loicbaillif.amazingNumbers.Main.main();
 
         /* Previous chapters */
         // com.loicbaillif.codeOrganization.methods.overloading.Main.main();
@@ -27,6 +27,6 @@ public class Main {
         // com.loicbaillif.basics.strings.textBlocks.Main.main();
 
         // Current chapter
-        com.loicbaillif.errless.debug.Main.main();
+        // com.loicbaillif.errless.debug.Main.main();
     }
 }

@@ -1,8 +1,6 @@
 package com.loicbaillif.amazingNumbers;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 import java.util.Objects;
 
 class CheckInput {
@@ -25,6 +23,19 @@ class CheckInput {
             {"BUZZ", "DUCK", "EVEN", "GAPFUL", "ODD", "PALINDROMIC", "SPY",
                     "SQUARE", "SUNNY"};
 
+
+    // Methods
+    private static boolean isValidProperty(String property) {
+        for (String listProperty : listProperties) {
+            if (Objects.equals(listProperty, property)) {
+                return true;
+            }
+        }
+        System.out.printf(errorInvalidProperty, property);
+        return false;
+    }
+
+
     static long strToLong(String input, String errorMessage, long minValue) {
         // minValue is excluded
         long inputLong;
@@ -40,17 +51,6 @@ class CheckInput {
         }
 
         return inputLong;
-    }
-
-
-    static boolean isValidProperty(String property) {
-        for (String listProperty : listProperties) {
-            if (Objects.equals(listProperty, property)) {
-                return true;
-            }
-        }
-        System.out.printf(errorInvalidProperty, property);
-        return false;
     }
 
 
@@ -73,23 +73,26 @@ class CheckInput {
         //  - in the given list
         //  - No incompatibility pair
         // Will also remove duplicated properties
-        ArrayList<String> tempList
-                = new ArrayList<>(
-                Arrays.asList(properties));
 
-        /*
-        if (isValidProperty(prop1) && isValidProperty(prop2)) {
-            return true;
-        } else if (!isValidProperty(prop1) && !isValidProperty(prop2)) {
-            System.out.printf(errorInvalidProperties, prop1, prop2);
-        } else if (!isValidProperty(prop1)) {
-            System.out.printf(errorInvalidProperty, prop1);
-        } else if (!isValidProperty(prop2)) {
-            System.out.printf(errorInvalidProperty, prop2);
+        // Variables
+        ArrayList<String> validList = new ArrayList<>();
+        ArrayList<String> rejectedList = new ArrayList<>();
+
+        for (int i = 0; i < properties.length; i++) {
+            // Verify properties one by one
+
+            // Step 1: valid?
+            if (isValidProperty(properties[i])) {
+                validList.add(properties[i]);
+            } else {
+                rejectedList.add(properties[i]);
+            }
+
         }
-         */
 
-        return tempList.toArray(new String[tempList.size()]);
+
+
+        return validList.toArray(new String[validList.size()]);
     }
 
 
