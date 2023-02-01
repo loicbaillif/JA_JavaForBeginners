@@ -93,10 +93,11 @@ class CheckInput {
             // Verify properties one by one
 
             // Step 1: valid?
-            if (isValidProperty(properties[i])) {
-                validList.add(properties[i]);
-            } else {
+            if (!isValidProperty(properties[i])) {
                 rejectedList.add(properties[i]);
+            } else if (!validList.contains(properties[i])) {
+                // Step 2: duplicated?
+                validList.add(properties[i]);
             }
 
         }
