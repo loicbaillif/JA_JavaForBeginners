@@ -76,5 +76,9 @@ public class ProcessRequests {
 
         // Check seekedProperties
         String[] properties = CheckInput.verifyProperties(seekedProperties);
+
+        for (String property : properties) {
+            System.out.println(property);
+        }
     }
 }
