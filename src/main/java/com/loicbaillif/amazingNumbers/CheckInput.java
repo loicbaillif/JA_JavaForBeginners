@@ -31,7 +31,6 @@ class CheckInput {
                 return true;
             }
         }
-        System.out.printf(errorInvalidProperty, property);
         return false;
     }
 
@@ -94,12 +93,15 @@ class CheckInput {
 
             // Step 1: valid?
             if (!isValidProperty(properties[i])) {
-                rejectedList.add(properties[i]);
+                if (!rejectedList.contains(properties[i])) {
+                    rejectedList.add(properties[i]);
+                }
             } else if (!validList.contains(properties[i])) {
                 // Step 2: duplicated?
                 validList.add(properties[i]);
             }
 
+            // Step 3:
         }
 
         showInvalidProperties(rejectedList);
