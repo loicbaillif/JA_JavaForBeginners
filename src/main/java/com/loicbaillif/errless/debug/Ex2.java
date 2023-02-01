@@ -13,10 +13,10 @@ public class Ex2 {
         String ex2 = "Capitalized";
         String ex3 = "";
         String ex4 = "g";
-        System.out.println(capitalize(ex1));
-        System.out.println(capitalize(ex2));
-        System.out.println(capitalize(ex3));
-        System.out.println(capitalize(ex4));
+        String temp = capitalize(ex1);
+        temp = capitalize(ex2);
+        temp = capitalize(ex3);
+        temp = capitalize(ex4);
 
 
         Print.title(("End of exercise"));
@@ -26,18 +26,18 @@ public class Ex2 {
     public static String capitalize(String str) {
         System.out.printf("Before: %s%n", str); // LOG
         if (str == null || str.isBlank()) {
-            System.out.printf("After: %s%n", str);
+            System.out.printf("After: %s%n", str); // LOG
             return str;
         }
 
         if (str.length() == 1) {
-            System.out.printf("After: %s%n", str.toUpperCase());
+            System.out.printf("After: %s%n", str.toUpperCase()); // LOG
             return str.toUpperCase();
         }
 
         System.out.printf("After: %c%s%n",
                 Character.toUpperCase(str.charAt(0)),
-                str.substring(1));
+                str.substring(1)); // LOG
         return Character.toUpperCase(str.charAt(0)) + str.substring(1);
     }
 }
