@@ -5,6 +5,10 @@ import java.util.Objects;
 
 class CheckInput {
     // Variables
+    static String errorIncompatibleProperties = """
+            The request contains mutually exclusive properties: [%s, %s]
+            There are no numbers with these properties.
+            """;
     static String errorInvalidProperties = """
             Error: The properties %s are wrong.
             Available properties: ["BUZZ", "DUCK", "EVEN", "GAPFUL", \
@@ -88,17 +92,17 @@ class CheckInput {
         ArrayList<String> validList = new ArrayList<>();
         ArrayList<String> rejectedList = new ArrayList<>();
 
-        for (int i = 0; i < properties.length; i++) {
+        for (String property : properties) {
             // Verify properties one by one
 
             // Step 1: valid?
-            if (!isValidProperty(properties[i])) {
-                if (!rejectedList.contains(properties[i])) {
-                    rejectedList.add(properties[i]);
+            if (!isValidProperty(property)) {
+                if (!rejectedList.contains(property)) {
+                    rejectedList.add(property);
                 }
-            } else if (!validList.contains(properties[i])) {
+            } else if (!validList.contains(property)) {
                 // Step 2: duplicated?
-                validList.add(properties[i]);
+                validList.add(property);
             }
 
             // Step 3: compatible properties?
@@ -117,17 +121,19 @@ class CheckInput {
         // Returns true if and only if there is no
         // mutually exclusive pair of properties
         if (properties.contains("EVEN") && properties.contains("ODD")) {
+            System.out.printf(errorIncompatibleProperties, "EVEN", "ODD");
             return false;
         }
 
         if (properties.contains("DUCK") && properties.contains("SPY")) {
+            System.out.printf(errorIncompatibleProperties, "DUCK", "SPY");
             return false;
         }
 
         if (properties.contains("SUNNY") && properties.contains("SQUARE")) {
+            System.out.printf(errorIncompatibleProperties, "SUNNY", "SQUARE");
             return false;
         }
-
 
         return true;
     }
