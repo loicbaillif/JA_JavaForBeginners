@@ -101,7 +101,10 @@ class CheckInput {
                 validList.add(properties[i]);
             }
 
-            // Step 3:
+            // Step 3: compatible properties?
+            if (!verifyPropCompat(validList)) {
+                validList.set(0, "ERROR");
+            }
         }
 
         showInvalidProperties(rejectedList);
@@ -110,26 +113,22 @@ class CheckInput {
     }
 
 
-    private static boolean verifyPropertyCompat(String prop1, String prop2) {
-        // Returns true if and only if prop1 and prop2 are compatible
-        if (Objects.equals(prop1, "EVEN")) {
-            return !Objects.equals(prop2, "ODD");
+    private static boolean verifyPropCompat(ArrayList<String> properties) {
+        // Returns true if and only if there is no
+        // mutually exclusive pair of properties
+        if (properties.contains("EVEN") && properties.contains("ODD")) {
+            return false;
         }
-        if (Objects.equals(prop1, "ODD")) {
-            return !Objects.equals(prop2, "EVEN");
+
+        if (properties.contains("DUCK") && properties.contains("SPY")) {
+            return false;
         }
-        if (Objects.equals(prop1, "DUCK")) {
-            return !Objects.equals(prop2, "SPY");
+
+        if (properties.contains("SUNNY") && properties.contains("SQUARE")) {
+            return false;
         }
-        if (Objects.equals(prop1, "SPY")) {
-            return !Objects.equals(prop2, "DUCK");
-        }
-        if (Objects.equals(prop1, "SUNNY")) {
-            return !Objects.equals(prop2, "SQUARE");
-        }
-        if (Objects.equals(prop1, "SQUARE")) {
-            return !Objects.equals(prop2, "SUNNY");
-        }
+
+
         return true;
     }
 }
