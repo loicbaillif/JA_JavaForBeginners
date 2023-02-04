@@ -12,6 +12,7 @@ class ProjectNumber {
     boolean duck;
     boolean even;
     boolean gapful;
+    boolean jumping;
     boolean odd;
     boolean palindromic;
     boolean spy;
@@ -39,6 +40,9 @@ class ProjectNumber {
     }
     boolean isGapful() {
         return gapful;
+    }
+    boolean isJumping() {
+        return jumping;
     }
     boolean isOdd() {
         return odd;
@@ -79,6 +83,22 @@ class ProjectNumber {
             long divider = firstDigit() * 10L + lastDigit();
             this.gapful = (numberValue % divider == 0);
         }
+    }
+    void setJumping() {
+        if (this.numberValue < 10) this.jumping = true;
+        int temp;
+        int units;
+        long remaining = this.numberValue;
+        while (remaining > 0) {
+            units = (int) (remaining % 10);
+            remaining /= 10;
+            temp = (int) (remaining % 10);
+            if (Math.abs(temp - units) != 1) {
+                this.jumping = false;
+                return;
+            }
+        }
+        this.jumping = true;
     }
     void setNumberValue(long numberValue) {
         this.numberValue = numberValue;
