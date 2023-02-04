@@ -12,20 +12,20 @@ class CheckInput {
     static String errorInvalidProperties = """
             Error: The properties %s are wrong.
             Available properties: ["BUZZ", "DUCK", "EVEN", "GAPFUL", \
-            "ODD", "PALINDROMIC", "SPY", "SQUARE", "SUNNY"]
+            "JUMPING", "ODD", "PALINDROMIC", "SPY", "SQUARE", "SUNNY"]
             """;
     static String errorInvalidProperty = """
             Error: the property %s is wrong.
             Available properties: ["BUZZ", "DUCK", "EVEN", "GAPFUL", \
-            "ODD", "PALINDROMIC", "SPY", "SQUARE", "SUNNY"]
+            "JUMPING", "ODD", "PALINDROMIC", "SPY", "SQUARE", "SUNNY"]
             """;
     static String errorLen = "Error: The second parameter should be " +
             "a natural number";
     static String errorNotNatural = "Error: The first parameter should be a " +
             "natural number or zero";
     static String[] listProperties =
-            {"BUZZ", "DUCK", "EVEN", "GAPFUL", "ODD", "PALINDROMIC", "SPY",
-                    "SQUARE", "SUNNY"};
+            {"BUZZ", "DUCK", "EVEN", "GAPFUL", "JUMPING", "ODD",
+                    "PALINDROMIC", "SPY", "SQUARE", "SUNNY"};
 
 
     // Methods
