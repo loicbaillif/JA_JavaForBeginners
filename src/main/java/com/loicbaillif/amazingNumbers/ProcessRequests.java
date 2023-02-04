@@ -25,39 +25,39 @@ public class ProcessRequests {
             switch (property) {
                 case "BUZZ" -> {
                     projectNumber.setBuzz();
-                    if (projectNumber.isBuzz()) return true;
+                    if (!projectNumber.isBuzz()) return false;
                 }
                 case "DUCK" -> {
                     projectNumber.setDuck();
-                    if (projectNumber.isDuck()) return true;
+                    if (!projectNumber.isDuck()) return false;
                 }
                 case "EVEN" -> {
                     projectNumber.setEven();
-                    if (projectNumber.isEven()) return true;
+                    if (!projectNumber.isEven()) return false;
                 }
                 case "GAPFUL" -> {
                     projectNumber.setGapful();
-                    if (projectNumber.isGapful()) return true;
+                    if (!projectNumber.isGapful()) return false;
                 }
                 case "ODD" -> {
                     projectNumber.setOdd();
-                    if (projectNumber.isOdd()) return true;
+                    if (!projectNumber.isOdd()) return false;
                 }
                 case "PALINDROMIC" -> {
                     projectNumber.setPalindromic();
-                    if (projectNumber.isPalindromic()) return true;
+                    if (!projectNumber.isPalindromic()) return false;
                 }
                 case "SPY" -> {
                     projectNumber.setSpy();
-                    if (projectNumber.isSpy()) return true;
+                    if (!projectNumber.isSpy()) return false;
                 }
                 case "SQUARE" -> {
                     projectNumber.setSquare();
-                    if (projectNumber.isSquare()) return true;
+                    if (!projectNumber.isSquare()) return false;
                 }
                 case "SUNNY" -> {
                     projectNumber.setSunny();
-                    if (projectNumber.isSunny()) return true;
+                    if (!projectNumber.isSunny()) return false;
                 }
                 default -> {
                     return false; // unknown property
@@ -66,7 +66,7 @@ public class ProcessRequests {
 
         }
 
-        return false;
+        return true;
     }
 
 
@@ -129,10 +129,18 @@ public class ProcessRequests {
         String[] properties = CheckInput.verifyProperties(seekedProperties);
 
         // Treat request only if previous checks successful
-        if (!Objects.equals("ERROR", properties[0])) {
-            projectNumber.setNumberValue(firstValue);
+        if (Objects.equals("ERROR", properties[0])) return;
 
-
+        while (foundElements < nbElements) {
+            projectNumber.setNumberValue(firstValue++);
+            if (hasProperties(properties)) {
+                projectNumber.setProperties();
+                projectNumber.giveShortStatus();
+                foundElements++;
+            }
         }
+
+
+
     }
 }
