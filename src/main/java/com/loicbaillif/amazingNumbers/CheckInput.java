@@ -91,6 +91,7 @@ class CheckInput {
         // Variables
         ArrayList<String> validList = new ArrayList<>();
         ArrayList<String> rejectedList = new ArrayList<>();
+        boolean invalidList = false;
 
         for (String property : properties) {
             // Verify properties one by one
@@ -99,6 +100,7 @@ class CheckInput {
             if (!isValidProperty(property)) {
                 if (!rejectedList.contains(property)) {
                     rejectedList.add(property);
+                    invalidList = true;
                 }
             } else if (!validList.contains(property)) {
                 // Step 2: duplicated?
@@ -112,6 +114,7 @@ class CheckInput {
         }
 
         showInvalidProperties(rejectedList);
+        if (invalidList) return new String[]{"ERROR"};
 
         return validList.toArray(new String[validList.size()]);
     }

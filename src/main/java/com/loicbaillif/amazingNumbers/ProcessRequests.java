@@ -106,8 +106,6 @@ public class ProcessRequests {
 
 
     static void process3MoreInputs(String[] userInput) {
-        System.out.println("3 inputs or more to process"); // DEBUG
-
         // Variables
         int foundElements = 0;
         int nbProperties = userInput.length - 2;
@@ -128,7 +126,6 @@ public class ProcessRequests {
 
         // Check seekedProperties
         String[] properties = CheckInput.verifyProperties(seekedProperties);
-        System.out.println(properties.toString());
 
         // Treat request only if previous checks successful
         if (Objects.equals("ERROR", properties[0])) return;
