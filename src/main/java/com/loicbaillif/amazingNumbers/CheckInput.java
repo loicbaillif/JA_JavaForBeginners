@@ -107,11 +107,11 @@ class CheckInput {
 
             // Step 3: compatible properties?
             if (!verifyPropCompat(validList)) {
-                validList.set(0, "ERROR");
+                return new String[]{"ERROR"};
             }
         }
 
-        showInvalidProperties(rejectedList); // DEBUG
+        showInvalidProperties(rejectedList);
 
         return validList.toArray(new String[validList.size()]);
     }

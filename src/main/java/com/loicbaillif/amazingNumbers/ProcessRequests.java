@@ -78,6 +78,7 @@ public class ProcessRequests {
         long firstValue = CheckInput.verifyFirstValue(userInput);
         if (firstValue == -1) return false;
 
+        projectNumber.setNumberValue(firstValue);
         projectNumber.setProperties();
         projectNumber.giveStatus(numberStatus);
 
@@ -127,6 +128,7 @@ public class ProcessRequests {
 
         // Check seekedProperties
         String[] properties = CheckInput.verifyProperties(seekedProperties);
+        System.out.println(properties.toString());
 
         // Treat request only if previous checks successful
         if (Objects.equals("ERROR", properties[0])) return;
