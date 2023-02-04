@@ -85,11 +85,14 @@ class ProjectNumber {
         }
     }
     void setJumping() {
-        if (this.numberValue < 10) this.jumping = true;
+        if (this.numberValue < 10) {
+            this.jumping = true;
+            return;
+        }
         int temp;
         int units;
         long remaining = this.numberValue;
-        while (remaining > 0) {
+        while (remaining > 9) {
             units = (int) (remaining % 10);
             remaining /= 10;
             temp = (int) (remaining % 10);
