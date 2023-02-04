@@ -111,7 +111,7 @@ class CheckInput {
             }
         }
 
-        showInvalidProperties(rejectedList);
+        showInvalidProperties(rejectedList); // DEBUG
 
         return validList.toArray(new String[validList.size()]);
     }

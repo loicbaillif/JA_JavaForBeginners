@@ -19,6 +19,57 @@ public class ProcessRequests {
     static ProjectNumber projectNumber = new ProjectNumber(1);
 
 
+    private static boolean hasProperties(String[] properties) {
+        for (String property: properties) {
+
+            switch (property) {
+                case "BUZZ" -> {
+                    projectNumber.setBuzz();
+                    if (projectNumber.isBuzz()) return true;
+                }
+                case "DUCK" -> {
+                    projectNumber.setDuck();
+                    if (projectNumber.isDuck()) return true;
+                }
+                case "EVEN" -> {
+                    projectNumber.setEven();
+                    if (projectNumber.isEven()) return true;
+                }
+                case "GAPFUL" -> {
+                    projectNumber.setGapful();
+                    if (projectNumber.isGapful()) return true;
+                }
+                case "ODD" -> {
+                    projectNumber.setOdd();
+                    if (projectNumber.isOdd()) return true;
+                }
+                case "PALINDROMIC" -> {
+                    projectNumber.setPalindromic();
+                    if (projectNumber.isPalindromic()) return true;
+                }
+                case "SPY" -> {
+                    projectNumber.setSpy();
+                    if (projectNumber.isSpy()) return true;
+                }
+                case "SQUARE" -> {
+                    projectNumber.setSquare();
+                    if (projectNumber.isSquare()) return true;
+                }
+                case "SUNNY" -> {
+                    projectNumber.setSunny();
+                    if (projectNumber.isSunny()) return true;
+                }
+                default -> {
+                    return false; // unknown property
+                }
+            }
+
+        }
+
+        return false;
+    }
+
+
     static boolean process1Input(String userInput) {
         // Exit condition
         if (Objects.equals("0", userInput)) return true;
@@ -77,8 +128,11 @@ public class ProcessRequests {
         // Check seekedProperties
         String[] properties = CheckInput.verifyProperties(seekedProperties);
 
-        for (String property : properties) {
-            System.out.println(property);
+        // Treat request only if previous checks successful
+        if (!Objects.equals("ERROR", properties[0])) {
+            projectNumber.setNumberValue(firstValue);
+
+
         }
     }
 }
