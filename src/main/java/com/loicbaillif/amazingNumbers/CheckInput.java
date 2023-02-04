@@ -106,15 +106,14 @@ class CheckInput {
                 // Step 2: duplicated?
                 validList.add(property);
             }
-
-            // Step 3: compatible properties?
-            if (!verifyPropCompat(validList)) {
-                return new String[]{"ERROR"};
-            }
         }
-
         showInvalidProperties(rejectedList);
         if (invalidList) return new String[]{"ERROR"};
+
+        // Step 3: compatible properties?
+        if (!verifyPropCompat(validList)) {
+            return new String[]{"ERROR"};
+        }
 
         return validList.toArray(new String[validList.size()]);
     }
