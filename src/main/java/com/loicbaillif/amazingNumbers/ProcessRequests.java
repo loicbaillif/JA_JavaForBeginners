@@ -6,12 +6,13 @@ public class ProcessRequests {
     // Static Variables
     static String numberStatus = """
             Properties of %d
-                       even: %b
-                        odd: %b
                        buzz: %b
                        duck: %b
-                palindromic: %b
+                       even: %b
                      gapful: %b
+                    jumping: %b
+                        odd: %b
+                palindromic: %b
                         spy: %b
                      square: %b
                       sunny: %b
@@ -38,6 +39,10 @@ public class ProcessRequests {
                 case "GAPFUL" -> {
                     projectNumber.setGapful();
                     if (!projectNumber.isGapful()) return false;
+                }
+                case "JUMPING" -> {
+                    projectNumber.setJumping();
+                    if (!projectNumber.isJumping()) return false;
                 }
                 case "ODD" -> {
                     projectNumber.setOdd();
