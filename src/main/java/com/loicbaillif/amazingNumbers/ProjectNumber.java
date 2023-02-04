@@ -169,6 +169,7 @@ class ProjectNumber {
         setSpy();
         setSquare();
         setSunny();
+        setJumping();
     }
 
 
@@ -188,11 +189,12 @@ class ProjectNumber {
     }
     void giveShortStatus() {
         System.out.printf("%d is ", numberValue);
-        System.out.printf(even? "even": "odd");
         System.out.printf(buzz? ", buzz": "");
         System.out.printf(duck? ", duck": "");
-        System.out.printf(palindromic? ", palindromic": "");
+        System.out.printf(even? "even": "odd");
         System.out.printf(gapful? ", gapful": "");
+        System.out.printf(jumping? ", jumping": "");
+        System.out.printf(palindromic? ", palindromic": "");
         System.out.printf(spy? ", spy": "");
         System.out.printf(square? ", square": "");
         System.out.printf(sunny? ", sunny": "");
@@ -201,12 +203,13 @@ class ProjectNumber {
     void giveStatus(String statusPhrase) {
         System.out.printf(statusPhrase,
                 this.getNumberValue(),
-                this.isEven(),
-                this.isOdd(),
                 this.isBuzz(),
                 this.isDuck(),
-                this.isPalindromic(),
+                this.isEven(),
                 this.isGapful(),
+                this.isJumping(),
+                this.isOdd(),
+                this.isPalindromic(),
                 this.isSpy(),
                 this.isSquare(),
                 this.isSunny());
