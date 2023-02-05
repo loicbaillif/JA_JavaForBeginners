@@ -12,9 +12,11 @@ class ProjectNumber {
     boolean duck;
     boolean even;
     boolean gapful;
+    boolean happy;
     boolean jumping;
     boolean odd;
     boolean palindromic;
+    boolean sad;
     boolean spy;
     boolean square;
     boolean sunny;
@@ -41,6 +43,9 @@ class ProjectNumber {
     boolean isGapful() {
         return gapful;
     }
+    boolean isHappy() {
+        return happy;
+    }
     boolean isJumping() {
         return jumping;
     }
@@ -49,6 +54,9 @@ class ProjectNumber {
     }
     boolean isPalindromic() {
         return palindromic;
+    }
+    boolean isSad() {
+        return sad;
     }
     boolean isSpy() {
         return spy;
@@ -83,6 +91,10 @@ class ProjectNumber {
             long divider = firstDigit() * 10L + lastDigit();
             this.gapful = (numberValue % divider == 0);
         }
+    }
+    void setHappy() {
+        // TODO
+        this.happy = false;
     }
     void setJumping() {
         if (this.numberValue < 10) {
@@ -127,6 +139,10 @@ class ProjectNumber {
         }
 
         this.palindromic = isPalindromic;
+    }
+    void setSad() {
+        // TODO
+        this.sad = false;
     }
     void setSpy() {
         // Variables
