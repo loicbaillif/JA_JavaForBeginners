@@ -98,14 +98,13 @@ class ProjectNumber {
         // TODO
         // Variables
         ArrayList<Integer> previousValues = new ArrayList<Integer>();
-        Integer tempValue = Integer.valueOf(0);
-        int temp = 0;
+        Integer tempValue = 0;
 
         // Loop
         while (!previousValues.contains(tempValue)) {
-            temp = sumDigitsSquare(this.getNumberValue());
-            previousValues.add(temp);
-            System.out.printf("sum of digits squares = %d%n", temp);
+            tempValue = sumDigitsSquare(this.getNumberValue());
+            previousValues.add(tempValue);
+            System.out.printf("sum of digits squares = %d%n", tempValue);
         }
 
         // Result
@@ -197,6 +196,7 @@ class ProjectNumber {
         setBuzz();
         setDuck();
         setEven();
+        setHappy();
         setOdd();
         setPalindromic();
         setGapful();
@@ -241,6 +241,7 @@ class ProjectNumber {
                 this.isDuck(),
                 this.isEven(),
                 this.isGapful(),
+                this.isHappy(),
                 this.isJumping(),
                 this.isOdd(),
                 this.isPalindromic(),

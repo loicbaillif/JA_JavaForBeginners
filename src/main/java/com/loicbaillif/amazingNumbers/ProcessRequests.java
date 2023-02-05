@@ -10,6 +10,7 @@ public class ProcessRequests {
                        duck: %b
                        even: %b
                      gapful: %b
+                      happy: %b
                     jumping: %b
                         odd: %b
                 palindromic: %b
