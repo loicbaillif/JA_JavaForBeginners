@@ -99,11 +99,14 @@ class ProjectNumber {
         // Variables
         ArrayList<Integer> previousValues = new ArrayList<Integer>();
         Integer tempValue = Integer.valueOf(0);
+        int temp = 0;
 
         // Loop
-        do {
-
-        } while (!previousValues.contains(tempValue));
+        while (!previousValues.contains(tempValue)) {
+            temp = sumDigitsSquare(this.getNumberValue());
+            previousValues.add(temp);
+            System.out.printf("sum of digits squares = %d%n", temp);
+        }
 
         // Result
         this.happy = false;
@@ -262,7 +265,20 @@ class ProjectNumber {
 
         return sumDigits;
     }
+    private int sumDigitsSquare(long inputValue) {
+        // Variables
+        int result = 0;
+        long temp = inputValue;
+        int lastDigit = (int) (temp % 10);
 
+        while (temp > 9L) {
+            result += lastDigit * lastDigit;
+            temp /= 10;
+            lastDigit = (int) (temp % 10);
+        }
+
+        return result;
+    }
     private static boolean multipleOf7(long userInput) {
         // This method returns false if userInput is not divisible by 7,
         // and returns true elsewhere;
