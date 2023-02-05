@@ -1,5 +1,7 @@
 package com.loicbaillif.amazingNumbers;
 
+import java.util.ArrayList;
+
 class ProjectNumber {
     /* ProjectNumber as an object
      *
@@ -94,6 +96,16 @@ class ProjectNumber {
     }
     void setHappy() {
         // TODO
+        // Variables
+        ArrayList<Integer> previousValues = new ArrayList<Integer>();
+        Integer tempValue = Integer.valueOf(0);
+
+        // Loop
+        do {
+
+        } while (!previousValues.contains(tempValue));
+
+        // Result
         this.happy = false;
     }
     void setJumping() {
