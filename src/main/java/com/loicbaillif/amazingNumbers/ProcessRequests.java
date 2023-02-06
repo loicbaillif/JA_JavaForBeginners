@@ -14,6 +14,7 @@ public class ProcessRequests {
                     jumping: %b
                         odd: %b
                 palindromic: %b
+                        sad: %b
                         spy: %b
                      square: %b
                       sunny: %b

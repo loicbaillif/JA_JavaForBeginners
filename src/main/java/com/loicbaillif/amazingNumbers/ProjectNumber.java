@@ -96,7 +96,7 @@ class ProjectNumber {
     }
     void setHappy() {
         // Variables
-        ArrayList<Integer> previousValues = new ArrayList<Integer>();
+        ArrayList<Integer> previousValues = new ArrayList<>();
         int tempValue = sumDigitsSquare(this.getNumberValue());
         System.out.printf("sum of digits squares = %d%n", tempValue);
 
@@ -161,8 +161,7 @@ class ProjectNumber {
         this.palindromic = isPalindromic;
     }
     void setSad() {
-        // TODO
-        this.sad = false;
+        setHappy();
     }
     void setSpy() {
         // Variables
@@ -202,14 +201,15 @@ class ProjectNumber {
         setBuzz();
         setDuck();
         setEven();
+        setGapful();
         setHappy();
+        setJumping();
         setOdd();
         setPalindromic();
-        setGapful();
+        setSad();
         setSpy();
         setSquare();
         setSunny();
-        setJumping();
     }
 
 
@@ -251,6 +251,7 @@ class ProjectNumber {
                 this.isJumping(),
                 this.isOdd(),
                 this.isPalindromic(),
+                this.isSad(),
                 this.isSpy(),
                 this.isSquare(),
                 this.isSunny());
