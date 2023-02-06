@@ -104,7 +104,6 @@ class ProjectNumber {
         while (!previousValues.contains(tempValue)) {
             previousValues.add(tempValue);
             tempValue = sumDigitsSquare(tempValue);
-            System.out.printf("sum of digits squares = %d%n", tempValue); // DEBUG
             if (tempValue == 1) {
                 this.happy = true;
                 this.sad = false;
@@ -233,8 +232,10 @@ class ProjectNumber {
         System.out.printf(buzz? ", buzz": "");
         System.out.printf(duck? ", duck": "");
         System.out.printf(gapful? ", gapful": "");
+        System.out.printf(happy? ", happy": "");
         System.out.printf(jumping? ", jumping": "");
         System.out.printf(palindromic? ", palindromic": "");
+        System.out.printf(sad? ", sad": "");
         System.out.printf(spy? ", spy": "");
         System.out.printf(square? ", square": "");
         System.out.printf(sunny? ", sunny": "");
