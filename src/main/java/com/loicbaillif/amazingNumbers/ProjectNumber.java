@@ -97,18 +97,24 @@ class ProjectNumber {
     void setHappy() {
         // Variables
         ArrayList<Integer> previousValues = new ArrayList<Integer>();
-        Integer tempValue = sumDigitsSquare(this.getNumberValue());
+        int tempValue = sumDigitsSquare(this.getNumberValue());
         System.out.printf("sum of digits squares = %d%n", tempValue);
 
         // Loop
         while (!previousValues.contains(tempValue)) {
             previousValues.add(tempValue);
             tempValue = sumDigitsSquare(tempValue);
-            System.out.printf("sum of digits squares = %d%n", tempValue);
+            System.out.printf("sum of digits squares = %d%n", tempValue); // DEBUG
+            if (tempValue == 1) {
+                this.happy = true;
+                this.sad = false;
+                return;
+            }
         }
 
         // Result
         this.happy = false;
+        this.sad = true;
     }
     void setJumping() {
         if (this.numberValue < 10) {
