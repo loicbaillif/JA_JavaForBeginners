@@ -95,15 +95,15 @@ class ProjectNumber {
         }
     }
     void setHappy() {
-        // TODO
         // Variables
         ArrayList<Integer> previousValues = new ArrayList<Integer>();
-        Integer tempValue = 0;
+        Integer tempValue = sumDigitsSquare(this.getNumberValue());
+        System.out.printf("sum of digits squares = %d%n", tempValue);
 
         // Loop
         while (!previousValues.contains(tempValue)) {
-            tempValue = sumDigitsSquare(this.getNumberValue());
             previousValues.add(tempValue);
+            tempValue = sumDigitsSquare(tempValue);
             System.out.printf("sum of digits squares = %d%n", tempValue);
         }
 
@@ -272,7 +272,7 @@ class ProjectNumber {
         long temp = inputValue;
         int lastDigit = (int) (temp % 10);
 
-        while (temp > 9L) {
+        while (temp > 0L) {
             result += lastDigit * lastDigit;
             temp /= 10;
             lastDigit = (int) (temp % 10);
