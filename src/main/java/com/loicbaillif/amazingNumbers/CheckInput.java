@@ -137,6 +137,11 @@ class CheckInput {
             return false;
         }
 
+        if (properties.contains("HAPPY") && properties.contains("SAD")) {
+            System.out.printf(errorIncompatibleProperties, "HAPPY", "SAD");
+            return false;
+        }
+
         return true;
     }
 }

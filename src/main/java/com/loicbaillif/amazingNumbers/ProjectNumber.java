@@ -98,7 +98,6 @@ class ProjectNumber {
         // Variables
         ArrayList<Integer> previousValues = new ArrayList<>();
         int tempValue = sumDigitsSquare(this.getNumberValue());
-        System.out.printf("sum of digits squares = %d%n", tempValue);
 
         // Loop
         while (!previousValues.contains(tempValue)) {
