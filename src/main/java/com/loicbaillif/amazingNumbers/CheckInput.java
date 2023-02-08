@@ -39,6 +39,13 @@ class CheckInput {
     }
 
 
+    static String[] refusedProperties(String[] properties) {
+
+
+        return new String[0];
+    }
+
+
     private static void showInvalidProperties(ArrayList<String> properties) {
         if (properties.size() == 1) {
             System.out.printf(errorInvalidProperty, properties);

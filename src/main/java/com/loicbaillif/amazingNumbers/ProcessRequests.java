@@ -133,6 +133,7 @@ public class ProcessRequests {
 
         // Check seekedProperties
         String[] properties = CheckInput.verifyProperties(seekedProperties);
+        String[] forbiddens = CheckInput.refusedProperties(seekedProperties);
 
         // Treat request only if previous checks successful
         if (Objects.equals("ERROR", properties[0])) return;
