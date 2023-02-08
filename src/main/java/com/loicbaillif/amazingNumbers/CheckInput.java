@@ -96,23 +96,41 @@ class CheckInput {
         // Will also remove duplicated properties
 
         // Variables
-        ArrayList<String> validList = new ArrayList<>();
+        ArrayList<String> errorList = new ArrayList<>();
         ArrayList<String> rejectedList = new ArrayList<>();
+        ArrayList<String> validList = new ArrayList<>();
+        boolean excludedProperty = false;
         boolean invalidList = false;
 
         for (String property : properties) {
-            // Verify properties one by one
+            // Treat properties one by one:
+            excludedProperty = (property.charAt(0) == '-');
 
-            // Step 1: valid?
-            if (!isValidProperty(property)) {
-                if (!rejectedList.contains(property)) {
-                    rejectedList.add(property);
-                    invalidList = true;
-                }
-            } else if (!validList.contains(property)) {
-                // Step 2: duplicated?
-                validList.add(property);
+            if (excludedProperty) {
+                property = property.substring(1);
             }
+
+            if (isValidProperty(property) && !validList.contains(property)) {
+                if (excludedProperty) rejectedList.add(property);
+                if (!excludedProperty) validList.add(property); // TODO
+            }
+
+
+            // Previous version, deprecated
+            if (property.charAt(0) != '-') {
+                // Step 1: valid?
+                if (!isValidProperty(property)) {
+                    if (!rejectedList.contains(property)) {
+                        rejectedList.add(property);
+                        invalidList = true;
+                    }
+                } else if (!validList.contains(property)) {
+                    // Step 2: duplicated?
+                    validList.add(property);
+                }
+            }
+            // End of deprecated
+
         }
         showInvalidProperties(rejectedList);
         if (invalidList) return new String[]{"ERROR"};
