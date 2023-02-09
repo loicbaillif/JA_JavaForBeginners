@@ -97,43 +97,43 @@ class CheckInput {
 
         // Variables
         ArrayList<String> errorList = new ArrayList<>();
-        ArrayList<String> rejectedList = new ArrayList<>();
+        ArrayList<String> excludedList = new ArrayList<>();
         ArrayList<String> validList = new ArrayList<>();
-        boolean excludedProperty = false;
-        boolean invalidList = false;
+        boolean excludedProperty;
+        boolean errorProperty = false;
+        boolean validProperty;
 
+        // Processing
         for (String property : properties) {
-            // Treat properties one by one:
+            // Process properties one by one:
+            // 1. Trim the '-' if any.
             excludedProperty = (property.charAt(0) == '-');
-
             if (excludedProperty) {
                 property = property.substring(1);
             }
 
-            if (isValidProperty(property) && !validList.contains(property)) {
-                if (excludedProperty) rejectedList.add(property);
-                if (!excludedProperty) validList.add(property); // TODO
+            // 2. Check if property is valid
+            validProperty = isValidProperty(property);
+
+            // 3. Place it in the appropriate ArrayList
+            if (!validProperty && !errorList.contains(property)) {
+                // Not valid, not in error list
+                errorList.add(property);
+                errorProperty = true;
             }
-
-
-            // Previous version, deprecated
-            if (property.charAt(0) != '-') {
-                // Step 1: valid?
-                if (!isValidProperty(property)) {
-                    if (!rejectedList.contains(property)) {
-                        rejectedList.add(property);
-                        invalidList = true;
-                    }
-                } else if (!validList.contains(property)) {
-                    // Step 2: duplicated?
+            if (validProperty) {
+                if (excludedProperty && !excludedList.contains(property)) {
+                    // Valid, excluded (-), not in excluded list
+                    excludedList.add(property);
+                }
+                if (!excludedProperty && !validList.contains(property)) {
+                    // Valid, included, not in valid list
                     validList.add(property);
                 }
             }
-            // End of deprecated
-
         }
-        showInvalidProperties(rejectedList);
-        if (invalidList) return new String[]{"ERROR"};
+        showInvalidProperties(errorList);
+        if (errorProperty) return new String[]{"ERROR"};
 
         // Step 3: compatible properties?
         if (!verifyPropCompat(validList)) {
