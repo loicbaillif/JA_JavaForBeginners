@@ -82,7 +82,7 @@ class CheckInput {
     }
 
 
-    static void verifyProperties(
+    static boolean verifyProperties(
             String[] properties,
             ArrayList<String> errorList,
             ArrayList<String> excludedList,
@@ -125,14 +125,10 @@ class CheckInput {
             }
         }
         showInvalidProperties(errorList);
-        if (errorProperty) return new String[]{"ERROR"};
+        if (errorProperty) return false;
 
         // Step 3: compatible properties?
-        if (!verifyPropCompat(validList)) {
-            return new String[]{"ERROR"};
-        }
-
-        // return validList.toArray(new String[validList.size()]);
+        return verifyPropCompat(validList);
     }
 
 

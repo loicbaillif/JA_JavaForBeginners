@@ -115,6 +115,7 @@ public class ProcessRequests {
 
     static void process3MoreInputs(String[] userInput) {
         // Variables
+        boolean validRequest;
         int foundElements = 0;
         int nbProperties = userInput.length - 2;
         String[] seekedProperties = new String[nbProperties];
@@ -136,18 +137,22 @@ public class ProcessRequests {
         }
 
         // Check seekedProperties
-        CheckInput.verifyProperties(
+        validRequest = CheckInput.verifyProperties(
                 seekedProperties,
                 errorList,
                 excludedList,
                 validList);
 
+        System.out.println(errorList);      // DEBUG
+        System.out.println(excludedList);   // DEBUG
+        System.out.println(validList);      // DEBUG
+
         // Treat request only if previous checks successful
-        if (Objects.equals("ERROR", properties[0])) return;
+        if (!validRequest) return;
 
         while (foundElements < nbElements) {
             projectNumber.setNumberValue(firstValue++);
-            if (hasProperties(properties)) {
+            if (hasProperties((String[]) validList.toArray())) {
                 projectNumber.setProperties();
                 projectNumber.giveShortStatus();
                 foundElements++;
