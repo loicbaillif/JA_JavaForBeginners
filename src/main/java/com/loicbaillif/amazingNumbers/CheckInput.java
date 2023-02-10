@@ -39,13 +39,6 @@ class CheckInput {
     }
 
 
-    static String[] refusedProperties(String[] properties) {
-
-
-        return new String[0];
-    }
-
-
     private static void showInvalidProperties(ArrayList<String> properties) {
         if (properties.size() == 1) {
             System.out.printf(errorInvalidProperty, properties);
@@ -89,16 +82,17 @@ class CheckInput {
     }
 
 
-    static String[] verifyProperties(String[] properties) {
+    static void verifyProperties(
+            String[] properties,
+            ArrayList<String> errorList,
+            ArrayList<String> excludedList,
+            ArrayList<String> validList) {
         // Returns String[] after checking properties element are valid, i.e.
         //  - in the given list
         //  - No incompatibility pair
         // Will also remove duplicated properties
 
         // Variables
-        ArrayList<String> errorList = new ArrayList<>();
-        ArrayList<String> excludedList = new ArrayList<>();
-        ArrayList<String> validList = new ArrayList<>();
         boolean excludedProperty;
         boolean errorProperty = false;
         boolean validProperty;
@@ -108,9 +102,7 @@ class CheckInput {
             // Process properties one by one:
             // 1. Trim the '-' if any.
             excludedProperty = (property.charAt(0) == '-');
-            if (excludedProperty) {
-                property = property.substring(1);
-            }
+            if (excludedProperty) property = property.substring(1);
 
             // 2. Check if property is valid
             validProperty = isValidProperty(property);
@@ -140,7 +132,7 @@ class CheckInput {
             return new String[]{"ERROR"};
         }
 
-        return validList.toArray(new String[validList.size()]);
+        // return validList.toArray(new String[validList.size()]);
     }
 
 

@@ -1,5 +1,6 @@
 package com.loicbaillif.amazingNumbers;
 
+import java.util.ArrayList;
 import java.util.Objects;
 
 public class ProcessRequests {
@@ -117,6 +118,9 @@ public class ProcessRequests {
         int foundElements = 0;
         int nbProperties = userInput.length - 2;
         String[] seekedProperties = new String[nbProperties];
+        ArrayList<String> errorList = new ArrayList<>();
+        ArrayList<String> excludedList = new ArrayList<>();
+        ArrayList<String> validList = new ArrayList<>();
 
         // Check first value
         long firstValue = CheckInput.verifyFirstValue(userInput[0]);
@@ -132,8 +136,11 @@ public class ProcessRequests {
         }
 
         // Check seekedProperties
-        String[] properties = CheckInput.verifyProperties(seekedProperties);
-        String[] forbiddens = CheckInput.refusedProperties(seekedProperties);
+        CheckInput.verifyProperties(
+                seekedProperties,
+                errorList,
+                excludedList,
+                validList);
 
         // Treat request only if previous checks successful
         if (Objects.equals("ERROR", properties[0])) return;
