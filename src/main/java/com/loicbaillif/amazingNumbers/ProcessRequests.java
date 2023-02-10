@@ -23,9 +23,61 @@ public class ProcessRequests {
     static ProjectNumber projectNumber = new ProjectNumber(1);
 
 
+    private static boolean hasNotProperties(String[] properties) {
+        for (String property: properties) {
+            switch (property) {
+                case "BUZZ" -> {
+                    projectNumber.setBuzz();
+                    if (projectNumber.isBuzz()) return false;
+                }
+                case "DUCK" -> {
+                    projectNumber.setDuck();
+                    if (projectNumber.isDuck()) return false;
+                }
+                case "EVEN" -> {
+                    projectNumber.setEven();
+                    if (projectNumber.isEven()) return false;
+                }
+                case "GAPFUL" -> {
+                    projectNumber.setGapful();
+                    if (projectNumber.isGapful()) return false;
+                }
+                case "JUMPING" -> {
+                    projectNumber.setJumping();
+                    if (projectNumber.isJumping()) return false;
+                }
+                case "ODD" -> {
+                    projectNumber.setOdd();
+                    if (projectNumber.isOdd()) return false;
+                }
+                case "PALINDROMIC" -> {
+                    projectNumber.setPalindromic();
+                    if (projectNumber.isPalindromic()) return false;
+                }
+                case "SPY" -> {
+                    projectNumber.setSpy();
+                    if (projectNumber.isSpy()) return false;
+                }
+                case "SQUARE" -> {
+                    projectNumber.setSquare();
+                    if (projectNumber.isSquare()) return false;
+                }
+                case "SUNNY" -> {
+                    projectNumber.setSunny();
+                    if (projectNumber.isSunny()) return false;
+                }
+                default -> {
+                    return false; // unknown property
+                }
+            }
+        }
+
+        return true;
+    }
+
+
     private static boolean hasProperties(String[] properties) {
         for (String property: properties) {
-
             switch (property) {
                 case "BUZZ" -> {
                     projectNumber.setBuzz();
@@ -71,7 +123,6 @@ public class ProcessRequests {
                     return false; // unknown property
                 }
             }
-
         }
 
         return true;
@@ -143,16 +194,17 @@ public class ProcessRequests {
                 excludedList,
                 validList);
 
-        System.out.println(errorList);      // DEBUG
-        System.out.println(excludedList);   // DEBUG
-        System.out.println(validList);      // DEBUG
-
         // Treat request only if previous checks successful
         if (!validRequest) return;
+        String[] excludedArray = excludedList.toArray(
+                new String[excludedList.size()]);
+        String[] validArray = validList.toArray(
+                new String[validList.size()]);
+
 
         while (foundElements < nbElements) {
             projectNumber.setNumberValue(firstValue++);
-            if (hasProperties((String[]) validList.toArray())) {
+            if (hasProperties(validArray) && hasNotProperties(excludedArray)) {
                 projectNumber.setProperties();
                 projectNumber.giveShortStatus();
                 foundElements++;
