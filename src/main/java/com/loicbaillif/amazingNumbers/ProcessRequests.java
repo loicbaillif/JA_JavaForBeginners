@@ -196,10 +196,8 @@ public class ProcessRequests {
 
         // Treat request only if previous checks successful
         if (!validRequest) return;
-        String[] excludedArray = excludedList.toArray(
-                new String[excludedList.size()]);
-        String[] validArray = validList.toArray(
-                new String[validList.size()]);
+        String[] excludedArray = excludedList.toArray(new String[0]);
+        String[] validArray = validList.toArray(new String[0]);
 
 
         while (foundElements < nbElements) {

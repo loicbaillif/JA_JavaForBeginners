@@ -128,6 +128,7 @@ class CheckInput {
         if (errorProperty) return false;
 
         // Step 3: compatible properties?
+        // TODO : Repeat this for excludedList
         return verifyPropCompat(validList);
     }
 
