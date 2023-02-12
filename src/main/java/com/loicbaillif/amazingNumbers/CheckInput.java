@@ -24,8 +24,8 @@ class CheckInput {
     static String errorNotNatural = "Error: The first parameter should be a " +
             "natural number or zero";
     static String[] listProperties =
-            {"BUZZ", "DUCK", "EVEN", "GAPFUL", "JUMPING", "ODD",
-                    "PALINDROMIC", "SPY", "SQUARE", "SUNNY"};
+            {"BUZZ", "DUCK", "EVEN", "GAPFUL", "HAPPY", "JUMPING", "ODD",
+                    "PALINDROMIC", "SAD", "SPY", "SQUARE", "SUNNY"};
 
 
     // Methods

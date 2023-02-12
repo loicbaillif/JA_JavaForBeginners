@@ -95,6 +95,10 @@ public class ProcessRequests {
                     projectNumber.setGapful();
                     if (!projectNumber.isGapful()) return false;
                 }
+                case "HAPPY" -> {
+                    projectNumber.setHappy();
+                    if (!projectNumber.isHappy()) return false;
+                }
                 case "JUMPING" -> {
                     projectNumber.setJumping();
                     if (!projectNumber.isJumping()) return false;
@@ -106,6 +110,10 @@ public class ProcessRequests {
                 case "PALINDROMIC" -> {
                     projectNumber.setPalindromic();
                     if (!projectNumber.isPalindromic()) return false;
+                }
+                case "SAD" -> {
+                    projectNumber.setSad();
+                    if (!projectNumber.isSad()) return false;
                 }
                 case "SPY" -> {
                     projectNumber.setSpy();
