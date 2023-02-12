@@ -128,8 +128,7 @@ class CheckInput {
         if (errorProperty) return false;
 
         // Step 3: compatible properties?
-        // TODO : Repeat this for excludedList
-        return verifyPropCompat(validList);
+        return (verifyPropCompat(validList) && verifyPropCompat(excludedList));
     }
 
 
@@ -153,6 +152,23 @@ class CheckInput {
 
         if (properties.contains("HAPPY") && properties.contains("SAD")) {
             System.out.printf(errorIncompatibleProperties, "HAPPY", "SAD");
+            return false;
+        }
+
+        return true;
+    }
+
+
+    private static boolean verifyPropCompat(
+            ArrayList<String> properties,
+            boolean exclusionList) {
+        // Variables
+        String exclusionMark = exclusionList? "-": "";
+
+        // Processing
+        if (properties.contains("EVEN") && properties.contains("ODD")) {
+            System.out.printf(errorIncompatibleProperties,
+                    exclusionMark, "EVEN", exclusionMark, "ODD");
             return false;
         }
 
