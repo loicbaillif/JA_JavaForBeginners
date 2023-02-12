@@ -11,13 +11,13 @@ class CheckInput {
             """;
     static String errorInvalidProperties = """
             Error: The properties %s are wrong.
-            Available properties: ["BUZZ", "DUCK", "EVEN", "GAPFUL", \
-            "JUMPING", "ODD", "PALINDROMIC", "SPY", "SQUARE", "SUNNY"]
+            Available properties: ["BUZZ", "DUCK", "EVEN", "GAPFUL", "HAPPY", \
+            "JUMPING", "ODD", "PALINDROMIC", "SAD", "SPY", "SQUARE", "SUNNY"]
             """;
     static String errorInvalidProperty = """
             Error: the property %s is wrong.
-            Available properties: ["BUZZ", "DUCK", "EVEN", "GAPFUL", \
-            "JUMPING", "ODD", "PALINDROMIC", "SPY", "SQUARE", "SUNNY"]
+            Available properties: ["BUZZ", "DUCK", "EVEN", "GAPFUL", "HAPPY", \
+            "JUMPING", "ODD", "PALINDROMIC", "SAD", "SPY", "SQUARE", "SUNNY"]
             """;
     static String errorLen = "Error: The second parameter should be " +
             "a natural number";
