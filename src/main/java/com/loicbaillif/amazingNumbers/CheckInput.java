@@ -172,6 +172,24 @@ class CheckInput {
             return false;
         }
 
+        if (properties.contains("DUCK") && properties.contains("SPY")) {
+            System.out.printf(errorIncompatibleProperties,
+                    exclusionMark, "DUCK", exclusionMark, "SPY");
+            return false;
+        }
+
+        if (properties.contains("SUNNY") && properties.contains("SQUARE")) {
+            System.out.printf(errorIncompatibleProperties,
+                    exclusionMark, "SUNNY", exclusionMark, "SQUARE");
+            return false;
+        }
+
+        if (properties.contains("HAPPY") && properties.contains("SAD")) {
+            System.out.printf(errorIncompatibleProperties,
+                    exclusionMark, "HAPPY", exclusionMark, "SAD");
+            return false;
+        }
+
         return true;
     }
 }
