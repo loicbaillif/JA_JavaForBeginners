@@ -6,7 +6,7 @@ import java.util.Objects;
 class CheckInput {
     // Variables
     static String errorIncompatibleProperties = """
-            The request contains mutually exclusive properties: [%s, %s]
+            The request contains mutually exclusive properties: [%s%s, %s%s]
             There are no numbers with these properties.
             """;
     static String errorInvalidProperties = """
@@ -135,27 +135,8 @@ class CheckInput {
     private static boolean verifyPropCompat(ArrayList<String> properties) {
         // Returns true if and only if there is no
         // mutually exclusive pair of properties
-        if (properties.contains("EVEN") && properties.contains("ODD")) {
-            System.out.printf(errorIncompatibleProperties, "EVEN", "ODD");
-            return false;
-        }
 
-        if (properties.contains("DUCK") && properties.contains("SPY")) {
-            System.out.printf(errorIncompatibleProperties, "DUCK", "SPY");
-            return false;
-        }
-
-        if (properties.contains("SUNNY") && properties.contains("SQUARE")) {
-            System.out.printf(errorIncompatibleProperties, "SUNNY", "SQUARE");
-            return false;
-        }
-
-        if (properties.contains("HAPPY") && properties.contains("SAD")) {
-            System.out.printf(errorIncompatibleProperties, "HAPPY", "SAD");
-            return false;
-        }
-
-        return true;
+        return verifyPropCompat(properties, false);
     }
 
 
