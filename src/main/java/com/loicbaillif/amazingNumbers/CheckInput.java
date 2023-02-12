@@ -128,15 +128,10 @@ class CheckInput {
         if (errorProperty) return false;
 
         // Step 3: compatible properties?
-        return (verifyPropCompat(validList) && verifyPropCompat(excludedList));
-    }
-
-
-    private static boolean verifyPropCompat(ArrayList<String> properties) {
-        // Returns true if and only if there is no
-        // mutually exclusive pair of properties
-
-        return verifyPropCompat(properties, false);
+        return (
+                verifyPropCompat(validList, false) &&
+                verifyPropCompat(excludedList, true)
+        );
     }
 
 
