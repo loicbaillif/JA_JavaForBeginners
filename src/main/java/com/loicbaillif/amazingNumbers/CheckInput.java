@@ -176,6 +176,8 @@ class CheckInput {
 
         for (String property : validList) {
             if (excludedList.contains(property)) {
+                System.out.printf(errorIncompatibleProperties,
+                        "", property, "-", property);
                 return false;
             }
         }
