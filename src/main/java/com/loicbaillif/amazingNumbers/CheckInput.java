@@ -130,7 +130,8 @@ class CheckInput {
         // Step 3: compatible properties?
         return (
                 verifyPropCompat(validList, false) &&
-                verifyPropCompat(excludedList, true)
+                verifyPropCompat(excludedList, true) &&
+                verifyPropCompat(validList, excludedList)
         );
     }
 
@@ -164,6 +165,19 @@ class CheckInput {
             System.out.printf(errorIncompatibleProperties,
                     exclusionMark, "HAPPY", exclusionMark, "SAD");
             return false;
+        }
+
+        return true;
+    }
+
+
+    private static boolean verifyPropCompat(
+            ArrayList<String> validList, ArrayList<String> excludedList) {
+
+        for (String property : validList) {
+            if (excludedList.contains(property)) {
+                return false;
+            }
         }
 
         return true;
