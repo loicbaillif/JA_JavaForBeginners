@@ -8,7 +8,8 @@ public class Main {
         // Project stages
         // com.loicbaillif.bullsAndCows.Project1.main();
         // com.loicbaillif.zookeeper.Main.main();
-        com.loicbaillif.amazingNumbers.Main.main();
+        // com.loicbaillif.amazingNumbers.Main.main();
+        com.loicbaillif.chuckNorris.Main.main();
 
         /* Previous chapters */
         // com.loicbaillif.codeOrganization.methods.overloading.Main.main();
