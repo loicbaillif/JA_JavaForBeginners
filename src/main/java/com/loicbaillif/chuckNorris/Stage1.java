@@ -2,6 +2,8 @@ package com.loicbaillif.chuckNorris;
 
 import com.loicbaillif.tools.Print;
 
+import java.util.Scanner;
+
 public class Stage1 {
     /*
      * https://hyperskill.org/projects/293/stages/1536/implement
@@ -11,6 +13,8 @@ public class Stage1 {
     public static void main() {
         Print.subtitle("Stage 1 - Analyze the words", '*', (byte) 80);
 
+        Scanner scanner = new Scanner(System.in);
+        String userInput = scanner.nextLine();
 
         Print.subtitle("End of Stage 1", '*', (byte) 80);
     }
