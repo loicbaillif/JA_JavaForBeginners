@@ -16,6 +16,10 @@ public class Stage1 {
         Scanner scanner = new Scanner(System.in);
         String userInput = scanner.nextLine();
 
+        for (int i = 0; i < userInput.length(); i++) {
+            System.out.printf("%c ", userInput.charAt(i));
+        }
+
         Print.subtitle("End of Stage 1", '*', (byte) 80);
     }
 }
