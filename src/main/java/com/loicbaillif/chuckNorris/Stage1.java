@@ -14,11 +14,13 @@ public class Stage1 {
         Print.subtitle("Stage 1 - Analyze the words", '*', (byte) 80);
 
         Scanner scanner = new Scanner(System.in);
+        System.out.println("Input String:");
         String userInput = scanner.nextLine();
 
         for (int i = 0; i < userInput.length(); i++) {
             System.out.printf("%c ", userInput.charAt(i));
         }
+        System.out.println();
 
         Print.subtitle("End of Stage 1", '*', (byte) 80);
     }
