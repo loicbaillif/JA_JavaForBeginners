@@ -17,7 +17,7 @@ public class Ex1 {
          */
         Print.title("Exception Handling - Exercise: String to double");
 
-        double d1 = convertStringToDouble("123a");
+        double d1 = convertStringToDouble("1 2 3");
         System.out.println(d1 / 10);
 
         Print.subtitle("End of exercise", '+', (byte) 80);
@@ -31,6 +31,7 @@ public class Ex1 {
             System.out.println(input + " is not a valid double.");
             return 0;
         } catch (Exception e) {
+            System.out.println("Non-specific exception caught;");
             return 0;
         }
     }
